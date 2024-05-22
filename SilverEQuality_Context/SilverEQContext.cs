@@ -31,14 +31,14 @@ namespace SilverEQuality_Context
         public virtual DbSet<Status> Statuses { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=DESKTOP-DDO84UQ; Database=SilverEQ; User ID=ae; Password=ae");
             }
-        }
+        }*/
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -129,7 +129,6 @@ namespace SilverEQuality_Context
                 entity.ToTable("Norm");
 
                 entity.Property(e => e.IdNorm)
-                    .ValueGeneratedNever()
                     .HasColumnName("ID_Norm");
 
                 entity.Property(e => e.DecimalNorm).HasColumnName("Decimal_Norm");
@@ -162,7 +161,6 @@ namespace SilverEQuality_Context
                 entity.ToTable("Order");
 
                 entity.Property(e => e.IdOrder)
-                    .ValueGeneratedNever()
                     .HasColumnName("ID_Order");
 
                 entity.Property(e => e.AppointedOrder).HasColumnName("Appointed_Order");
@@ -213,7 +211,6 @@ namespace SilverEQuality_Context
                 entity.ToTable("Part");
 
                 entity.Property(e => e.IdPart)
-                    .ValueGeneratedNever()
                     .HasColumnName("ID_Part");
 
                 entity.Property(e => e.CostPart)
@@ -242,7 +239,6 @@ namespace SilverEQuality_Context
                 entity.ToTable("PartNecessary");
 
                 entity.Property(e => e.IdNecessary)
-                    .ValueGeneratedNever()
                     .HasColumnName("ID_Necessary");
 
                 entity.Property(e => e.AmountNecessary).HasColumnName("Amount_Necessary");
@@ -301,7 +297,6 @@ namespace SilverEQuality_Context
                 entity.ToTable("SilverRequest");
 
                 entity.Property(e => e.IdRequest)
-                    .ValueGeneratedNever()
                     .HasColumnName("ID_Request");
 
                 entity.Property(e => e.AmountRequest).HasColumnName("Amount_Request");
@@ -377,7 +372,6 @@ namespace SilverEQuality_Context
                 entity.ToTable("User");
 
                 entity.Property(e => e.IdUser)
-                    .ValueGeneratedNever()
                     .HasColumnName("ID_User");
 
                 entity.Property(e => e.DateOfBirthUser)

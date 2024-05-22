@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label3 = new Label();
             buttonHide = new Button();
             buttonWindowSize = new Button();
             buttonExit = new Button();
@@ -39,11 +40,13 @@
             buttonCancel = new Button();
             buttonLogin = new Button();
             panel4 = new Panel();
+            buttonReload = new Button();
+            textBoxCaptcha = new TextBox();
+            panelCaptcha = new Panel();
             label2 = new Label();
             textBoxPassword = new TextBox();
             label1 = new Label();
             textBoxLogin = new TextBox();
-            label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -65,6 +68,20 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(440, 30);
             panel1.TabIndex = 0;
+            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseMove += panel1_MouseMove;
+            panel1.MouseUp += panel1_MouseUp;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Lucida Console", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.ControlLightLight;
+            label3.Location = new Point(39, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(95, 14);
+            label3.TabIndex = 4;
+            label3.Text = "Авторизация";
             // 
             // buttonHide
             // 
@@ -145,7 +162,7 @@
             panel3.Controls.Add(buttonCancel);
             panel3.Controls.Add(buttonLogin);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 277);
+            panel3.Location = new Point(0, 250);
             panel3.Name = "panel3";
             panel3.Size = new Size(440, 94);
             panel3.TabIndex = 2;
@@ -157,7 +174,7 @@
             buttonCancel.FlatStyle = FlatStyle.Flat;
             buttonCancel.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCancel.ForeColor = SystemColors.ControlLightLight;
-            buttonCancel.Location = new Point(65, 51);
+            buttonCancel.Location = new Point(65, 55);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(320, 27);
             buttonCancel.TabIndex = 1;
@@ -171,7 +188,7 @@
             buttonLogin.FlatStyle = FlatStyle.Flat;
             buttonLogin.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonLogin.ForeColor = SystemColors.ControlLightLight;
-            buttonLogin.Location = new Point(65, 11);
+            buttonLogin.Location = new Point(65, 15);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(320, 36);
             buttonLogin.TabIndex = 0;
@@ -181,6 +198,9 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(buttonReload);
+            panel4.Controls.Add(textBoxCaptcha);
+            panel4.Controls.Add(panelCaptcha);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(textBoxPassword);
             panel4.Controls.Add(label1);
@@ -188,8 +208,40 @@
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(0, 117);
             panel4.Name = "panel4";
-            panel4.Size = new Size(440, 160);
+            panel4.Size = new Size(440, 133);
             panel4.TabIndex = 3;
+            // 
+            // buttonReload
+            // 
+            buttonReload.BackgroundImage = Properties.Resources.refresh;
+            buttonReload.BackgroundImageLayout = ImageLayout.Stretch;
+            buttonReload.FlatAppearance.BorderSize = 0;
+            buttonReload.FlatStyle = FlatStyle.Flat;
+            buttonReload.Location = new Point(324, 275);
+            buttonReload.Name = "buttonReload";
+            buttonReload.Size = new Size(31, 26);
+            buttonReload.TabIndex = 0;
+            buttonReload.UseVisualStyleBackColor = true;
+            buttonReload.Visible = false;
+            buttonReload.Click += buttonReload_Click;
+            // 
+            // textBoxCaptcha
+            // 
+            textBoxCaptcha.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxCaptcha.Location = new Point(86, 275);
+            textBoxCaptcha.Name = "textBoxCaptcha";
+            textBoxCaptcha.Size = new Size(232, 26);
+            textBoxCaptcha.TabIndex = 1;
+            textBoxCaptcha.Visible = false;
+            // 
+            // panelCaptcha
+            // 
+            panelCaptcha.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            panelCaptcha.Location = new Point(73, 135);
+            panelCaptcha.Name = "panelCaptcha";
+            panelCaptcha.Size = new Size(300, 134);
+            panelCaptcha.TabIndex = 4;
+            panelCaptcha.Visible = false;
             // 
             // label2
             // 
@@ -208,6 +260,7 @@
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(198, 26);
             textBoxPassword.TabIndex = 2;
+            textBoxPassword.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -227,28 +280,19 @@
             textBoxLogin.Size = new Size(198, 26);
             textBoxLogin.TabIndex = 0;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Lucida Console", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(39, 9);
-            label3.Name = "label3";
-            label3.Size = new Size(95, 14);
-            label3.TabIndex = 4;
-            label3.Text = "Авторизация";
-            // 
             // AuthForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(440, 371);
+            ClientSize = new Size(440, 344);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            MaximumSize = new Size(440, 520);
             Name = "AuthForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -279,5 +323,8 @@
         private Button buttonCancel;
         private Button buttonLogin;
         private Label label3;
+        private Panel panelCaptcha;
+        private Button buttonReload;
+        private TextBox textBoxCaptcha;
     }
 }

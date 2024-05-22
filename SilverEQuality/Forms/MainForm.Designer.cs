@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label3 = new Label();
             buttonHide = new Button();
             buttonWindowSize = new Button();
             buttonExit = new Button();
             pictureBox1 = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            panel2 = new Panel();
             panel3 = new Panel();
+            panel2 = new Panel();
             buttonChecks = new Button();
             panel4 = new Panel();
             button1 = new Button();
             panel5 = new Panel();
             button2 = new Button();
-            label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             flowLayoutPanel1.SuspendLayout();
@@ -63,6 +63,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(993, 30);
             panel1.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Lucida Console", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.ControlLightLight;
+            label3.Location = new Point(39, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(103, 14);
+            label3.TabIndex = 5;
+            label3.Text = "Главное меню";
             // 
             // buttonHide
             // 
@@ -131,6 +142,13 @@
             flowLayoutPanel1.Size = new Size(218, 420);
             flowLayoutPanel1.TabIndex = 2;
             // 
+            // panel3
+            // 
+            panel3.Location = new Point(3, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(211, 79);
+            panel3.TabIndex = 1;
+            // 
             // panel2
             // 
             panel2.Controls.Add(buttonChecks);
@@ -138,13 +156,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(211, 49);
             panel2.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            panel3.Location = new Point(3, 3);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(211, 79);
-            panel3.TabIndex = 1;
             // 
             // buttonChecks
             // 
@@ -210,17 +221,6 @@
             button2.Text = "Чеки";
             button2.UseVisualStyleBackColor = false;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Lucida Console", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(39, 9);
-            label3.Name = "label3";
-            label3.Size = new Size(103, 14);
-            label3.TabIndex = 5;
-            label3.Text = "Главное меню";
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -230,6 +230,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
