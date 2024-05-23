@@ -35,7 +35,7 @@ namespace SilverEQuality
                     RefreshCaptcha();
                 }
 
-                if (authorizedUser != null && triesToLogin < 2 
+                if (authorizedUser != null && triesToLogin < 2
                     || triesToLogin >= 2 && authorizedUser != null && textBoxCaptcha.Text == captcha)
                 {
                     MainForm mainForm = new MainForm();
@@ -43,7 +43,7 @@ namespace SilverEQuality
                 }
                 else
                 {
-                    MessageBoxAuth authError = new MessageBoxAuth();
+                    MessageBoxCustom authError = new MessageBoxCustom("Неправильный логин или пароль");
                     authError.ShowDialog();
                     triesToLogin++;
                 }
@@ -90,6 +90,16 @@ namespace SilverEQuality
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             isMouseDown = false;
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonHide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

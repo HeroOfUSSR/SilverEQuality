@@ -67,7 +67,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(440, 30);
-            panel1.TabIndex = 0;
+            panel1.TabIndex = 2;
             panel1.MouseDown += panel1_MouseDown;
             panel1.MouseMove += panel1_MouseMove;
             panel1.MouseUp += panel1_MouseUp;
@@ -96,6 +96,7 @@
             buttonHide.TabIndex = 4;
             buttonHide.Text = "_";
             buttonHide.UseVisualStyleBackColor = true;
+            buttonHide.Click += buttonHide_Click;
             // 
             // buttonWindowSize
             // 
@@ -109,7 +110,7 @@
             buttonWindowSize.Location = new Point(374, 0);
             buttonWindowSize.Name = "buttonWindowSize";
             buttonWindowSize.Size = new Size(31, 30);
-            buttonWindowSize.TabIndex = 3;
+            buttonWindowSize.TabIndex = 6;
             buttonWindowSize.UseVisualStyleBackColor = true;
             // 
             // buttonExit
@@ -122,9 +123,10 @@
             buttonExit.Location = new Point(405, 0);
             buttonExit.Name = "buttonExit";
             buttonExit.Size = new Size(35, 30);
-            buttonExit.TabIndex = 2;
+            buttonExit.TabIndex = 5;
             buttonExit.Text = "X";
             buttonExit.UseVisualStyleBackColor = true;
+            buttonExit.Click += buttonExit_Click;
             // 
             // pictureBox1
             // 
@@ -165,7 +167,7 @@
             panel3.Location = new Point(0, 250);
             panel3.Name = "panel3";
             panel3.Size = new Size(440, 94);
-            panel3.TabIndex = 2;
+            panel3.TabIndex = 1;
             // 
             // buttonCancel
             // 
@@ -177,7 +179,7 @@
             buttonCancel.Location = new Point(65, 55);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(320, 27);
-            buttonCancel.TabIndex = 1;
+            buttonCancel.TabIndex = 3;
             buttonCancel.Text = "Выйти";
             buttonCancel.UseVisualStyleBackColor = false;
             // 
@@ -191,7 +193,7 @@
             buttonLogin.Location = new Point(65, 15);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(320, 36);
-            buttonLogin.TabIndex = 0;
+            buttonLogin.TabIndex = 2;
             buttonLogin.Text = "Авторизоваться";
             buttonLogin.UseVisualStyleBackColor = false;
             buttonLogin.Click += buttonLogin_Click;
@@ -209,7 +211,7 @@
             panel4.Location = new Point(0, 117);
             panel4.Name = "panel4";
             panel4.Size = new Size(440, 133);
-            panel4.TabIndex = 3;
+            panel4.TabIndex = 0;
             // 
             // buttonReload
             // 
@@ -259,7 +261,7 @@
             textBoxPassword.Location = new Point(176, 91);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(198, 26);
-            textBoxPassword.TabIndex = 2;
+            textBoxPassword.TabIndex = 1;
             textBoxPassword.UseSystemPasswordChar = true;
             // 
             // label1

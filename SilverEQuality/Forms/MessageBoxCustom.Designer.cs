@@ -1,6 +1,6 @@
 ﻿namespace SilverEQuality.MessageBoxes
 {
-    partial class MessageBoxAuth
+    partial class MessageBoxCustom
     {
         /// <summary>
         /// Required designer variable.
@@ -137,13 +137,14 @@
             // 
             // labelErrorMes
             // 
+            labelErrorMes.Anchor = AnchorStyles.None;
             labelErrorMes.AutoSize = true;
             labelErrorMes.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelErrorMes.Location = new Point(39, 63);
+            labelErrorMes.Location = new Point(164, 66);
             labelErrorMes.Name = "labelErrorMes";
-            labelErrorMes.Size = new Size(328, 19);
+            labelErrorMes.Size = new Size(86, 19);
             labelErrorMes.TabIndex = 4;
-            labelErrorMes.Text = "Неправильный логин или пароль";
+            labelErrorMes.Text = "Ошибка!";
             // 
             // MessageBoxAuth
             // 

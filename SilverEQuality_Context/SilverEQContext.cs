@@ -30,6 +30,9 @@ namespace SilverEQuality_Context
         public virtual DbSet<SilverType> SilverTypes { get; set; } = null!;
         public virtual DbSet<Status> Statuses { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
+        public virtual DbSet<Manufacturer> Manufacturers { get; set; } = null!;
+        public virtual DbSet<Comment> Comments { get; set; } = null!;
+
 
         /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -202,6 +205,12 @@ namespace SilverEQuality_Context
                     .HasForeignKey(d => d.StatusOrder)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Order_Status");
+
+                entity.HasOne(d => d.ManufacturerOrderNavigation)
+                    .WithMany(p => p.Orders)
+                    .HasForeignKey(d => d.ManufacturerOrder)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Order_Manufacturer");
             });
 
             modelBuilder.Entity<Part>(entity =>
@@ -275,6 +284,25 @@ namespace SilverEQuality_Context
                     .HasColumnName("Title_Priority");
             });
 
+            modelBuilder.Entity<Manufacturer>(entity =>
+            {
+                entity.HasKey(e => e.IdManufacturer);
+
+                entity.ToTable("Manufacturer");
+
+                entity.Property(e => e.IdManufacturer)
+                    .ValueGeneratedNever()
+                    .HasColumnName("ID_Manufacturer");
+
+                entity.Property(e => e.NameManufacturer)
+                    .HasMaxLength(80)
+                    .HasColumnName("Name_Manufacturer");
+
+                entity.Property(e => e.ImageManufacturer)
+                    .HasColumnType("varbinary")
+                    .HasColumnName("Image_Manufacturer");
+            });
+
             modelBuilder.Entity<Role>(entity =>
             {
                 entity.HasKey(e => e.IdRole);
@@ -329,6 +357,40 @@ namespace SilverEQuality_Context
                     .HasConstraintName("FK_SilverRequest_User");
             });
 
+            modelBuilder.Entity<Comment>(entity =>
+            {
+                entity.HasKey(e => e.IdComment);
+
+                entity.ToTable("Comment");
+
+                entity.Property(e => e.IdComment)
+                    .HasColumnName("ID_Comment");
+
+                entity.Property(e => e.TextComment)
+                    .HasColumnName("Text_Comment")
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.DateComment)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Date_Comment");
+
+                entity.Property(e => e.UserComment).HasColumnName("User_Comment");
+
+                entity.Property(e => e.OrderComment).HasColumnName("Order_Comment");
+
+                entity.HasOne(d => d.UserCommentNavigation)
+                    .WithMany(p => p.Comments)
+                    .HasForeignKey(d => d.UserComment)
+                    .HasConstraintName("FK_Comment_User");
+
+                entity.HasOne(d => d.OrderCommentNavigation)
+                    .WithMany(p => p.Comments)
+                    .HasForeignKey(d => d.OrderComment)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Comment_Order");
+
+            });
+
             modelBuilder.Entity<SilverType>(entity =>
             {
                 entity.HasKey(e => e.CodeSilverType);
@@ -343,7 +405,9 @@ namespace SilverEQuality_Context
                     .HasColumnType("money")
                     .HasColumnName("CostPerKG_SilverType");
 
-                entity.Property(e => e.ImageSilverType).HasColumnName("Image_SilverType");
+                entity.Property(e => e.ImageSilverType)
+                    .HasColumnName("Image_SilverType")
+                    .HasColumnType("varbinary");
 
                 entity.Property(e => e.TitleSilverType)
                     .HasMaxLength(60)

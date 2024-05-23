@@ -9,6 +9,7 @@ namespace SilverEQuality_Context.Models
         {
             Checks = new HashSet<Check>();
             PartNecessaries = new HashSet<PartNecessary>();
+            Comments = new HashSet<Comment>();
         }
 
         public int IdOrder { get; set; }
@@ -24,7 +25,12 @@ namespace SilverEQuality_Context.Models
         public virtual User? AppointedOrderNavigation { get; set; }
         public virtual Priority? PriorityOrderNavigation { get; set; }
         public virtual Status StatusOrderNavigation { get; set; } = null!;
+        public virtual Manufacturer ManufacturerOrderNavigation { get; set; } = null!;
+
         public virtual ICollection<Check> Checks { get; set; }
         public virtual ICollection<PartNecessary> PartNecessaries { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
+
+
     }
 }

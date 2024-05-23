@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace SilverEQuality.MessageBoxes
 {
-    public partial class MessageBoxAuth : Form
+    public partial class MessageBoxCustom : Form
     {
-        public MessageBoxAuth()
+        public MessageBoxCustom()
         {
             InitializeComponent();
+        }
+
+        public MessageBoxCustom(string textMessage) : this()
+        {
+            ChangeMessageText(textMessage);
+        }
+
+        private void ChangeMessageText(string textMessage)
+        {
+            labelErrorMes.Text = textMessage;
         }
 
         private void buttonOK_Click(object sender, EventArgs e)

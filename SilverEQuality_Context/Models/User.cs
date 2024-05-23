@@ -9,6 +9,7 @@ namespace SilverEQuality_Context.Models
         {
             Orders = new HashSet<Order>();
             SilverRequests = new HashSet<SilverRequest>();
+            Comments = new HashSet<Comment>();
         }
 
         public int IdUser { get; set; }
@@ -25,5 +26,7 @@ namespace SilverEQuality_Context.Models
         public virtual Role RoleUserNavigation { get; set; } = null!;
         public virtual ICollection<Order> Orders { get; set; }
         public virtual ICollection<SilverRequest> SilverRequests { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
+
     }
 }

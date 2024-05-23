@@ -28,48 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            components = new System.ComponentModel.Container();
+            panelHeader = new Panel();
             label3 = new Label();
             buttonHide = new Button();
             buttonWindowSize = new Button();
             buttonExit = new Button();
             pictureBox1 = new PictureBox();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            slideBar = new FlowLayoutPanel();
+            panel5 = new Panel();
+            buttonMenu = new Button();
             panel3 = new Panel();
+            buttonProfile = new Button();
             panel2 = new Panel();
             buttonChecks = new Button();
             panel4 = new Panel();
-            button1 = new Button();
-            panel5 = new Panel();
-            button2 = new Button();
-            panel1.SuspendLayout();
+            buttonOrders = new Button();
+            panelFrame = new Panel();
+            slideBarTimer = new System.Windows.Forms.Timer(components);
+            panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            flowLayoutPanel1.SuspendLayout();
+            slideBar.SuspendLayout();
+            panel5.SuspendLayout();
+            panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
-            panel5.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // panelHeader
             // 
-            panel1.BackColor = Color.FromArgb(50, 50, 56);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(buttonHide);
-            panel1.Controls.Add(buttonWindowSize);
-            panel1.Controls.Add(buttonExit);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(993, 30);
-            panel1.TabIndex = 1;
+            panelHeader.BackColor = Color.FromArgb(50, 50, 56);
+            panelHeader.Controls.Add(label3);
+            panelHeader.Controls.Add(buttonHide);
+            panelHeader.Controls.Add(buttonWindowSize);
+            panelHeader.Controls.Add(buttonExit);
+            panelHeader.Controls.Add(pictureBox1);
+            panelHeader.Dock = DockStyle.Top;
+            panelHeader.Location = new Point(0, 0);
+            panelHeader.Name = "panelHeader";
+            panelHeader.Size = new Size(1059, 39);
+            panelHeader.TabIndex = 1;
+            panelHeader.MouseDown += panelHeader_MouseDown;
+            panelHeader.MouseMove += panelHeader_MouseMove;
+            panelHeader.MouseUp += panelHeader_MouseUp;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Lucida Console", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(39, 9);
+            label3.Location = new Point(56, 9);
             label3.Name = "label3";
             label3.Size = new Size(103, 14);
             label3.TabIndex = 5;
@@ -82,10 +90,10 @@
             buttonHide.FlatStyle = FlatStyle.Flat;
             buttonHide.Font = new Font("Lucida Console", 14F, FontStyle.Bold, GraphicsUnit.Point);
             buttonHide.ForeColor = SystemColors.ControlLightLight;
-            buttonHide.Location = new Point(893, 0);
+            buttonHide.Location = new Point(959, 0);
             buttonHide.Name = "buttonHide";
-            buttonHide.Size = new Size(34, 30);
-            buttonHide.TabIndex = 4;
+            buttonHide.Size = new Size(34, 39);
+            buttonHide.TabIndex = 0;
             buttonHide.Text = "_";
             buttonHide.UseVisualStyleBackColor = true;
             // 
@@ -98,10 +106,10 @@
             buttonWindowSize.FlatStyle = FlatStyle.Flat;
             buttonWindowSize.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonWindowSize.ForeColor = SystemColors.ControlLightLight;
-            buttonWindowSize.Location = new Point(927, 0);
+            buttonWindowSize.Location = new Point(993, 0);
             buttonWindowSize.Name = "buttonWindowSize";
-            buttonWindowSize.Size = new Size(31, 30);
-            buttonWindowSize.TabIndex = 3;
+            buttonWindowSize.Size = new Size(31, 39);
+            buttonWindowSize.TabIndex = 2;
             buttonWindowSize.UseVisualStyleBackColor = true;
             // 
             // buttonExit
@@ -111,10 +119,10 @@
             buttonExit.FlatStyle = FlatStyle.Flat;
             buttonExit.Font = new Font("Lucida Console", 14F, FontStyle.Bold, GraphicsUnit.Point);
             buttonExit.ForeColor = SystemColors.ControlLightLight;
-            buttonExit.Location = new Point(958, 0);
+            buttonExit.Location = new Point(1024, 0);
             buttonExit.Name = "buttonExit";
-            buttonExit.Size = new Size(35, 30);
-            buttonExit.TabIndex = 2;
+            buttonExit.Size = new Size(35, 39);
+            buttonExit.TabIndex = 1;
             buttonExit.Text = "X";
             buttonExit.UseVisualStyleBackColor = true;
             // 
@@ -124,35 +132,81 @@
             pictureBox1.Image = Properties.Resources.logo;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(33, 30);
+            pictureBox1.Padding = new Padding(8, 5, 10, 5);
+            pictureBox1.Size = new Size(50, 39);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // flowLayoutPanel1
+            // slideBar
             // 
-            flowLayoutPanel1.BackColor = Color.FromArgb(50, 50, 56);
-            flowLayoutPanel1.Controls.Add(panel3);
-            flowLayoutPanel1.Controls.Add(panel2);
-            flowLayoutPanel1.Controls.Add(panel4);
-            flowLayoutPanel1.Controls.Add(panel5);
-            flowLayoutPanel1.Dock = DockStyle.Left;
-            flowLayoutPanel1.Location = new Point(0, 30);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(218, 420);
-            flowLayoutPanel1.TabIndex = 2;
+            slideBar.BackColor = Color.FromArgb(50, 50, 56);
+            slideBar.Controls.Add(panel5);
+            slideBar.Controls.Add(panel3);
+            slideBar.Controls.Add(panel2);
+            slideBar.Controls.Add(panel4);
+            slideBar.Dock = DockStyle.Left;
+            slideBar.Location = new Point(0, 39);
+            slideBar.MaximumSize = new Size(218, 472);
+            slideBar.MinimumSize = new Size(50, 472);
+            slideBar.Name = "slideBar";
+            slideBar.Size = new Size(218, 472);
+            slideBar.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(buttonMenu);
+            panel5.Location = new Point(3, 3);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(215, 38);
+            panel5.TabIndex = 3;
+            // 
+            // buttonMenu
+            // 
+            buttonMenu.BackColor = Color.Transparent;
+            buttonMenu.FlatAppearance.BorderSize = 0;
+            buttonMenu.FlatStyle = FlatStyle.Flat;
+            buttonMenu.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonMenu.ForeColor = SystemColors.ControlLightLight;
+            buttonMenu.Image = Properties.Resources.menu;
+            buttonMenu.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonMenu.Location = new Point(0, -1);
+            buttonMenu.Name = "buttonMenu";
+            buttonMenu.Size = new Size(213, 41);
+            buttonMenu.TabIndex = 0;
+            buttonMenu.Text = "Меню";
+            buttonMenu.UseVisualStyleBackColor = false;
+            buttonMenu.Click += buttonMenu_Click;
             // 
             // panel3
             // 
-            panel3.Location = new Point(3, 3);
+            panel3.Controls.Add(buttonProfile);
+            panel3.Location = new Point(3, 47);
             panel3.Name = "panel3";
-            panel3.Size = new Size(211, 79);
+            panel3.Size = new Size(211, 55);
             panel3.TabIndex = 1;
+            // 
+            // buttonProfile
+            // 
+            buttonProfile.BackColor = Color.Transparent;
+            buttonProfile.FlatAppearance.BorderSize = 0;
+            buttonProfile.FlatStyle = FlatStyle.Flat;
+            buttonProfile.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonProfile.ForeColor = SystemColors.ControlLightLight;
+            buttonProfile.Image = Properties.Resources.profile;
+            buttonProfile.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonProfile.Location = new Point(-3, 3);
+            buttonProfile.Name = "buttonProfile";
+            buttonProfile.Padding = new Padding(3, 0, 0, 0);
+            buttonProfile.Size = new Size(211, 49);
+            buttonProfile.TabIndex = 1;
+            buttonProfile.Text = "Фамилия Имя Отчество";
+            buttonProfile.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
             panel2.Controls.Add(buttonChecks);
-            panel2.Location = new Point(3, 88);
+            panel2.Location = new Point(3, 108);
             panel2.Name = "panel2";
             panel2.Size = new Size(211, 49);
             panel2.TabIndex = 0;
@@ -166,97 +220,91 @@
             buttonChecks.ForeColor = SystemColors.ControlLightLight;
             buttonChecks.Image = Properties.Resources.report1;
             buttonChecks.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonChecks.Location = new Point(-3, 4);
+            buttonChecks.Location = new Point(2, 5);
             buttonChecks.Name = "buttonChecks";
-            buttonChecks.Size = new Size(211, 41);
-            buttonChecks.TabIndex = 1;
+            buttonChecks.Size = new Size(209, 41);
+            buttonChecks.TabIndex = 2;
             buttonChecks.Text = "Чеки";
             buttonChecks.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
-            panel4.Controls.Add(button1);
-            panel4.Location = new Point(3, 143);
+            panel4.Controls.Add(buttonOrders);
+            panel4.Location = new Point(3, 163);
             panel4.Name = "panel4";
             panel4.Size = new Size(211, 49);
             panel4.TabIndex = 2;
             // 
-            // button1
+            // buttonOrders
             // 
-            button1.BackColor = Color.Transparent;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Image = Properties.Resources.report1;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(-3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(211, 41);
-            button1.TabIndex = 1;
-            button1.Text = "Чеки";
-            button1.UseVisualStyleBackColor = false;
+            buttonOrders.BackColor = Color.Transparent;
+            buttonOrders.FlatAppearance.BorderSize = 0;
+            buttonOrders.FlatStyle = FlatStyle.Flat;
+            buttonOrders.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonOrders.ForeColor = SystemColors.ControlLightLight;
+            buttonOrders.Image = Properties.Resources.order;
+            buttonOrders.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonOrders.Location = new Point(0, 4);
+            buttonOrders.Name = "buttonOrders";
+            buttonOrders.Size = new Size(208, 41);
+            buttonOrders.TabIndex = 3;
+            buttonOrders.Text = "Заказы";
+            buttonOrders.UseVisualStyleBackColor = false;
             // 
-            // panel5
+            // panelFrame
             // 
-            panel5.Controls.Add(button2);
-            panel5.Location = new Point(3, 198);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(211, 49);
-            panel5.TabIndex = 3;
+            panelFrame.Dock = DockStyle.Fill;
+            panelFrame.Location = new Point(218, 39);
+            panelFrame.Name = "panelFrame";
+            panelFrame.Size = new Size(841, 472);
+            panelFrame.TabIndex = 3;
             // 
-            // button2
+            // slideBarTimer
             // 
-            button2.BackColor = Color.Transparent;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Image = Properties.Resources.report1;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(-3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(211, 41);
-            button2.TabIndex = 1;
-            button2.Text = "Чеки";
-            button2.UseVisualStyleBackColor = false;
+            slideBarTimer.Interval = 50;
+            slideBarTimer.Tick += slideBarTimer_Tick;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(993, 450);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(panel1);
+            ClientSize = new Size(1059, 511);
+            Controls.Add(panelFrame);
+            Controls.Add(slideBar);
+            Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panelHeader.ResumeLayout(false);
+            panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            flowLayoutPanel1.ResumeLayout(false);
+            slideBar.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel panelHeader;
         private Button buttonHide;
         private Button buttonWindowSize;
         private Button buttonExit;
         private PictureBox pictureBox1;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel slideBar;
         private Panel panel2;
         private Panel panel3;
         private Button buttonChecks;
         private Panel panel4;
-        private Button button1;
-        private Panel panel5;
-        private Button button2;
+        private Button buttonOrders;
         private Label label3;
+        private Panel panelFrame;
+        private Button buttonProfile;
+        private Panel panel5;
+        private Button buttonMenu;
+        private System.Windows.Forms.Timer slideBarTimer;
     }
 }
