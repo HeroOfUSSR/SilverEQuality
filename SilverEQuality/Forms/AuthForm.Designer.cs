@@ -93,7 +93,7 @@
             buttonHide.Location = new Point(340, 0);
             buttonHide.Name = "buttonHide";
             buttonHide.Size = new Size(34, 30);
-            buttonHide.TabIndex = 4;
+            buttonHide.TabIndex = 6;
             buttonHide.Text = "_";
             buttonHide.UseVisualStyleBackColor = true;
             buttonHide.Click += buttonHide_Click;
@@ -110,7 +110,7 @@
             buttonWindowSize.Location = new Point(374, 0);
             buttonWindowSize.Name = "buttonWindowSize";
             buttonWindowSize.Size = new Size(31, 30);
-            buttonWindowSize.TabIndex = 6;
+            buttonWindowSize.TabIndex = 7;
             buttonWindowSize.UseVisualStyleBackColor = true;
             // 
             // buttonExit
@@ -123,7 +123,7 @@
             buttonExit.Location = new Point(405, 0);
             buttonExit.Name = "buttonExit";
             buttonExit.Size = new Size(35, 30);
-            buttonExit.TabIndex = 5;
+            buttonExit.TabIndex = 8;
             buttonExit.Text = "X";
             buttonExit.UseVisualStyleBackColor = true;
             buttonExit.Click += buttonExit_Click;
@@ -179,7 +179,7 @@
             buttonCancel.Location = new Point(65, 55);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(320, 27);
-            buttonCancel.TabIndex = 3;
+            buttonCancel.TabIndex = 5;
             buttonCancel.Text = "Выйти";
             buttonCancel.UseVisualStyleBackColor = false;
             // 
@@ -193,7 +193,7 @@
             buttonLogin.Location = new Point(65, 15);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(320, 36);
-            buttonLogin.TabIndex = 2;
+            buttonLogin.TabIndex = 3;
             buttonLogin.Text = "Авторизоваться";
             buttonLogin.UseVisualStyleBackColor = false;
             buttonLogin.Click += buttonLogin_Click;
@@ -222,7 +222,7 @@
             buttonReload.Location = new Point(324, 275);
             buttonReload.Name = "buttonReload";
             buttonReload.Size = new Size(31, 26);
-            buttonReload.TabIndex = 0;
+            buttonReload.TabIndex = 4;
             buttonReload.UseVisualStyleBackColor = true;
             buttonReload.Visible = false;
             buttonReload.Click += buttonReload_Click;
@@ -233,7 +233,7 @@
             textBoxCaptcha.Location = new Point(86, 275);
             textBoxCaptcha.Name = "textBoxCaptcha";
             textBoxCaptcha.Size = new Size(232, 26);
-            textBoxCaptcha.TabIndex = 1;
+            textBoxCaptcha.TabIndex = 2;
             textBoxCaptcha.Visible = false;
             // 
             // panelCaptcha
@@ -293,6 +293,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             MaximumSize = new Size(440, 520);
+            MinimumSize = new Size(440, 344);
             Name = "AuthForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";

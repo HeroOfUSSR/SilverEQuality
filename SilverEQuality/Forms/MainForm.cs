@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SilverEQuality.FramesUC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,6 +46,25 @@ namespace SilverEQuality.Forms
             }
         }
 
+        private void FrameOutput(int buttonNumber)
+        {
+            panelFrame.Controls.Clear();
+
+            switch (buttonNumber)
+            {
+                case 1:
+                    var profileFrame = new ProfileFrame();
+                    profileFrame.Parent = panelFrame;
+                    break;
+                case 2:
+                    var checkFrame = new CheckFrame();
+                    checkFrame.Parent = panelFrame;
+                    break;
+
+
+            }
+        }
+
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             slideBarTimer.Start();
@@ -68,6 +88,16 @@ namespace SilverEQuality.Forms
         private void panelHeader_MouseUp(object sender, MouseEventArgs e)
         {
             isMouseDown = false;
+        }
+
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+            FrameOutput(1);
+        }
+
+        private void buttonChecks_Click(object sender, EventArgs e)
+        {
+            FrameOutput(2);
         }
     }
 }

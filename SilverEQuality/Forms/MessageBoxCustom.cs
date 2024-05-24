@@ -12,6 +12,9 @@ namespace SilverEQuality.MessageBoxes
 {
     public partial class MessageBoxCustom : Form
     {
+        public bool isMouseDown;
+        public Point startPoint;
+
         public MessageBoxCustom()
         {
             InitializeComponent();
@@ -30,6 +33,27 @@ namespace SilverEQuality.MessageBoxes
         private void buttonOK_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panelHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            isMouseDown = true;
+            startPoint = new Point(e.X, e.Y);
+        }
+
+        private void panelHeader_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMouseDown)
+            {
+                Point p = PointToScreen(e.Location);
+                this.Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void panelHeader_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDown = false;
+
         }
     }
 }

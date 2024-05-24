@@ -46,6 +46,7 @@
             buttonOrders = new Button();
             panelFrame = new Panel();
             slideBarTimer = new System.Windows.Forms.Timer(components);
+            button1 = new Button();
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             slideBar.SuspendLayout();
@@ -145,6 +146,7 @@
             slideBar.Controls.Add(panel3);
             slideBar.Controls.Add(panel2);
             slideBar.Controls.Add(panel4);
+            slideBar.Controls.Add(button1);
             slideBar.Dock = DockStyle.Left;
             slideBar.Location = new Point(0, 39);
             slideBar.MaximumSize = new Size(218, 472);
@@ -191,7 +193,7 @@
             buttonProfile.BackColor = Color.Transparent;
             buttonProfile.FlatAppearance.BorderSize = 0;
             buttonProfile.FlatStyle = FlatStyle.Flat;
-            buttonProfile.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonProfile.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonProfile.ForeColor = SystemColors.ControlLightLight;
             buttonProfile.Image = Properties.Resources.profile;
             buttonProfile.ImageAlign = ContentAlignment.MiddleLeft;
@@ -200,8 +202,9 @@
             buttonProfile.Padding = new Padding(3, 0, 0, 0);
             buttonProfile.Size = new Size(211, 49);
             buttonProfile.TabIndex = 1;
-            buttonProfile.Text = "Фамилия Имя Отчество";
+            buttonProfile.Text = "Профиль";
             buttonProfile.UseVisualStyleBackColor = false;
+            buttonProfile.Click += buttonProfile_Click;
             // 
             // panel2
             // 
@@ -226,6 +229,7 @@
             buttonChecks.TabIndex = 2;
             buttonChecks.Text = "Чеки";
             buttonChecks.UseVisualStyleBackColor = false;
+            buttonChecks.Click += buttonChecks_Click;
             // 
             // panel4
             // 
@@ -261,8 +265,24 @@
             // 
             // slideBarTimer
             // 
-            slideBarTimer.Interval = 50;
+            slideBarTimer.Interval = 10;
             slideBarTimer.Tick += slideBarTimer_Tick;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.ControlLightLight;
+            button1.Image = Properties.Resources.order;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(3, 218);
+            button1.Name = "button1";
+            button1.Size = new Size(208, 41);
+            button1.TabIndex = 4;
+            button1.Text = "Заказы";
+            button1.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
@@ -306,5 +326,6 @@
         private Panel panel5;
         private Button buttonMenu;
         private System.Windows.Forms.Timer slideBarTimer;
+        private Button button1;
     }
 }

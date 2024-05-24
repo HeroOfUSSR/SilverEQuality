@@ -16,6 +16,7 @@ namespace SilverEQuality.Forms
         public CheckFrame()
         {
             InitializeComponent();
+            InitDatagrid();
         }
 
         public void InitDatagrid()

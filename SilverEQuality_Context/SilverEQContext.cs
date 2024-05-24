@@ -406,9 +406,9 @@ namespace SilverEQuality_Context
                     .HasColumnName("CostPerKG_SilverType");
 
                 entity.Property(e => e.ImageSilverType)
-                    .HasColumnName("Image_SilverType")
-                    .HasColumnType("varbinary");
-
+                    .HasColumnType("varbinary")
+                    .HasColumnName("Image_SilverType");
+   
                 entity.Property(e => e.TitleSilverType)
                     .HasMaxLength(60)
                     .HasColumnName("Title_SilverType");
@@ -462,7 +462,11 @@ namespace SilverEQuality_Context
 
                 entity.Property(e => e.PhoneUser)
                     .HasMaxLength(12)
-                    .HasColumnName("Phone_User");
+                    .HasColumnName("Phone_User"); 
+
+                entity.Property(e => e.AvatarUser)
+                    .HasColumnType("varbinary")
+                    .HasColumnName("Avatar_User");
 
                 entity.Property(e => e.RoleUser).HasColumnName("Role_User");
 

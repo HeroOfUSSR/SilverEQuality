@@ -46,7 +46,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(841, 83);
+            panel1.Size = new Size(1009, 83);
             panel1.TabIndex = 0;
             // 
             // buttonSearch
@@ -74,15 +74,15 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(841, 24);
+            panel2.Size = new Size(1009, 24);
             panel2.TabIndex = 1;
             // 
             // panel3
             // 
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 405);
+            panel3.Location = new Point(0, 396);
             panel3.Name = "panel3";
-            panel3.Size = new Size(841, 76);
+            panel3.Size = new Size(1009, 76);
             panel3.TabIndex = 1;
             // 
             // dataGridCheck
@@ -93,7 +93,7 @@
             dataGridCheck.Location = new Point(0, 83);
             dataGridCheck.Name = "dataGridCheck";
             dataGridCheck.RowTemplate.Height = 25;
-            dataGridCheck.Size = new Size(841, 322);
+            dataGridCheck.Size = new Size(1009, 313);
             dataGridCheck.TabIndex = 2;
             // 
             // CheckFrame
@@ -104,7 +104,7 @@
             Controls.Add(panel3);
             Controls.Add(panel1);
             Name = "CheckFrame";
-            Size = new Size(841, 481);
+            Size = new Size(1009, 472);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridCheck).EndInit();

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            panelHeader = new Panel();
             label3 = new Label();
             buttonHide = new Button();
             buttonWindowSize = new Button();
@@ -36,23 +36,26 @@
             pictureBox1 = new PictureBox();
             buttonOK = new Button();
             labelErrorMes = new Label();
-            panel1.SuspendLayout();
+            panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // panelHeader
             // 
-            panel1.BackColor = Color.FromArgb(50, 50, 56);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(buttonHide);
-            panel1.Controls.Add(buttonWindowSize);
-            panel1.Controls.Add(buttonExit);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(419, 30);
-            panel1.TabIndex = 2;
+            panelHeader.BackColor = Color.FromArgb(50, 50, 56);
+            panelHeader.Controls.Add(label3);
+            panelHeader.Controls.Add(buttonHide);
+            panelHeader.Controls.Add(buttonWindowSize);
+            panelHeader.Controls.Add(buttonExit);
+            panelHeader.Controls.Add(pictureBox1);
+            panelHeader.Dock = DockStyle.Top;
+            panelHeader.Location = new Point(0, 0);
+            panelHeader.Name = "panelHeader";
+            panelHeader.Size = new Size(419, 30);
+            panelHeader.TabIndex = 2;
+            panelHeader.MouseDown += panelHeader_MouseDown;
+            panelHeader.MouseMove += panelHeader_MouseMove;
+            panelHeader.MouseUp += panelHeader_MouseUp;
             // 
             // label3
             // 
@@ -140,26 +143,26 @@
             labelErrorMes.Anchor = AnchorStyles.None;
             labelErrorMes.AutoSize = true;
             labelErrorMes.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelErrorMes.Location = new Point(164, 66);
+            labelErrorMes.Location = new Point(37, 63);
             labelErrorMes.Name = "labelErrorMes";
             labelErrorMes.Size = new Size(86, 19);
             labelErrorMes.TabIndex = 4;
             labelErrorMes.Text = "Ошибка!";
             // 
-            // MessageBoxAuth
+            // MessageBoxCustom
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(419, 156);
             Controls.Add(labelErrorMes);
             Controls.Add(buttonOK);
-            Controls.Add(panel1);
+            Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "MessageBoxAuth";
+            Name = "MessageBoxCustom";
             StartPosition = FormStartPosition.CenterParent;
             Text = "MessageBoxAuth";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panelHeader.ResumeLayout(false);
+            panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -167,7 +170,7 @@
 
         #endregion
 
-        private Panel panel1;
+        private Panel panelHeader;
         private Label label3;
         private Button buttonHide;
         private Button buttonWindowSize;
