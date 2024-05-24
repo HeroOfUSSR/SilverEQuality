@@ -1,6 +1,6 @@
 ﻿namespace SilverEQuality.MessageBoxes
 {
-    partial class MessageBoxCustom
+    partial class CustomMessageBox
     {
         /// <summary>
         /// Required designer variable.

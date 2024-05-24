@@ -60,6 +60,10 @@ namespace SilverEQuality.Forms
                     var checkFrame = new CheckFrame();
                     checkFrame.Parent = panelFrame;
                     break;
+                case 3:
+                    var orderFrame = new OrderFrame();
+                    orderFrame.Parent = panelFrame;
+                    break;
 
 
             }
@@ -98,6 +102,11 @@ namespace SilverEQuality.Forms
         private void buttonChecks_Click(object sender, EventArgs e)
         {
             FrameOutput(2);
+        }
+
+        private void buttonOrders_Click(object sender, EventArgs e)
+        {
+            FrameOutput(3);
         }
     }
 }

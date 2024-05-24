@@ -44,9 +44,9 @@
             buttonChecks = new Button();
             panel4 = new Panel();
             buttonOrders = new Button();
+            button1 = new Button();
             panelFrame = new Panel();
             slideBarTimer = new System.Windows.Forms.Timer(components);
-            button1 = new Button();
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             slideBar.SuspendLayout();
@@ -254,19 +254,7 @@
             buttonOrders.TabIndex = 3;
             buttonOrders.Text = "Заказы";
             buttonOrders.UseVisualStyleBackColor = false;
-            // 
-            // panelFrame
-            // 
-            panelFrame.Dock = DockStyle.Fill;
-            panelFrame.Location = new Point(218, 39);
-            panelFrame.Name = "panelFrame";
-            panelFrame.Size = new Size(841, 472);
-            panelFrame.TabIndex = 3;
-            // 
-            // slideBarTimer
-            // 
-            slideBarTimer.Interval = 10;
-            slideBarTimer.Tick += slideBarTimer_Tick;
+            buttonOrders.Click += buttonOrders_Click;
             // 
             // button1
             // 
@@ -283,6 +271,19 @@
             button1.TabIndex = 4;
             button1.Text = "Заказы";
             button1.UseVisualStyleBackColor = false;
+            // 
+            // panelFrame
+            // 
+            panelFrame.Dock = DockStyle.Fill;
+            panelFrame.Location = new Point(218, 39);
+            panelFrame.Name = "panelFrame";
+            panelFrame.Size = new Size(841, 472);
+            panelFrame.TabIndex = 3;
+            // 
+            // slideBarTimer
+            // 
+            slideBarTimer.Interval = 10;
+            slideBarTimer.Tick += slideBarTimer_Tick;
             // 
             // MainForm
             // 

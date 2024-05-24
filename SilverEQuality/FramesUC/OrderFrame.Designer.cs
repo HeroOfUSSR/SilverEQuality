@@ -30,6 +30,7 @@
         {
             panel1 = new Panel();
             panel2 = new Panel();
+            flowLayoutPanelOrder = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // panel1
@@ -48,14 +49,26 @@
             panel2.Size = new Size(1009, 51);
             panel2.TabIndex = 1;
             // 
+            // flowLayoutPanelOrder
+            // 
+            flowLayoutPanelOrder.AutoScroll = true;
+            flowLayoutPanelOrder.BorderStyle = BorderStyle.FixedSingle;
+            flowLayoutPanelOrder.Dock = DockStyle.Fill;
+            flowLayoutPanelOrder.Location = new Point(0, 100);
+            flowLayoutPanelOrder.Name = "flowLayoutPanelOrder";
+            flowLayoutPanelOrder.Size = new Size(1009, 321);
+            flowLayoutPanelOrder.TabIndex = 2;
+            // 
             // OrderFrame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(flowLayoutPanelOrder);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "OrderFrame";
             Size = new Size(1009, 472);
+            Load += OrderFrame_Load;
             ResumeLayout(false);
         }
 
@@ -63,5 +76,6 @@
 
         private Panel panel1;
         private Panel panel2;
+        private FlowLayoutPanel flowLayoutPanelOrder;
     }
 }

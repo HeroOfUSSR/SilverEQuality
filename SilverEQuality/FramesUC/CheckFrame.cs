@@ -1,4 +1,5 @@
-﻿using SilverEQuality_Context;
+﻿using SilverEQuality.MessageBoxes;
+using SilverEQuality_Context;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,22 +46,23 @@ namespace SilverEQuality.Forms
                 if (result.Any())
                 {
                     dataGridCheck.DataSource = result.ToList();
+
+                    dataGridCheck.Columns["IdCheck"].HeaderText = "Идентификатор чека";
+                    dataGridCheck.Columns["NumberCheck"].HeaderText = "Номер чека";
+                    dataGridCheck.Columns["DateCheck"].HeaderText = "Дата чека";
+                    dataGridCheck.Columns["DepartmentCheck"].HeaderText = "Номер цеха";
+                    dataGridCheck.Columns["NormCheck"].HeaderText = "Норма серебра";
+                    dataGridCheck.Columns["SilverTypeCheck"].HeaderText = "Вид серебра";
+                    dataGridCheck.Columns["CoverageCheck"].HeaderText = "Площадь покрытия";
+                    dataGridCheck.Columns["AmountCheck"].HeaderText = "Количество";
+                    dataGridCheck.Columns["DecimalCheck"].HeaderText = "Децимальный номер";
+                    dataGridCheck.Columns["OrderCheck"].HeaderText = "Номер заказа";
                 }
                 else
                 {
-                    MessageBox.Show("Не найдено ни одной записи");
+                    CustomMessageBox checksNotFound = new CustomMessageBox("Не найдено записей");
+                    checksNotFound.ShowDialog();
                 }
-
-                dataGridCheck.Columns["IdCheck"].HeaderText = "Идентификатор чека";
-                dataGridCheck.Columns["NumberCheck"].HeaderText = "Номер чека";
-                dataGridCheck.Columns["DateCheck"].HeaderText = "Дата чека";
-                dataGridCheck.Columns["DepartmentCheck"].HeaderText = "Номер цеха";
-                dataGridCheck.Columns["NormCheck"].HeaderText = "Норма серебра";
-                dataGridCheck.Columns["SilverTypeCheck"].HeaderText = "Вид серебра";
-                dataGridCheck.Columns["CoverageCheck"].HeaderText = "Площадь покрытия";
-                dataGridCheck.Columns["AmountCheck"].HeaderText = "Количество";
-                dataGridCheck.Columns["DecimalCheck"].HeaderText = "Децимальный номер";
-                dataGridCheck.Columns["OrderCheck"].HeaderText = "Номер заказа";
 
             }
         }

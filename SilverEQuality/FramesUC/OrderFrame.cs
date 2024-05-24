@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using SilverEQuality.FramesUC;
+using SilverEQuality_Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +18,20 @@ namespace SilverEQuality.Forms
         public OrderFrame()
         {
             InitializeComponent();
+        }
+
+        private void OrderFrame_Load(object sender, EventArgs e)
+        {
+            using (var db = new SilverEQContext(DBHelper.Option()))
+            {
+                var orders = db.Orders.Include(x => x.ManufacturerOrderNavigation).ToList();
+
+                foreach (var order in orders)
+                {
+                    var orderView = new OrderView(order);
+                    orderView.Parent = flowLayoutPanelOrder;
+                }
+            }
         }
     }
 }

@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace SilverEQuality.MessageBoxes
 {
-    public partial class MessageBoxCustom : Form
+    public partial class CustomMessageBox : Form
     {
         public bool isMouseDown;
         public Point startPoint;
 
-        public MessageBoxCustom()
+        public CustomMessageBox()
         {
             InitializeComponent();
         }
 
-        public MessageBoxCustom(string textMessage) : this()
+        public CustomMessageBox(string textMessage) : this()
         {
             ChangeMessageText(textMessage);
         }

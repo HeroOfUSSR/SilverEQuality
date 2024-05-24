@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            buttonChangeAv = new Button();
             labelDate = new Label();
             labelName = new Label();
             pictureBoxAvatar = new PictureBox();
             panel3 = new Panel();
             panel2 = new Panel();
-            buttonChangeAv = new Button();
+            openFileDialogChangeAv = new OpenFileDialog();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).BeginInit();
             SuspendLayout();
@@ -51,6 +52,21 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1009, 121);
             panel1.TabIndex = 0;
+            // 
+            // buttonChangeAv
+            // 
+            buttonChangeAv.BackColor = SystemColors.ActiveCaption;
+            buttonChangeAv.FlatAppearance.BorderSize = 0;
+            buttonChangeAv.FlatStyle = FlatStyle.Flat;
+            buttonChangeAv.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonChangeAv.ForeColor = SystemColors.ControlLightLight;
+            buttonChangeAv.Location = new Point(115, 68);
+            buttonChangeAv.Name = "buttonChangeAv";
+            buttonChangeAv.Size = new Size(207, 25);
+            buttonChangeAv.TabIndex = 4;
+            buttonChangeAv.Text = "Изменить фото";
+            buttonChangeAv.UseVisualStyleBackColor = false;
+            buttonChangeAv.Click += buttonChangeAv_Click;
             // 
             // labelDate
             // 
@@ -96,19 +112,9 @@
             panel2.Size = new Size(1009, 22);
             panel2.TabIndex = 1;
             // 
-            // buttonChangeAv
+            // openFileDialogChangeAv
             // 
-            buttonChangeAv.BackColor = SystemColors.ActiveCaption;
-            buttonChangeAv.FlatAppearance.BorderSize = 0;
-            buttonChangeAv.FlatStyle = FlatStyle.Flat;
-            buttonChangeAv.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonChangeAv.ForeColor = SystemColors.ControlLightLight;
-            buttonChangeAv.Location = new Point(115, 68);
-            buttonChangeAv.Name = "buttonChangeAv";
-            buttonChangeAv.Size = new Size(207, 25);
-            buttonChangeAv.TabIndex = 4;
-            buttonChangeAv.Text = "Изменить фото";
-            buttonChangeAv.UseVisualStyleBackColor = false;
+            openFileDialogChangeAv.FileName = "openFileDialog1";
             // 
             // ProfileFrame
             // 
@@ -133,5 +139,6 @@
         private Label labelName;
         private Label labelDate;
         private Button buttonChangeAv;
+        private OpenFileDialog openFileDialogChangeAv;
     }
 }
