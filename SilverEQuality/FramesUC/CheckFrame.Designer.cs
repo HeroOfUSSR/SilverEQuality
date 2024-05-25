@@ -34,7 +34,14 @@
             panel2 = new Panel();
             panel3 = new Panel();
             dataGridCheck = new DataGridView();
+            buttonGrid = new Button();
+            buttonGraphs = new Button();
+            dateTimePickerFrom = new DateTimePicker();
+            dateTimePickerUntil = new DateTimePicker();
+            label1 = new Label();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridCheck).BeginInit();
             SuspendLayout();
             // 
@@ -51,19 +58,22 @@
             // 
             // buttonSearch
             // 
+            buttonSearch.BackColor = SystemColors.ActiveCaption;
+            buttonSearch.FlatAppearance.BorderSize = 0;
             buttonSearch.FlatStyle = FlatStyle.Flat;
             buttonSearch.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonSearch.Location = new Point(639, 46);
+            buttonSearch.ForeColor = SystemColors.ControlLightLight;
+            buttonSearch.Location = new Point(707, 42);
             buttonSearch.Name = "buttonSearch";
             buttonSearch.Size = new Size(121, 29);
             buttonSearch.TabIndex = 3;
             buttonSearch.Text = "Применить";
-            buttonSearch.UseVisualStyleBackColor = true;
+            buttonSearch.UseVisualStyleBackColor = false;
             // 
             // textBoxSearch
             // 
             textBoxSearch.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxSearch.Location = new Point(78, 49);
+            textBoxSearch.Location = new Point(146, 45);
             textBoxSearch.Name = "textBoxSearch";
             textBoxSearch.PlaceholderText = "Чеки за всё время";
             textBoxSearch.Size = new Size(555, 23);
@@ -71,6 +81,8 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(buttonGraphs);
+            panel2.Controls.Add(buttonGrid);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -79,6 +91,9 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(label1);
+            panel3.Controls.Add(dateTimePickerUntil);
+            panel3.Controls.Add(dateTimePickerFrom);
             panel3.Dock = DockStyle.Bottom;
             panel3.Location = new Point(0, 396);
             panel3.Name = "panel3";
@@ -96,6 +111,62 @@
             dataGridCheck.Size = new Size(1009, 313);
             dataGridCheck.TabIndex = 2;
             // 
+            // buttonGrid
+            // 
+            buttonGrid.BackColor = SystemColors.ActiveCaption;
+            buttonGrid.Dock = DockStyle.Left;
+            buttonGrid.FlatAppearance.BorderSize = 0;
+            buttonGrid.FlatStyle = FlatStyle.Flat;
+            buttonGrid.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonGrid.ForeColor = SystemColors.ControlLightLight;
+            buttonGrid.Location = new Point(0, 0);
+            buttonGrid.Name = "buttonGrid";
+            buttonGrid.Size = new Size(121, 24);
+            buttonGrid.TabIndex = 4;
+            buttonGrid.Text = "Таблица";
+            buttonGrid.UseVisualStyleBackColor = false;
+            // 
+            // buttonGraphs
+            // 
+            buttonGraphs.BackColor = SystemColors.ActiveCaption;
+            buttonGraphs.Dock = DockStyle.Left;
+            buttonGraphs.FlatAppearance.BorderSize = 0;
+            buttonGraphs.FlatStyle = FlatStyle.Flat;
+            buttonGraphs.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonGraphs.ForeColor = SystemColors.ControlLightLight;
+            buttonGraphs.Location = new Point(121, 0);
+            buttonGraphs.Name = "buttonGraphs";
+            buttonGraphs.Size = new Size(121, 24);
+            buttonGraphs.TabIndex = 5;
+            buttonGraphs.Text = "Графики";
+            buttonGraphs.UseVisualStyleBackColor = false;
+            // 
+            // dateTimePickerFrom
+            // 
+            dateTimePickerFrom.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePickerFrom.Location = new Point(212, 22);
+            dateTimePickerFrom.Name = "dateTimePickerFrom";
+            dateTimePickerFrom.Size = new Size(210, 23);
+            dateTimePickerFrom.TabIndex = 5;
+            // 
+            // dateTimePickerUntil
+            // 
+            dateTimePickerUntil.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePickerUntil.Location = new Point(590, 22);
+            dateTimePickerUntil.Name = "dateTimePickerUntil";
+            dateTimePickerUntil.Size = new Size(210, 23);
+            dateTimePickerUntil.TabIndex = 6;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(173, 27);
+            label1.Name = "label1";
+            label1.Size = new Size(17, 16);
+            label1.TabIndex = 7;
+            label1.Text = "С";
+            // 
             // CheckFrame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -107,6 +178,9 @@
             Size = new Size(1009, 472);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridCheck).EndInit();
             ResumeLayout(false);
         }
@@ -120,5 +194,10 @@
         private TextBox textBoxSearch;
         private Panel panel4;
         private DataGridView dataGridCheck;
+        private Button buttonGraphs;
+        private Button buttonGrid;
+        private DateTimePicker dateTimePickerFrom;
+        private Label label1;
+        private DateTimePicker dateTimePickerUntil;
     }
 }

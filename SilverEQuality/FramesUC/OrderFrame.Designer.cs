@@ -31,10 +31,17 @@
             panel1 = new Panel();
             panel2 = new Panel();
             flowLayoutPanelOrder = new FlowLayoutPanel();
+            panel3 = new Panel();
+            buttonSearch = new Button();
+            textBoxSearch = new TextBox();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(buttonSearch);
+            panel1.Controls.Add(textBoxSearch);
+            panel1.Controls.Add(panel3);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -59,6 +66,37 @@
             flowLayoutPanelOrder.Size = new Size(1009, 321);
             flowLayoutPanelOrder.TabIndex = 2;
             // 
+            // panel3
+            // 
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1009, 28);
+            panel3.TabIndex = 0;
+            // 
+            // buttonSearch
+            // 
+            buttonSearch.BackColor = SystemColors.ActiveCaption;
+            buttonSearch.FlatAppearance.BorderSize = 0;
+            buttonSearch.FlatStyle = FlatStyle.Flat;
+            buttonSearch.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonSearch.ForeColor = SystemColors.ControlLightLight;
+            buttonSearch.Location = new Point(715, 58);
+            buttonSearch.Name = "buttonSearch";
+            buttonSearch.Size = new Size(121, 29);
+            buttonSearch.TabIndex = 5;
+            buttonSearch.Text = "Применить";
+            buttonSearch.UseVisualStyleBackColor = false;
+            // 
+            // textBoxSearch
+            // 
+            textBoxSearch.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxSearch.Location = new Point(154, 61);
+            textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.PlaceholderText = "Чеки за всё время";
+            textBoxSearch.Size = new Size(555, 23);
+            textBoxSearch.TabIndex = 4;
+            // 
             // OrderFrame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -69,6 +107,8 @@
             Name = "OrderFrame";
             Size = new Size(1009, 472);
             Load += OrderFrame_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -77,5 +117,8 @@
         private Panel panel1;
         private Panel panel2;
         private FlowLayoutPanel flowLayoutPanelOrder;
+        private Panel panel3;
+        private Button buttonSearch;
+        private TextBox textBoxSearch;
     }
 }

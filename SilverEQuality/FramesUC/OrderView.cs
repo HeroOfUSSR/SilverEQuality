@@ -52,8 +52,8 @@ namespace SilverEQuality.FramesUC
         {
             if (isExpanding)
             {
-                Width += 10;
-                Height += 10;
+                Width += 15;
+                Height += 15;
 
                 if (Width == MaximumSize.Width && Height == MaximumSize.Height)
                 {

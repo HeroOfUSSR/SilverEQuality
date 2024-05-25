@@ -18,6 +18,7 @@ namespace SilverEQuality_Context.Models
 
         public virtual DecimalNumber DecimalCheckNavigation { get; set; } = null!;
         public virtual Order? OrderCheckNavigation { get; set; }
+        public virtual Department DepartmentCheckNavigation { get; set; } = null!;
         public virtual SilverType SilverTypeCheckNavigation { get; set; } = null!;
     }
 }

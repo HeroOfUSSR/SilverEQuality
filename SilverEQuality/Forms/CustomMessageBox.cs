@@ -53,7 +53,16 @@ namespace SilverEQuality.MessageBoxes
         private void panelHeader_MouseUp(object sender, MouseEventArgs e)
         {
             isMouseDown = false;
+        }
 
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonHide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

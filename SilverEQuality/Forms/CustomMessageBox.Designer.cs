@@ -31,7 +31,6 @@
             panelHeader = new Panel();
             label3 = new Label();
             buttonHide = new Button();
-            buttonWindowSize = new Button();
             buttonExit = new Button();
             pictureBox1 = new PictureBox();
             buttonOK = new Button();
@@ -45,7 +44,6 @@
             panelHeader.BackColor = Color.FromArgb(50, 50, 56);
             panelHeader.Controls.Add(label3);
             panelHeader.Controls.Add(buttonHide);
-            panelHeader.Controls.Add(buttonWindowSize);
             panelHeader.Controls.Add(buttonExit);
             panelHeader.Controls.Add(pictureBox1);
             panelHeader.Dock = DockStyle.Top;
@@ -75,27 +73,13 @@
             buttonHide.FlatStyle = FlatStyle.Flat;
             buttonHide.Font = new Font("Lucida Console", 14F, FontStyle.Bold, GraphicsUnit.Point);
             buttonHide.ForeColor = SystemColors.ControlLightLight;
-            buttonHide.Location = new Point(319, 0);
+            buttonHide.Location = new Point(350, 0);
             buttonHide.Name = "buttonHide";
             buttonHide.Size = new Size(34, 30);
             buttonHide.TabIndex = 4;
             buttonHide.Text = "_";
             buttonHide.UseVisualStyleBackColor = true;
-            // 
-            // buttonWindowSize
-            // 
-            buttonWindowSize.BackgroundImage = Properties.Resources.windowSize;
-            buttonWindowSize.BackgroundImageLayout = ImageLayout.Zoom;
-            buttonWindowSize.Dock = DockStyle.Right;
-            buttonWindowSize.FlatAppearance.BorderSize = 0;
-            buttonWindowSize.FlatStyle = FlatStyle.Flat;
-            buttonWindowSize.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonWindowSize.ForeColor = SystemColors.ControlLightLight;
-            buttonWindowSize.Location = new Point(353, 0);
-            buttonWindowSize.Name = "buttonWindowSize";
-            buttonWindowSize.Size = new Size(31, 30);
-            buttonWindowSize.TabIndex = 3;
-            buttonWindowSize.UseVisualStyleBackColor = true;
+            buttonHide.Click += buttonHide_Click;
             // 
             // buttonExit
             // 
@@ -110,6 +94,7 @@
             buttonExit.TabIndex = 2;
             buttonExit.Text = "X";
             buttonExit.UseVisualStyleBackColor = true;
+            buttonExit.Click += buttonExit_Click;
             // 
             // pictureBox1
             // 
@@ -149,7 +134,7 @@
             labelErrorMes.TabIndex = 4;
             labelErrorMes.Text = "Ошибка!";
             // 
-            // MessageBoxCustom
+            // CustomMessageBox
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -158,7 +143,7 @@
             Controls.Add(buttonOK);
             Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "MessageBoxCustom";
+            Name = "CustomMessageBox";
             StartPosition = FormStartPosition.CenterParent;
             Text = "MessageBoxAuth";
             panelHeader.ResumeLayout(false);
@@ -173,7 +158,6 @@
         private Panel panelHeader;
         private Label label3;
         private Button buttonHide;
-        private Button buttonWindowSize;
         private Button buttonExit;
         private PictureBox pictureBox1;
         private Button buttonOK;

@@ -50,7 +50,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1009, 121);
+            panel1.Size = new Size(1009, 132);
             panel1.TabIndex = 0;
             // 
             // buttonChangeAv
@@ -60,7 +60,7 @@
             buttonChangeAv.FlatStyle = FlatStyle.Flat;
             buttonChangeAv.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonChangeAv.ForeColor = SystemColors.ControlLightLight;
-            buttonChangeAv.Location = new Point(115, 68);
+            buttonChangeAv.Location = new Point(115, 77);
             buttonChangeAv.Name = "buttonChangeAv";
             buttonChangeAv.Size = new Size(207, 25);
             buttonChangeAv.TabIndex = 4;
@@ -90,16 +90,18 @@
             // 
             // pictureBoxAvatar
             // 
+            pictureBoxAvatar.Image = Properties.Resources.profileMain;
             pictureBoxAvatar.Location = new Point(11, 5);
             pictureBoxAvatar.Name = "pictureBoxAvatar";
-            pictureBoxAvatar.Size = new Size(98, 88);
+            pictureBoxAvatar.Size = new Size(98, 97);
+            pictureBoxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxAvatar.TabIndex = 1;
             pictureBoxAvatar.TabStop = false;
             // 
             // panel3
             // 
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 97);
+            panel3.Location = new Point(0, 108);
             panel3.Name = "panel3";
             panel3.Size = new Size(1009, 24);
             panel3.TabIndex = 0;
