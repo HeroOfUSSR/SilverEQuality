@@ -109,7 +109,7 @@
             // 
             panel1.Controls.Add(buttonMore);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(365, 0);
+            panel1.Location = new Point(383, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(115, 150);
             panel1.TabIndex = 5;
@@ -156,9 +156,9 @@
             Controls.Add(labelStatus);
             Controls.Add(labelOrderNumber);
             MaximumSize = new Size(1000, 300);
-            MinimumSize = new Size(480, 150);
+            MinimumSize = new Size(500, 150);
             Name = "OrderView";
-            Size = new Size(480, 150);
+            Size = new Size(498, 150);
             Load += OrderView_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).EndInit();
             panel1.ResumeLayout(false);

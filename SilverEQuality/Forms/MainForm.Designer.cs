@@ -44,7 +44,7 @@
             buttonChecks = new Button();
             panel4 = new Panel();
             buttonOrders = new Button();
-            button1 = new Button();
+            buttonNorms = new Button();
             panelFrame = new Panel();
             slideBarTimer = new System.Windows.Forms.Timer(components);
             panelHeader.SuspendLayout();
@@ -146,7 +146,7 @@
             slideBar.Controls.Add(panel3);
             slideBar.Controls.Add(panel2);
             slideBar.Controls.Add(panel4);
-            slideBar.Controls.Add(button1);
+            slideBar.Controls.Add(buttonNorms);
             slideBar.Dock = DockStyle.Left;
             slideBar.Location = new Point(0, 39);
             slideBar.MaximumSize = new Size(218, 472);
@@ -256,21 +256,21 @@
             buttonOrders.UseVisualStyleBackColor = false;
             buttonOrders.Click += buttonOrders_Click;
             // 
-            // button1
+            // buttonNorms
             // 
-            button1.BackColor = Color.Transparent;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Image = Properties.Resources.order;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(3, 218);
-            button1.Name = "button1";
-            button1.Size = new Size(208, 41);
-            button1.TabIndex = 4;
-            button1.Text = "Заказы";
-            button1.UseVisualStyleBackColor = false;
+            buttonNorms.BackColor = Color.Transparent;
+            buttonNorms.FlatAppearance.BorderSize = 0;
+            buttonNorms.FlatStyle = FlatStyle.Flat;
+            buttonNorms.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonNorms.ForeColor = SystemColors.ControlLightLight;
+            buttonNorms.Image = Properties.Resources.norm;
+            buttonNorms.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonNorms.Location = new Point(3, 218);
+            buttonNorms.Name = "buttonNorms";
+            buttonNorms.Size = new Size(208, 41);
+            buttonNorms.TabIndex = 4;
+            buttonNorms.Text = "Нормы";
+            buttonNorms.UseVisualStyleBackColor = false;
             // 
             // panelFrame
             // 
@@ -327,6 +327,6 @@
         private Panel panel5;
         private Button buttonMenu;
         private System.Windows.Forms.Timer slideBarTimer;
-        private Button button1;
+        private Button buttonNorms;
     }
 }

@@ -14,7 +14,7 @@ namespace SilverEQuality.FramesUC
 {
     public partial class OrderView : UserControl
     {
-        private Order orderView;
+        public readonly Order orderView;
         bool isExpanding = true;
         public OrderView(Order order)
         {
@@ -22,6 +22,8 @@ namespace SilverEQuality.FramesUC
             orderView = order;
             InitView(orderView);
         }
+
+        //public Order Order => orderView;
 
         private void InitView(Order order)
         {

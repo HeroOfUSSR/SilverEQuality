@@ -93,6 +93,16 @@ namespace SilverEQuality.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap norm {
+            get {
+                object obj = ResourceManager.GetObject("norm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap order {
             get {
                 object obj = ResourceManager.GetObject("order", resourceCulture);
