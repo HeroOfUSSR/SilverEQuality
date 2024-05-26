@@ -35,6 +35,7 @@
             pictureBox1 = new PictureBox();
             buttonOK = new Button();
             labelErrorMes = new Label();
+            buttonCancel = new Button();
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -49,7 +50,7 @@
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(419, 30);
+            panelHeader.Size = new Size(424, 30);
             panelHeader.TabIndex = 2;
             panelHeader.MouseDown += panelHeader_MouseDown;
             panelHeader.MouseMove += panelHeader_MouseMove;
@@ -73,7 +74,7 @@
             buttonHide.FlatStyle = FlatStyle.Flat;
             buttonHide.Font = new Font("Lucida Console", 14F, FontStyle.Bold, GraphicsUnit.Point);
             buttonHide.ForeColor = SystemColors.ControlLightLight;
-            buttonHide.Location = new Point(350, 0);
+            buttonHide.Location = new Point(355, 0);
             buttonHide.Name = "buttonHide";
             buttonHide.Size = new Size(34, 30);
             buttonHide.TabIndex = 4;
@@ -88,7 +89,7 @@
             buttonExit.FlatStyle = FlatStyle.Flat;
             buttonExit.Font = new Font("Lucida Console", 14F, FontStyle.Bold, GraphicsUnit.Point);
             buttonExit.ForeColor = SystemColors.ControlLightLight;
-            buttonExit.Location = new Point(384, 0);
+            buttonExit.Location = new Point(389, 0);
             buttonExit.Name = "buttonExit";
             buttonExit.Size = new Size(35, 30);
             buttonExit.TabIndex = 2;
@@ -115,7 +116,7 @@
             buttonOK.FlatStyle = FlatStyle.Flat;
             buttonOK.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonOK.ForeColor = SystemColors.ControlLightLight;
-            buttonOK.Location = new Point(69, 112);
+            buttonOK.Location = new Point(74, 112);
             buttonOK.Name = "buttonOK";
             buttonOK.Size = new Size(275, 32);
             buttonOK.TabIndex = 3;
@@ -125,20 +126,37 @@
             // 
             // labelErrorMes
             // 
-            labelErrorMes.Anchor = AnchorStyles.None;
             labelErrorMes.AutoSize = true;
             labelErrorMes.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelErrorMes.Location = new Point(37, 63);
+            labelErrorMes.Location = new Point(37, 58);
             labelErrorMes.Name = "labelErrorMes";
             labelErrorMes.Size = new Size(86, 19);
             labelErrorMes.TabIndex = 4;
             labelErrorMes.Text = "Ошибка!";
             // 
+            // buttonCancel
+            // 
+            buttonCancel.BackColor = SystemColors.ActiveBorder;
+            buttonCancel.DialogResult = DialogResult.Cancel;
+            buttonCancel.FlatAppearance.BorderSize = 0;
+            buttonCancel.FlatStyle = FlatStyle.Flat;
+            buttonCancel.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonCancel.ForeColor = SystemColors.ControlLightLight;
+            buttonCancel.Location = new Point(74, 147);
+            buttonCancel.Name = "buttonCancel";
+            buttonCancel.Size = new Size(275, 28);
+            buttonCancel.TabIndex = 5;
+            buttonCancel.Text = "Отмена";
+            buttonCancel.UseVisualStyleBackColor = false;
+            buttonCancel.Visible = false;
+            buttonCancel.Click += buttonCancel_Click;
+            // 
             // CustomMessageBox
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(419, 156);
+            ClientSize = new Size(424, 158);
+            Controls.Add(buttonCancel);
             Controls.Add(labelErrorMes);
             Controls.Add(buttonOK);
             Controls.Add(panelHeader);
@@ -162,5 +180,6 @@
         private PictureBox pictureBox1;
         private Button buttonOK;
         private Label labelErrorMes;
+        private Button buttonCancel;
     }
 }

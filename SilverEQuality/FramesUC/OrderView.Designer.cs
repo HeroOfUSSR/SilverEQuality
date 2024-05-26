@@ -39,6 +39,8 @@
             panel2 = new Panel();
             buttonImageMan = new Button();
             openFileDialogImageChange = new OpenFileDialog();
+            buttonEdit = new Button();
+            button = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -92,7 +94,7 @@
             buttonMore.FlatStyle = FlatStyle.Flat;
             buttonMore.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonMore.ForeColor = SystemColors.ControlLightLight;
-            buttonMore.Location = new Point(0, 114);
+            buttonMore.Location = new Point(0, 262);
             buttonMore.Name = "buttonMore";
             buttonMore.Size = new Size(115, 36);
             buttonMore.TabIndex = 4;
@@ -109,19 +111,21 @@
             // 
             panel1.Controls.Add(buttonMore);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(383, 0);
+            panel1.Location = new Point(883, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(115, 150);
+            panel1.Size = new Size(115, 298);
             panel1.TabIndex = 5;
             // 
             // panel2
             // 
+            panel2.Controls.Add(button);
+            panel2.Controls.Add(buttonEdit);
             panel2.Controls.Add(buttonImageMan);
             panel2.Controls.Add(pictureBoxAvatar);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(171, 150);
+            panel2.Size = new Size(171, 298);
             panel2.TabIndex = 6;
             // 
             // buttonImageMan
@@ -136,7 +140,7 @@
             buttonImageMan.Name = "buttonImageMan";
             buttonImageMan.Size = new Size(171, 36);
             buttonImageMan.TabIndex = 5;
-            buttonImageMan.Text = "Изменить";
+            buttonImageMan.Text = "Изменить фото";
             buttonImageMan.UseVisualStyleBackColor = false;
             buttonImageMan.Visible = false;
             buttonImageMan.Click += buttonImageMan_Click;
@@ -144,6 +148,38 @@
             // openFileDialogImageChange
             // 
             openFileDialogImageChange.FileName = "openFileDialog1";
+            // 
+            // buttonEdit
+            // 
+            buttonEdit.BackColor = SystemColors.ActiveCaption;
+            buttonEdit.Dock = DockStyle.Top;
+            buttonEdit.FlatAppearance.BorderSize = 0;
+            buttonEdit.FlatStyle = FlatStyle.Flat;
+            buttonEdit.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEdit.ForeColor = SystemColors.ControlLightLight;
+            buttonEdit.Location = new Point(0, 170);
+            buttonEdit.Name = "buttonEdit";
+            buttonEdit.Size = new Size(171, 36);
+            buttonEdit.TabIndex = 6;
+            buttonEdit.Text = "Редактировать";
+            buttonEdit.UseVisualStyleBackColor = false;
+            buttonEdit.Visible = false;
+            // 
+            // button
+            // 
+            button.BackColor = SystemColors.ActiveCaption;
+            button.Dock = DockStyle.Top;
+            button.FlatAppearance.BorderSize = 0;
+            button.FlatStyle = FlatStyle.Flat;
+            button.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button.ForeColor = SystemColors.ControlLightLight;
+            button.Location = new Point(0, 206);
+            button.Name = "button";
+            button.Size = new Size(171, 36);
+            button.TabIndex = 7;
+            button.Text = "Изменить";
+            button.UseVisualStyleBackColor = false;
+            button.Visible = false;
             // 
             // OrderView
             // 
@@ -158,7 +194,7 @@
             MaximumSize = new Size(1000, 300);
             MinimumSize = new Size(500, 150);
             Name = "OrderView";
-            Size = new Size(498, 150);
+            Size = new Size(998, 298);
             Load += OrderView_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).EndInit();
             panel1.ResumeLayout(false);
@@ -179,5 +215,7 @@
         private Panel panel2;
         private Button buttonImageMan;
         private OpenFileDialog openFileDialogImageChange;
+        private Button button;
+        private Button buttonEdit;
     }
 }

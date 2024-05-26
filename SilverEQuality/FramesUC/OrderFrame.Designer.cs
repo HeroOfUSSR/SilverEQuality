@@ -58,6 +58,7 @@
             // 
             // comboBoxPriority
             // 
+            comboBoxPriority.Anchor = AnchorStyles.Right;
             comboBoxPriority.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxPriority.FormattingEnabled = true;
             comboBoxPriority.Location = new Point(575, 63);
@@ -68,6 +69,7 @@
             // 
             // comboBoxStatus
             // 
+            comboBoxStatus.Anchor = AnchorStyles.Right;
             comboBoxStatus.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxStatus.FormattingEnabled = true;
             comboBoxStatus.Location = new Point(379, 63);
@@ -78,6 +80,7 @@
             // 
             // comboBoxManuf
             // 
+            comboBoxManuf.Anchor = AnchorStyles.Right;
             comboBoxManuf.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxManuf.FormattingEnabled = true;
             comboBoxManuf.Location = new Point(183, 63);
@@ -88,6 +91,7 @@
             // 
             // comboBoxSortDate
             // 
+            comboBoxSortDate.Anchor = AnchorStyles.Right;
             comboBoxSortDate.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxSortDate.FormattingEnabled = true;
             comboBoxSortDate.Location = new Point(613, 34);
@@ -98,6 +102,7 @@
             // 
             // buttonSearch
             // 
+            buttonSearch.Anchor = AnchorStyles.Right;
             buttonSearch.BackColor = SystemColors.ActiveCaption;
             buttonSearch.FlatAppearance.BorderSize = 0;
             buttonSearch.FlatStyle = FlatStyle.Flat;
@@ -112,6 +117,7 @@
             // 
             // textBoxSearch
             // 
+            textBoxSearch.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxSearch.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxSearch.Location = new Point(72, 35);
             textBoxSearch.Name = "textBoxSearch";
@@ -131,9 +137,9 @@
             // panel2
             // 
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 421);
+            panel2.Location = new Point(0, 438);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1009, 51);
+            panel2.Size = new Size(1009, 34);
             panel2.TabIndex = 1;
             // 
             // flowLayoutPanelOrder
@@ -143,7 +149,7 @@
             flowLayoutPanelOrder.Dock = DockStyle.Fill;
             flowLayoutPanelOrder.Location = new Point(0, 100);
             flowLayoutPanelOrder.Name = "flowLayoutPanelOrder";
-            flowLayoutPanelOrder.Size = new Size(1009, 321);
+            flowLayoutPanelOrder.Size = new Size(1009, 338);
             flowLayoutPanelOrder.TabIndex = 2;
             // 
             // OrderFrame
@@ -154,6 +160,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             MaximumSize = new Size(1009, 472);
+            MinimumSize = new Size(841, 472);
             Name = "OrderFrame";
             Size = new Size(1009, 472);
             Load += OrderFrame_Load;

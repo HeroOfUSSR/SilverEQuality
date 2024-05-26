@@ -20,10 +20,17 @@ namespace SilverEQuality.MessageBoxes
             InitializeComponent();
         }
 
-        public CustomMessageBox(string textMessage) : this()
+        public CustomMessageBox(string textMessage, bool cancelOption) : this()
         {
             ChangeMessageText(textMessage);
+
+            if (cancelOption)
+            {
+                buttonCancel.Visible = true;
+                Size = new Size(424, 183);
+            }
         }
+
 
         private void ChangeMessageText(string textMessage)
         {
@@ -63,6 +70,11 @@ namespace SilverEQuality.MessageBoxes
         private void buttonHide_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

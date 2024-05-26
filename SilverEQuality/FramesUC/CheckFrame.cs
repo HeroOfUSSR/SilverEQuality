@@ -60,7 +60,7 @@ namespace SilverEQuality.Forms
                 }
                 else
                 {
-                    CustomMessageBox checksNotFound = new CustomMessageBox("Не найдено записей");
+                    CustomMessageBox checksNotFound = new CustomMessageBox("Не найдено записей", false);
                     checksNotFound.ShowDialog();
                 }
 

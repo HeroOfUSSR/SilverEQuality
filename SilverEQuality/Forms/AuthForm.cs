@@ -44,7 +44,7 @@ namespace SilverEQuality
                 }
                 else
                 {
-                    CustomMessageBox authError = new CustomMessageBox("Неправильный логин или пароль");
+                    CustomMessageBox authError = new CustomMessageBox("Неправильный логин или пароль", false);
                     authError.ShowDialog();
                     triesToLogin++;
                 }

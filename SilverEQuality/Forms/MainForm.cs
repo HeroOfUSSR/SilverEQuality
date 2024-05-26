@@ -1,4 +1,5 @@
 ﻿using SilverEQuality.FramesUC;
+using SilverEQuality.MessageBoxes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -107,6 +108,17 @@ namespace SilverEQuality.Forms
         private void buttonOrders_Click(object sender, EventArgs e)
         {
             FrameOutput(3);
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            CustomMessageBox logoutMessage = new CustomMessageBox("Выйти из аккаунта?", true);
+            if (logoutMessage.DialogResult == DialogResult.OK)
+            {
+                AuthForm authForm = new AuthForm();
+                authForm.Show();
+                this.Close();
+            }
         }
     }
 }
