@@ -185,7 +185,7 @@
             // 
             // buttonLogin
             // 
-            buttonLogin.BackColor = SystemColors.ActiveCaption;
+            buttonLogin.BackColor = Color.SteelBlue;
             buttonLogin.FlatAppearance.BorderSize = 0;
             buttonLogin.FlatStyle = FlatStyle.Flat;
             buttonLogin.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
@@ -286,6 +286,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(440, 344);
             Controls.Add(panel4);
             Controls.Add(panel3);

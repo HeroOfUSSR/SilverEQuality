@@ -34,10 +34,16 @@
             labelName = new Label();
             pictureBoxAvatar = new PictureBox();
             panel3 = new Panel();
+            buttonComment = new Button();
+            buttonOrders = new Button();
             panel2 = new Panel();
             openFileDialogChangeAv = new OpenFileDialog();
+            panelBody = new Panel();
+            flowLayoutPanelBody = new FlowLayoutPanel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).BeginInit();
+            panel3.SuspendLayout();
+            panelBody.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -55,7 +61,7 @@
             // 
             // buttonChangeAv
             // 
-            buttonChangeAv.BackColor = SystemColors.ActiveCaption;
+            buttonChangeAv.BackColor = Color.SteelBlue;
             buttonChangeAv.FlatAppearance.BorderSize = 0;
             buttonChangeAv.FlatStyle = FlatStyle.Flat;
             buttonChangeAv.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -100,11 +106,45 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(buttonComment);
+            panel3.Controls.Add(buttonOrders);
             panel3.Dock = DockStyle.Bottom;
             panel3.Location = new Point(0, 108);
             panel3.Name = "panel3";
             panel3.Size = new Size(1009, 24);
             panel3.TabIndex = 0;
+            // 
+            // buttonComment
+            // 
+            buttonComment.BackColor = Color.SteelBlue;
+            buttonComment.Dock = DockStyle.Left;
+            buttonComment.FlatAppearance.BorderSize = 0;
+            buttonComment.FlatStyle = FlatStyle.Flat;
+            buttonComment.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonComment.ForeColor = SystemColors.ControlLightLight;
+            buttonComment.Location = new Point(171, 0);
+            buttonComment.Name = "buttonComment";
+            buttonComment.Size = new Size(171, 24);
+            buttonComment.TabIndex = 6;
+            buttonComment.Text = "Комментарии";
+            buttonComment.UseVisualStyleBackColor = false;
+            buttonComment.Click += buttonComment_Click;
+            // 
+            // buttonOrders
+            // 
+            buttonOrders.BackColor = Color.SteelBlue;
+            buttonOrders.Dock = DockStyle.Left;
+            buttonOrders.FlatAppearance.BorderSize = 0;
+            buttonOrders.FlatStyle = FlatStyle.Flat;
+            buttonOrders.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonOrders.ForeColor = SystemColors.ControlLightLight;
+            buttonOrders.Location = new Point(0, 0);
+            buttonOrders.Name = "buttonOrders";
+            buttonOrders.Size = new Size(171, 24);
+            buttonOrders.TabIndex = 5;
+            buttonOrders.Text = "Заказы";
+            buttonOrders.UseVisualStyleBackColor = false;
+            buttonOrders.Click += buttonOrders_Click;
             // 
             // panel2
             // 
@@ -118,17 +158,41 @@
             // 
             openFileDialogChangeAv.FileName = "openFileDialog1";
             // 
+            // panelBody
+            // 
+            panelBody.Controls.Add(flowLayoutPanelBody);
+            panelBody.Dock = DockStyle.Fill;
+            panelBody.Location = new Point(0, 132);
+            panelBody.Name = "panelBody";
+            panelBody.Size = new Size(1009, 318);
+            panelBody.TabIndex = 2;
+            // 
+            // flowLayoutPanelBody
+            // 
+            flowLayoutPanelBody.AutoScroll = true;
+            flowLayoutPanelBody.Dock = DockStyle.Fill;
+            flowLayoutPanelBody.Location = new Point(0, 0);
+            flowLayoutPanelBody.Name = "flowLayoutPanelBody";
+            flowLayoutPanelBody.Size = new Size(1009, 318);
+            flowLayoutPanelBody.TabIndex = 0;
+            // 
             // ProfileFrame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            Controls.Add(panelBody);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            MaximumSize = new Size(1009, 472);
+            MinimumSize = new Size(841, 472);
             Name = "ProfileFrame";
             Size = new Size(1009, 472);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).EndInit();
+            panel3.ResumeLayout(false);
+            panelBody.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -142,5 +206,9 @@
         private Label labelDate;
         private Button buttonChangeAv;
         private OpenFileDialog openFileDialogChangeAv;
+        private Button buttonOrders;
+        private Button buttonComment;
+        private Panel panelBody;
+        private FlowLayoutPanel flowLayoutPanelBody;
     }
 }

@@ -37,10 +37,10 @@
             timerExpand = new System.Windows.Forms.Timer(components);
             panel1 = new Panel();
             panel2 = new Panel();
+            button = new Button();
+            buttonEdit = new Button();
             buttonImageMan = new Button();
             openFileDialogImageChange = new OpenFileDialog();
-            buttonEdit = new Button();
-            button = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -88,7 +88,7 @@
             // 
             // buttonMore
             // 
-            buttonMore.BackColor = SystemColors.ActiveCaption;
+            buttonMore.BackColor = Color.SteelBlue;
             buttonMore.Dock = DockStyle.Bottom;
             buttonMore.FlatAppearance.BorderSize = 0;
             buttonMore.FlatStyle = FlatStyle.Flat;
@@ -111,7 +111,7 @@
             // 
             panel1.Controls.Add(buttonMore);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(883, 0);
+            panel1.Location = new Point(863, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(115, 298);
             panel1.TabIndex = 5;
@@ -128,9 +128,42 @@
             panel2.Size = new Size(171, 298);
             panel2.TabIndex = 6;
             // 
+            // button
+            // 
+            button.BackColor = Color.SteelBlue;
+            button.Dock = DockStyle.Top;
+            button.FlatAppearance.BorderSize = 0;
+            button.FlatStyle = FlatStyle.Flat;
+            button.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button.ForeColor = SystemColors.ControlLightLight;
+            button.Location = new Point(0, 206);
+            button.Name = "button";
+            button.Size = new Size(171, 36);
+            button.TabIndex = 7;
+            button.Text = "Изменить";
+            button.UseVisualStyleBackColor = false;
+            button.Visible = false;
+            // 
+            // buttonEdit
+            // 
+            buttonEdit.BackColor = Color.SteelBlue;
+            buttonEdit.Dock = DockStyle.Top;
+            buttonEdit.FlatAppearance.BorderSize = 0;
+            buttonEdit.FlatStyle = FlatStyle.Flat;
+            buttonEdit.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEdit.ForeColor = SystemColors.ControlLightLight;
+            buttonEdit.Location = new Point(0, 170);
+            buttonEdit.Name = "buttonEdit";
+            buttonEdit.Size = new Size(171, 36);
+            buttonEdit.TabIndex = 6;
+            buttonEdit.Text = "Редактировать";
+            buttonEdit.UseVisualStyleBackColor = false;
+            buttonEdit.Visible = false;
+            buttonEdit.Click += buttonEdit_Click;
+            // 
             // buttonImageMan
             // 
-            buttonImageMan.BackColor = SystemColors.ActiveCaption;
+            buttonImageMan.BackColor = Color.SteelBlue;
             buttonImageMan.Dock = DockStyle.Top;
             buttonImageMan.FlatAppearance.BorderSize = 0;
             buttonImageMan.FlatStyle = FlatStyle.Flat;
@@ -149,52 +182,21 @@
             // 
             openFileDialogImageChange.FileName = "openFileDialog1";
             // 
-            // buttonEdit
-            // 
-            buttonEdit.BackColor = SystemColors.ActiveCaption;
-            buttonEdit.Dock = DockStyle.Top;
-            buttonEdit.FlatAppearance.BorderSize = 0;
-            buttonEdit.FlatStyle = FlatStyle.Flat;
-            buttonEdit.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonEdit.ForeColor = SystemColors.ControlLightLight;
-            buttonEdit.Location = new Point(0, 170);
-            buttonEdit.Name = "buttonEdit";
-            buttonEdit.Size = new Size(171, 36);
-            buttonEdit.TabIndex = 6;
-            buttonEdit.Text = "Редактировать";
-            buttonEdit.UseVisualStyleBackColor = false;
-            buttonEdit.Visible = false;
-            // 
-            // button
-            // 
-            button.BackColor = SystemColors.ActiveCaption;
-            button.Dock = DockStyle.Top;
-            button.FlatAppearance.BorderSize = 0;
-            button.FlatStyle = FlatStyle.Flat;
-            button.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button.ForeColor = SystemColors.ControlLightLight;
-            button.Location = new Point(0, 206);
-            button.Name = "button";
-            button.Size = new Size(171, 36);
-            button.TabIndex = 7;
-            button.Text = "Изменить";
-            button.UseVisualStyleBackColor = false;
-            button.Visible = false;
-            // 
             // OrderView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(labelPriority);
             Controls.Add(labelStatus);
             Controls.Add(labelOrderNumber);
-            MaximumSize = new Size(1000, 300);
-            MinimumSize = new Size(500, 150);
+            MaximumSize = new Size(980, 300);
+            MinimumSize = new Size(480, 148);
             Name = "OrderView";
-            Size = new Size(998, 298);
+            Size = new Size(978, 298);
             Load += OrderView_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).EndInit();
             panel1.ResumeLayout(false);

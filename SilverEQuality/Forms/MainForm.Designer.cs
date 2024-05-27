@@ -46,14 +46,14 @@
             buttonOrders = new Button();
             panelNorms = new Panel();
             buttonNorms = new Button();
-            panelFrame = new Panel();
-            slideBarTimer = new System.Windows.Forms.Timer(components);
             panel1 = new Panel();
             button1 = new Button();
             panel2 = new Panel();
             button2 = new Button();
             panelLogout = new Panel();
             buttonLogout = new Button();
+            panelFrame = new Panel();
+            slideBarTimer = new System.Windows.Forms.Timer(components);
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             slideBar.SuspendLayout();
@@ -294,19 +294,6 @@
             buttonNorms.Text = "Нормы";
             buttonNorms.UseVisualStyleBackColor = false;
             // 
-            // panelFrame
-            // 
-            panelFrame.Dock = DockStyle.Fill;
-            panelFrame.Location = new Point(218, 39);
-            panelFrame.Name = "panelFrame";
-            panelFrame.Size = new Size(841, 472);
-            panelFrame.TabIndex = 3;
-            // 
-            // slideBarTimer
-            // 
-            slideBarTimer.Interval = 10;
-            slideBarTimer.Tick += slideBarTimer_Tick;
-            // 
             // panel1
             // 
             panel1.Controls.Add(button1);
@@ -328,7 +315,7 @@
             button1.Name = "button1";
             button1.Size = new Size(208, 41);
             button1.TabIndex = 5;
-            button1.Text = "Нормы";
+            button1.Text = "Материалы";
             button1.UseVisualStyleBackColor = false;
             // 
             // panel2
@@ -380,6 +367,20 @@
             buttonLogout.UseVisualStyleBackColor = false;
             buttonLogout.Click += buttonLogout_Click;
             // 
+            // panelFrame
+            // 
+            panelFrame.BackColor = Color.White;
+            panelFrame.Dock = DockStyle.Fill;
+            panelFrame.Location = new Point(218, 39);
+            panelFrame.Name = "panelFrame";
+            panelFrame.Size = new Size(841, 472);
+            panelFrame.TabIndex = 3;
+            // 
+            // slideBarTimer
+            // 
+            slideBarTimer.Interval = 10;
+            slideBarTimer.Tick += slideBarTimer_Tick;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -391,7 +392,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MainForm";
+            Text = " ";
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

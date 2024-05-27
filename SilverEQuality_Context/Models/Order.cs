@@ -14,7 +14,7 @@ namespace SilverEQuality_Context.Models
 
         public int IdOrder { get; set; }
         public DateTime DateOrder { get; set; }
-        public DateTime? DateEndOrder { get; set; }
+        public DateTime? DateEndOrder { get; set; } //ЩА ВСЁ СЛОМАЕТСЯ АХАХАХАХ
         public int ManufacturerOrder { get; set; }
         public int? PriorityOrder { get; set; }
         public int StatusOrder { get; set; }

@@ -1,4 +1,6 @@
-﻿using SilverEQuality_Context;
+﻿using SilverEQuality.Forms;
+using SilverEQuality.MessageBoxes;
+using SilverEQuality_Context;
 using SilverEQuality_Context.Models;
 using System;
 using System.Collections.Generic;
@@ -62,17 +64,20 @@ namespace SilverEQuality.FramesUC
                     isExpanding = false;
                     timerExpand.Stop();
                     buttonImageMan.Visible = true;
+                    buttonEdit.Visible = true;
+
                 }
             }
             else
             {
-                Width -= 10;
-                Height -= 10;
+                Width -= 15;
+                Height -= 15;
                 if (Width == MinimumSize.Width && Height == MinimumSize.Height)
                 {
                     isExpanding = true;
                     timerExpand.Stop();
                     buttonImageMan.Visible = false;
+                    buttonEdit.Visible = false;
                 }
             }
         }
@@ -98,6 +103,17 @@ namespace SilverEQuality.FramesUC
                 db.SaveChanges();
 
                 pictureBoxAvatar.Image = Image.FromStream(new MemoryStream(newImage));
+            }
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            var editForm = new EditOrderForm(orderView);
+            editForm.ShowDialog();
+            if (editForm.DialogResult == DialogResult.OK)
+            {
+                CustomMessageBox successAdd = new CustomMessageBox($"Заказ №{orderView.IdOrder} изменён", false);
+                successAdd.ShowDialog();
             }
         }
     }

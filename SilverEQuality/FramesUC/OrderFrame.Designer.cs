@@ -61,7 +61,7 @@
             comboBoxPriority.Anchor = AnchorStyles.Right;
             comboBoxPriority.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxPriority.FormattingEnabled = true;
-            comboBoxPriority.Location = new Point(575, 63);
+            comboBoxPriority.Location = new Point(417, 64);
             comboBoxPriority.Name = "comboBoxPriority";
             comboBoxPriority.Size = new Size(190, 24);
             comboBoxPriority.TabIndex = 9;
@@ -72,7 +72,7 @@
             comboBoxStatus.Anchor = AnchorStyles.Right;
             comboBoxStatus.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxStatus.FormattingEnabled = true;
-            comboBoxStatus.Location = new Point(379, 63);
+            comboBoxStatus.Location = new Point(613, 64);
             comboBoxStatus.Name = "comboBoxStatus";
             comboBoxStatus.Size = new Size(190, 24);
             comboBoxStatus.TabIndex = 8;
@@ -80,12 +80,12 @@
             // 
             // comboBoxManuf
             // 
-            comboBoxManuf.Anchor = AnchorStyles.Right;
+            comboBoxManuf.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             comboBoxManuf.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxManuf.FormattingEnabled = true;
-            comboBoxManuf.Location = new Point(183, 63);
+            comboBoxManuf.Location = new Point(72, 64);
             comboBoxManuf.Name = "comboBoxManuf";
-            comboBoxManuf.Size = new Size(190, 24);
+            comboBoxManuf.Size = new Size(339, 24);
             comboBoxManuf.TabIndex = 7;
             comboBoxManuf.SelectedIndexChanged += comboBoxManuf_SelectedIndexChanged;
             // 
@@ -94,7 +94,7 @@
             comboBoxSortDate.Anchor = AnchorStyles.Right;
             comboBoxSortDate.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxSortDate.FormattingEnabled = true;
-            comboBoxSortDate.Location = new Point(613, 34);
+            comboBoxSortDate.Location = new Point(613, 35);
             comboBoxSortDate.Name = "comboBoxSortDate";
             comboBoxSortDate.Size = new Size(190, 24);
             comboBoxSortDate.TabIndex = 6;
@@ -103,14 +103,14 @@
             // buttonSearch
             // 
             buttonSearch.Anchor = AnchorStyles.Right;
-            buttonSearch.BackColor = SystemColors.ActiveCaption;
+            buttonSearch.BackColor = Color.SteelBlue;
             buttonSearch.FlatAppearance.BorderSize = 0;
             buttonSearch.FlatStyle = FlatStyle.Flat;
             buttonSearch.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonSearch.ForeColor = SystemColors.ControlLightLight;
-            buttonSearch.Location = new Point(809, 31);
+            buttonSearch.Location = new Point(809, 34);
             buttonSearch.Name = "buttonSearch";
-            buttonSearch.Size = new Size(121, 29);
+            buttonSearch.Size = new Size(160, 54);
             buttonSearch.TabIndex = 5;
             buttonSearch.Text = "Применить";
             buttonSearch.UseVisualStyleBackColor = false;
@@ -156,6 +156,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             Controls.Add(flowLayoutPanelOrder);
             Controls.Add(panel2);
             Controls.Add(panel1);

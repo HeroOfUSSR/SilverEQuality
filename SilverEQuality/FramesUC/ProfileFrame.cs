@@ -1,4 +1,5 @@
-﻿using SilverEQuality_Context;
+﻿using Microsoft.EntityFrameworkCore;
+using SilverEQuality_Context;
 using SilverEQuality_Context.Models;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,63 @@ namespace SilverEQuality.FramesUC
 
                 pictureBoxAvatar.Image = Image.FromStream(new MemoryStream(newAvatar));
             }
-            
+
+        }
+
+        private void buttonOrders_Click(object sender, EventArgs e)
+        {
+            buttonOrders.BackColor = Color.White;
+            buttonOrders.ForeColor = Color.SteelBlue;
+            InitFlowView(1);
+            buttonComment.BackColor = Color.SteelBlue;
+            buttonComment.ForeColor = Color.White;
+        }
+
+        private void buttonComment_Click(object sender, EventArgs e)
+        {
+            buttonComment.BackColor = Color.White;
+            buttonComment.ForeColor = Color.SteelBlue;
+            InitFlowView(2);
+            buttonOrders.BackColor = Color.SteelBlue;
+            buttonOrders.ForeColor = Color.White;
+        }
+
+        private void InitFlowView(int buttonNumber)
+        {
+            using (var db = new SilverEQContext(DBHelper.Option()))
+            {
+                flowLayoutPanelBody.Controls.Clear();
+
+                switch (buttonNumber)
+                {
+                    case 1:
+
+                        var orders = db.Orders.Where(x => x.AppointedOrder == AuthForm.authorizedUser.IdUser)
+                            .Include(x => x.ManufacturerOrderNavigation).ToList();
+
+                        foreach (var order in orders)
+                        {
+                            var orderView = new OrderView(order);
+                            orderView.Parent = flowLayoutPanelBody;
+                        }
+
+                        break;
+                    case 2:
+
+                        var comments = db.Comments
+                            .Where(x => x.OrderCommentNavigation.AppointedOrder == AuthForm.authorizedUser.IdUser).ToList();
+
+                        foreach (var comment in comments)
+                        {
+                            var commentView = new CommentView(comment);
+                            commentView.Parent = flowLayoutPanelBody;
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 }

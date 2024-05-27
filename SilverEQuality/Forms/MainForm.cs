@@ -22,6 +22,7 @@ namespace SilverEQuality.Forms
         public MainForm()
         {
             InitializeComponent();
+            FrameOutput(1);
         }
 
         private void slideBarTimer_Tick(object sender, EventArgs e)
@@ -58,15 +59,13 @@ namespace SilverEQuality.Forms
                     profileFrame.Parent = panelFrame;
                     break;
                 case 2:
-                    var checkFrame = new CheckFrame();
+                    var checkFrame = new MainCheckFrame();
                     checkFrame.Parent = panelFrame;
                     break;
                 case 3:
                     var orderFrame = new OrderFrame();
                     orderFrame.Parent = panelFrame;
                     break;
-
-
             }
         }
 
@@ -113,6 +112,7 @@ namespace SilverEQuality.Forms
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             CustomMessageBox logoutMessage = new CustomMessageBox("Выйти из аккаунта?", true);
+            logoutMessage.ShowDialog();
             if (logoutMessage.DialogResult == DialogResult.OK)
             {
                 AuthForm authForm = new AuthForm();

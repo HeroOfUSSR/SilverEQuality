@@ -110,7 +110,7 @@
             // 
             // buttonOK
             // 
-            buttonOK.BackColor = SystemColors.ActiveCaption;
+            buttonOK.BackColor = Color.SteelBlue;
             buttonOK.DialogResult = DialogResult.OK;
             buttonOK.FlatAppearance.BorderSize = 0;
             buttonOK.FlatStyle = FlatStyle.Flat;
