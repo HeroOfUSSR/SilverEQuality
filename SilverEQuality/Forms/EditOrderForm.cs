@@ -113,7 +113,7 @@ namespace SilverEQuality.Forms
 
                     db.Orders.Update(editOrder);
                     db.SaveChanges();
-            }
+                }
                 else
                 {
                     DateTime dateOrder;
@@ -139,7 +139,18 @@ namespace SilverEQuality.Forms
                     db.SaveChanges();
                 }
             }
-            
+
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonHide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
         }
     }
 }

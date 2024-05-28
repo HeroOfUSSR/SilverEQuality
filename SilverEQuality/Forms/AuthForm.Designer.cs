@@ -154,6 +154,7 @@
             pictureBox2.Image = Properties.Resources.logoMain;
             pictureBox2.Location = new Point(0, 10);
             pictureBox2.Name = "pictureBox2";
+            pictureBox2.Padding = new Padding(5, 0, 5, 0);
             pictureBox2.Size = new Size(440, 77);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 0;

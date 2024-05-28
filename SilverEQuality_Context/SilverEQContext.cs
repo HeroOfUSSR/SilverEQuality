@@ -236,7 +236,7 @@ namespace SilverEQuality_Context
                 entity.Property(e => e.ImagePart).HasColumnName("Image_Part");
 
                 entity.Property(e => e.WeightPart)
-                    .HasColumnType("decimal(10, 2)")
+                    .HasColumnType("decimal(10, 3)")
                     .HasColumnName("Weight_Part");
 
                 entity.HasOne(d => d.DecimalPartNavigation)

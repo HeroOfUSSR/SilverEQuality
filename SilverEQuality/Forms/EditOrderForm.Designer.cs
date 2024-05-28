@@ -31,7 +31,6 @@
             panelHeader = new Panel();
             labelTitle = new Label();
             buttonHide = new Button();
-            buttonWindowSize = new Button();
             buttonExit = new Button();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
@@ -64,7 +63,6 @@
             panelHeader.BackColor = Color.FromArgb(50, 50, 56);
             panelHeader.Controls.Add(labelTitle);
             panelHeader.Controls.Add(buttonHide);
-            panelHeader.Controls.Add(buttonWindowSize);
             panelHeader.Controls.Add(buttonExit);
             panelHeader.Controls.Add(pictureBox1);
             panelHeader.Dock = DockStyle.Top;
@@ -94,27 +92,13 @@
             buttonHide.FlatStyle = FlatStyle.Flat;
             buttonHide.Font = new Font("Lucida Console", 14F, FontStyle.Bold, GraphicsUnit.Point);
             buttonHide.ForeColor = SystemColors.ControlLightLight;
-            buttonHide.Location = new Point(412, 0);
+            buttonHide.Location = new Point(443, 0);
             buttonHide.Name = "buttonHide";
             buttonHide.Size = new Size(34, 39);
             buttonHide.TabIndex = 0;
             buttonHide.Text = "_";
             buttonHide.UseVisualStyleBackColor = true;
-            // 
-            // buttonWindowSize
-            // 
-            buttonWindowSize.BackgroundImage = Properties.Resources.windowSize;
-            buttonWindowSize.BackgroundImageLayout = ImageLayout.Zoom;
-            buttonWindowSize.Dock = DockStyle.Right;
-            buttonWindowSize.FlatAppearance.BorderSize = 0;
-            buttonWindowSize.FlatStyle = FlatStyle.Flat;
-            buttonWindowSize.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonWindowSize.ForeColor = SystemColors.ControlLightLight;
-            buttonWindowSize.Location = new Point(446, 0);
-            buttonWindowSize.Name = "buttonWindowSize";
-            buttonWindowSize.Size = new Size(31, 39);
-            buttonWindowSize.TabIndex = 2;
-            buttonWindowSize.UseVisualStyleBackColor = true;
+            buttonHide.Click += buttonHide_Click;
             // 
             // buttonExit
             // 
@@ -129,6 +113,7 @@
             buttonExit.TabIndex = 1;
             buttonExit.Text = "X";
             buttonExit.UseVisualStyleBackColor = true;
+            buttonExit.Click += buttonExit_Click;
             // 
             // pictureBox1
             // 
@@ -385,7 +370,6 @@
         private Panel panelHeader;
         private Label labelTitle;
         private Button buttonHide;
-        private Button buttonWindowSize;
         private Button buttonExit;
         private PictureBox pictureBox1;
         private Panel panel1;

@@ -19,6 +19,9 @@ namespace SilverEQuality.Forms
 
         bool isExpanded = true;
 
+        private ProfileFrame profileFrame = new ProfileFrame();
+        private MainCheckFrame checkFrame = new MainCheckFrame();
+        private OrderFrame orderFrame = new OrderFrame();
         public MainForm()
         {
             InitializeComponent();
@@ -30,6 +33,9 @@ namespace SilverEQuality.Forms
             if (isExpanded)
             {
                 slideBar.Width -= 10;
+                profileFrame.Width += 10;
+                checkFrame.Width += 10;
+                orderFrame.Width += 10;
 
                 if (slideBar.Width == slideBar.MinimumSize.Width)
                 {
@@ -40,6 +46,10 @@ namespace SilverEQuality.Forms
             else
             {
                 slideBar.Width += 10;
+                profileFrame.Width -= 10;
+                checkFrame.Width -= 10;
+                orderFrame.Width -= 10;
+
                 if (slideBar.Width == slideBar.MaximumSize.Width)
                 {
                     isExpanded = true;
@@ -55,15 +65,15 @@ namespace SilverEQuality.Forms
             switch (buttonNumber)
             {
                 case 1:
-                    var profileFrame = new ProfileFrame();
+                    profileFrame.Size = panelFrame.Size;
                     profileFrame.Parent = panelFrame;
                     break;
                 case 2:
-                    var checkFrame = new MainCheckFrame();
+                    checkFrame.Size = panelFrame.Size;
                     checkFrame.Parent = panelFrame;
                     break;
                 case 3:
-                    var orderFrame = new OrderFrame();
+                    orderFrame.Size = panelFrame.Size;
                     orderFrame.Parent = panelFrame;
                     break;
             }
@@ -119,6 +129,18 @@ namespace SilverEQuality.Forms
                 authForm.Show();
                 this.Close();
             }
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void buttonHide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
         }
     }
 }

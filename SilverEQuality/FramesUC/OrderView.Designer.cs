@@ -94,7 +94,7 @@
             buttonMore.FlatStyle = FlatStyle.Flat;
             buttonMore.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonMore.ForeColor = SystemColors.ControlLightLight;
-            buttonMore.Location = new Point(0, 262);
+            buttonMore.Location = new Point(0, 110);
             buttonMore.Name = "buttonMore";
             buttonMore.Size = new Size(115, 36);
             buttonMore.TabIndex = 4;
@@ -111,9 +111,9 @@
             // 
             panel1.Controls.Add(buttonMore);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(863, 0);
+            panel1.Location = new Point(363, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(115, 298);
+            panel1.Size = new Size(115, 146);
             panel1.TabIndex = 5;
             // 
             // panel2
@@ -125,7 +125,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(171, 298);
+            panel2.Size = new Size(171, 146);
             panel2.TabIndex = 6;
             // 
             // button
@@ -196,7 +196,7 @@
             MaximumSize = new Size(980, 300);
             MinimumSize = new Size(480, 148);
             Name = "OrderView";
-            Size = new Size(978, 298);
+            Size = new Size(478, 146);
             Load += OrderView_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).EndInit();
             panel1.ResumeLayout(false);
