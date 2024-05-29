@@ -13,7 +13,6 @@ namespace SilverEQuality.FramesUC
 {
     public partial class MainCheckFrame : UserControl
     {
-        private int buttonNumber = 1;
         public MainCheckFrame()
         {
             InitializeComponent();

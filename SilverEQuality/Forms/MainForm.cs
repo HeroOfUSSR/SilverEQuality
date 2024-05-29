@@ -16,53 +16,51 @@ namespace SilverEQuality.Forms
     {
         public bool isMouseDown;
         public Point startPoint;
+        private int menuButton = 1;
 
-        bool isExpanded = true;
+        public static bool isMenuExpanded = true;
 
         private ProfileFrame profileFrame = new ProfileFrame();
         private MainCheckFrame checkFrame = new MainCheckFrame();
-        private OrderFrame orderFrame = new OrderFrame();
+        private MainOrderFrame orderFrame = new MainOrderFrame();
+        private MainNormFrame normFrame = new MainNormFrame();
         public MainForm()
         {
             InitializeComponent();
-            FrameOutput(1);
+            FrameOutput();
         }
 
         private void slideBarTimer_Tick(object sender, EventArgs e)
         {
-            if (isExpanded)
+            if (isMenuExpanded)
             {
                 slideBar.Width -= 10;
-                profileFrame.Width += 10;
-                checkFrame.Width += 10;
-                orderFrame.Width += 10;
+                
+
 
                 if (slideBar.Width == slideBar.MinimumSize.Width)
                 {
-                    isExpanded = false;
+                    isMenuExpanded = false;
                     slideBarTimer.Stop();
                 }
             }
             else
             {
                 slideBar.Width += 10;
-                profileFrame.Width -= 10;
-                checkFrame.Width -= 10;
-                orderFrame.Width -= 10;
-
+               
                 if (slideBar.Width == slideBar.MaximumSize.Width)
                 {
-                    isExpanded = true;
+                    isMenuExpanded = true;
                     slideBarTimer.Stop();
                 }
             }
         }
 
-        private void FrameOutput(int buttonNumber)
+        private void FrameOutput()
         {
             panelFrame.Controls.Clear();
 
-            switch (buttonNumber)
+            switch (menuButton)
             {
                 case 1:
                     profileFrame.Size = panelFrame.Size;
@@ -76,6 +74,11 @@ namespace SilverEQuality.Forms
                     orderFrame.Size = panelFrame.Size;
                     orderFrame.Parent = panelFrame;
                     break;
+                case 4:
+                    normFrame.Size = panelFrame.Size;
+                    normFrame.Parent = panelFrame;
+                    break;
+
             }
         }
 
@@ -106,17 +109,20 @@ namespace SilverEQuality.Forms
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            FrameOutput(1);
+            menuButton = 1;
+            FrameOutput();
         }
 
         private void buttonChecks_Click(object sender, EventArgs e)
         {
-            FrameOutput(2);
+            menuButton = 2;
+            FrameOutput();
         }
 
         private void buttonOrders_Click(object sender, EventArgs e)
         {
-            FrameOutput(3);
+            menuButton = 3;
+            FrameOutput();
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
@@ -141,6 +147,31 @@ namespace SilverEQuality.Forms
         {
             this.WindowState = FormWindowState.Minimized;
 
+        }
+
+        private void buttonNorms_Click(object sender, EventArgs e)
+        {
+            menuButton = 4;
+            FrameOutput();
+        }
+
+        private void slideBar_Resize(object sender, EventArgs e)
+        {
+            if (isMenuExpanded)
+            {
+                profileFrame.Width += 10;
+                checkFrame.Width += 10;
+                orderFrame.Width += 10;
+                normFrame.Width += 10;
+            } 
+            else if (!isMenuExpanded)
+            {
+                profileFrame.Width -= 10;
+                checkFrame.Width -= 10;
+                orderFrame.Width -= 10;
+                normFrame.Width -= 10;
+
+            }
         }
     }
 }

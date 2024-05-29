@@ -153,6 +153,7 @@
             slideBar.Name = "slideBar";
             slideBar.Size = new Size(218, 472);
             slideBar.TabIndex = 0;
+            slideBar.Resize += slideBar_Resize;
             // 
             // panelMenu
             // 
@@ -278,6 +279,7 @@
             buttonNorms.TabIndex = 5;
             buttonNorms.Text = "Нормы";
             buttonNorms.UseVisualStyleBackColor = false;
+            buttonNorms.Click += buttonNorms_Click;
             // 
             // panel1
             // 
@@ -294,7 +296,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Image = Properties.Resources.norm;
+            button1.Image = Properties.Resources.silver;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.Location = new Point(1, 4);
             button1.Name = "button1";

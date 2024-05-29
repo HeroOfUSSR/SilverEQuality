@@ -15,6 +15,8 @@ namespace SilverEQuality_Context.Models
         public int DecimalPart { get; set; }
         public decimal? CostPart { get; set; }
         public byte[]? ImagePart { get; set; }
+        public string NamePart { get; set; }
+        
 
         public virtual DecimalNumber DecimalPartNavigation { get; set; } = null!;
         public virtual ICollection<PartNecessary> PartNecessaries { get; set; }

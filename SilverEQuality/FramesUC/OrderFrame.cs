@@ -18,6 +18,7 @@ namespace SilverEQuality.Forms
 {
     public partial class OrderFrame : UserControl
     {
+        private EventHandler editOrder;
         public OrderFrame()
         {
             InitializeComponent();

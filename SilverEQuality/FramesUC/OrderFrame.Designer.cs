@@ -53,7 +53,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1009, 100);
+            panel1.Size = new Size(1009, 68);
             panel1.TabIndex = 0;
             // 
             // comboBoxPriority
@@ -61,7 +61,7 @@
             comboBoxPriority.Anchor = AnchorStyles.Right;
             comboBoxPriority.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxPriority.FormattingEnabled = true;
-            comboBoxPriority.Location = new Point(417, 64);
+            comboBoxPriority.Location = new Point(407, 41);
             comboBoxPriority.Name = "comboBoxPriority";
             comboBoxPriority.Size = new Size(190, 24);
             comboBoxPriority.TabIndex = 9;
@@ -72,7 +72,7 @@
             comboBoxStatus.Anchor = AnchorStyles.Right;
             comboBoxStatus.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxStatus.FormattingEnabled = true;
-            comboBoxStatus.Location = new Point(613, 64);
+            comboBoxStatus.Location = new Point(603, 41);
             comboBoxStatus.Name = "comboBoxStatus";
             comboBoxStatus.Size = new Size(190, 24);
             comboBoxStatus.TabIndex = 8;
@@ -83,7 +83,7 @@
             comboBoxManuf.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             comboBoxManuf.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxManuf.FormattingEnabled = true;
-            comboBoxManuf.Location = new Point(72, 64);
+            comboBoxManuf.Location = new Point(62, 41);
             comboBoxManuf.Name = "comboBoxManuf";
             comboBoxManuf.Size = new Size(339, 24);
             comboBoxManuf.TabIndex = 7;
@@ -94,7 +94,7 @@
             comboBoxSortDate.Anchor = AnchorStyles.Right;
             comboBoxSortDate.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxSortDate.FormattingEnabled = true;
-            comboBoxSortDate.Location = new Point(613, 35);
+            comboBoxSortDate.Location = new Point(603, 12);
             comboBoxSortDate.Name = "comboBoxSortDate";
             comboBoxSortDate.Size = new Size(190, 24);
             comboBoxSortDate.TabIndex = 6;
@@ -108,7 +108,7 @@
             buttonSearch.FlatStyle = FlatStyle.Flat;
             buttonSearch.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonSearch.ForeColor = SystemColors.ControlLightLight;
-            buttonSearch.Location = new Point(809, 34);
+            buttonSearch.Location = new Point(799, 11);
             buttonSearch.Name = "buttonSearch";
             buttonSearch.Size = new Size(160, 54);
             buttonSearch.TabIndex = 5;
@@ -119,7 +119,7 @@
             // 
             textBoxSearch.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxSearch.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxSearch.Location = new Point(72, 35);
+            textBoxSearch.Location = new Point(62, 12);
             textBoxSearch.Name = "textBoxSearch";
             textBoxSearch.PlaceholderText = "Поиск по номеру заказа";
             textBoxSearch.Size = new Size(535, 23);
@@ -131,15 +131,15 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1009, 28);
+            panel3.Size = new Size(1009, 10);
             panel3.TabIndex = 0;
             // 
             // panel2
             // 
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 438);
+            panel2.Location = new Point(0, 420);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1009, 34);
+            panel2.Size = new Size(1009, 28);
             panel2.TabIndex = 1;
             // 
             // flowLayoutPanelOrder
@@ -147,9 +147,9 @@
             flowLayoutPanelOrder.AutoScroll = true;
             flowLayoutPanelOrder.BorderStyle = BorderStyle.FixedSingle;
             flowLayoutPanelOrder.Dock = DockStyle.Fill;
-            flowLayoutPanelOrder.Location = new Point(0, 100);
+            flowLayoutPanelOrder.Location = new Point(0, 68);
             flowLayoutPanelOrder.Name = "flowLayoutPanelOrder";
-            flowLayoutPanelOrder.Size = new Size(1009, 338);
+            flowLayoutPanelOrder.Size = new Size(1009, 352);
             flowLayoutPanelOrder.TabIndex = 2;
             // 
             // OrderFrame
@@ -160,10 +160,10 @@
             Controls.Add(flowLayoutPanelOrder);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            MaximumSize = new Size(1009, 472);
-            MinimumSize = new Size(841, 472);
+            MaximumSize = new Size(1009, 448);
+            MinimumSize = new Size(841, 448);
             Name = "OrderFrame";
-            Size = new Size(1009, 472);
+            Size = new Size(1009, 448);
             Load += OrderFrame_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

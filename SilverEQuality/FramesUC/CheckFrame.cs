@@ -20,7 +20,7 @@ namespace SilverEQuality.Forms
             InitDatagrid();
         }
 
-        public void InitDatagrid()
+        private void InitDatagrid()
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
@@ -31,7 +31,7 @@ namespace SilverEQuality.Forms
                                 || textBoxSearch.Text == "")
                              select new
                              {
-                                 IdCheck = check.IdCheck,
+                                 //IdCheck = check.IdCheck,
                                  NumberCheck = check.NumberCheck,
                                  DateCheck = check.DateCheck,
                                  DepartmentCheck = check.DepartmentCheck,
@@ -47,7 +47,7 @@ namespace SilverEQuality.Forms
                 {
                     dataGridCheck.DataSource = result.ToList();
 
-                    dataGridCheck.Columns["IdCheck"].HeaderText = "Идентификатор чека";
+                    //dataGridCheck.Columns["IdCheck"].HeaderText = "Идентификатор чека";
                     dataGridCheck.Columns["NumberCheck"].HeaderText = "Номер чека";
                     dataGridCheck.Columns["DateCheck"].HeaderText = "Дата чека";
                     dataGridCheck.Columns["DepartmentCheck"].HeaderText = "Номер цеха";
@@ -65,6 +65,11 @@ namespace SilverEQuality.Forms
                 }
 
             }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            InitDatagrid();
         }
     }
 }

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SilverEQuality.FramesUC
 {
-    public partial class OrderEditFrame : UserControl
+    public partial class DocumentsFrame : UserControl
     {
-        public OrderEditFrame()
+        public DocumentsFrame()
         {
             InitializeComponent();
-        }
-
-        private void dateTimePickerEnd_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

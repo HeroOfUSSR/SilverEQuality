@@ -1,4 +1,5 @@
-﻿using SilverEQuality.Forms;
+﻿using Microsoft.EntityFrameworkCore;
+using SilverEQuality.Forms;
 using SilverEQuality.MessageBoxes;
 using SilverEQuality_Context;
 using SilverEQuality_Context.Models;
@@ -18,6 +19,11 @@ namespace SilverEQuality.FramesUC
     {
         public readonly Order orderView;
         bool isExpanding = true;
+
+        public event Action<Order> editingOrder;
+
+        public OrderAddFrame orderEditFrame;
+
         public OrderView(Order order)
         {
             InitializeComponent();
@@ -31,6 +37,8 @@ namespace SilverEQuality.FramesUC
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
+                textBoxDesc.Visible = false;
+
                 if (order.ManufacturerOrderNavigation.ImageManufacturer != null)
                     pictureBoxAvatar.Image = Image.FromStream(new MemoryStream(order.ManufacturerOrderNavigation.ImageManufacturer));
                 labelOrderNumber.Text = $"Заказ №{order.IdOrder}";
@@ -40,11 +48,26 @@ namespace SilverEQuality.FramesUC
                 else
                     labelPriority.Text = "Без приоритета";
 
+                if (order.DescOrder == null || order.DescOrder == "")
+                {
+                    textBoxDesc.Text = "Описание заказа отсутствует";
+                }
+                else
+                    textBoxDesc.Text = order.DescOrder;
+
                 labelStatus.Text = db.Statuses.FirstOrDefault(x => x.IdStatus == order.StatusOrder).TitleStatus;
 
+                labelManufacturer.Text = db.Manufacturers.FirstOrDefault(x => x.IdManufacturer == order.ManufacturerOrder).NameManufacturer;
 
+                var partsInWork = db.PartNecessaries.Where(x => x.OrderNecessary == order.IdOrder).ToList();
+
+                foreach (var partInWork in partsInWork)
+                {
+                    var part = db.Parts.FirstOrDefault(x => x.IdPart == partInWork.PartNecessary1);
+                    PartView partView = new PartView(part, partInWork.AmountNecessary);
+                    partView.Parent = flowLayoutPanelOrderParts;
+                }
             }
-
         }
 
         private void buttonMore_Click(object sender, EventArgs e)
@@ -65,7 +88,10 @@ namespace SilverEQuality.FramesUC
                     timerExpand.Stop();
                     buttonImageMan.Visible = true;
                     buttonEdit.Visible = true;
-
+                    buttonComments.Visible = true;
+                    textBoxDesc.Visible = true;
+                    flowLayoutPanelOrderParts.Visible = true;
+                    flowLayoutPanelOrderParts.Size = MaximumSize;
                 }
             }
             else
@@ -78,6 +104,10 @@ namespace SilverEQuality.FramesUC
                     timerExpand.Stop();
                     buttonImageMan.Visible = false;
                     buttonEdit.Visible = false;
+                    textBoxDesc.Visible = false;
+                    buttonComments.Visible = false;
+                    flowLayoutPanelOrderParts.Visible = false;
+                    flowLayoutPanelOrderParts.Size = MinimumSize;
                 }
             }
         }
@@ -108,6 +138,7 @@ namespace SilverEQuality.FramesUC
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            //orderEditFrame = new OrderEditFrame(orderView);
             var editForm = new EditOrderForm(orderView);
             editForm.ShowDialog();
             if (editForm.DialogResult == DialogResult.OK)
@@ -115,6 +146,12 @@ namespace SilverEQuality.FramesUC
                 CustomMessageBox successAdd = new CustomMessageBox($"Заказ №{orderView.IdOrder} изменён", false);
                 successAdd.ShowDialog();
             }
+        }
+
+        private void buttonComments_Click(object sender, EventArgs e)
+        {
+            CommentForm commentForm = new CommentForm(orderView);
+            commentForm.ShowDialog();
         }
     }
 }

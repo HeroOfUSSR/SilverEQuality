@@ -227,6 +227,10 @@ namespace SilverEQuality_Context
                 entity.Property(e => e.IdPart)
                     .HasColumnName("ID_Part");
 
+                entity.Property(e => e.NamePart)
+                    .HasMaxLength(50)
+                    .HasColumnName("Name_Part");
+
                 entity.Property(e => e.CostPart)
                     .HasColumnType("money")
                     .HasColumnName("Cost_Part");

@@ -46,7 +46,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(153, 150);
+            panel1.Size = new Size(153, 148);
             panel1.TabIndex = 0;
             // 
             // labelAuthorName
@@ -75,9 +75,9 @@
             // panel2
             // 
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(726, 0);
+            panel2.Location = new Point(724, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(115, 150);
+            panel2.Size = new Size(115, 148);
             panel2.TabIndex = 1;
             // 
             // labelCommentTitle
@@ -108,7 +108,7 @@
             labelDateCom.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelDateCom.AutoSize = true;
             labelDateCom.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelDateCom.Location = new Point(579, 119);
+            labelDateCom.Location = new Point(577, 119);
             labelDateCom.Name = "labelDateCom";
             labelDateCom.Size = new Size(127, 16);
             labelDateCom.TabIndex = 4;
@@ -119,6 +119,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(labelDateCom);
             Controls.Add(textBoxComment);
             Controls.Add(labelCommentTitle);
@@ -126,7 +127,7 @@
             Controls.Add(panel1);
             MinimumSize = new Size(841, 150);
             Name = "CommentView";
-            Size = new Size(841, 150);
+            Size = new Size(839, 148);
             Load += CommentView_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

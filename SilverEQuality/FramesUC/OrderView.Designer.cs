@@ -37,10 +37,13 @@
             timerExpand = new System.Windows.Forms.Timer(components);
             panel1 = new Panel();
             panel2 = new Panel();
-            button = new Button();
+            buttonComments = new Button();
             buttonEdit = new Button();
             buttonImageMan = new Button();
             openFileDialogImageChange = new OpenFileDialog();
+            textBoxDesc = new TextBox();
+            labelManufacturer = new Label();
+            flowLayoutPanelOrderParts = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -51,7 +54,7 @@
             pictureBoxAvatar.Dock = DockStyle.Top;
             pictureBoxAvatar.Location = new Point(0, 0);
             pictureBoxAvatar.Name = "pictureBoxAvatar";
-            pictureBoxAvatar.Size = new Size(171, 134);
+            pictureBoxAvatar.Size = new Size(158, 134);
             pictureBoxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxAvatar.TabIndex = 0;
             pictureBoxAvatar.TabStop = false;
@@ -60,7 +63,7 @@
             // 
             labelOrderNumber.AutoSize = true;
             labelOrderNumber.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelOrderNumber.Location = new Point(177, 15);
+            labelOrderNumber.Location = new Point(164, 15);
             labelOrderNumber.Name = "labelOrderNumber";
             labelOrderNumber.Size = new Size(86, 19);
             labelOrderNumber.TabIndex = 1;
@@ -70,7 +73,7 @@
             // 
             labelStatus.AutoSize = true;
             labelStatus.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelStatus.Location = new Point(177, 118);
+            labelStatus.Location = new Point(164, 50);
             labelStatus.Name = "labelStatus";
             labelStatus.Size = new Size(67, 16);
             labelStatus.TabIndex = 2;
@@ -80,7 +83,7 @@
             // 
             labelPriority.AutoSize = true;
             labelPriority.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelPriority.Location = new Point(177, 102);
+            labelPriority.Location = new Point(164, 34);
             labelPriority.Name = "labelPriority";
             labelPriority.Size = new Size(97, 16);
             labelPriority.TabIndex = 3;
@@ -94,9 +97,9 @@
             buttonMore.FlatStyle = FlatStyle.Flat;
             buttonMore.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonMore.ForeColor = SystemColors.ControlLightLight;
-            buttonMore.Location = new Point(0, 110);
+            buttonMore.Location = new Point(0, 262);
             buttonMore.Name = "buttonMore";
-            buttonMore.Size = new Size(115, 36);
+            buttonMore.Size = new Size(130, 36);
             buttonMore.TabIndex = 4;
             buttonMore.Text = "Подробнее";
             buttonMore.UseVisualStyleBackColor = false;
@@ -111,38 +114,39 @@
             // 
             panel1.Controls.Add(buttonMore);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(363, 0);
+            panel1.Location = new Point(848, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(115, 146);
+            panel1.Size = new Size(130, 298);
             panel1.TabIndex = 5;
             // 
             // panel2
             // 
-            panel2.Controls.Add(button);
+            panel2.Controls.Add(buttonComments);
             panel2.Controls.Add(buttonEdit);
             panel2.Controls.Add(buttonImageMan);
             panel2.Controls.Add(pictureBoxAvatar);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(171, 146);
+            panel2.Size = new Size(158, 298);
             panel2.TabIndex = 6;
             // 
-            // button
+            // buttonComments
             // 
-            button.BackColor = Color.SteelBlue;
-            button.Dock = DockStyle.Top;
-            button.FlatAppearance.BorderSize = 0;
-            button.FlatStyle = FlatStyle.Flat;
-            button.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button.ForeColor = SystemColors.ControlLightLight;
-            button.Location = new Point(0, 206);
-            button.Name = "button";
-            button.Size = new Size(171, 36);
-            button.TabIndex = 7;
-            button.Text = "Изменить";
-            button.UseVisualStyleBackColor = false;
-            button.Visible = false;
+            buttonComments.BackColor = Color.SteelBlue;
+            buttonComments.Dock = DockStyle.Top;
+            buttonComments.FlatAppearance.BorderSize = 0;
+            buttonComments.FlatStyle = FlatStyle.Flat;
+            buttonComments.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonComments.ForeColor = SystemColors.ControlLightLight;
+            buttonComments.Location = new Point(0, 206);
+            buttonComments.Name = "buttonComments";
+            buttonComments.Size = new Size(158, 36);
+            buttonComments.TabIndex = 7;
+            buttonComments.Text = "Комментарии";
+            buttonComments.UseVisualStyleBackColor = false;
+            buttonComments.Visible = false;
+            buttonComments.Click += buttonComments_Click;
             // 
             // buttonEdit
             // 
@@ -154,7 +158,7 @@
             buttonEdit.ForeColor = SystemColors.ControlLightLight;
             buttonEdit.Location = new Point(0, 170);
             buttonEdit.Name = "buttonEdit";
-            buttonEdit.Size = new Size(171, 36);
+            buttonEdit.Size = new Size(158, 36);
             buttonEdit.TabIndex = 6;
             buttonEdit.Text = "Редактировать";
             buttonEdit.UseVisualStyleBackColor = false;
@@ -171,7 +175,7 @@
             buttonImageMan.ForeColor = SystemColors.ControlLightLight;
             buttonImageMan.Location = new Point(0, 134);
             buttonImageMan.Name = "buttonImageMan";
-            buttonImageMan.Size = new Size(171, 36);
+            buttonImageMan.Size = new Size(158, 36);
             buttonImageMan.TabIndex = 5;
             buttonImageMan.Text = "Изменить фото";
             buttonImageMan.UseVisualStyleBackColor = false;
@@ -182,12 +186,50 @@
             // 
             openFileDialogImageChange.FileName = "openFileDialog1";
             // 
+            // textBoxDesc
+            // 
+            textBoxDesc.BackColor = Color.White;
+            textBoxDesc.BorderStyle = BorderStyle.None;
+            textBoxDesc.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxDesc.Location = new Point(164, 134);
+            textBoxDesc.Multiline = true;
+            textBoxDesc.Name = "textBoxDesc";
+            textBoxDesc.ReadOnly = true;
+            textBoxDesc.Size = new Size(326, 161);
+            textBoxDesc.TabIndex = 8;
+            textBoxDesc.Text = "ОЧЕНЬ КРУТОE ОПИСАНИЕ. ТУТ КЛАССНЕНЬКИЕ ВЕЩИ ОПИСАНЫ, Например: что я сегодня покушал, где я сегодня гулял";
+            // 
+            // labelManufacturer
+            // 
+            labelManufacturer.AutoSize = true;
+            labelManufacturer.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            labelManufacturer.Location = new Point(164, 104);
+            labelManufacturer.Name = "labelManufacturer";
+            labelManufacturer.Size = new Size(137, 16);
+            labelManufacturer.TabIndex = 9;
+            labelManufacturer.Text = "Производитель";
+            // 
+            // flowLayoutPanelOrderParts
+            // 
+            flowLayoutPanelOrderParts.AutoScroll = true;
+            flowLayoutPanelOrderParts.Dock = DockStyle.Right;
+            flowLayoutPanelOrderParts.Enabled = false;
+            flowLayoutPanelOrderParts.Location = new Point(838, 0);
+            flowLayoutPanelOrderParts.MaximumSize = new Size(358, 298);
+            flowLayoutPanelOrderParts.MinimumSize = new Size(10, 146);
+            flowLayoutPanelOrderParts.Name = "flowLayoutPanelOrderParts";
+            flowLayoutPanelOrderParts.Size = new Size(10, 298);
+            flowLayoutPanelOrderParts.TabIndex = 7;
+            // 
             // OrderView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(flowLayoutPanelOrderParts);
+            Controls.Add(labelManufacturer);
+            Controls.Add(textBoxDesc);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(labelPriority);
@@ -196,7 +238,7 @@
             MaximumSize = new Size(980, 300);
             MinimumSize = new Size(480, 148);
             Name = "OrderView";
-            Size = new Size(478, 146);
+            Size = new Size(978, 298);
             Load += OrderView_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).EndInit();
             panel1.ResumeLayout(false);
@@ -217,7 +259,10 @@
         private Panel panel2;
         private Button buttonImageMan;
         private OpenFileDialog openFileDialogImageChange;
-        private Button button;
+        private Button buttonComments;
         private Button buttonEdit;
+        private TextBox textBoxDesc;
+        private Label labelManufacturer;
+        private FlowLayoutPanel flowLayoutPanelOrderParts;
     }
 }

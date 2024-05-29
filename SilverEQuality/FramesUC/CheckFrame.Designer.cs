@@ -93,6 +93,7 @@
             buttonSearch.TabIndex = 3;
             buttonSearch.Text = "Применить";
             buttonSearch.UseVisualStyleBackColor = false;
+            buttonSearch.Click += buttonSearch_Click;
             // 
             // textBoxSearch
             // 
