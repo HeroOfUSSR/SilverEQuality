@@ -13,6 +13,8 @@ namespace SilverEQuality.FramesUC
 {
     public partial class MainCheckFrame : UserControl
     {
+        private CheckFrame checkFrame = new CheckFrame();
+        private GraphFrame graphFrame = new GraphFrame();
         public MainCheckFrame()
         {
             InitializeComponent();
@@ -28,7 +30,7 @@ namespace SilverEQuality.FramesUC
                 case 1:
                     buttonGrid.BackColor = Color.White;
                     buttonGrid.ForeColor = Color.SteelBlue;
-                    var checkFrame = new CheckFrame();
+                    checkFrame.Size = panelBody.Size;
                     checkFrame.Parent = panelBody;
                     buttonGraphs.BackColor = Color.SteelBlue;
                     buttonGraphs.ForeColor = Color.White;
@@ -36,7 +38,7 @@ namespace SilverEQuality.FramesUC
                 case 2:
                     buttonGraphs.BackColor = Color.White;
                     buttonGraphs.ForeColor = Color.SteelBlue;
-                    var graphFrame = new GraphFrame();
+                    graphFrame.Size = panelBody.Size;
                     graphFrame.Parent = panelBody;
                     buttonGrid.BackColor = Color.SteelBlue;
                     buttonGrid.ForeColor = Color.White;
@@ -55,6 +57,21 @@ namespace SilverEQuality.FramesUC
         private void buttonGraphs_Click(object sender, EventArgs e)
         {
             FrameOutput(2);
+        }
+
+        private void MainCheckFrame_Resize(object sender, EventArgs e)
+        {
+            if (MainForm.isMenuExpanded)
+            {
+                checkFrame.Width += 10;
+                graphFrame.Width += 10;
+
+            }
+            else if (!MainForm.isMenuExpanded)
+            {
+                checkFrame.Width -= 10;
+                graphFrame.Width -= 10;
+            }
         }
     }
 }

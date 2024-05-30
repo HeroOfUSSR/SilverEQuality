@@ -36,13 +36,8 @@
             panel1 = new Panel();
             buttonCancel = new Button();
             buttonDone = new Button();
-            label1 = new Label();
             label2 = new Label();
-            dateTimePickerStart = new DateTimePicker();
-            checkBoxTodayDate = new CheckBox();
             dateTimePickerEnd = new DateTimePicker();
-            comboBoxManufacturer = new ComboBox();
-            label4 = new Label();
             label5 = new Label();
             comboBoxStatus = new ComboBox();
             label6 = new Label();
@@ -81,9 +76,9 @@
             labelTitle.ForeColor = SystemColors.ControlLightLight;
             labelTitle.Location = new Point(56, 11);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(196, 19);
+            labelTitle.Size = new Size(240, 19);
             labelTitle.TabIndex = 5;
-            labelTitle.Text = "Добавление заказа";
+            labelTitle.Text = "Редактирование заказа";
             // 
             // buttonHide
             // 
@@ -132,7 +127,7 @@
             panel1.Controls.Add(buttonCancel);
             panel1.Controls.Add(buttonDone);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 428);
+            panel1.Location = new Point(0, 340);
             panel1.Name = "panel1";
             panel1.Size = new Size(512, 94);
             panel1.TabIndex = 3;
@@ -163,82 +158,33 @@
             buttonDone.Name = "buttonDone";
             buttonDone.Size = new Size(368, 37);
             buttonDone.TabIndex = 0;
-            buttonDone.Text = "Добавить";
+            buttonDone.Text = "Изменить";
             buttonDone.UseVisualStyleBackColor = false;
             buttonDone.Click += buttonDone_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(41, 73);
-            label1.Name = "label1";
-            label1.Size = new Size(130, 19);
-            label1.TabIndex = 5;
-            label1.Text = "Дата заказа";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(41, 127);
+            label2.Location = new Point(41, 296);
             label2.Name = "label2";
             label2.Size = new Size(174, 19);
             label2.TabIndex = 7;
             label2.Text = "Дата завершения";
             // 
-            // dateTimePickerStart
-            // 
-            dateTimePickerStart.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerStart.Location = new Point(236, 67);
-            dateTimePickerStart.Name = "dateTimePickerStart";
-            dateTimePickerStart.Size = new Size(200, 26);
-            dateTimePickerStart.TabIndex = 8;
-            // 
-            // checkBoxTodayDate
-            // 
-            checkBoxTodayDate.AutoSize = true;
-            checkBoxTodayDate.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxTodayDate.Location = new Point(236, 99);
-            checkBoxTodayDate.Name = "checkBoxTodayDate";
-            checkBoxTodayDate.Size = new Size(160, 23);
-            checkBoxTodayDate.TabIndex = 9;
-            checkBoxTodayDate.Text = "Текущая дата";
-            checkBoxTodayDate.UseVisualStyleBackColor = true;
-            checkBoxTodayDate.CheckedChanged += checkBoxTodayDate_CheckedChanged;
-            // 
             // dateTimePickerEnd
             // 
             dateTimePickerEnd.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerEnd.Location = new Point(236, 127);
+            dateTimePickerEnd.Location = new Point(236, 296);
             dateTimePickerEnd.Name = "dateTimePickerEnd";
             dateTimePickerEnd.Size = new Size(200, 26);
             dateTimePickerEnd.TabIndex = 10;
-            // 
-            // comboBoxManufacturer
-            // 
-            comboBoxManufacturer.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxManufacturer.FormattingEnabled = true;
-            comboBoxManufacturer.Location = new Point(236, 192);
-            comboBoxManufacturer.Name = "comboBoxManufacturer";
-            comboBoxManufacturer.Size = new Size(200, 27);
-            comboBoxManufacturer.TabIndex = 11;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(41, 192);
-            label4.Name = "label4";
-            label4.Size = new Size(97, 19);
-            label4.TabIndex = 12;
-            label4.Text = "Заказчик";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(41, 225);
+            label5.Location = new Point(41, 92);
             label5.Name = "label5";
             label5.Size = new Size(75, 19);
             label5.TabIndex = 14;
@@ -248,7 +194,7 @@
             // 
             comboBoxStatus.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxStatus.FormattingEnabled = true;
-            comboBoxStatus.Location = new Point(236, 225);
+            comboBoxStatus.Location = new Point(236, 92);
             comboBoxStatus.Name = "comboBoxStatus";
             comboBoxStatus.Size = new Size(200, 27);
             comboBoxStatus.TabIndex = 13;
@@ -257,7 +203,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(41, 258);
+            label6.Location = new Point(41, 125);
             label6.Name = "label6";
             label6.Size = new Size(108, 19);
             label6.TabIndex = 16;
@@ -267,7 +213,7 @@
             // 
             comboBoxPrio.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxPrio.FormattingEnabled = true;
-            comboBoxPrio.Location = new Point(236, 258);
+            comboBoxPrio.Location = new Point(236, 125);
             comboBoxPrio.Name = "comboBoxPrio";
             comboBoxPrio.Size = new Size(200, 27);
             comboBoxPrio.TabIndex = 15;
@@ -275,7 +221,7 @@
             // textBoxPayment
             // 
             textBoxPayment.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPayment.Location = new Point(236, 290);
+            textBoxPayment.Location = new Point(236, 264);
             textBoxPayment.Name = "textBoxPayment";
             textBoxPayment.Size = new Size(200, 26);
             textBoxPayment.TabIndex = 17;
@@ -284,7 +230,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(41, 290);
+            label7.Location = new Point(41, 264);
             label7.Name = "label7";
             label7.Size = new Size(163, 19);
             label7.TabIndex = 18;
@@ -294,7 +240,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(41, 322);
+            label8.Location = new Point(41, 158);
             label8.Name = "label8";
             label8.Size = new Size(97, 19);
             label8.TabIndex = 20;
@@ -303,7 +249,7 @@
             // textBoxDesc
             // 
             textBoxDesc.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxDesc.Location = new Point(236, 322);
+            textBoxDesc.Location = new Point(236, 158);
             textBoxDesc.Multiline = true;
             textBoxDesc.Name = "textBoxDesc";
             textBoxDesc.Size = new Size(200, 82);
@@ -313,7 +259,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(41, 159);
+            label3.Location = new Point(41, 55);
             label3.Name = "label3";
             label3.Size = new Size(152, 19);
             label3.TabIndex = 22;
@@ -323,7 +269,7 @@
             // 
             comboBoxAppointed.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxAppointed.FormattingEnabled = true;
-            comboBoxAppointed.Location = new Point(236, 159);
+            comboBoxAppointed.Location = new Point(236, 55);
             comboBoxAppointed.Name = "comboBoxAppointed";
             comboBoxAppointed.Size = new Size(200, 27);
             comboBoxAppointed.TabIndex = 21;
@@ -332,7 +278,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(512, 522);
+            ClientSize = new Size(512, 434);
             Controls.Add(label3);
             Controls.Add(comboBoxAppointed);
             Controls.Add(label8);
@@ -343,13 +289,8 @@
             Controls.Add(comboBoxPrio);
             Controls.Add(label5);
             Controls.Add(comboBoxStatus);
-            Controls.Add(label4);
-            Controls.Add(comboBoxManufacturer);
             Controls.Add(dateTimePickerEnd);
-            Controls.Add(checkBoxTodayDate);
-            Controls.Add(dateTimePickerStart);
             Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(panel1);
             Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.None;
@@ -373,15 +314,10 @@
         private Button buttonExit;
         private PictureBox pictureBox1;
         private Panel panel1;
-        private Label label1;
         private Label label2;
-        private DateTimePicker dateTimePickerStart;
-        private CheckBox checkBoxTodayDate;
         private DateTimePicker dateTimePickerEnd;
         private Button buttonCancel;
         private Button buttonDone;
-        private ComboBox comboBoxManufacturer;
-        private Label label4;
         private Label label5;
         private ComboBox comboBoxStatus;
         private Label label6;

@@ -141,8 +141,6 @@ namespace SilverEQuality_Context
 
                 entity.Property(e => e.DecimalNorm).HasColumnName("Decimal_Norm");
 
-                entity.Property(e => e.DepartmentNorm).HasColumnName("Department_Norm");
-
                 entity.Property(e => e.SilverTypeNorm).HasColumnName("SilverType_Norm");
 
                 entity.Property(e => e.TitleNorm)

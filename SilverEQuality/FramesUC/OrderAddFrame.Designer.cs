@@ -326,6 +326,8 @@
             Controls.Add(comboBoxStatus);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            MaximumSize = new Size(1009, 448);
+            MinimumSize = new Size(841, 448);
             Name = "OrderAddFrame";
             Size = new Size(1009, 448);
             Load += OrderAddFrame_Load;

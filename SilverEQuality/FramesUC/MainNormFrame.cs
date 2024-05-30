@@ -13,6 +13,8 @@ namespace SilverEQuality.FramesUC
 {
     public partial class MainNormFrame : UserControl
     {
+        private NormFrame normFrame = new NormFrame();
+        private DocumentsFrame docsFrame = new DocumentsFrame();
         public MainNormFrame()
         {
             InitializeComponent();
@@ -28,16 +30,19 @@ namespace SilverEQuality.FramesUC
                 case 1:
                     buttonNormView.BackColor = Color.White;
                     buttonNormView.ForeColor = Color.SteelBlue;
-                    var normFrame = new NormFrame();
+                    normFrame.Size = panelBody.Size;
                     normFrame.Parent = panelBody;
+
                     buttonDocuments.BackColor = Color.SteelBlue;
                     buttonDocuments.ForeColor = Color.White;
                     break;
                 case 2:
                     buttonDocuments.BackColor = Color.White;
                     buttonDocuments.ForeColor = Color.SteelBlue;
-                    var docsFrame = new DocumentsFrame();
+
+                    docsFrame.Size = panelBody.Size;
                     docsFrame.Parent = panelBody;
+
                     buttonNormView.BackColor = Color.SteelBlue;
                     buttonNormView.ForeColor = Color.White;
                     break;
@@ -55,6 +60,21 @@ namespace SilverEQuality.FramesUC
         private void buttonDocuments_Click(object sender, EventArgs e)
         {
             FrameOutput(2);
+        }
+
+        private void MainNormFrame_Resize(object sender, EventArgs e)
+        {
+            if (MainForm.isMenuExpanded)
+            {
+                normFrame.Width += 10;
+                docsFrame.Width += 10;
+
+            }
+            else if (!MainForm.isMenuExpanded)
+            {
+                normFrame.Width -= 10;
+                docsFrame.Width -= 10;
+            }
         }
     }
 }

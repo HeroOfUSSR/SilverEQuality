@@ -165,6 +165,7 @@
             Name = "OrderFrame";
             Size = new Size(1009, 448);
             Load += OrderFrame_Load;
+            Resize += OrderFrame_Resize;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

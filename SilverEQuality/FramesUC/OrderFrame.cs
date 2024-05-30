@@ -94,7 +94,12 @@ namespace SilverEQuality.Forms
 
                 foreach (var order in orders)
                 {
+
                     var orderView = new OrderView(order);
+                    if (this.Size == MinimumSize)
+                    {
+                        orderView.Width = MinimumSize.Width;
+                    }
                     orderView.Parent = flowLayoutPanelOrder;
                 }
             }
@@ -167,6 +172,11 @@ namespace SilverEQuality.Forms
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
             Filter();
+        }
+
+        private void OrderFrame_Resize(object sender, EventArgs e)
+        {
+            Sort();
         }
     }
 }

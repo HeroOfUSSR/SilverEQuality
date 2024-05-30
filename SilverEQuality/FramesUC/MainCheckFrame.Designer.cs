@@ -93,8 +93,11 @@
             BackColor = Color.White;
             Controls.Add(panelBody);
             Controls.Add(panel2);
+            MaximumSize = new Size(1009, 472);
+            MinimumSize = new Size(841, 472);
             Name = "MainCheckFrame";
             Size = new Size(1009, 472);
+            Resize += MainCheckFrame_Resize;
             panel2.ResumeLayout(false);
             ResumeLayout(false);
         }

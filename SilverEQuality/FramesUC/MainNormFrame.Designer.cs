@@ -92,8 +92,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelBody);
             Controls.Add(panel2);
+            MaximumSize = new Size(1009, 472);
+            MinimumSize = new Size(841, 472);
             Name = "MainNormFrame";
             Size = new Size(1009, 472);
+            Resize += MainNormFrame_Resize;
             panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
