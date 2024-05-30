@@ -16,6 +16,7 @@ namespace SilverEQuality.FramesUC
         public MainNormFrame()
         {
             InitializeComponent();
+            FrameOutput(1);
         }
 
         private void FrameOutput(int buttonNumber)
@@ -35,7 +36,7 @@ namespace SilverEQuality.FramesUC
                 case 2:
                     buttonDocuments.BackColor = Color.White;
                     buttonDocuments.ForeColor = Color.SteelBlue;
-                    var docsFrame = new GraphFrame();
+                    var docsFrame = new DocumentsFrame();
                     docsFrame.Parent = panelBody;
                     buttonNormView.BackColor = Color.SteelBlue;
                     buttonNormView.ForeColor = Color.White;

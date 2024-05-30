@@ -34,8 +34,8 @@
             buttonExit = new Button();
             pictureBox1 = new PictureBox();
             buttonOK = new Button();
-            labelErrorMes = new Label();
             buttonCancel = new Button();
+            textBoxNotification = new TextBox();
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -124,16 +124,6 @@
             buttonOK.UseVisualStyleBackColor = false;
             buttonOK.Click += buttonOK_Click;
             // 
-            // labelErrorMes
-            // 
-            labelErrorMes.AutoSize = true;
-            labelErrorMes.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelErrorMes.Location = new Point(37, 58);
-            labelErrorMes.Name = "labelErrorMes";
-            labelErrorMes.Size = new Size(86, 19);
-            labelErrorMes.TabIndex = 4;
-            labelErrorMes.Text = "Ошибка!";
-            // 
             // buttonCancel
             // 
             buttonCancel.BackColor = SystemColors.ActiveBorder;
@@ -151,13 +141,25 @@
             buttonCancel.Visible = false;
             buttonCancel.Click += buttonCancel_Click;
             // 
+            // textBoxNotification
+            // 
+            textBoxNotification.BorderStyle = BorderStyle.None;
+            textBoxNotification.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxNotification.Location = new Point(12, 46);
+            textBoxNotification.Multiline = true;
+            textBoxNotification.Name = "textBoxNotification";
+            textBoxNotification.ReadOnly = true;
+            textBoxNotification.Size = new Size(400, 50);
+            textBoxNotification.TabIndex = 6;
+            textBoxNotification.Text = "Сообщение об ошибке";
+            // 
             // CustomMessageBox
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(424, 158);
+            Controls.Add(textBoxNotification);
             Controls.Add(buttonCancel);
-            Controls.Add(labelErrorMes);
             Controls.Add(buttonOK);
             Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.None;
@@ -179,7 +181,7 @@
         private Button buttonExit;
         private PictureBox pictureBox1;
         private Button buttonOK;
-        private Label labelErrorMes;
         private Button buttonCancel;
+        private TextBox textBoxNotification;
     }
 }

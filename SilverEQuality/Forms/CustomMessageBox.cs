@@ -34,7 +34,7 @@ namespace SilverEQuality.MessageBoxes
 
         private void ChangeMessageText(string textMessage)
         {
-            labelErrorMes.Text = textMessage;
+            textBoxNotification.Text = textMessage;
         }
 
         private void buttonOK_Click(object sender, EventArgs e)

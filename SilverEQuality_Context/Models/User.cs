@@ -22,6 +22,8 @@ namespace SilverEQuality_Context.Models
         public string? LoginUser { get; set; }
         public string? PasswordUser { get; set; }
         public byte[]? AvatarUser { get; set; }
+        public bool AvailableUser { get; set; }
+
 
         public virtual Department? DepartmentUserNavigation { get; set; }
         public virtual Role RoleUserNavigation { get; set; } = null!;

@@ -8,6 +8,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +18,9 @@ namespace SilverEQuality.Forms
 {
     public partial class CommentForm : Form
     {
+        public bool isMouseDown;
+        public Point startPoint;
+
         private Order commentOrder;
         public CommentForm(Order order)
         {
@@ -72,17 +77,170 @@ namespace SilverEQuality.Forms
                 db.Comments.Add(newComment);
                 db.SaveChanges();
 
-                CustomMessageBox successComment = new CustomMessageBox("Комментарий добавлен", false);
-                successComment.ShowDialog();
-
+                if (checkBoxSendEmail.Checked == true)
+                {
+                    SendEmail();
+                }
+                else
+                {
+                    CustomMessageBox successComment = new CustomMessageBox("Комментарий добавлен", false);
+                    successComment.ShowDialog();
+                }
             }
         }
 
-        private void SendEmail(string messageTest)
+        private void SendEmail()
         {
-            string smtpServer = "smtp.mail.ru";
-            int smtpPort = 587;
-            string smtpUsername = "alexey_ivanov04@mail.ru";
+            using (var db = new SilverEQContext(DBHelper.Option()))
+            {
+                var recipients = db.Users.Where(x => x.RoleUser == 3).ToList();
+
+                foreach (var recipient in recipients)
+                {
+                    if (recipient.AvailableUser == true)
+                    {
+                        string smtpServer = "smtp.mail.ru";
+                        int smtpPort = 587;
+                        string smtpUsername = "arhangel19960530@mail.ru";
+                        string smtpPassword = "8kuupgQFpGjKF2XwbbPs";
+
+                        using (SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort))
+                        {
+                            smtpClient.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
+                            smtpClient.EnableSsl = true;
+
+                            using (MailMessage mailMessage = new MailMessage())
+                            {
+                                mailMessage.From = new MailAddress(smtpUsername, "SilverEQualityAPP");
+
+
+                                mailMessage.To.Add(recipient.EmailUser);
+                                mailMessage.Subject = $"Комментарий по заказу №{commentOrder.IdOrder}";
+                                mailMessage.Body = textBoxComment.Text;
+
+                                try
+                                {
+                                    smtpClient.Send(mailMessage);
+                                }
+                                catch (Exception ex)
+                                {
+                                    CustomMessageBox errorMail = new CustomMessageBox("Ошибка отправки сообщения", false);
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            
+                //using (var db = new SilverEQContext(DBHelper.Option()))
+                //{
+                //    var recipients = db.Users.Where(x => x.RoleUser == 3).ToList();
+
+                //    foreach (var recipient in recipients)
+                //    {
+                //        var mailProvider = recipient.EmailUser.Split("@");
+
+                //        if (recipient.AvailableUser == true && mailProvider[1] == "mail.ru")
+                //        {
+                //            string smtpServer = "smtp.mail.ru";
+                //            int smtpPort = 587;
+                //            string smtpUsername = "arhangel19960530@mail.ru";
+                //            string smtpPassword = "8kuupgQFpGjKF2XwbbPs";
+
+                //            using (SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort))
+                //            {
+                //                smtpClient.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
+                //                smtpClient.EnableSsl = true;
+
+                //                using (MailMessage mailMessage = new MailMessage())
+                //                {
+                //                    mailMessage.From = new MailAddress(smtpUsername, "SilverEQualityAPP");
+
+
+                //                    mailMessage.To.Add(recipient.EmailUser);
+                //                    mailMessage.Subject = $"Комментарий по заказу №{commentOrder.IdOrder}";
+                //                    mailMessage.Body = textBoxComment.Text;
+
+                //                    try
+                //                    {
+                //                        smtpClient.Send(mailMessage);
+                //                    }
+                //                    catch (Exception ex)
+                //                    {
+                //                        CustomMessageBox errorMail = new CustomMessageBox("Ошибка отправки сообщения", false);
+                //                    }
+                //                }
+                //            }
+
+                //        }
+                //        else if (recipient.AvailableUser == true && mailProvider[1] == "gmail.com")
+                //        {
+                //            string fromMail = "alexey.ivanov.ae049@gmail.com";
+                //            string fromPassword = "wnvl amle jheb kwyz";
+
+                //            using (MailMessage gmailMessage = new MailMessage())
+                //            {
+                //                gmailMessage.From = new MailAddress(fromMail, "SilverEQualityAPP");
+                //                gmailMessage.Subject = $"Комментарий по заказу №{commentOrder.IdOrder}";
+                //                gmailMessage.To.Add(new MailAddress(recipient.EmailUser));
+                //                gmailMessage.Body = textBoxComment.Text;
+
+                //                var smtpGmailClient = new SmtpClient("smtp.gmail.com")
+                //                {
+                //                    Port = 587,
+                //                    Credentials = new NetworkCredential(fromMail, fromPassword),
+                //                    EnableSsl = true,
+                //                };
+
+                //                smtpGmailClient.Send(gmailMessage);
+
+                //            }
+                //        }
+                //    }
+                //}
+            }
+                    //else
+                    //{
+                    //    string[] initials = recipient.FullnameUser.Split(' ');
+                    //    CustomMessageBox unavailableUser = new CustomMessageBox($"Пользователь {initials[0]} {initials[1][0]}.{initials[2][0]}. недоступен", false);
+                    //    return;
+                    //}
+
+
+   
+
+        private void panelHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            isMouseDown = true;
+            startPoint = new Point(e.X, e.Y);
+        }
+
+        private void panelHeader_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMouseDown)
+            {
+                Point p = PointToScreen(e.Location);
+                this.Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void panelHeader_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDown = false;
+
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonHide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
         }
     }
 }

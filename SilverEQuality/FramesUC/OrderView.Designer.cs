@@ -97,7 +97,7 @@
             buttonMore.FlatStyle = FlatStyle.Flat;
             buttonMore.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonMore.ForeColor = SystemColors.ControlLightLight;
-            buttonMore.Location = new Point(0, 262);
+            buttonMore.Location = new Point(0, 110);
             buttonMore.Name = "buttonMore";
             buttonMore.Size = new Size(130, 36);
             buttonMore.TabIndex = 4;
@@ -114,9 +114,9 @@
             // 
             panel1.Controls.Add(buttonMore);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(848, 0);
+            panel1.Location = new Point(348, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(130, 298);
+            panel1.Size = new Size(130, 146);
             panel1.TabIndex = 5;
             // 
             // panel2
@@ -128,7 +128,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(158, 298);
+            panel2.Size = new Size(158, 146);
             panel2.TabIndex = 6;
             // 
             // buttonComments
@@ -214,11 +214,11 @@
             flowLayoutPanelOrderParts.AutoScroll = true;
             flowLayoutPanelOrderParts.Dock = DockStyle.Right;
             flowLayoutPanelOrderParts.Enabled = false;
-            flowLayoutPanelOrderParts.Location = new Point(838, 0);
+            flowLayoutPanelOrderParts.Location = new Point(338, 0);
             flowLayoutPanelOrderParts.MaximumSize = new Size(358, 298);
             flowLayoutPanelOrderParts.MinimumSize = new Size(10, 146);
             flowLayoutPanelOrderParts.Name = "flowLayoutPanelOrderParts";
-            flowLayoutPanelOrderParts.Size = new Size(10, 298);
+            flowLayoutPanelOrderParts.Size = new Size(10, 146);
             flowLayoutPanelOrderParts.TabIndex = 7;
             // 
             // OrderView
@@ -238,7 +238,7 @@
             MaximumSize = new Size(980, 300);
             MinimumSize = new Size(480, 148);
             Name = "OrderView";
-            Size = new Size(978, 298);
+            Size = new Size(478, 146);
             Load += OrderView_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).EndInit();
             panel1.ResumeLayout(false);

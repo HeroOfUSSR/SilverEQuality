@@ -34,6 +34,7 @@
             buttonExit = new Button();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
+            checkBoxSendEmail = new CheckBox();
             labelSymbolsLeft = new Label();
             buttonDone = new Button();
             textBoxComment = new TextBox();
@@ -55,6 +56,9 @@
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(841, 39);
             panelHeader.TabIndex = 3;
+            panelHeader.MouseDown += panelHeader_MouseDown;
+            panelHeader.MouseMove += panelHeader_MouseMove;
+            panelHeader.MouseUp += panelHeader_MouseUp;
             // 
             // labelTitle
             // 
@@ -80,6 +84,7 @@
             buttonHide.TabIndex = 0;
             buttonHide.Text = "_";
             buttonHide.UseVisualStyleBackColor = true;
+            buttonHide.Click += buttonHide_Click;
             // 
             // buttonExit
             // 
@@ -94,6 +99,7 @@
             buttonExit.TabIndex = 1;
             buttonExit.Text = "X";
             buttonExit.UseVisualStyleBackColor = true;
+            buttonExit.Click += buttonExit_Click;
             // 
             // pictureBox1
             // 
@@ -109,6 +115,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(checkBoxSendEmail);
             panel1.Controls.Add(labelSymbolsLeft);
             panel1.Controls.Add(buttonDone);
             panel1.Controls.Add(textBoxComment);
@@ -117,6 +124,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(841, 172);
             panel1.TabIndex = 4;
+            // 
+            // checkBoxSendEmail
+            // 
+            checkBoxSendEmail.AutoSize = true;
+            checkBoxSendEmail.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBoxSendEmail.Location = new Point(243, 70);
+            checkBoxSendEmail.Name = "checkBoxSendEmail";
+            checkBoxSendEmail.Size = new Size(336, 23);
+            checkBoxSendEmail.TabIndex = 7;
+            checkBoxSendEmail.Text = "Отправить сообщение на почту";
+            checkBoxSendEmail.UseVisualStyleBackColor = true;
             // 
             // labelSymbolsLeft
             // 
@@ -196,5 +214,6 @@
         private TextBox textBoxComment;
         private Label labelSymbolsLeft;
         private Button buttonDone;
+        private CheckBox checkBoxSendEmail;
     }
 }

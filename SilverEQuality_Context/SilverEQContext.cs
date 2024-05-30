@@ -477,6 +477,10 @@ namespace SilverEQuality_Context
                     .HasColumnType("varbinary")
                     .HasColumnName("Avatar_User");
 
+                entity.Property(e => e.AvailableUser)
+                    .HasColumnType("bit")
+                    .HasColumnName("Available_User");
+
                 entity.Property(e => e.RoleUser).HasColumnName("Role_User");
 
                 entity.HasOne(d => d.DepartmentUserNavigation)

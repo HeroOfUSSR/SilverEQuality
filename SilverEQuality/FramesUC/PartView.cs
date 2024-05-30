@@ -25,7 +25,6 @@ namespace SilverEQuality.FramesUC
 
         public PartView(Part part) : this()
         {
-            InitializeComponent();
             InitView(part);
 
             labelAmount.Visible = false;

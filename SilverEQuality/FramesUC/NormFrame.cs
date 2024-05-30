@@ -16,6 +16,7 @@ namespace SilverEQuality.FramesUC
         public NormFrame()
         {
             InitializeComponent();
+            InitDatagrid();
         }
 
         private void InitDatagrid()

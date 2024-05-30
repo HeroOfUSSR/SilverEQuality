@@ -131,9 +131,12 @@ namespace SilverEQuality.Forms
             logoutMessage.ShowDialog();
             if (logoutMessage.DialogResult == DialogResult.OK)
             {
-                AuthForm authForm = new AuthForm();
-                authForm.Show();
+                var auth = Application.OpenForms[0];
+                auth.Show();
                 this.Close();
+                //AuthForm authForm = new AuthForm();
+                //authForm.Show();
+                //this.Close();
             }
         }
 
