@@ -20,8 +20,6 @@ namespace SilverEQuality.Forms
     {
         public event Action<Order> nextAddCheck;
         private Order fromOrderView;
-
-        private bool resizeView = false;
         public OrderFrame()
         {
             InitializeComponent();
@@ -31,7 +29,6 @@ namespace SilverEQuality.Forms
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
-
                 comboBoxManuf.DisplayMember = nameof(Manufacturer.NameManufacturer);
                 comboBoxManuf.ValueMember = nameof(Manufacturer.IdManufacturer);
                 comboBoxPriority.DisplayMember = nameof(Priority.TitlePriority);
@@ -101,6 +98,7 @@ namespace SilverEQuality.Forms
 
                 foreach (var order in orders)
                 {
+                    
 
                     var orderView = new OrderView(order);
 
@@ -199,6 +197,11 @@ namespace SilverEQuality.Forms
             {
                 Sort();
             }
+        }
+
+        private void OrderFrame_ParentChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

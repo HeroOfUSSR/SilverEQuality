@@ -87,10 +87,11 @@ namespace SilverEQuality.FramesUC
         {
             if (isExpanding)
             {
-                Width += 15;
+                if (!MainForm.isMenuExpanded) Width += 15;
                 Height += 15;
 
-                if (Width == MaximumSize.Width && Height == MaximumSize.Height)
+                if (Width == MaximumSize.Width && Height == MaximumSize.Height
+                    || Height == MaximumSize.Height && MainForm.isMenuExpanded)
                 {
                     isExpanding = false;
                     timerExpand.Stop();
@@ -106,9 +107,10 @@ namespace SilverEQuality.FramesUC
             }
             else
             {
-                Width -= 15;
+                if (!MainForm.isMenuExpanded) Width -= 15;
                 Height -= 15;
-                if (Width == MinimumSize.Width && Height == MinimumSize.Height)
+                if (Width == MinimumSize.Width && Height == MinimumSize.Height
+                    || Height == MinimumSize.Height && MainForm.isMenuExpanded)
                 {
                     isExpanding = true;
                     timerExpand.Stop();

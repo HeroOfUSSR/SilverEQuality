@@ -7,7 +7,7 @@ namespace SilverEQuality_Context.Models
     {
         public int IdCheck { get; set; }
         public string? NumberCheck { get; set; }
-        public DateTime? DateCheck { get; set; }
+        public DateTime DateCheck { get; set; }
         public int DepartmentCheck { get; set; }
         public decimal? NormCheck { get; set; }
         public int SilverTypeCheck { get; set; }

@@ -66,8 +66,8 @@ namespace SilverEQuality.FramesUC
                     buttonGraphs.ForeColor = Color.White;
                     break;
                 case 3:
-                    buttonGrid.BackColor = Color.White;
-                    buttonGrid.ForeColor = Color.SteelBlue;
+                    buttonGraphs.BackColor = Color.White;
+                    buttonGraphs.ForeColor = Color.SteelBlue;
 
                     graphFrame.Size = panelBody.Size;
                     graphFrame.Dock = DockStyle.Fill;
@@ -75,8 +75,8 @@ namespace SilverEQuality.FramesUC
 
                     buttonAdd.BackColor = Color.SteelBlue;
                     buttonAdd.ForeColor = Color.White;
-                    buttonGraphs.BackColor = Color.SteelBlue;
-                    buttonGraphs.ForeColor = Color.White;
+                    buttonGrid.BackColor = Color.SteelBlue;
+                    buttonGrid.ForeColor = Color.White;
                     break;
                 default:
                     break;

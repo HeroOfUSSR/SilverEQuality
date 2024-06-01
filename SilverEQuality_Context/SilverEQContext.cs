@@ -90,7 +90,7 @@ namespace SilverEQuality_Context
                     .HasForeignKey(d => d.OrderCheck)
                     .HasConstraintName("FK_Check_Order");
 
-                entity.HasOne(d => d.DecimalCheckNavigation)
+                entity.HasOne(d => d.DepartmentCheckNavigation)
                     .WithMany(p => p.Checks)
                     .HasForeignKey(d => d.DepartmentCheck)
                     .HasConstraintName("FK_Check_Department");
