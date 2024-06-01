@@ -1,5 +1,6 @@
 ﻿using SilverEQuality.FramesUC;
 using SilverEQuality.MessageBoxes;
+using SilverEQuality_Context.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,8 @@ namespace SilverEQuality.Forms
         private MainCheckFrame checkFrame = new MainCheckFrame();
         private MainOrderFrame orderFrame = new MainOrderFrame();
         private MainNormFrame normFrame = new MainNormFrame();
+        private MainMaterialFrame materialFrame = new MainMaterialFrame();
+
         public MainForm()
         {
             InitializeComponent();
@@ -35,9 +38,6 @@ namespace SilverEQuality.Forms
             if (isMenuExpanded)
             {
                 slideBar.Width -= 10;
-                
-
-
                 if (slideBar.Width == slideBar.MinimumSize.Width)
                 {
                     isMenuExpanded = false;
@@ -47,7 +47,7 @@ namespace SilverEQuality.Forms
             else
             {
                 slideBar.Width += 10;
-               
+
                 if (slideBar.Width == slideBar.MaximumSize.Width)
                 {
                     isMenuExpanded = true;
@@ -64,22 +64,47 @@ namespace SilverEQuality.Forms
             {
                 case 1:
                     profileFrame.Size = panelFrame.Size;
+                    profileFrame.Dock = DockStyle.Fill;
                     profileFrame.Parent = panelFrame;
                     break;
                 case 2:
                     checkFrame.Size = panelFrame.Size;
+                    checkFrame.Dock = DockStyle.Fill;
                     checkFrame.Parent = panelFrame;
                     break;
                 case 3:
                     orderFrame.Size = panelFrame.Size;
+                    orderFrame.Dock = DockStyle.Fill;
                     orderFrame.Parent = panelFrame;
+
+                    orderFrame.mainAddCheck += FinishOrder;
+
                     break;
                 case 4:
                     normFrame.Size = panelFrame.Size;
+                    normFrame.Dock = DockStyle.Fill;
                     normFrame.Parent = panelFrame;
+                    break;
+                case 5:
+                    materialFrame.Size = panelFrame.Size;
+                    materialFrame.Dock = DockStyle.Fill;
+                    materialFrame.Parent = panelFrame;
                     break;
 
             }
+        }
+
+        private void FinishOrder(Order finishOrder)
+        {
+            panelFrame.Controls.Clear();
+
+            MainCheckFrame finishCheckFrame = new MainCheckFrame(finishOrder);
+
+            finishCheckFrame.Size = panelFrame.Size;
+            finishCheckFrame.Dock = DockStyle.Fill;
+            finishCheckFrame.Parent = panelFrame;
+
+
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
@@ -142,8 +167,9 @@ namespace SilverEQuality.Forms
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
+            var auth = Application.OpenForms[0];
+            auth.Close();
             this.Close();
-
         }
 
         private void buttonHide_Click(object sender, EventArgs e)
@@ -160,6 +186,7 @@ namespace SilverEQuality.Forms
 
         private void slideBar_Resize(object sender, EventArgs e)
         {
+            /*
             if (isMenuExpanded)
             {
                 profileFrame.Width += 10;
@@ -175,6 +202,13 @@ namespace SilverEQuality.Forms
                 normFrame.Width -= 10;
 
             }
+            */
+        }
+
+        private void buttonMaterials_Click(object sender, EventArgs e)
+        {
+            menuButton = 5;
+            FrameOutput();
         }
     }
 }

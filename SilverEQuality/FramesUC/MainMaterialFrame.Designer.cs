@@ -1,6 +1,6 @@
 ﻿namespace SilverEQuality.FramesUC
 {
-    partial class MainMaterialForm
+    partial class MainMaterialFrame
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -31,7 +31,7 @@
             panel2 = new Panel();
             buttonRequests = new Button();
             buttonView = new Button();
-            panel1 = new Panel();
+            panelBody = new Panel();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,6 +60,7 @@
             buttonRequests.TabIndex = 5;
             buttonRequests.Text = "Запросы";
             buttonRequests.UseVisualStyleBackColor = false;
+            buttonRequests.Click += buttonRequests_Click;
             // 
             // buttonView
             // 
@@ -75,24 +76,25 @@
             buttonView.TabIndex = 4;
             buttonView.Text = "Список";
             buttonView.UseVisualStyleBackColor = false;
+            buttonView.Click += buttonView_Click;
             // 
-            // panel1
+            // panelBody
             // 
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 24);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1009, 448);
-            panel1.TabIndex = 5;
+            panelBody.Dock = DockStyle.Fill;
+            panelBody.Location = new Point(0, 24);
+            panelBody.Name = "panelBody";
+            panelBody.Size = new Size(1009, 448);
+            panelBody.TabIndex = 5;
             // 
-            // MainMaterialForm
+            // MainMaterialFrame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel1);
+            Controls.Add(panelBody);
             Controls.Add(panel2);
             MaximumSize = new Size(1009, 472);
             MinimumSize = new Size(841, 472);
-            Name = "MainMaterialForm";
+            Name = "MainMaterialFrame";
             Size = new Size(1009, 472);
             panel2.ResumeLayout(false);
             ResumeLayout(false);
@@ -103,6 +105,6 @@
         private Panel panel2;
         private Button buttonRequests;
         private Button buttonView;
-        private Panel panel1;
+        private Panel panelBody;
     }
 }

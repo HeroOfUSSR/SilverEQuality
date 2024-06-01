@@ -18,7 +18,10 @@ namespace SilverEQuality.Forms
 {
     public partial class OrderFrame : UserControl
     {
-        private EventHandler editOrder;
+        public event Action<Order> nextAddCheck;
+        private Order fromOrderView;
+
+        private bool resizeView = false;
         public OrderFrame()
         {
             InitializeComponent();
@@ -44,8 +47,6 @@ namespace SilverEQuality.Forms
 
                 comboBoxSortDate.Items.Add(new { Text = "Самые новые", Value = 0 });
                 comboBoxSortDate.Items.Add(new { Text = "Самые старые", Value = 1 });
-                //comboBoxSortDate.Items.Add(new { Text = "report C", Value = "reportC" });
-                //comboBoxSortDate.Items.Add(new { Text = "report D", Value = "reportD" });
 
                 comboBoxManuf.Items.Insert(0, new Manufacturer
                 {
@@ -80,13 +81,19 @@ namespace SilverEQuality.Forms
 
                 var orders = db.Orders.Include(x => x.ManufacturerOrderNavigation).ToList();
 
-                switch (comboBoxManuf.SelectedValue)
+                switch (comboBoxManuf.SelectedIndex)
                 {
                     case 0:
-                        orders = db.Orders.OrderBy(x => x.DateOrder).Include(x => x.ManufacturerOrderNavigation).ToList();
+                        orders = db.Orders.OrderBy(x => x.DateOrder)
+                            .Include(x => x.ManufacturerOrderNavigation)
+                            .Include(x => x.StatusOrderNavigation)
+                            .Include(x => x.PriorityOrderNavigation).ToList();
                         break;
                     case 1:
-                        orders = db.Orders.OrderByDescending(x => x.DateOrder).Include(x => x.ManufacturerOrderNavigation).ToList();
+                        orders = db.Orders.OrderByDescending(x => x.DateOrder)
+                            .Include(x => x.ManufacturerOrderNavigation)
+                            .Include(x => x.StatusOrderNavigation)
+                            .Include(x => x.PriorityOrderNavigation).ToList();
                         break;
                     default:
                         break;
@@ -96,14 +103,26 @@ namespace SilverEQuality.Forms
                 {
 
                     var orderView = new OrderView(order);
-                    if (this.Size == MinimumSize)
+
+                    if (MainForm.isMenuExpanded)
                     {
-                        orderView.Width = MinimumSize.Width;
+                        orderView.Width = orderView.MinimumSize.Width;
                     }
+                    else if (!MainForm.isMenuExpanded)
+                    {
+                        orderView.Width = MinimumSize.Width - 20;
+                    }
+
                     orderView.Parent = flowLayoutPanelOrder;
+                    orderView.createCheck += KeepGoing;
                 }
             }
 
+        }
+
+        private void KeepGoing(Order fromOrderView)
+        {
+            nextAddCheck?.Invoke(fromOrderView);
         }
 
         private void Filter()
@@ -176,7 +195,10 @@ namespace SilverEQuality.Forms
 
         private void OrderFrame_Resize(object sender, EventArgs e)
         {
-            Sort();
+            if (this.Size == MinimumSize || this.Size == MaximumSize)
+            {
+                Sort();
+            }
         }
     }
 }

@@ -138,6 +138,7 @@
             buttonEdit.TabIndex = 29;
             buttonEdit.Text = "Редактировать";
             buttonEdit.UseVisualStyleBackColor = false;
+            buttonEdit.Visible = false;
             // 
             // buttonDelete
             // 
@@ -154,6 +155,7 @@
             buttonDelete.TabIndex = 28;
             buttonDelete.Text = "Удалить";
             buttonDelete.UseVisualStyleBackColor = false;
+            buttonDelete.Visible = false;
             // 
             // label4
             // 

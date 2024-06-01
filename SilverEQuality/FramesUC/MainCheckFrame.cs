@@ -1,4 +1,5 @@
 ﻿using SilverEQuality.Forms;
+using SilverEQuality_Context.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,21 @@ namespace SilverEQuality.FramesUC
     {
         private CheckFrame checkFrame = new CheckFrame();
         private GraphFrame graphFrame = new GraphFrame();
+        private CheckEditFrame checkEditFrame = new CheckEditFrame();
+
         public MainCheckFrame()
         {
             InitializeComponent();
             FrameOutput(1);
+        }
+        public MainCheckFrame(Order order) : this()
+        {
+            panelBody.Controls.Clear();
+            CheckEditFrame finishCheck = new CheckEditFrame(order);
+
+            finishCheck.Size = panelBody.Size;
+            finishCheck.Dock = DockStyle.Fill;
+            finishCheck.Parent = panelBody;
         }
 
         private void FrameOutput(int buttonNumber)
@@ -30,18 +42,41 @@ namespace SilverEQuality.FramesUC
                 case 1:
                     buttonGrid.BackColor = Color.White;
                     buttonGrid.ForeColor = Color.SteelBlue;
+
                     checkFrame.Size = panelBody.Size;
+                    checkFrame.Dock = DockStyle.Fill;
                     checkFrame.Parent = panelBody;
+
+                    buttonAdd.BackColor = Color.SteelBlue;
+                    buttonAdd.ForeColor = Color.White;
                     buttonGraphs.BackColor = Color.SteelBlue;
                     buttonGraphs.ForeColor = Color.White;
                     break;
                 case 2:
-                    buttonGraphs.BackColor = Color.White;
-                    buttonGraphs.ForeColor = Color.SteelBlue;
-                    graphFrame.Size = panelBody.Size;
-                    graphFrame.Parent = panelBody;
+                    buttonAdd.BackColor = Color.White;
+                    buttonAdd.ForeColor = Color.SteelBlue;
+
+                    checkEditFrame.Size = panelBody.Size;
+                    checkEditFrame.Dock = DockStyle.Fill;
+                    checkEditFrame.Parent = panelBody;
+
                     buttonGrid.BackColor = Color.SteelBlue;
                     buttonGrid.ForeColor = Color.White;
+                    buttonGraphs.BackColor = Color.SteelBlue;
+                    buttonGraphs.ForeColor = Color.White;
+                    break;
+                case 3:
+                    buttonGrid.BackColor = Color.White;
+                    buttonGrid.ForeColor = Color.SteelBlue;
+
+                    graphFrame.Size = panelBody.Size;
+                    graphFrame.Dock = DockStyle.Fill;
+                    graphFrame.Parent = panelBody;
+
+                    buttonAdd.BackColor = Color.SteelBlue;
+                    buttonAdd.ForeColor = Color.White;
+                    buttonGraphs.BackColor = Color.SteelBlue;
+                    buttonGraphs.ForeColor = Color.White;
                     break;
                 default:
                     break;
@@ -54,13 +89,9 @@ namespace SilverEQuality.FramesUC
             FrameOutput(1);
         }
 
-        private void buttonGraphs_Click(object sender, EventArgs e)
-        {
-            FrameOutput(2);
-        }
-
         private void MainCheckFrame_Resize(object sender, EventArgs e)
         {
+            /*
             if (MainForm.isMenuExpanded)
             {
                 checkFrame.Width += 10;
@@ -72,6 +103,17 @@ namespace SilverEQuality.FramesUC
                 checkFrame.Width -= 10;
                 graphFrame.Width -= 10;
             }
+            */
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            FrameOutput(2);
+        }
+
+        private void buttonGraphs_Click(object sender, EventArgs e)
+        {
+            FrameOutput(3);
         }
     }
 }

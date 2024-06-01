@@ -46,7 +46,7 @@
             panelNorms = new Panel();
             buttonNorms = new Button();
             panel1 = new Panel();
-            button1 = new Button();
+            buttonMaterials = new Button();
             panel2 = new Panel();
             button2 = new Button();
             panelLogout = new Panel();
@@ -283,27 +283,28 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(buttonMaterials);
             panel1.Location = new Point(3, 273);
             panel1.Name = "panel1";
             panel1.Size = new Size(211, 49);
             panel1.TabIndex = 6;
             // 
-            // button1
+            // buttonMaterials
             // 
-            button1.BackColor = Color.Transparent;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Image = Properties.Resources.silver;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(1, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(208, 41);
-            button1.TabIndex = 5;
-            button1.Text = "Материалы";
-            button1.UseVisualStyleBackColor = false;
+            buttonMaterials.BackColor = Color.Transparent;
+            buttonMaterials.FlatAppearance.BorderSize = 0;
+            buttonMaterials.FlatStyle = FlatStyle.Flat;
+            buttonMaterials.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonMaterials.ForeColor = SystemColors.ControlLightLight;
+            buttonMaterials.Image = Properties.Resources.silver;
+            buttonMaterials.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonMaterials.Location = new Point(1, 4);
+            buttonMaterials.Name = "buttonMaterials";
+            buttonMaterials.Size = new Size(208, 41);
+            buttonMaterials.TabIndex = 5;
+            buttonMaterials.Text = "Материалы";
+            buttonMaterials.UseVisualStyleBackColor = false;
+            buttonMaterials.Click += buttonMaterials_Click;
             // 
             // panel2
             // 
@@ -326,7 +327,7 @@
             button2.Name = "button2";
             button2.Size = new Size(208, 41);
             button2.TabIndex = 5;
-            button2.Text = "Нормы";
+            button2.Text = "PLACEHOLDER";
             button2.UseVisualStyleBackColor = false;
             // 
             // panelLogout
@@ -416,7 +417,7 @@
         private Panel panelNorms;
         private Button buttonNorms;
         private Panel panel1;
-        private Button button1;
+        private Button buttonMaterials;
         private Panel panel2;
         private Button button2;
         private Panel panelLogout;

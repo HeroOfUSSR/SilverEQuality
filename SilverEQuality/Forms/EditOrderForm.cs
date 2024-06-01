@@ -68,7 +68,7 @@ namespace SilverEQuality.Forms
             labelTitle.Text = $"Изменение заказа №{editOrder.IdOrder}";
             buttonDone.Text = "Редактировать";
 
-            var index = comboBoxPrio.FindString(editOrder.StatusOrderNavigation.TitleStatus.ToString());
+            var index = comboBoxStatus.FindString(editOrder.StatusOrderNavigation.TitleStatus.ToString());
 
             comboBoxStatus.SelectedIndex = index;
 
@@ -95,7 +95,7 @@ namespace SilverEQuality.Forms
 
                     editOrder.DateEndOrder = dateTimePickerEnd.Value;
                     editOrder.StatusOrder = ((Status)comboBoxStatus.SelectedItem).IdStatus;
-                    editOrder.PriorityOrder = ((Priority)comboBoxPrio.SelectedItem).IdPriority;
+                    if (comboBoxPrio.SelectedItem != null) editOrder.PriorityOrder = ((Priority)comboBoxPrio.SelectedItem).IdPriority;
                     editOrder.DescOrder = textBoxDesc.Text;
                     editOrder.AppointedOrder = ((User)comboBoxAppointed.SelectedItem).IdUser;
                     editOrder.PaymentOrder = Convert.ToDecimal(textBoxPayment.Text);

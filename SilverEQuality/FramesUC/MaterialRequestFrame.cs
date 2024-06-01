@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SilverEQuality.FramesUC
 {
-    public partial class MaterialForm : UserControl
+    public partial class MaterialRequestFrame : UserControl
     {
-        public MaterialForm()
+        public MaterialRequestFrame()
         {
             InitializeComponent();
         }

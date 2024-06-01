@@ -30,6 +30,7 @@
         {
             panel2 = new Panel();
             buttonGraphs = new Button();
+            buttonAdd = new Button();
             buttonGrid = new Button();
             panelBody = new Panel();
             panel2.SuspendLayout();
@@ -39,6 +40,7 @@
             // 
             panel2.BackColor = Color.SteelBlue;
             panel2.Controls.Add(buttonGraphs);
+            panel2.Controls.Add(buttonAdd);
             panel2.Controls.Add(buttonGrid);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
@@ -54,13 +56,29 @@
             buttonGraphs.FlatStyle = FlatStyle.Flat;
             buttonGraphs.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonGraphs.ForeColor = SystemColors.ControlLightLight;
-            buttonGraphs.Location = new Point(121, 0);
+            buttonGraphs.Location = new Point(242, 0);
             buttonGraphs.Name = "buttonGraphs";
             buttonGraphs.Size = new Size(121, 24);
-            buttonGraphs.TabIndex = 5;
+            buttonGraphs.TabIndex = 6;
             buttonGraphs.Text = "Графики";
             buttonGraphs.UseVisualStyleBackColor = false;
             buttonGraphs.Click += buttonGraphs_Click;
+            // 
+            // buttonAdd
+            // 
+            buttonAdd.BackColor = Color.SteelBlue;
+            buttonAdd.Dock = DockStyle.Left;
+            buttonAdd.FlatAppearance.BorderSize = 0;
+            buttonAdd.FlatStyle = FlatStyle.Flat;
+            buttonAdd.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonAdd.ForeColor = SystemColors.ControlLightLight;
+            buttonAdd.Location = new Point(121, 0);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(121, 24);
+            buttonAdd.TabIndex = 5;
+            buttonAdd.Text = "Добавление";
+            buttonAdd.UseVisualStyleBackColor = false;
+            buttonAdd.Click += buttonAdd_Click;
             // 
             // buttonGrid
             // 
@@ -105,8 +123,9 @@
         #endregion
 
         private Panel panel2;
-        private Button buttonGraphs;
+        private Button buttonAdd;
         private Button buttonGrid;
         private Panel panelBody;
+        private Button buttonGraphs;
     }
 }

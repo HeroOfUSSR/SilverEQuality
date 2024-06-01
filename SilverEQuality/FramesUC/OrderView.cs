@@ -20,7 +20,7 @@ namespace SilverEQuality.FramesUC
         public readonly Order orderView;
         bool isExpanding = true;
 
-        public event Action<Order> editingOrder;
+        public event Action<Order> createCheck;
 
         public OrderAddFrame orderEditFrame;
 
@@ -61,12 +61,20 @@ namespace SilverEQuality.FramesUC
 
                 var partsInWork = db.PartNecessaries.Where(x => x.OrderNecessary == order.IdOrder).ToList();
 
-                foreach (var partInWork in partsInWork)
+                if (partsInWork.Any())
                 {
-                    var part = db.Parts.FirstOrDefault(x => x.IdPart == partInWork.PartNecessary1);
-                    PartView partView = new PartView(part, partInWork.AmountNecessary);
-                    partView.Parent = flowLayoutPanelOrderParts;
+                    foreach (var partInWork in partsInWork)
+                    {
+                        var part = db.Parts.FirstOrDefault(x => x.IdPart == partInWork.PartNecessary1);
+                        PartView partView = new PartView(part, partInWork.AmountNecessary);
+                        partView.Parent = flowLayoutPanelOrderParts;
+                    }
                 }
+                else
+                {
+                    buttonNotFound.Visible = true;
+                }
+
             }
         }
 
@@ -89,7 +97,9 @@ namespace SilverEQuality.FramesUC
                     buttonImageMan.Visible = true;
                     buttonEdit.Visible = true;
                     buttonComments.Visible = true;
+                    buttonCheck.Visible = true;
                     textBoxDesc.Visible = true;
+                    flowLayoutPanelOrderParts.Enabled = true;
                     flowLayoutPanelOrderParts.Visible = true;
                     flowLayoutPanelOrderParts.Size = MaximumSize;
                 }
@@ -104,8 +114,10 @@ namespace SilverEQuality.FramesUC
                     timerExpand.Stop();
                     buttonImageMan.Visible = false;
                     buttonEdit.Visible = false;
+                    buttonCheck.Visible = false;
                     textBoxDesc.Visible = false;
                     buttonComments.Visible = false;
+                    flowLayoutPanelOrderParts.Enabled = false;
                     flowLayoutPanelOrderParts.Visible = false;
                     flowLayoutPanelOrderParts.Size = MinimumSize;
                 }
@@ -152,6 +164,19 @@ namespace SilverEQuality.FramesUC
         {
             CommentForm commentForm = new CommentForm(orderView);
             commentForm.ShowDialog();
+        }
+
+        private void buttonCheck_Click(object sender, EventArgs e)
+        {
+            if (orderView.StatusOrderNavigation.IdStatus == 2)
+            {
+                createCheck?.Invoke(orderView);
+            }
+        }
+
+        private void OrderView_ParentChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

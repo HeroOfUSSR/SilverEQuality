@@ -30,7 +30,9 @@ namespace SilverEQuality.FramesUC
                 case 1:
                     buttonNormView.BackColor = Color.White;
                     buttonNormView.ForeColor = Color.SteelBlue;
+
                     normFrame.Size = panelBody.Size;
+                    normFrame.Dock = DockStyle.Fill;
                     normFrame.Parent = panelBody;
 
                     buttonDocuments.BackColor = Color.SteelBlue;
@@ -41,6 +43,7 @@ namespace SilverEQuality.FramesUC
                     buttonDocuments.ForeColor = Color.SteelBlue;
 
                     docsFrame.Size = panelBody.Size;
+                    docsFrame.Dock = DockStyle.Fill;
                     docsFrame.Parent = panelBody;
 
                     buttonNormView.BackColor = Color.SteelBlue;
@@ -64,6 +67,7 @@ namespace SilverEQuality.FramesUC
 
         private void MainNormFrame_Resize(object sender, EventArgs e)
         {
+            /*
             if (MainForm.isMenuExpanded)
             {
                 normFrame.Width += 10;
@@ -75,6 +79,7 @@ namespace SilverEQuality.FramesUC
                 normFrame.Width -= 10;
                 docsFrame.Width -= 10;
             }
+            */
         }
     }
 }

@@ -36,6 +36,7 @@
             buttonMore = new Button();
             timerExpand = new System.Windows.Forms.Timer(components);
             panel1 = new Panel();
+            buttonCheck = new Button();
             panel2 = new Panel();
             buttonComments = new Button();
             buttonEdit = new Button();
@@ -44,9 +45,11 @@
             textBoxDesc = new TextBox();
             labelManufacturer = new Label();
             flowLayoutPanelOrderParts = new FlowLayoutPanel();
+            buttonNotFound = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            flowLayoutPanelOrderParts.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBoxAvatar
@@ -112,12 +115,30 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(buttonCheck);
             panel1.Controls.Add(buttonMore);
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(348, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(130, 146);
             panel1.TabIndex = 5;
+            // 
+            // buttonCheck
+            // 
+            buttonCheck.BackColor = Color.SteelBlue;
+            buttonCheck.Dock = DockStyle.Bottom;
+            buttonCheck.FlatAppearance.BorderSize = 0;
+            buttonCheck.FlatStyle = FlatStyle.Flat;
+            buttonCheck.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonCheck.ForeColor = SystemColors.ControlLightLight;
+            buttonCheck.Location = new Point(0, 74);
+            buttonCheck.Name = "buttonCheck";
+            buttonCheck.Size = new Size(130, 36);
+            buttonCheck.TabIndex = 5;
+            buttonCheck.Text = "Отчёт";
+            buttonCheck.UseVisualStyleBackColor = false;
+            buttonCheck.Visible = false;
+            buttonCheck.Click += buttonCheck_Click;
             // 
             // panel2
             // 
@@ -191,35 +212,50 @@
             textBoxDesc.BackColor = Color.White;
             textBoxDesc.BorderStyle = BorderStyle.None;
             textBoxDesc.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxDesc.Location = new Point(164, 134);
+            textBoxDesc.Location = new Point(164, 146);
             textBoxDesc.Multiline = true;
             textBoxDesc.Name = "textBoxDesc";
             textBoxDesc.ReadOnly = true;
-            textBoxDesc.Size = new Size(326, 161);
+            textBoxDesc.Size = new Size(321, 149);
             textBoxDesc.TabIndex = 8;
             textBoxDesc.Text = "ОЧЕНЬ КРУТОE ОПИСАНИЕ. ТУТ КЛАССНЕНЬКИЕ ВЕЩИ ОПИСАНЫ, Например: что я сегодня покушал, где я сегодня гулял";
             // 
             // labelManufacturer
             // 
             labelManufacturer.AutoSize = true;
-            labelManufacturer.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelManufacturer.Location = new Point(164, 104);
+            labelManufacturer.Font = new Font("Lucida Console", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelManufacturer.Location = new Point(164, 123);
             labelManufacturer.Name = "labelManufacturer";
-            labelManufacturer.Size = new Size(137, 16);
+            labelManufacturer.Size = new Size(111, 14);
             labelManufacturer.TabIndex = 9;
             labelManufacturer.Text = "Производитель";
             // 
             // flowLayoutPanelOrderParts
             // 
             flowLayoutPanelOrderParts.AutoScroll = true;
+            flowLayoutPanelOrderParts.Controls.Add(buttonNotFound);
             flowLayoutPanelOrderParts.Dock = DockStyle.Right;
-            flowLayoutPanelOrderParts.Enabled = false;
             flowLayoutPanelOrderParts.Location = new Point(338, 0);
-            flowLayoutPanelOrderParts.MaximumSize = new Size(358, 298);
+            flowLayoutPanelOrderParts.MaximumSize = new Size(362, 298);
             flowLayoutPanelOrderParts.MinimumSize = new Size(10, 146);
             flowLayoutPanelOrderParts.Name = "flowLayoutPanelOrderParts";
             flowLayoutPanelOrderParts.Size = new Size(10, 146);
             flowLayoutPanelOrderParts.TabIndex = 7;
+            flowLayoutPanelOrderParts.Visible = false;
+            // 
+            // buttonNotFound
+            // 
+            buttonNotFound.Enabled = false;
+            buttonNotFound.FlatAppearance.BorderSize = 0;
+            buttonNotFound.FlatStyle = FlatStyle.Flat;
+            buttonNotFound.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonNotFound.Location = new Point(3, 3);
+            buttonNotFound.Name = "buttonNotFound";
+            buttonNotFound.Size = new Size(353, 292);
+            buttonNotFound.TabIndex = 0;
+            buttonNotFound.Text = "Детали не найдены";
+            buttonNotFound.UseVisualStyleBackColor = true;
+            buttonNotFound.Visible = false;
             // 
             // OrderView
             // 
@@ -240,9 +276,11 @@
             Name = "OrderView";
             Size = new Size(478, 146);
             Load += OrderView_Load;
+            ParentChanged += OrderView_ParentChanged;
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            flowLayoutPanelOrderParts.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -264,5 +302,7 @@
         private TextBox textBoxDesc;
         private Label labelManufacturer;
         private FlowLayoutPanel flowLayoutPanelOrderParts;
+        private Button buttonNotFound;
+        private Button buttonCheck;
     }
 }

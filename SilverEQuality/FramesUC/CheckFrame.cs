@@ -71,5 +71,17 @@ namespace SilverEQuality.Forms
         {
             InitDatagrid();
         }
+
+        private void buttonReportCreate_Click(object sender, EventArgs e)
+        {
+            if (dateTimePickerFrom.Value.ToString("d") == dateTimePickerUntil.Value.ToString("d"))
+            {
+                CustomMessageBox incorrectDate = new CustomMessageBox("Нельзя сформировать отчёт за один день", false);
+                incorrectDate.ShowDialog();
+                return;
+            }
+
+
+        }
     }
 }

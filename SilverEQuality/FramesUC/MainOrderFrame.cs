@@ -1,4 +1,5 @@
 ﻿using SilverEQuality.Forms;
+using SilverEQuality_Context.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,9 @@ namespace SilverEQuality.FramesUC
     {
         private OrderFrame orderFrame = new OrderFrame();
         private OrderAddFrame orderEditFrame = new OrderAddFrame();
+
+        public event Action<Order> mainAddCheck;
+
         public MainOrderFrame()
         {
             InitializeComponent();
@@ -31,8 +35,11 @@ namespace SilverEQuality.FramesUC
                     buttonView.BackColor = Color.White;
                     buttonView.ForeColor = Color.SteelBlue;
 
+                    orderFrame.Dock = DockStyle.Fill;
                     orderFrame.Parent = panelBody;
                     orderFrame.Size = panelBody.Size;
+
+                    orderFrame.nextAddCheck += KeepGoing;
 
                     buttonEditAdd.BackColor = Color.SteelBlue;
                     buttonEditAdd.ForeColor = Color.White;
@@ -41,6 +48,7 @@ namespace SilverEQuality.FramesUC
                     buttonEditAdd.BackColor = Color.White;
                     buttonEditAdd.ForeColor = Color.SteelBlue;
 
+                    orderEditFrame.Dock = DockStyle.Fill;
                     orderEditFrame.Parent = panelBody;
                     orderEditFrame.Size = panelBody.Size;
 
@@ -51,6 +59,11 @@ namespace SilverEQuality.FramesUC
                     break;
 
             }
+        }
+
+        private void KeepGoing(Order fromOrderFrame)
+        {
+            mainAddCheck?.Invoke(fromOrderFrame);
         }
 
         private void buttonView_Click(object sender, EventArgs e)
@@ -65,6 +78,7 @@ namespace SilverEQuality.FramesUC
 
         private void MainOrderFrame_Resize(object sender, EventArgs e)
         {
+            /*
             if (MainForm.isMenuExpanded)
             {
                 orderFrame.Width += 10;
@@ -76,6 +90,7 @@ namespace SilverEQuality.FramesUC
                 orderFrame.Width -= 10;
                 orderEditFrame.Width -= 10;
             }
+            */
         }
     }
 }
