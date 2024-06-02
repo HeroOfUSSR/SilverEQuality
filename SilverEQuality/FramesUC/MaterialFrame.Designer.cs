@@ -87,6 +87,7 @@
             // 
             // flowLayoutPanelSilver
             // 
+            flowLayoutPanelSilver.AutoScroll = true;
             flowLayoutPanelSilver.Dock = DockStyle.Fill;
             flowLayoutPanelSilver.Location = new Point(145, 22);
             flowLayoutPanelSilver.Name = "flowLayoutPanelSilver";

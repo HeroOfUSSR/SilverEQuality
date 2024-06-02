@@ -11,6 +11,9 @@ namespace SilverEQuality_Context.Models
         public int AmountRequest { get; set; }
         public int? PriorityRequest { get; set; }
         public decimal? CostRequest { get; set; }
+        public string? DescRequest {  get; set; }
+        public DateTime DateRequest { get; set; }
+
 
         public virtual Priority? PriorityRequestNavigation { get; set; }
         public virtual SilverType SilverTypeRequestNavigation { get; set; } = null!;

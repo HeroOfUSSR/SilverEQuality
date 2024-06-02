@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SilverEQuality_Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,21 @@ namespace SilverEQuality.FramesUC
         public MaterialRequestFrame()
         {
             InitializeComponent();
+            InitFlow();
+        }
+
+        private void InitFlow()
+        {
+            using (var db = new SilverEQContext(DBHelper.Option()))
+            {
+                var reqs = db.SilverRequests.ToList();
+
+                foreach (var req in reqs)
+                {
+                    var reqView = new RequestView(req);
+                    reqView.Parent = flowLayoutPanelRequests;
+                }
+            }
         }
     }
 }

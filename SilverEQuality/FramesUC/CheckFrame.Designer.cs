@@ -40,7 +40,6 @@
             dateTimePickerUntil = new DateTimePicker();
             dateTimePickerFrom = new DateTimePicker();
             dataGridCheck = new DataGridView();
-            buttonCheckDate = new Button();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridCheck).BeginInit();
@@ -108,7 +107,6 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(buttonCheckDate);
             panel3.Controls.Add(buttonReportCreate);
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label1);
@@ -128,7 +126,7 @@
             buttonReportCreate.FlatStyle = FlatStyle.Flat;
             buttonReportCreate.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonReportCreate.ForeColor = SystemColors.ControlLightLight;
-            buttonReportCreate.Location = new Point(782, 27);
+            buttonReportCreate.Location = new Point(761, 25);
             buttonReportCreate.Name = "buttonReportCreate";
             buttonReportCreate.Size = new Size(214, 34);
             buttonReportCreate.TabIndex = 9;
@@ -141,7 +139,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(279, 36);
+            label2.Location = new Point(381, 36);
             label2.Name = "label2";
             label2.Size = new Size(37, 16);
             label2.TabIndex = 8;
@@ -162,7 +160,7 @@
             // 
             dateTimePickerUntil.Anchor = AnchorStyles.None;
             dateTimePickerUntil.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerUntil.Location = new Point(322, 31);
+            dateTimePickerUntil.Location = new Point(424, 31);
             dateTimePickerUntil.Name = "dateTimePickerUntil";
             dateTimePickerUntil.Size = new Size(210, 23);
             dateTimePickerUntil.TabIndex = 6;
@@ -192,22 +190,6 @@
             dataGridCheck.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridCheck.Size = new Size(1009, 289);
             dataGridCheck.TabIndex = 2;
-            // 
-            // buttonCheckDate
-            // 
-            buttonCheckDate.Anchor = AnchorStyles.Right;
-            buttonCheckDate.BackColor = Color.SteelBlue;
-            buttonCheckDate.FlatAppearance.BorderSize = 0;
-            buttonCheckDate.FlatStyle = FlatStyle.Flat;
-            buttonCheckDate.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonCheckDate.ForeColor = SystemColors.ControlLightLight;
-            buttonCheckDate.Location = new Point(549, 27);
-            buttonCheckDate.Name = "buttonCheckDate";
-            buttonCheckDate.Size = new Size(214, 34);
-            buttonCheckDate.TabIndex = 10;
-            buttonCheckDate.Text = "Проверить даты";
-            buttonCheckDate.UseVisualStyleBackColor = false;
-            buttonCheckDate.Click += buttonCheckDate_Click;
             // 
             // CheckFrame
             // 
@@ -243,6 +225,5 @@
         private CheckBox checkBoxNorm;
         private Label label2;
         private Button buttonReportCreate;
-        private Button buttonCheckDate;
     }
 }

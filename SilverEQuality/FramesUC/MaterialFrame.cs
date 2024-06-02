@@ -16,6 +16,7 @@ namespace SilverEQuality.FramesUC
         public MaterialFrame()
         {
             InitializeComponent();
+            InitView();
         }
 
         private void InitView()

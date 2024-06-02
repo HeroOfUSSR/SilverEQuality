@@ -80,6 +80,7 @@ namespace SilverEQuality.FramesUC
                         {
                             var orderView = new OrderView(order);
                             orderView.Parent = flowLayoutPanelBody;
+                            // Ивент добавить сюда
                         }
 
                         break;

@@ -1,4 +1,5 @@
-﻿using SilverEQuality.MessageBoxes;
+﻿using DGVPrinterHelper;
+using SilverEQuality.MessageBoxes;
 using SilverEQuality_Context;
 using SilverEQuality_Context.Models;
 using System;
@@ -113,41 +114,41 @@ namespace SilverEQuality.Forms
                 return;
             }
 
-
+            var printReports = new DGVPrinter();
+            printReports.CreateReport("Отчёт", dataGridCheck, fromDate, toDate);
         }
 
         private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void dateTimePickerUntil_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonCheckDate_Click(object sender, EventArgs e)
-        {
             fromDate = dateTimePickerFrom.Value;
-            toDate = dateTimePickerUntil.Value;
 
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
-
-                var datedChecks = db.Checks.Where(x => x.DateCheck >= fromDate && x.DateCheck <= toDate).ToList();
-
-                if (datedChecks.Any())
+                if (db.Checks.Where(x => x.DateCheck >= fromDate && x.DateCheck <= toDate).Any())
                 {
                     searchDate = true;
                     InitDatagrid();
                 }
-                else
-                {
-                    CustomMessageBox dateNotFound = new CustomMessageBox("Не найдено записей с такой датой", false);
-                    dateNotFound.ShowDialog();
-                }
-
             }
+        }
+
+        private void dateTimePickerUntil_ValueChanged(object sender, EventArgs e)
+        {
+            toDate = dateTimePickerUntil.Value;
+
+            using (var db = new SilverEQContext(DBHelper.Option()))
+            {
+                if (db.Checks.Where(x => x.DateCheck >= fromDate && x.DateCheck <= toDate).Any())
+                {
+                    searchDate = true;
+                    InitDatagrid();
+                }
+            }
+        }
+
+        private void buttonCheckDate_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

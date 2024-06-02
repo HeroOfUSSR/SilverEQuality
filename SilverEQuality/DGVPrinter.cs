@@ -251,7 +251,7 @@ namespace DGVPrinterHelper //AllocationRequest
             printer.PageNumberInHeader = false;
             printer.PorportionalColumns = true;
             printer.HeaderCellAlignment = StringAlignment.Near;
-            printer.Footer = "ABOBA";//$"С {} по {}";
+            printer.Footer = $"С {startDate} по {endDate}";
             printer.FooterSpacing = 50;
             printer.PreviewDialog = new PrintPreviewDialog();
             printer.PageSettings.Landscape = true;

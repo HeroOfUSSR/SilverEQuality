@@ -346,6 +346,14 @@ namespace SilverEQuality_Context
 
                 entity.Property(e => e.UserRequest).HasColumnName("User_Request");
 
+                entity.Property(e => e.DescRequest)
+                    .HasMaxLength(90)
+                    .HasColumnName("Desc_Request");
+
+                entity.Property(e => e.DateRequest)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Date_Request");
+
                 entity.HasOne(d => d.PriorityRequestNavigation)
                     .WithMany(p => p.SilverRequests)
                     .HasForeignKey(d => d.PriorityRequest)

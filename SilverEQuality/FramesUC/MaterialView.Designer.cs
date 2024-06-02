@@ -32,7 +32,8 @@
             labelAmount = new Label();
             labelCost = new Label();
             buttonEdit = new Button();
-            button1 = new Button();
+            buttonNorm = new Button();
+            buttonRequest = new Button();
             SuspendLayout();
             // 
             // labelSilverName
@@ -59,7 +60,7 @@
             // 
             labelCost.AutoSize = true;
             labelCost.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelCost.Location = new Point(333, 32);
+            labelCost.Location = new Point(547, 32);
             labelCost.Name = "labelCost";
             labelCost.Size = new Size(97, 16);
             labelCost.TabIndex = 2;
@@ -73,39 +74,57 @@
             buttonEdit.FlatStyle = FlatStyle.Flat;
             buttonEdit.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonEdit.ForeColor = SystemColors.ControlLightLight;
-            buttonEdit.Location = new Point(467, 9);
+            buttonEdit.Location = new Point(481, 77);
             buttonEdit.Name = "buttonEdit";
-            buttonEdit.Size = new Size(249, 30);
+            buttonEdit.Size = new Size(223, 30);
             buttonEdit.TabIndex = 24;
             buttonEdit.Text = "Редактировать";
             buttonEdit.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // buttonNorm
             // 
-            button1.BackColor = Color.SteelBlue;
-            button1.DialogResult = DialogResult.OK;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(467, 42);
-            button1.Name = "button1";
-            button1.Size = new Size(249, 30);
-            button1.TabIndex = 25;
-            button1.Text = "Открыть норму";
-            button1.UseVisualStyleBackColor = false;
+            buttonNorm.BackColor = Color.SteelBlue;
+            buttonNorm.DialogResult = DialogResult.OK;
+            buttonNorm.FlatAppearance.BorderSize = 0;
+            buttonNorm.FlatStyle = FlatStyle.Flat;
+            buttonNorm.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonNorm.ForeColor = SystemColors.ControlLightLight;
+            buttonNorm.Location = new Point(14, 77);
+            buttonNorm.Name = "buttonNorm";
+            buttonNorm.Size = new Size(232, 30);
+            buttonNorm.TabIndex = 25;
+            buttonNorm.Text = "Открыть норму";
+            buttonNorm.UseVisualStyleBackColor = false;
+            // 
+            // buttonRequest
+            // 
+            buttonRequest.BackColor = Color.SteelBlue;
+            buttonRequest.DialogResult = DialogResult.OK;
+            buttonRequest.FlatAppearance.BorderSize = 0;
+            buttonRequest.FlatStyle = FlatStyle.Flat;
+            buttonRequest.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonRequest.ForeColor = SystemColors.ControlLightLight;
+            buttonRequest.Location = new Point(252, 77);
+            buttonRequest.Name = "buttonRequest";
+            buttonRequest.Size = new Size(223, 30);
+            buttonRequest.TabIndex = 26;
+            buttonRequest.Text = "Запрос";
+            buttonRequest.UseVisualStyleBackColor = false;
             // 
             // MaterialView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button1);
+            Controls.Add(buttonRequest);
+            Controls.Add(buttonNorm);
             Controls.Add(buttonEdit);
             Controls.Add(labelCost);
             Controls.Add(labelAmount);
             Controls.Add(labelSilverName);
+            MaximumSize = new Size(719, 110);
+            MinimumSize = new Size(719, 78);
             Name = "MaterialView";
-            Size = new Size(719, 78);
+            Size = new Size(719, 110);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -116,6 +135,7 @@
         private Label labelAmount;
         private Label labelCost;
         private Button buttonEdit;
-        private Button button1;
+        private Button buttonNorm;
+        private Button buttonRequest;
     }
 }
