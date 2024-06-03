@@ -17,6 +17,8 @@ namespace SilverEQuality.FramesUC
         private SilverType silverView;
 
         public event Action<SilverType> silverNormShow;
+
+        private int timer;
         public MaterialView(SilverType silverType)
         {
             InitializeComponent();
@@ -43,16 +45,6 @@ namespace SilverEQuality.FramesUC
 
         }
 
-        private void MaterialView_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MaterialView_MouseLeave(object sender, EventArgs e)
-        {
-
-
-        }
 
         private void buttonNorm_Click(object sender, EventArgs e)
         {
@@ -68,8 +60,82 @@ namespace SilverEQuality.FramesUC
 
         private void panelBody_MouseLeave(object sender, EventArgs e)
         {
-            this.Size = MinimumSize;
-            BackColor = Color.White;
+            timer = 0;
+            timerHover.Start();
+        }
+
+        private void panelBody_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void timerHover_Tick(object sender, EventArgs e)
+        {
+            timer++;
+            if (timer >= 3)
+            {
+                this.Size = MinimumSize;
+                BackColor = Color.White;
+                timerHover.Stop();
+            }
+        }
+
+        private void buttonNorm_MouseEnter(object sender, EventArgs e)
+        {
+            timerHover.Stop();
+
+        }
+
+        private void buttonRequest_MouseEnter(object sender, EventArgs e)
+        {
+            timerHover.Stop();
+
+        }
+
+        private void buttonNorm_MouseLeave(object sender, EventArgs e)
+        {
+            timerHover.Start();
+
+        }
+
+        private void buttonRequest_MouseLeave(object sender, EventArgs e)
+        {
+            timerHover.Start();
+
+        }
+
+        private void buttonEdit_MouseLeave(object sender, EventArgs e)
+        {
+            timerHover.Start();
+
+        }
+
+        private void buttonEdit_MouseEnter(object sender, EventArgs e)
+        {
+            timerHover.Stop();
+
+        }
+
+        private void labelSilverName_MouseEnter(object sender, EventArgs e)
+        {
+            timerHover.Stop();
+        }
+
+        private void labelSilverName_MouseLeave(object sender, EventArgs e)
+        {
+            timerHover.Start();
+
+        }
+
+        private void labelAmount_MouseEnter(object sender, EventArgs e)
+        {
+            timerHover.Stop();
+        }
+
+        private void labelAmount_MouseLeave(object sender, EventArgs e)
+        {
+            timerHover.Start();
+
         }
     }
 }
