@@ -27,6 +27,7 @@ namespace SilverEQuality.FramesUC
                 labelRequestTitle.Text = $"Запрос №{silverRequest.IdRequest}";
                 textBoxDescReq.Text = silverRequest.DescRequest;
                 labelDateReq.Text = silverRequest.DateRequest.ToString("D");
+                labelAmount.Text = $"{silverRequest.AmountRequest} кг";
 
                 var author = db.Users.FirstOrDefault(x => x.IdUser == silverRequest.UserRequest);
 

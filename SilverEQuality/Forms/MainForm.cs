@@ -89,6 +89,8 @@ namespace SilverEQuality.Forms
                     materialFrame.Size = panelFrame.Size;
                     materialFrame.Dock = DockStyle.Fill;
                     materialFrame.Parent = panelFrame;
+
+                    materialFrame.mainAddSilver += ShowNorm;
                     break;
 
             }
@@ -104,6 +106,17 @@ namespace SilverEQuality.Forms
             finishCheckFrame.Dock = DockStyle.Fill;
             finishCheckFrame.Parent = panelFrame;
 
+        }
+
+        private void ShowNorm(SilverType silverType)
+        {
+            panelFrame.Controls.Clear();
+
+            MainNormFrame showSilverNorm = new MainNormFrame(silverType);
+
+            showSilverNorm.Size = panelFrame.Size;
+            showSilverNorm.Dock = DockStyle.Fill;
+            showSilverNorm.Parent = panelFrame;
 
         }
 

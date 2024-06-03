@@ -1,4 +1,5 @@
 ﻿using SilverEQuality_Context;
+using SilverEQuality_Context.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace SilverEQuality.FramesUC
 {
     public partial class MaterialFrame : UserControl
     {
+        public event Action<SilverType> nextAddSilver;
         public MaterialFrame()
         {
             InitializeComponent();
@@ -25,13 +27,20 @@ namespace SilverEQuality.FramesUC
             {
                 var silverTypes = db.SilverTypes.OrderBy(x => x.CodeSilverType).ToList();
 
-                foreach(var silver in silverTypes)
+                foreach (var silver in silverTypes)
                 {
                     var materialView = new MaterialView(silver);
                     materialView.Parent = flowLayoutPanelSilver;
 
+                    materialView.silverNormShow += KeepGoing;
+
                 }
             }
+        }
+
+        private void KeepGoing(SilverType fromSilverView)
+        {
+            nextAddSilver?.Invoke(fromSilverView);
         }
     }
 }

@@ -47,8 +47,6 @@
             buttonNorms = new Button();
             panel1 = new Panel();
             buttonMaterials = new Button();
-            panel2 = new Panel();
-            button2 = new Button();
             panelLogout = new Panel();
             buttonLogout = new Button();
             panelFrame = new Panel();
@@ -62,7 +60,6 @@
             panelOrders.SuspendLayout();
             panelNorms.SuspendLayout();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             panelLogout.SuspendLayout();
             SuspendLayout();
             // 
@@ -144,7 +141,6 @@
             slideBar.Controls.Add(panelOrders);
             slideBar.Controls.Add(panelNorms);
             slideBar.Controls.Add(panel1);
-            slideBar.Controls.Add(panel2);
             slideBar.Controls.Add(panelLogout);
             slideBar.Dock = DockStyle.Left;
             slideBar.Location = new Point(0, 39);
@@ -306,34 +302,10 @@
             buttonMaterials.UseVisualStyleBackColor = false;
             buttonMaterials.Click += buttonMaterials_Click;
             // 
-            // panel2
-            // 
-            panel2.Controls.Add(button2);
-            panel2.Location = new Point(3, 328);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(211, 49);
-            panel2.TabIndex = 7;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Transparent;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Image = Properties.Resources.norm;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(1, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(208, 41);
-            button2.TabIndex = 5;
-            button2.Text = "PLACEHOLDER";
-            button2.UseVisualStyleBackColor = false;
-            // 
             // panelLogout
             // 
             panelLogout.Controls.Add(buttonLogout);
-            panelLogout.Location = new Point(3, 383);
+            panelLogout.Location = new Point(3, 328);
             panelLogout.Name = "panelLogout";
             panelLogout.Size = new Size(211, 49);
             panelLogout.TabIndex = 8;
@@ -391,7 +363,6 @@
             panelOrders.ResumeLayout(false);
             panelNorms.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
             panelLogout.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -418,8 +389,6 @@
         private Button buttonNorms;
         private Panel panel1;
         private Button buttonMaterials;
-        private Panel panel2;
-        private Button button2;
         private Panel panelLogout;
         private Button buttonLogout;
     }

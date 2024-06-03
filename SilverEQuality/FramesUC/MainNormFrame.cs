@@ -1,4 +1,5 @@
 ﻿using SilverEQuality.Forms;
+using SilverEQuality_Context.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,16 @@ namespace SilverEQuality.FramesUC
         {
             InitializeComponent();
             FrameOutput(1);
+        }
+
+        public MainNormFrame(SilverType silverType) : this()
+        {
+            panelBody.Controls.Clear();
+            NormFrame showNormFrame = new NormFrame(silverType);
+
+            showNormFrame.Size = panelBody.Size;
+            showNormFrame.Dock = DockStyle.Fill;
+            showNormFrame.Parent = panelBody;
         }
 
         private void FrameOutput(int buttonNumber)

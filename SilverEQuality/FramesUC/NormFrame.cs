@@ -35,6 +35,30 @@ namespace SilverEQuality.FramesUC
 
         }
 
+        public NormFrame(SilverType silverType) : this()
+        {
+            using (var db = new SilverEQContext(DBHelper.Option()))
+            {
+                foreach (DataGridViewRow row in dataGridViewNorm.Rows)
+                {
+                    if (silverType.TitleSilverType == row.Cells[2].ToString())
+                    {
+                        row.Selected = true;
+                        break;
+                    }
+                } // Бесконечный форич может получиться 
+
+                comboBoxDecimal.DisplayMember = nameof(DecimalNumber.TitleDecimal);
+                comboBoxDecimal.ValueMember = nameof(DecimalNumber.IdDecimal);
+                comboBoxSilverType.DisplayMember = nameof(SilverType.TitleSilverType);
+                comboBoxSilverType.ValueMember = nameof(SilverType.CodeSilverType);
+
+                comboBoxDecimal.Items.AddRange(db.DecimalNumbers.ToArray());
+                comboBoxSilverType.Items.AddRange(db.SilverTypes.ToArray());
+            }
+
+        }
+
         private void InitDatagrid()
         {
             using (var db = new SilverEQContext(DBHelper.Option()))

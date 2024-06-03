@@ -34,6 +34,7 @@
             buttonEdit = new Button();
             buttonNorm = new Button();
             buttonRequest = new Button();
+            panelBody = new Panel();
             SuspendLayout();
             // 
             // labelSilverName
@@ -60,7 +61,7 @@
             // 
             labelCost.AutoSize = true;
             labelCost.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelCost.Location = new Point(547, 32);
+            labelCost.Location = new Point(549, 18);
             labelCost.Name = "labelCost";
             labelCost.Size = new Size(97, 16);
             labelCost.TabIndex = 2;
@@ -74,12 +75,13 @@
             buttonEdit.FlatStyle = FlatStyle.Flat;
             buttonEdit.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonEdit.ForeColor = SystemColors.ControlLightLight;
-            buttonEdit.Location = new Point(481, 77);
+            buttonEdit.Location = new Point(473, 77);
             buttonEdit.Name = "buttonEdit";
             buttonEdit.Size = new Size(223, 30);
             buttonEdit.TabIndex = 24;
             buttonEdit.Text = "Редактировать";
             buttonEdit.UseVisualStyleBackColor = false;
+            buttonEdit.Click += buttonEdit_Click;
             // 
             // buttonNorm
             // 
@@ -89,12 +91,13 @@
             buttonNorm.FlatStyle = FlatStyle.Flat;
             buttonNorm.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonNorm.ForeColor = SystemColors.ControlLightLight;
-            buttonNorm.Location = new Point(14, 77);
+            buttonNorm.Location = new Point(6, 77);
             buttonNorm.Name = "buttonNorm";
             buttonNorm.Size = new Size(232, 30);
             buttonNorm.TabIndex = 25;
             buttonNorm.Text = "Открыть норму";
             buttonNorm.UseVisualStyleBackColor = false;
+            buttonNorm.Click += buttonNorm_Click;
             // 
             // buttonRequest
             // 
@@ -104,27 +107,43 @@
             buttonRequest.FlatStyle = FlatStyle.Flat;
             buttonRequest.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonRequest.ForeColor = SystemColors.ControlLightLight;
-            buttonRequest.Location = new Point(252, 77);
+            buttonRequest.Location = new Point(244, 77);
             buttonRequest.Name = "buttonRequest";
             buttonRequest.Size = new Size(223, 30);
             buttonRequest.TabIndex = 26;
             buttonRequest.Text = "Запрос";
             buttonRequest.UseVisualStyleBackColor = false;
+            buttonRequest.Click += buttonRequest_Click;
+            // 
+            // panelBody
+            // 
+            panelBody.BackColor = Color.Transparent;
+            panelBody.Dock = DockStyle.Fill;
+            panelBody.Location = new Point(0, 0);
+            panelBody.Name = "panelBody";
+            panelBody.Size = new Size(700, 110);
+            panelBody.TabIndex = 27;
+            panelBody.MouseEnter += panelBody_MouseEnter;
+            panelBody.MouseLeave += panelBody_MouseLeave;
             // 
             // MaterialView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             Controls.Add(buttonRequest);
-            Controls.Add(buttonNorm);
             Controls.Add(buttonEdit);
             Controls.Add(labelCost);
             Controls.Add(labelAmount);
             Controls.Add(labelSilverName);
-            MaximumSize = new Size(719, 110);
-            MinimumSize = new Size(719, 78);
+            Controls.Add(buttonNorm);
+            Controls.Add(panelBody);
+            MaximumSize = new Size(700, 110);
+            MinimumSize = new Size(700, 70);
             Name = "MaterialView";
-            Size = new Size(719, 110);
+            Size = new Size(700, 110);
+            MouseEnter += MaterialView_MouseEnter;
+            MouseLeave += MaterialView_MouseLeave;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -137,5 +156,6 @@
         private Button buttonEdit;
         private Button buttonNorm;
         private Button buttonRequest;
+        private Panel panelBody;
     }
 }

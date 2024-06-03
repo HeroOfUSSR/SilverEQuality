@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SilverEQuality_Context.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,9 @@ namespace SilverEQuality.FramesUC
     {
         private MaterialFrame materialFrame = new MaterialFrame();
         private MaterialRequestFrame requestFrame = new MaterialRequestFrame();
+
+        public event Action<SilverType> mainAddSilver;
+
 
         public MainMaterialFrame()
         {
@@ -35,6 +39,8 @@ namespace SilverEQuality.FramesUC
                     materialFrame.Dock = DockStyle.Fill;
                     materialFrame.Parent = panelBody;
 
+                    materialFrame.nextAddSilver += KeepGoing;
+
                     buttonRequests.BackColor = Color.SteelBlue;
                     buttonRequests.ForeColor = Color.White;
                     break;
@@ -53,6 +59,11 @@ namespace SilverEQuality.FramesUC
                     break;
 
             }
+        }
+
+        private void KeepGoing(SilverType fromSilverFrame)
+        {
+            mainAddSilver?.Invoke(fromSilverFrame);
         }
 
         private void buttonView_Click(object sender, EventArgs e)
