@@ -166,7 +166,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(41, 296);
+            label2.Location = new Point(41, 302);
             label2.Name = "label2";
             label2.Size = new Size(174, 19);
             label2.TabIndex = 7;

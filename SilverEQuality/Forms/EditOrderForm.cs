@@ -72,13 +72,13 @@ namespace SilverEQuality.Forms
 
             comboBoxStatus.SelectedIndex = index;
 
-            if (editOrder.PriorityOrder !=  null)
+            if (editOrder.PriorityOrder != null)
             {
                 index = comboBoxPrio.FindString(editOrder.PriorityOrderNavigation.TitlePriority.ToString());
 
                 comboBoxPrio.SelectedIndex = index;
             }
-            
+
 
             if (editOrder.DateEndOrder != null)
                 dateTimePickerEnd.Value = (DateTime)editOrder.DateEndOrder;
@@ -93,15 +93,15 @@ namespace SilverEQuality.Forms
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
 
-                    editOrder.DateEndOrder = dateTimePickerEnd.Value;
-                    editOrder.StatusOrder = ((Status)comboBoxStatus.SelectedItem).IdStatus;
-                    if (comboBoxPrio.SelectedItem != null) editOrder.PriorityOrder = ((Priority)comboBoxPrio.SelectedItem).IdPriority;
-                    editOrder.DescOrder = textBoxDesc.Text;
-                    editOrder.AppointedOrder = ((User)comboBoxAppointed.SelectedItem).IdUser;
-                    editOrder.PaymentOrder = Convert.ToDecimal(textBoxPayment.Text);
+                editOrder.DateEndOrder = dateTimePickerEnd.Value;
+                editOrder.StatusOrder = ((Status)comboBoxStatus.SelectedItem).IdStatus;
+                if (comboBoxPrio.SelectedItem != null) editOrder.PriorityOrder = ((Priority)comboBoxPrio.SelectedItem).IdPriority;
+                editOrder.DescOrder = textBoxDesc.Text;
+                editOrder.AppointedOrder = ((User)comboBoxAppointed.SelectedItem).IdUser;
+                editOrder.PaymentOrder = Convert.ToDecimal(textBoxPayment.Text);
 
-                    db.Orders.Update(editOrder);
-                    db.SaveChanges();
+                db.Orders.Update(editOrder);
+                db.SaveChanges();
 
             }
 

@@ -31,6 +31,13 @@ namespace SilverEQuality.Forms
         {
             InitializeComponent();
             FrameOutput();
+
+            if (AuthForm.authorizedUser.RoleUser == 4
+                || AuthForm.authorizedUser.RoleUser == 2)
+            {
+                panelChecks.Visible = false;
+                panelOrders.Visible = false;
+            }
         }
 
         private void slideBarTimer_Tick(object sender, EventArgs e)

@@ -15,6 +15,9 @@ namespace SilverEQuality.Forms
 {
     public partial class EditMaterialForm : Form
     {
+        public bool isMouseDown;
+        public Point startPoint;
+
         SilverEQContext db = new SilverEQContext(DBHelper.Option());
 
         private SilverType editType;
@@ -85,7 +88,38 @@ namespace SilverEQuality.Forms
                 newSilver.ShowDialog();
             }
 
-            
+
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonHide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
+        }
+
+        private void panelHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            isMouseDown = true;
+            startPoint = new Point(e.X, e.Y);
+        }
+
+        private void panelHeader_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDown = false;
+        }
+
+        private void panelHeader_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMouseDown)
+            {
+                Point p = PointToScreen(e.Location);
+                this.Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
         }
     }
 }

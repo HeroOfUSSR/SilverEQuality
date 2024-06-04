@@ -174,10 +174,14 @@ namespace SilverEQuality_Context
                 entity.Property(e => e.DateEndOrder)
                     .HasColumnType("datetime")
                     .HasColumnName("DateEnd_Order");
-
+                
                 entity.Property(e => e.DateOrder)
                     .HasColumnType("datetime")
                     .HasColumnName("Date_Order");
+
+                entity.Property(e => e.DateClosedOrder)
+                    .HasColumnType("datetime")
+                    .HasColumnName("DateClosed_Order");
 
                 entity.Property(e => e.DescOrder)
                     .HasMaxLength(50)
@@ -342,6 +346,8 @@ namespace SilverEQuality_Context
 
                 entity.Property(e => e.PriorityRequest).HasColumnName("Priority_Request");
 
+                entity.Property(e => e.StatusRequest).HasColumnName("Status_Request");
+
                 entity.Property(e => e.SilverTypeRequest).HasColumnName("SilverType_Request");
 
                 entity.Property(e => e.UserRequest).HasColumnName("User_Request");
@@ -349,10 +355,23 @@ namespace SilverEQuality_Context
                 entity.Property(e => e.DescRequest)
                     .HasMaxLength(90)
                     .HasColumnName("Desc_Request");
-
+                
                 entity.Property(e => e.DateRequest)
                     .HasColumnType("datetime")
                     .HasColumnName("Date_Request");
+
+                entity.Property(e => e.DateEndRequest)
+                   .HasColumnType("datetime")
+                   .HasColumnName("DateEnd_Request");
+
+                entity.Property(e => e.DateClosedOrder)
+                    .HasColumnType("datetime")
+                    .HasColumnName("DateClosed_Request");
+
+                entity.HasOne(d => d.StatusRequestNavigation)
+                    .WithMany(p => p.SilverRequests)
+                    .HasForeignKey(d => d.StatusRequest)
+                    .HasConstraintName("FK_SilverRequest_Status");
 
                 entity.HasOne(d => d.PriorityRequestNavigation)
                     .WithMany(p => p.SilverRequests)

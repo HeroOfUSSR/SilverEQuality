@@ -64,6 +64,9 @@
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(442, 30);
             panelHeader.TabIndex = 3;
+            panelHeader.MouseDown += panelHeader_MouseDown;
+            panelHeader.MouseMove += panelHeader_MouseMove;
+            panelHeader.MouseUp += panelHeader_MouseUp;
             // 
             // labelTitle
             // 
@@ -89,6 +92,7 @@
             buttonHide.TabIndex = 4;
             buttonHide.Text = "_";
             buttonHide.UseVisualStyleBackColor = true;
+            buttonHide.Click += buttonHide_Click;
             // 
             // buttonExit
             // 
@@ -103,6 +107,7 @@
             buttonExit.TabIndex = 2;
             buttonExit.Text = "X";
             buttonExit.UseVisualStyleBackColor = true;
+            buttonExit.Click += buttonExit_Click;
             // 
             // pictureBox1
             // 

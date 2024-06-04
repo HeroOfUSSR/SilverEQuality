@@ -156,7 +156,7 @@
             panelMenu.Controls.Add(buttonMenu);
             panelMenu.Location = new Point(3, 3);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(215, 38);
+            panelMenu.Size = new Size(215, 41);
             panelMenu.TabIndex = 3;
             // 
             // buttonMenu
@@ -179,7 +179,7 @@
             // panelProfile
             // 
             panelProfile.Controls.Add(buttonProfile);
-            panelProfile.Location = new Point(3, 47);
+            panelProfile.Location = new Point(3, 50);
             panelProfile.Name = "panelProfile";
             panelProfile.Size = new Size(211, 55);
             panelProfile.TabIndex = 1;
@@ -205,7 +205,7 @@
             // panelChecks
             // 
             panelChecks.Controls.Add(buttonChecks);
-            panelChecks.Location = new Point(3, 108);
+            panelChecks.Location = new Point(3, 111);
             panelChecks.Name = "panelChecks";
             panelChecks.Size = new Size(211, 49);
             panelChecks.TabIndex = 0;
@@ -230,7 +230,7 @@
             // panelOrders
             // 
             panelOrders.Controls.Add(buttonOrders);
-            panelOrders.Location = new Point(3, 163);
+            panelOrders.Location = new Point(3, 166);
             panelOrders.Name = "panelOrders";
             panelOrders.Size = new Size(211, 49);
             panelOrders.TabIndex = 2;
@@ -255,7 +255,7 @@
             // panelNorms
             // 
             panelNorms.Controls.Add(buttonNorms);
-            panelNorms.Location = new Point(3, 218);
+            panelNorms.Location = new Point(3, 221);
             panelNorms.Name = "panelNorms";
             panelNorms.Size = new Size(211, 49);
             panelNorms.TabIndex = 5;
@@ -280,7 +280,7 @@
             // panel1
             // 
             panel1.Controls.Add(buttonMaterials);
-            panel1.Location = new Point(3, 273);
+            panel1.Location = new Point(3, 276);
             panel1.Name = "panel1";
             panel1.Size = new Size(211, 49);
             panel1.TabIndex = 6;
@@ -305,7 +305,7 @@
             // panelLogout
             // 
             panelLogout.Controls.Add(buttonLogout);
-            panelLogout.Location = new Point(3, 328);
+            panelLogout.Location = new Point(3, 331);
             panelLogout.Name = "panelLogout";
             panelLogout.Size = new Size(211, 49);
             panelLogout.TabIndex = 8;

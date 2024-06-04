@@ -14,7 +14,6 @@ namespace SilverEQuality.FramesUC
 {
     public partial class MainOrderFrame : UserControl
     {
-        private OrderFrame orderFrame = new OrderFrame();
         private OrderAddFrame orderEditFrame = new OrderAddFrame();
 
         public event Action<Order> mainAddCheck;
@@ -35,6 +34,7 @@ namespace SilverEQuality.FramesUC
                     buttonView.BackColor = Color.White;
                     buttonView.ForeColor = Color.SteelBlue;
 
+                    var orderFrame = new OrderFrame();
                     orderFrame.Dock = DockStyle.Fill;
                     orderFrame.Parent = panelBody;
                     orderFrame.Size = panelBody.Size;

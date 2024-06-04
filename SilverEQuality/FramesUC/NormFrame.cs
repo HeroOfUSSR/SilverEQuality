@@ -33,6 +33,10 @@ namespace SilverEQuality.FramesUC
                 comboBoxSilverType.Items.AddRange(db.SilverTypes.ToArray());
             }
 
+            if (AuthForm.authorizedUser.RoleUser == 4)
+            {
+                checkBoxEditMode.Visible = false;
+            }
         }
 
         public NormFrame(SilverType silverType) : this()
@@ -101,7 +105,7 @@ namespace SilverEQuality.FramesUC
                 {
                     var newNorm = new Norm
                     {
-                        DecimalNorm = ((Norm)comboBoxDecimal.SelectedItem).IdNorm,
+                        DecimalNorm = ((DecimalNumber)comboBoxDecimal.SelectedItem).IdDecimal,
                         SilverTypeNorm = ((SilverType)comboBoxSilverType.SelectedItem).CodeSilverType,
                         TitleNorm = Convert.ToDecimal(maskedTextBoxNorm.Text),
                     };
