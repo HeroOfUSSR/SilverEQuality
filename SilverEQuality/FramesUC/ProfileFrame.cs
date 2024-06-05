@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SilverEQuality.Forms;
 using SilverEQuality_Context;
 using SilverEQuality_Context.Models;
 using System;
@@ -16,6 +17,7 @@ namespace SilverEQuality.FramesUC
     public partial class ProfileFrame : UserControl
     {
         private User currentUser;
+        private int buttonPressed;
         public ProfileFrame()
         {
             InitializeComponent();
@@ -49,7 +51,8 @@ namespace SilverEQuality.FramesUC
         {
             buttonOrders.BackColor = Color.White;
             buttonOrders.ForeColor = Color.SteelBlue;
-            InitFlowView(1);
+            buttonPressed = 1;
+            InitFlowView(buttonPressed);
             buttonComment.BackColor = Color.SteelBlue;
             buttonComment.ForeColor = Color.White;
         }
@@ -58,7 +61,8 @@ namespace SilverEQuality.FramesUC
         {
             buttonComment.BackColor = Color.White;
             buttonComment.ForeColor = Color.SteelBlue;
-            InitFlowView(2);
+            buttonPressed = 2;
+            InitFlowView(buttonPressed);
             buttonOrders.BackColor = Color.SteelBlue;
             buttonOrders.ForeColor = Color.White;
         }
@@ -79,6 +83,17 @@ namespace SilverEQuality.FramesUC
                         foreach (var order in orders)
                         {
                             var orderView = new OrderView(order);
+
+                            if (MainForm.isMenuExpanded)
+                            {
+                                orderView.Width = orderView.MinimumSize.Width;
+                            }
+                            else if (!MainForm.isMenuExpanded)
+                            {
+                                orderView.Width = MinimumSize.Width - 20;
+                            }
+
+                            orderView = new OrderView(order);
                             orderView.Parent = flowLayoutPanelBody;
                             // Ивент добавить сюда
                         }
@@ -99,6 +114,14 @@ namespace SilverEQuality.FramesUC
                     default:
                         break;
                 }
+            }
+        }
+
+        private void ProfileFrame_Resize(object sender, EventArgs e)
+        {
+            if (this.Size == MinimumSize || this.Size == MaximumSize)
+            {
+                InitFlowView(buttonPressed);
             }
         }
     }

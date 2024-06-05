@@ -188,6 +188,7 @@
             MinimumSize = new Size(841, 472);
             Name = "ProfileFrame";
             Size = new Size(1009, 472);
+            Resize += ProfileFrame_Resize;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).EndInit();

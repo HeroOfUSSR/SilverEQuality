@@ -43,7 +43,7 @@ namespace SilverEQuality.FramesUC
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
-                var result = from norm in db.Norms
+                var resultSilver = from norm in db.Norms
                              .Where(x => x.SilverTypeNorm == silverType.CodeSilverType)
                              select new
                              {
@@ -53,9 +53,9 @@ namespace SilverEQuality.FramesUC
                                  TitleNorm = norm.TitleNorm,
                              };
 
-                if (result.Any())
+                if (resultSilver.Any())
                 {
-                    dataGridViewNorm.DataSource = result.ToList();
+                    dataGridViewNorm.DataSource = resultSilver.ToList();
 
                     dataGridViewNorm.Columns["IdNorm"].HeaderText = "Идентификатор";
                     dataGridViewNorm.Columns["IdNorm"].Visible = false;
@@ -67,6 +67,7 @@ namespace SilverEQuality.FramesUC
                 else
                 {
                     CustomMessageBox noNorms = new CustomMessageBox("Нормы не найдены", false);
+                    noNorms.ShowDialog();
                 }
             }
 
@@ -98,8 +99,11 @@ namespace SilverEQuality.FramesUC
                     dataGridViewNorm.Columns["DecimalNorm"].HeaderText = "Децимальный номер";
                     dataGridViewNorm.Columns["SilverTypeNorm"].HeaderText = "Вид серебра";
                     dataGridViewNorm.Columns["TitleNorm"].HeaderText = "Норма";
-
-
+                }
+                else
+                {
+                    CustomMessageBox noNorms = new CustomMessageBox("Нормы не найдены", false);
+                    noNorms.ShowDialog();
                 }
             }
         }

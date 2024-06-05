@@ -45,7 +45,9 @@ namespace SilverEQuality.Forms
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
-                comboBoxSilver.SelectedValue = silverType.CodeSilverType;
+                var index = comboBoxSilver.FindString(silverType.TitleSilverType);
+
+                comboBoxSilver.SelectedIndex = index;
             }
         }
 
@@ -112,6 +114,8 @@ namespace SilverEQuality.Forms
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
+                if (numericUpDownAmount.Value <= 0) return; // Валидацией займись
+
                 string paymentRequest;
                 if (textBoxPayment.Text == "")
                 {

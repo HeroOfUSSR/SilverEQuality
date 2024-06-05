@@ -23,7 +23,6 @@ namespace SilverEQuality.FramesUC
         public event Action<Order> createCheck;
         public event Action<bool> reloadView;
 
-
         public OrderAddFrame orderEditFrame;
 
         public OrderView(Order order)
@@ -31,6 +30,15 @@ namespace SilverEQuality.FramesUC
             InitializeComponent();
             orderView = order;
             InitView(orderView);
+
+            if (AuthForm.authorizedUser.RoleUser == 2 || AuthForm.authorizedUser.RoleUser == 4)
+            {
+                buttonImageMan.Visible = false;
+                buttonEdit.Visible = false;
+                buttonCheck.Visible = false;
+            }
+
+            Width = 821;
         }
 
         //public Order Order => orderView;
