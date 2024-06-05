@@ -48,8 +48,6 @@
             labelSilverName.Size = new Size(229, 19);
             labelSilverName.TabIndex = 0;
             labelSilverName.Text = "Наименование серебра";
-            labelSilverName.MouseEnter += labelSilverName_MouseEnter;
-            labelSilverName.MouseLeave += labelSilverName_MouseLeave;
             // 
             // labelAmount
             // 
@@ -60,8 +58,7 @@
             labelAmount.Size = new Size(107, 16);
             labelAmount.TabIndex = 1;
             labelAmount.Text = "Количество";
-            labelAmount.MouseEnter += labelAmount_MouseEnter;
-            labelAmount.MouseLeave += labelAmount_MouseLeave;
+
             // 
             // labelCost
             // 
@@ -88,8 +85,6 @@
             buttonEdit.Text = "Редактировать";
             buttonEdit.UseVisualStyleBackColor = false;
             buttonEdit.Click += buttonEdit_Click;
-            buttonEdit.MouseEnter += buttonEdit_MouseEnter;
-            buttonEdit.MouseLeave += buttonEdit_MouseLeave;
             // 
             // buttonNorm
             // 
@@ -106,8 +101,6 @@
             buttonNorm.Text = "Открыть норму";
             buttonNorm.UseVisualStyleBackColor = false;
             buttonNorm.Click += buttonNorm_Click;
-            buttonNorm.MouseEnter += buttonNorm_MouseEnter;
-            buttonNorm.MouseLeave += buttonNorm_MouseLeave;
             // 
             // buttonRequest
             // 
@@ -124,8 +117,6 @@
             buttonRequest.Text = "Запрос";
             buttonRequest.UseVisualStyleBackColor = false;
             buttonRequest.Click += buttonRequest_Click;
-            buttonRequest.MouseEnter += buttonRequest_MouseEnter;
-            buttonRequest.MouseLeave += buttonRequest_MouseLeave;
             // 
             // panelBody
             // 
@@ -135,13 +126,8 @@
             panelBody.Name = "panelBody";
             panelBody.Size = new Size(700, 110);
             panelBody.TabIndex = 27;
-            panelBody.Scroll += panelBody_Scroll;
             panelBody.MouseEnter += panelBody_MouseEnter;
             panelBody.MouseLeave += panelBody_MouseLeave;
-            // 
-            // timerHover
-            // 
-            timerHover.Tick += timerHover_Tick;
             // 
             // MaterialView
             // 

@@ -46,13 +46,13 @@
             buttonDone = new Button();
             numericUpDownAmount = new NumericUpDown();
             panelAdmin = new Panel();
+            dateTimePickerEnd = new DateTimePicker();
+            label4 = new Label();
             label1 = new Label();
             comboBoxSilver = new ComboBox();
             label2 = new Label();
             label3 = new Label();
             textBoxDesc = new TextBox();
-            dateTimePickerEnd = new DateTimePicker();
-            label4 = new Label();
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -149,7 +149,6 @@
             label7.Size = new Size(185, 19);
             label7.TabIndex = 27;
             label7.Text = "Стоимость заявки";
-            label7.Visible = false;
             // 
             // textBoxPayment
             // 
@@ -159,7 +158,6 @@
             textBoxPayment.Name = "textBoxPayment";
             textBoxPayment.Size = new Size(200, 26);
             textBoxPayment.TabIndex = 26;
-            textBoxPayment.Visible = false;
             // 
             // label6
             // 
@@ -279,6 +277,24 @@
             panelAdmin.Size = new Size(661, 120);
             panelAdmin.TabIndex = 31;
             // 
+            // dateTimePickerEnd
+            // 
+            dateTimePickerEnd.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePickerEnd.Location = new Point(319, 84);
+            dateTimePickerEnd.Name = "dateTimePickerEnd";
+            dateTimePickerEnd.Size = new Size(200, 26);
+            dateTimePickerEnd.TabIndex = 29;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(133, 87);
+            label4.Name = "label4";
+            label4.Size = new Size(174, 19);
+            label4.TabIndex = 28;
+            label4.Text = "Дата завершения";
+            // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top;
@@ -331,24 +347,6 @@
             textBoxDesc.Name = "textBoxDesc";
             textBoxDesc.Size = new Size(261, 82);
             textBoxDesc.TabIndex = 28;
-            // 
-            // dateTimePickerEnd
-            // 
-            dateTimePickerEnd.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerEnd.Location = new Point(319, 84);
-            dateTimePickerEnd.Name = "dateTimePickerEnd";
-            dateTimePickerEnd.Size = new Size(200, 26);
-            dateTimePickerEnd.TabIndex = 29;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(133, 87);
-            label4.Name = "label4";
-            label4.Size = new Size(174, 19);
-            label4.TabIndex = 28;
-            label4.Text = "Дата завершения";
             // 
             // MaterialRequestForm
             // 

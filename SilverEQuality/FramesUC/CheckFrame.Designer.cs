@@ -68,6 +68,7 @@
             checkBoxNorm.TabIndex = 8;
             checkBoxNorm.Text = "Выделить некорректные нормы";
             checkBoxNorm.UseVisualStyleBackColor = true;
+            checkBoxNorm.CheckedChanged += checkBoxNorm_CheckedChanged;
             // 
             // comboBoxSortDate
             // 

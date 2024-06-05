@@ -21,7 +21,7 @@ namespace SilverEQuality.Forms
         public bool isMouseDown;
         public Point startPoint;
 
-        private Order commentOrder;
+        private readonly Order commentOrder;
         public CommentForm(Order order)
         {
             InitializeComponent();
@@ -135,7 +135,7 @@ namespace SilverEQuality.Forms
         }
 
 
-   
+
 
         private void panelHeader_MouseDown(object sender, MouseEventArgs e)
         {

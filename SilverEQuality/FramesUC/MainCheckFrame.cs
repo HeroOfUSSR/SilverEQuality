@@ -43,6 +43,7 @@ namespace SilverEQuality.FramesUC
                     buttonGrid.BackColor = Color.White;
                     buttonGrid.ForeColor = Color.SteelBlue;
 
+                    CheckFrame checkFrame = new CheckFrame();
                     checkFrame.Size = panelBody.Size;
                     checkFrame.Dock = DockStyle.Fill;
                     checkFrame.Parent = panelBody;
@@ -56,6 +57,7 @@ namespace SilverEQuality.FramesUC
                     buttonAdd.BackColor = Color.White;
                     buttonAdd.ForeColor = Color.SteelBlue;
 
+                    CheckEditFrame checkEditFrame = new CheckEditFrame();
                     checkEditFrame.Size = panelBody.Size;
                     checkEditFrame.Dock = DockStyle.Fill;
                     checkEditFrame.Parent = panelBody;

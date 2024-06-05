@@ -155,6 +155,7 @@
             textBoxPayment.Name = "textBoxPayment";
             textBoxPayment.Size = new Size(200, 26);
             textBoxPayment.TabIndex = 36;
+            textBoxPayment.KeyDown += textBoxPayment_KeyDown;
             // 
             // label6
             // 
@@ -313,7 +314,7 @@
             textBox1.Location = new Point(0, 19);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Поиск необходимых деталей";
-            textBox1.Size = new Size(355, 26);
+            textBox1.Size = new Size(364, 26);
             textBox1.TabIndex = 48;
             // 
             // panel5

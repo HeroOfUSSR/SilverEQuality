@@ -19,6 +19,7 @@ namespace SilverEQuality.Forms
     public partial class OrderFrame : UserControl
     {
         public event Action<Order> nextAddCheck;
+
         private Order fromOrderView;
         public OrderFrame()
         {
@@ -122,6 +123,7 @@ namespace SilverEQuality.Forms
         {
             nextAddCheck?.Invoke(fromOrderView);
         }
+
 
         private void Filter()
         {

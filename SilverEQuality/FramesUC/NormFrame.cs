@@ -43,22 +43,31 @@ namespace SilverEQuality.FramesUC
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
-                foreach (DataGridViewRow row in dataGridViewNorm.Rows)
+                var result = from norm in db.Norms
+                             .Where(x => x.SilverTypeNorm == silverType.CodeSilverType)
+                             select new
+                             {
+                                 IdNorm = norm.IdNorm,
+                                 DecimalNorm = norm.DecimalNormNavigation.TitleDecimal,
+                                 SilverTypeNorm = norm.SilverTypeNormNavigation.TitleSilverType,
+                                 TitleNorm = norm.TitleNorm,
+                             };
+
+                if (result.Any())
                 {
-                    if (silverType.TitleSilverType == row.Cells[2].ToString())
-                    {
-                        row.Selected = true;
-                        break;
-                    }
-                } // Бесконечный форич может получиться 
+                    dataGridViewNorm.DataSource = result.ToList();
 
-                comboBoxDecimal.DisplayMember = nameof(DecimalNumber.TitleDecimal);
-                comboBoxDecimal.ValueMember = nameof(DecimalNumber.IdDecimal);
-                comboBoxSilverType.DisplayMember = nameof(SilverType.TitleSilverType);
-                comboBoxSilverType.ValueMember = nameof(SilverType.CodeSilverType);
+                    dataGridViewNorm.Columns["IdNorm"].HeaderText = "Идентификатор";
+                    dataGridViewNorm.Columns["IdNorm"].Visible = false;
 
-                comboBoxDecimal.Items.AddRange(db.DecimalNumbers.ToArray());
-                comboBoxSilverType.Items.AddRange(db.SilverTypes.ToArray());
+                    dataGridViewNorm.Columns["DecimalNorm"].HeaderText = "Децимальный номер";
+                    dataGridViewNorm.Columns["SilverTypeNorm"].HeaderText = "Вид серебра";
+                    dataGridViewNorm.Columns["TitleNorm"].HeaderText = "Норма";
+                }
+                else
+                {
+                    CustomMessageBox noNorms = new CustomMessageBox("Нормы не найдены", false);
+                }
             }
 
         }
@@ -132,6 +141,10 @@ namespace SilverEQuality.FramesUC
             {
                 buttonEdit.Visible = false;
                 buttonDelete.Visible = false;
+
+                maskedTextBoxNorm.Text = "";
+                comboBoxDecimal.SelectedValue = 0;
+                comboBoxSilverType.SelectedValue = 0;
             }
         }
 

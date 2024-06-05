@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace SilverEQuality.Forms
 {
@@ -19,48 +20,58 @@ namespace SilverEQuality.Forms
         private DateTime fromDate;
         private DateTime toDate;
 
+        private int sortChecks;
         private bool searchDate = false;
         public CheckFrame()
         {
             InitializeComponent();
-            InitDatagrid();
+            
 
             fromDate = dateTimePickerFrom.Value;
             toDate = dateTimePickerUntil.Value;
+
+            comboBoxSortDate.DisplayMember = "Text";
+            comboBoxSortDate.ValueMember = "Value";
+
+            comboBoxSortDate.Items.Add(new { Text = "Самые новые", Value = 1 });
+            comboBoxSortDate.Items.Add(new { Text = "Самые старые", Value = 2 });
+
+            comboBoxSortDate.SelectedValue = 0;
+            sortChecks = comboBoxSortDate.SelectedIndex;
+
+            InitDatagrid(sortChecks);
         }
 
-        private void InitDatagrid()
+        private void InitDatagrid(int sort)
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
                 //var show = db.Check.OrderBy(x => x.IdCheck).ToList();
-                
-                var result = from check in db.Checks
+
+                var query = db.Checks
                              .Where(x => x.IdCheck.ToString().Contains(textBoxSearch.Text)
                                 || x.DecimalCheckNavigation.TitleDecimal.Contains(textBoxSearch.Text)
-                                || textBoxSearch.Text != "")
-                             select new
-                             {
-                                 //IdCheck = check.IdCheck,
-                                 NumberCheck = check.NumberCheck,
-                                 DateCheck = check.DateCheck,
-                                 DepartmentCheck = check.DepartmentCheck,
-                                 NormCheck = check.NormCheck,
-                                 SilverTypeCheck = db.SilverTypes.FirstOrDefault(x => x.CodeSilverType == check.SilverTypeCheck).TitleSilverType,
-                                 CoverageCheck = check.CoverageCheck,
-                                 AmountCheck = check.AmountCheck,
-                                 DecimalCheck = db.DecimalNumbers.FirstOrDefault(x => x.IdDecimal == check.DecimalCheck).TitleDecimal,
-                                 OrderCheck = check.OrderCheck,
-                             };
+                                || textBoxSearch.Text == "");
 
                 if (searchDate)
                 {
-                    result = from check in db.Checks
-                             .Where(x => x.IdCheck.ToString().Contains(textBoxSearch.Text)
-                                && textBoxSearch.Text != ""
-                                || x.DecimalCheckNavigation.TitleDecimal.Contains(textBoxSearch.Text)
-                                && textBoxSearch.Text != ""
-                                || x.DateCheck >= fromDate && x.DateCheck <= toDate)
+                    query = query.Where(x => x.DateCheck >= fromDate && x.DateCheck <= toDate);
+                }
+
+                switch (sort)
+                {
+                    case 0:
+                        query.OrderByDescending(c => c.DateCheck.Ticks);
+                            //.ThenBy(c => c.DateCheck.TimeOfDay);
+                        //.OrderBy(x => x.DateCheck);
+                        break;
+                    case 1:
+                        query.OrderBy(c => c.DateCheck.Ticks);
+                            //.ThenBy(c => c.DateCheck.TimeOfDay);
+                        break;
+                }
+
+                var result = from check in query
                              select new
                              {
                                  //IdCheck = check.IdCheck,
@@ -74,7 +85,6 @@ namespace SilverEQuality.Forms
                                  DecimalCheck = db.DecimalNumbers.FirstOrDefault(x => x.IdDecimal == check.DecimalCheck).TitleDecimal,
                                  OrderCheck = check.OrderCheck,
                              };
-                }
 
                 if (result.Any())
                 {
@@ -102,7 +112,25 @@ namespace SilverEQuality.Forms
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            InitDatagrid();
+            sortChecks = comboBoxSortDate.SelectedIndex;
+
+            InitDatagrid(sortChecks);
+
+            if (checkBoxNorm.Checked)
+            {
+                using (var db = new SilverEQContext(DBHelper.Option()))
+                {
+                    foreach (DataGridViewRow row in dataGridCheck.Rows)
+                    {
+                        var correctNorm = db.Norms.FirstOrDefault(x => x.DecimalNormNavigation.TitleDecimal == row.Cells[7].Value.ToString());
+
+                        if (correctNorm != null)
+                            if (correctNorm.TitleNorm.ToString() != row.Cells[3].Value.ToString()
+                                || correctNorm.SilverTypeNorm.ToString() != row.Cells[4].Value.ToString()) // Тут надо позор с ToString как то переделать
+                                dataGridCheck.Rows[row.Index].DefaultCellStyle.BackColor = Color.IndianRed; // P.S. Decimal.Compare не работает, потому что nullable в моделях
+                    }
+                }
+            }
         }
 
         private void buttonReportCreate_Click(object sender, EventArgs e)
@@ -127,7 +155,7 @@ namespace SilverEQuality.Forms
                 if (db.Checks.Where(x => x.DateCheck >= fromDate && x.DateCheck <= toDate).Any())
                 {
                     searchDate = true;
-                    InitDatagrid();
+                    InitDatagrid(sortChecks);
                 }
             }
         }
@@ -141,14 +169,19 @@ namespace SilverEQuality.Forms
                 if (db.Checks.Where(x => x.DateCheck >= fromDate && x.DateCheck <= toDate).Any())
                 {
                     searchDate = true;
-                    InitDatagrid();
+                    InitDatagrid(sortChecks);
                 }
             }
         }
 
         private void buttonCheckDate_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void checkBoxNorm_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

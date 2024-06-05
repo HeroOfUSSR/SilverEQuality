@@ -42,5 +42,23 @@ namespace SilverEQuality.FramesUC
         {
             nextAddSilver?.Invoke(fromSilverView);
         }
+
+        private void flowLayoutPanelSilver_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender is MaterialView materialView)
+            {
+                this.Size = MaximumSize;
+                BackColor = Color.Lavender;
+            }
+        }
+
+        private void flowLayoutPanelSilver_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is MaterialView)
+            {
+                this.Size = MinimumSize;
+                BackColor = Color.White;
+            }
+        }
     }
 }

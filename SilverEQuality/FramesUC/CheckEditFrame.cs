@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SilverEQuality.MessageBoxes;
 using SilverEQuality_Context;
 using SilverEQuality_Context.Models;
 using System;
@@ -18,6 +19,7 @@ namespace SilverEQuality.FramesUC
     public partial class CheckEditFrame : UserControl
     {
         private Check editCheck;
+        private Order orderReport;
         public CheckEditFrame()
         {
             InitializeComponent();
@@ -28,7 +30,7 @@ namespace SilverEQuality.FramesUC
                 comboBoxTypeSilver.DataSource = db.SilverTypes.ToList();
                 comboBoxDecimal.DataSource = db.DecimalNumbers.ToList();
                 comboBoxOrder.DataSource = db.Orders.Include(x => x.StatusOrderNavigation)
-                    .Where(x => x.StatusOrderNavigation.IdStatus == 2).ToList();
+                    .Where(x => x.StatusOrderNavigation.IdStatus != 3).ToList();
 
                 comboBoxDepartment.DisplayMember = nameof(Department.CodeDepartment);
                 comboBoxDepartment.ValueMember = nameof(Department.CodeDepartment);
@@ -73,13 +75,15 @@ namespace SilverEQuality.FramesUC
 
             comboBoxOrder.SelectedIndex = index;
             comboBoxOrder.Enabled = false;
+            //checkBoxFinish.Visible = true;
+            orderReport = order;
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             DateTime dateCheck;
 
-            if (checkBoxChoose.Checked == true)
+            if (checkBoxDate.Checked == true)
             {
                 dateCheck = dateTimePickerCheck.Value;
             }
@@ -95,7 +99,7 @@ namespace SilverEQuality.FramesUC
                     Check newCheck = new Check
                     {
                         DateCheck = dateCheck,
-                        DepartmentCheck = ((Department)comboBoxDecimal.SelectedItem).CodeDepartment,
+                        DepartmentCheck = ((Department)comboBoxDepartment.SelectedItem).CodeDepartment,
                         NormCheck = Convert.ToDecimal(maskedTextBoxNorm.Text),
                         SilverTypeCheck = ((SilverType)comboBoxTypeSilver.SelectedItem).CodeSilverType,
                         CoverageCheck = Convert.ToDecimal(maskedTextBoxCoverage.Text),
@@ -106,11 +110,13 @@ namespace SilverEQuality.FramesUC
 
                     db.Checks.Add(newCheck);
                     db.SaveChanges();
+                    CustomMessageBox successAdd = new CustomMessageBox("Успешное добавление", false);
+                    successAdd.Show();
                 }
                 if (buttonAdd.Text == "Редактировать")
                 {
                     editCheck.DateCheck = dateCheck;
-                    editCheck.DepartmentCheck = ((Department)comboBoxDecimal.SelectedItem).CodeDepartment;
+                    editCheck.DepartmentCheck = ((Department)comboBoxDepartment.SelectedItem).CodeDepartment;
                     editCheck.NormCheck = Convert.ToDecimal(maskedTextBoxNorm.Text);
                     editCheck.SilverTypeCheck = ((SilverType)comboBoxTypeSilver.SelectedItem).CodeSilverType;
                     editCheck.CoverageCheck = Convert.ToDecimal(maskedTextBoxCoverage.Text);
@@ -120,13 +126,27 @@ namespace SilverEQuality.FramesUC
 
                     db.Checks.Update(editCheck);
                     db.SaveChanges();
+                    CustomMessageBox successEdit = new CustomMessageBox($"Чек №{editCheck.IdCheck} изменён", false);
+                    successEdit.Show();
+                }
+
+                if (checkBoxFinish.Checked)
+                {
+                    if (orderReport == null) 
+                        orderReport = db.Orders.FirstOrDefault(x => x.IdOrder == db.Checks.OrderBy(x => x.IdCheck).Last().OrderCheck);
+
+                    orderReport.StatusOrder = 3;
+                    orderReport.DateClosedOrder = DateTime.Now;
+
+                    db.Orders.Update(orderReport);
+                    db.SaveChanges();
                 }
             }
         }
 
         private void checkBoxChoose_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxChoose.Checked == true)
+            if (checkBoxDate.Checked == true)
             {
                 dateTimePickerCheck.Enabled = true;
             }

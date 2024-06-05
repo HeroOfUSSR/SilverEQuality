@@ -93,6 +93,8 @@
             flowLayoutPanelSilver.Name = "flowLayoutPanelSilver";
             flowLayoutPanelSilver.Size = new Size(719, 359);
             flowLayoutPanelSilver.TabIndex = 4;
+            flowLayoutPanelSilver.MouseEnter += flowLayoutPanelSilver_MouseEnter;
+            flowLayoutPanelSilver.MouseLeave += flowLayoutPanelSilver_MouseLeave;
             // 
             // MaterialFrame
             // 

@@ -40,7 +40,7 @@ namespace SilverEQuality
                 if (authorizedUser != null && triesToLogin < 2
                     || triesToLogin >= 2 && authorizedUser != null && textBoxCaptcha.Text == captcha)
                 {
-                    MainForm mainForm = new MainForm();
+                    MainForm mainForm = new();
                     mainForm.Show();
                     this.Hide();
                 }

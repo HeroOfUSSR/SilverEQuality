@@ -38,7 +38,14 @@ namespace SilverEQuality.Forms
                 comboBoxStatus.SelectedValue = 0;
                 comboBoxPrio.SelectedValue = 0;
             }
+        }
 
+        public MaterialRequestForm(SilverType silverType) : this()
+        {
+            using (var db = new SilverEQContext(DBHelper.Option()))
+            {
+                comboBoxSilver.SelectedValue = silverType.CodeSilverType;
+            }
         }
 
         public MaterialRequestForm(SilverRequest silverRequest) : this()
@@ -104,15 +111,36 @@ namespace SilverEQuality.Forms
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
+                string paymentRequest;
+                if (textBoxPayment.Text == "")
+                {
+                    paymentRequest = null;
+                }
+                else
+                {
+                    paymentRequest = textBoxPayment.Text;
+                }
+
+                int statusRequest;
+                if (comboBoxStatus.SelectedItem != null)
+                {
+                    statusRequest = ((Status)comboBoxStatus.SelectedItem).IdStatus;
+                }
+                else
+                {
+                    statusRequest = 1;
+                }
+
+
                 if (buttonDone.Text == "Редактировать")
                 {
-                    editRequest.StatusRequest = ((Status)comboBoxStatus.SelectedItem).IdStatus;
+                    editRequest.StatusRequest = statusRequest;
                     editRequest.PriorityRequest = ((Priority)comboBoxPrio.SelectedItem).IdPriority;
                     editRequest.SilverTypeRequest = ((SilverType)comboBoxSilver.SelectedItem).CodeSilverType;
                     editRequest.AmountRequest = Convert.ToInt32(numericUpDownAmount.Value);
                     editRequest.DescRequest = textBoxDesc.Text;
 
-                    editRequest.CostRequest = Convert.ToInt32(textBoxPayment.Text);
+                    editRequest.CostRequest = Convert.ToDecimal(paymentRequest);
                     editRequest.DateEndRequest = dateTimePickerEnd.Value;
 
                     db.SilverRequests.Update(editRequest);
@@ -123,13 +151,13 @@ namespace SilverEQuality.Forms
                 {
                     SilverRequest newRequest = new SilverRequest
                     {
-                        StatusRequest = ((Status)comboBoxStatus.SelectedItem).IdStatus,
+                        StatusRequest = statusRequest,
                         PriorityRequest = ((Priority)comboBoxPrio.SelectedItem).IdPriority,
                         SilverTypeRequest = ((SilverType)comboBoxSilver.SelectedItem).CodeSilverType,
                         UserRequest = AuthForm.authorizedUser.IdUser,
                         AmountRequest = Convert.ToInt32(numericUpDownAmount.Value),
                         DescRequest = textBoxDesc.Text,
-                        CostRequest = Convert.ToInt32(textBoxPayment.Text),
+                        CostRequest = Convert.ToDecimal(paymentRequest),
                         DateEndRequest = dateTimePickerEnd.Value,
                         DateRequest = DateTime.Now,
 

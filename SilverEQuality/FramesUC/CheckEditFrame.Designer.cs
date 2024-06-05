@@ -32,7 +32,8 @@
             panel2 = new Panel();
             buttonAdd = new Button();
             panel3 = new Panel();
-            checkBoxChoose = new CheckBox();
+            checkBoxFinish = new CheckBox();
+            checkBoxDate = new CheckBox();
             label9 = new Label();
             dateTimePickerCheck = new DateTimePicker();
             comboBoxOrder = new ComboBox();
@@ -59,16 +60,16 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1009, 33);
+            panel1.Size = new Size(841, 18);
             panel1.TabIndex = 0;
             // 
             // panel2
             // 
             panel2.Controls.Add(buttonAdd);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 372);
+            panel2.Location = new Point(0, 378);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1009, 76);
+            panel2.Size = new Size(841, 70);
             panel2.TabIndex = 1;
             // 
             // buttonAdd
@@ -80,7 +81,7 @@
             buttonAdd.FlatStyle = FlatStyle.Flat;
             buttonAdd.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAdd.ForeColor = SystemColors.ControlLightLight;
-            buttonAdd.Location = new Point(336, 22);
+            buttonAdd.Location = new Point(252, 19);
             buttonAdd.Name = "buttonAdd";
             buttonAdd.Size = new Size(355, 37);
             buttonAdd.TabIndex = 24;
@@ -90,7 +91,8 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(checkBoxChoose);
+            panel3.Controls.Add(checkBoxFinish);
+            panel3.Controls.Add(checkBoxDate);
             panel3.Controls.Add(label9);
             panel3.Controls.Add(dateTimePickerCheck);
             panel3.Controls.Add(comboBoxOrder);
@@ -108,30 +110,43 @@
             panel3.Controls.Add(comboBoxTypeSilver);
             panel3.Controls.Add(label2);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 33);
+            panel3.Location = new Point(0, 18);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1009, 339);
+            panel3.Size = new Size(841, 360);
             panel3.TabIndex = 2;
             // 
-            // checkBoxChoose
+            // checkBoxFinish
             // 
-            checkBoxChoose.Anchor = AnchorStyles.None;
-            checkBoxChoose.AutoSize = true;
-            checkBoxChoose.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxChoose.Location = new Point(445, 248);
-            checkBoxChoose.Name = "checkBoxChoose";
-            checkBoxChoose.Size = new Size(160, 23);
-            checkBoxChoose.TabIndex = 17;
-            checkBoxChoose.Text = "Выбрать дату";
-            checkBoxChoose.UseVisualStyleBackColor = true;
-            checkBoxChoose.CheckedChanged += checkBoxChoose_CheckedChanged;
+            checkBoxFinish.AutoSize = true;
+            checkBoxFinish.CheckAlign = ContentAlignment.MiddleRight;
+            checkBoxFinish.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBoxFinish.Location = new Point(339, 331);
+            checkBoxFinish.Name = "checkBoxFinish";
+            checkBoxFinish.Size = new Size(182, 23);
+            checkBoxFinish.TabIndex = 18;
+            checkBoxFinish.Text = "Заказ завершён";
+            checkBoxFinish.TextAlign = ContentAlignment.MiddleCenter;
+            checkBoxFinish.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDate
+            // 
+            checkBoxDate.Anchor = AnchorStyles.None;
+            checkBoxDate.AutoSize = true;
+            checkBoxDate.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBoxDate.Location = new Point(361, 260);
+            checkBoxDate.Name = "checkBoxDate";
+            checkBoxDate.Size = new Size(160, 23);
+            checkBoxDate.TabIndex = 17;
+            checkBoxDate.Text = "Выбрать дату";
+            checkBoxDate.UseVisualStyleBackColor = true;
+            checkBoxDate.CheckedChanged += checkBoxChoose_CheckedChanged;
             // 
             // label9
             // 
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(368, 282);
+            label9.Location = new Point(284, 294);
             label9.Name = "label9";
             label9.Size = new Size(130, 19);
             label9.TabIndex = 16;
@@ -142,7 +157,7 @@
             dateTimePickerCheck.Anchor = AnchorStyles.None;
             dateTimePickerCheck.Enabled = false;
             dateTimePickerCheck.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerCheck.Location = new Point(516, 277);
+            dateTimePickerCheck.Location = new Point(432, 289);
             dateTimePickerCheck.Name = "dateTimePickerCheck";
             dateTimePickerCheck.Size = new Size(224, 26);
             dateTimePickerCheck.TabIndex = 7;
@@ -154,7 +169,7 @@
             comboBoxOrder.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBoxOrder.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxOrder.FormattingEnabled = true;
-            comboBoxOrder.Location = new Point(516, 6);
+            comboBoxOrder.Location = new Point(432, 18);
             comboBoxOrder.Name = "comboBoxOrder";
             comboBoxOrder.Size = new Size(153, 27);
             comboBoxOrder.TabIndex = 6;
@@ -164,7 +179,7 @@
             label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
             label8.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(357, 9);
+            label8.Location = new Point(273, 21);
             label8.Name = "label8";
             label8.Size = new Size(141, 19);
             label8.TabIndex = 15;
@@ -177,7 +192,7 @@
             comboBoxDecimal.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBoxDecimal.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxDecimal.FormattingEnabled = true;
-            comboBoxDecimal.Location = new Point(516, 209);
+            comboBoxDecimal.Location = new Point(432, 221);
             comboBoxDecimal.Name = "comboBoxDecimal";
             comboBoxDecimal.Size = new Size(224, 27);
             comboBoxDecimal.TabIndex = 5;
@@ -187,7 +202,7 @@
             label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
             label7.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(302, 212);
+            label7.Location = new Point(218, 224);
             label7.Name = "label7";
             label7.Size = new Size(196, 19);
             label7.TabIndex = 13;
@@ -198,7 +213,7 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(379, 179);
+            label6.Location = new Point(295, 191);
             label6.Name = "label6";
             label6.Size = new Size(119, 19);
             label6.TabIndex = 12;
@@ -208,7 +223,7 @@
             // 
             numericUpDownAmount.Anchor = AnchorStyles.None;
             numericUpDownAmount.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDownAmount.Location = new Point(516, 176);
+            numericUpDownAmount.Location = new Point(432, 188);
             numericUpDownAmount.Name = "numericUpDownAmount";
             numericUpDownAmount.Size = new Size(89, 26);
             numericUpDownAmount.TabIndex = 4;
@@ -218,7 +233,7 @@
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(314, 148);
+            label5.Location = new Point(230, 160);
             label5.Name = "label5";
             label5.Size = new Size(185, 19);
             label5.TabIndex = 10;
@@ -228,7 +243,7 @@
             // 
             maskedTextBoxCoverage.Anchor = AnchorStyles.None;
             maskedTextBoxCoverage.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            maskedTextBoxCoverage.Location = new Point(516, 144);
+            maskedTextBoxCoverage.Location = new Point(432, 156);
             maskedTextBoxCoverage.Mask = "0.00000";
             maskedTextBoxCoverage.Name = "maskedTextBoxCoverage";
             maskedTextBoxCoverage.Size = new Size(153, 26);
@@ -240,7 +255,7 @@
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(303, 83);
+            label4.Location = new Point(219, 95);
             label4.Name = "label4";
             label4.Size = new Size(196, 19);
             label4.TabIndex = 8;
@@ -250,7 +265,7 @@
             // 
             maskedTextBoxNorm.Anchor = AnchorStyles.None;
             maskedTextBoxNorm.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            maskedTextBoxNorm.Location = new Point(516, 79);
+            maskedTextBoxNorm.Location = new Point(432, 91);
             maskedTextBoxNorm.Mask = "0.000000";
             maskedTextBoxNorm.Name = "maskedTextBoxNorm";
             maskedTextBoxNorm.Size = new Size(121, 26);
@@ -264,7 +279,7 @@
             comboBoxDepartment.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBoxDepartment.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxDepartment.FormattingEnabled = true;
-            comboBoxDepartment.Location = new Point(516, 47);
+            comboBoxDepartment.Location = new Point(432, 59);
             comboBoxDepartment.Name = "comboBoxDepartment";
             comboBoxDepartment.Size = new Size(89, 27);
             comboBoxDepartment.TabIndex = 0;
@@ -274,7 +289,7 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(380, 50);
+            label3.Location = new Point(296, 62);
             label3.Name = "label3";
             label3.Size = new Size(119, 19);
             label3.TabIndex = 5;
@@ -286,7 +301,7 @@
             comboBoxTypeSilver.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxTypeSilver.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxTypeSilver.FormattingEnabled = true;
-            comboBoxTypeSilver.Location = new Point(516, 112);
+            comboBoxTypeSilver.Location = new Point(432, 124);
             comboBoxTypeSilver.Name = "comboBoxTypeSilver";
             comboBoxTypeSilver.Size = new Size(192, 27);
             comboBoxTypeSilver.TabIndex = 2;
@@ -296,7 +311,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(369, 115);
+            label2.Location = new Point(285, 127);
             label2.Name = "label2";
             label2.Size = new Size(130, 19);
             label2.TabIndex = 3;
@@ -312,7 +327,7 @@
             MaximumSize = new Size(1009, 448);
             MinimumSize = new Size(841, 448);
             Name = "CheckEditFrame";
-            Size = new Size(1009, 448);
+            Size = new Size(841, 448);
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -342,6 +357,7 @@
         private Label label8;
         private Label label9;
         private Button buttonAdd;
-        private CheckBox checkBoxChoose;
+        private CheckBox checkBoxDate;
+        private CheckBox checkBoxFinish;
     }
 }

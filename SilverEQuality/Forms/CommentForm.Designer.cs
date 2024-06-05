@@ -193,6 +193,7 @@
             Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.None;
             Name = "CommentForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "CommentForm";
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();

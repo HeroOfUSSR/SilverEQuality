@@ -127,7 +127,7 @@
             panel1.Controls.Add(buttonCancel);
             panel1.Controls.Add(buttonDone);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 340);
+            panel1.Location = new Point(0, 337);
             panel1.Name = "panel1";
             panel1.Size = new Size(512, 94);
             panel1.TabIndex = 3;
@@ -278,7 +278,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(512, 434);
+            ClientSize = new Size(512, 431);
             Controls.Add(label3);
             Controls.Add(comboBoxAppointed);
             Controls.Add(label8);

@@ -16,7 +16,6 @@ namespace SilverEQuality.FramesUC
     public partial class OrderAddFrame : UserControl
     {
         private Dictionary<Part, int> partMap;
-        private Order editOrder;
 
         public OrderAddFrame()
         {
@@ -39,13 +38,7 @@ namespace SilverEQuality.FramesUC
                 comboBoxManufacturer.Items.AddRange(db.Manufacturers.ToArray());
 
                 partMap = new Dictionary<Part, int>();
-            }
-        }
 
-        private void OrderAddFrame_Load(object sender, EventArgs e)
-        {
-            using (var db = new SilverEQContext(DBHelper.Option()))
-            {
                 var parts = db.Parts.OrderByDescending(x => x.IdPart);
 
                 foreach (var part in parts)
@@ -55,6 +48,15 @@ namespace SilverEQuality.FramesUC
 
                     partView.PartAdded += PartView_PartAdded;
                 }
+            }
+        }
+
+
+        private void OrderAddFrame_Load(object sender, EventArgs e)
+        {
+            using (var db = new SilverEQContext(DBHelper.Option()))
+            {
+
             }
 
         }
@@ -72,6 +74,15 @@ namespace SilverEQuality.FramesUC
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
+                string paymentOrder;
+                if (textBoxPayment.Text != "")
+                {
+                    paymentOrder = textBoxPayment.Text;
+                }
+                else
+                {
+                    paymentOrder = null;
+                }
                 var newOrder = new Order
                 {
                     DateOrder = dateTimePickerStart.Value,
@@ -81,7 +92,7 @@ namespace SilverEQuality.FramesUC
                     PriorityOrder = ((Priority)comboBoxPrio.SelectedItem).IdPriority,
                     DescOrder = textBoxDesc.Text,
                     AppointedOrder = ((User)comboBoxAppointed.SelectedItem).IdUser,
-                    PaymentOrder = Convert.ToDecimal(textBoxPayment.Text)
+                    PaymentOrder = Convert.ToDecimal(paymentOrder)
                 };
 
                 if (checkBoxTodayDate.Checked)
@@ -138,6 +149,14 @@ namespace SilverEQuality.FramesUC
             else dateTimePickerEnd.Enabled = true;
         }
 
-        
+        private void textBoxPayment_KeyDown(object sender, KeyEventArgs e)
+        {
+            char digit = Convert.ToChar(e.KeyCode);
+
+            if (!Char.IsDigit(digit) || e.KeyCode == Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

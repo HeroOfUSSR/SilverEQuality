@@ -66,6 +66,7 @@ namespace SilverEQuality.FramesUC
             mainAddCheck?.Invoke(fromOrderFrame);
         }
 
+
         private void buttonView_Click(object sender, EventArgs e)
         {
             FrameOutput(1);

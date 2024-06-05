@@ -272,6 +272,7 @@
             Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.None;
             Name = "EditMaterialForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "EditMaterialForm";
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();

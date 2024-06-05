@@ -21,6 +21,8 @@ namespace SilverEQuality.FramesUC
         bool isExpanding = true;
 
         public event Action<Order> createCheck;
+        public event Action<bool> reloadView;
+
 
         public OrderAddFrame orderEditFrame;
 
@@ -160,6 +162,7 @@ namespace SilverEQuality.FramesUC
                 CustomMessageBox successAdd = new CustomMessageBox($"Заказ №{orderView.IdOrder} изменён", false);
                 successAdd.ShowDialog();
             }
+
         }
 
         private void buttonComments_Click(object sender, EventArgs e)
@@ -170,7 +173,7 @@ namespace SilverEQuality.FramesUC
 
         private void buttonCheck_Click(object sender, EventArgs e)
         {
-            if (orderView.StatusOrderNavigation.IdStatus == 2)
+            if (orderView.StatusOrderNavigation.IdStatus != 3)
             {
                 createCheck?.Invoke(orderView);
             }
@@ -178,7 +181,7 @@ namespace SilverEQuality.FramesUC
 
         private void OrderView_ParentChanged(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
