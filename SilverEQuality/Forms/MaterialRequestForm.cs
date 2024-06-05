@@ -1,4 +1,5 @@
-﻿using SilverEQuality_Context;
+﻿using SilverEQuality.MessageBoxes;
+using SilverEQuality_Context;
 using SilverEQuality_Context.Models;
 using System;
 using System.Collections.Generic;
@@ -146,6 +147,9 @@ namespace SilverEQuality.Forms
                     db.SilverRequests.Update(editRequest);
                     db.SaveChanges();
 
+                    CustomMessageBox successEdit = new CustomMessageBox("Запрос изменён", false);
+                    successEdit.ShowDialog();
+
                 }
                 else
                 {
@@ -165,6 +169,9 @@ namespace SilverEQuality.Forms
 
                     db.SilverRequests.Add(newRequest);
                     db.SaveChanges();
+
+                    CustomMessageBox successAdd = new CustomMessageBox("Запрос создан", false);
+                    successAdd.ShowDialog();
                 }
             }
         }
