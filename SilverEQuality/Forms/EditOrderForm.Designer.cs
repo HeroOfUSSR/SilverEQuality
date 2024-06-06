@@ -149,7 +149,6 @@
             // buttonDone
             // 
             buttonDone.BackColor = Color.SteelBlue;
-            buttonDone.DialogResult = DialogResult.OK;
             buttonDone.FlatAppearance.BorderSize = 0;
             buttonDone.FlatStyle = FlatStyle.Flat;
             buttonDone.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
@@ -186,9 +185,9 @@
             label5.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(41, 92);
             label5.Name = "label5";
-            label5.Size = new Size(75, 19);
+            label5.Size = new Size(86, 19);
             label5.TabIndex = 14;
-            label5.Text = "Статус";
+            label5.Text = "Статус*";
             // 
             // comboBoxStatus
             // 

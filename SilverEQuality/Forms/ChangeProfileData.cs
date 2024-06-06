@@ -111,7 +111,10 @@ namespace SilverEQuality.Forms
                         else
                         {
                             textBoxNew.ForeColor = Color.Red;
+                            labelNew.ForeColor = Color.Red;
                             textBoxRepeat.ForeColor = Color.Red;
+                            labelRepeat.ForeColor = Color.Red;
+
                         }
 
                         break;
@@ -134,11 +137,14 @@ namespace SilverEQuality.Forms
                             {
                                 textBoxNew.ForeColor = Color.Red;
                                 textBoxRepeat.ForeColor = Color.Red;
+                                labelNew.ForeColor = Color.Red;
+                                labelRepeat.ForeColor = Color.Red;
                             }
                         }
                         else
                         {
                             textBoxCurrent.ForeColor = Color.Red;
+                            labelCurrent.ForeColor = Color.Red;
                         }
 
                         break;
@@ -165,16 +171,20 @@ namespace SilverEQuality.Forms
         private void textBoxCurrent_Enter(object sender, EventArgs e)
         {
             textBoxCurrent.ForeColor = Color.Black;
+            labelCurrent.ForeColor = Color.Black;
         }
 
         private void textBoxNew_Enter(object sender, EventArgs e)
         {
             textBoxNew.ForeColor = Color.Black;
+            labelNew.ForeColor = Color.Black;
         }
 
         private void textBoxRepeat_Enter(object sender, EventArgs e)
         {
             textBoxRepeat.ForeColor = Color.Black;
+            labelRepeat.ForeColor = Color.Black;
+
         }
 
         private void panelHeader_MouseDown(object sender, MouseEventArgs e)

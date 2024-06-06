@@ -1,4 +1,6 @@
-﻿using SilverEQuality_Context;
+﻿using SilverEQuality.FramesUC;
+using SilverEQuality.MessageBoxes;
+using SilverEQuality_Context;
 using SilverEQuality_Context.Models;
 using System;
 using System.Collections.Generic;
@@ -92,6 +94,12 @@ namespace SilverEQuality.Forms
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
+                if (comboBoxStatus.SelectedIndex == -1)
+                {
+                    CustomMessageBox errorEditing = new CustomMessageBox($"Не все поля со звёздочкой заполнены", false);
+                    errorEditing.ShowDialog();
+                    return;
+                }
 
                 editOrder.DateEndOrder = dateTimePickerEnd.Value;
                 editOrder.StatusOrder = ((Status)comboBoxStatus.SelectedItem).IdStatus;
@@ -103,7 +111,11 @@ namespace SilverEQuality.Forms
                 db.Orders.Update(editOrder);
                 db.SaveChanges();
 
+
             }
+
+            CustomMessageBox successAdd = new CustomMessageBox($"Заказ №{editOrder.IdOrder} изменён", false);
+            successAdd.ShowDialog();
 
         }
 

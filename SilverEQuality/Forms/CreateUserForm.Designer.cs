@@ -137,16 +137,16 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(67, 74);
+            label7.Location = new Point(67, 69);
             label7.Name = "label7";
-            label7.Size = new Size(42, 19);
+            label7.Size = new Size(53, 19);
             label7.TabIndex = 24;
-            label7.Text = "ФИО";
+            label7.Text = "ФИО*";
             // 
             // textBoxFullname
             // 
             textBoxFullname.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxFullname.Location = new Point(236, 71);
+            textBoxFullname.Location = new Point(252, 66);
             textBoxFullname.Name = "textBoxFullname";
             textBoxFullname.Size = new Size(231, 26);
             textBoxFullname.TabIndex = 1;
@@ -156,7 +156,7 @@
             comboBoxRoles.Anchor = AnchorStyles.Top;
             comboBoxRoles.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxRoles.FormattingEnabled = true;
-            comboBoxRoles.Location = new Point(236, 210);
+            comboBoxRoles.Location = new Point(252, 205);
             comboBoxRoles.Name = "comboBoxRoles";
             comboBoxRoles.Size = new Size(231, 27);
             comboBoxRoles.TabIndex = 7;
@@ -166,26 +166,26 @@
             label5.Anchor = AnchorStyles.Top;
             label5.AutoSize = true;
             label5.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(67, 213);
+            label5.Location = new Point(67, 208);
             label5.Name = "label5";
-            label5.Size = new Size(53, 19);
+            label5.Size = new Size(119, 19);
             label5.TabIndex = 28;
-            label5.Text = "Роль";
+            label5.Text = "Должность*";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(67, 256);
+            label3.Location = new Point(67, 245);
             label3.Name = "label3";
-            label3.Size = new Size(152, 19);
+            label3.Size = new Size(163, 19);
             label3.TabIndex = 32;
-            label3.Text = "Дата рождения";
+            label3.Text = "Дата рождения*";
             // 
             // dateTimePickerBirth
             // 
             dateTimePickerBirth.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerBirth.Location = new Point(236, 250);
+            dateTimePickerBirth.Location = new Point(252, 242);
             dateTimePickerBirth.Name = "dateTimePickerBirth";
             dateTimePickerBirth.Size = new Size(231, 26);
             dateTimePickerBirth.TabIndex = 8;
@@ -194,16 +194,16 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(67, 107);
+            label4.Location = new Point(67, 102);
             label4.Name = "label4";
-            label4.Size = new Size(163, 19);
+            label4.Size = new Size(174, 19);
             label4.TabIndex = 35;
-            label4.Text = "Номер телефона";
+            label4.Text = "Номер телефона*";
             // 
             // textBoxPhone
             // 
             textBoxPhone.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPhone.Location = new Point(236, 104);
+            textBoxPhone.Location = new Point(252, 99);
             textBoxPhone.Name = "textBoxPhone";
             textBoxPhone.Size = new Size(231, 26);
             textBoxPhone.TabIndex = 4;
@@ -212,7 +212,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(67, 139);
+            label6.Location = new Point(67, 134);
             label6.Name = "label6";
             label6.Size = new Size(64, 19);
             label6.TabIndex = 37;
@@ -221,7 +221,7 @@
             // textBoxMail
             // 
             textBoxMail.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxMail.Location = new Point(236, 136);
+            textBoxMail.Location = new Point(252, 131);
             textBoxMail.Name = "textBoxMail";
             textBoxMail.Size = new Size(231, 26);
             textBoxMail.TabIndex = 5;
@@ -231,7 +231,7 @@
             comboBoxDepartment.Anchor = AnchorStyles.Top;
             comboBoxDepartment.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxDepartment.FormattingEnabled = true;
-            comboBoxDepartment.Location = new Point(236, 177);
+            comboBoxDepartment.Location = new Point(252, 172);
             comboBoxDepartment.Name = "comboBoxDepartment";
             comboBoxDepartment.Size = new Size(231, 27);
             comboBoxDepartment.TabIndex = 6;
@@ -241,17 +241,17 @@
             label8.Anchor = AnchorStyles.Top;
             label8.AutoSize = true;
             label8.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(67, 180);
+            label8.Location = new Point(67, 175);
             label8.Name = "label8";
-            label8.Size = new Size(42, 19);
+            label8.Size = new Size(130, 19);
             label8.TabIndex = 39;
-            label8.Text = "Цех";
+            label8.Text = "Номер цеха*";
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(67, 328);
+            label9.Location = new Point(111, 332);
             label9.Name = "label9";
             label9.Size = new Size(75, 19);
             label9.TabIndex = 43;
@@ -260,7 +260,7 @@
             // textBoxPassword
             // 
             textBoxPassword.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPassword.Location = new Point(236, 325);
+            textBoxPassword.Location = new Point(202, 329);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(231, 26);
             textBoxPassword.TabIndex = 10;
@@ -269,7 +269,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(67, 296);
+            label10.Location = new Point(122, 291);
             label10.Name = "label10";
             label10.Size = new Size(64, 19);
             label10.TabIndex = 42;
@@ -278,7 +278,7 @@
             // textBoxLogin
             // 
             textBoxLogin.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxLogin.Location = new Point(236, 293);
+            textBoxLogin.Location = new Point(202, 288);
             textBoxLogin.Name = "textBoxLogin";
             textBoxLogin.Size = new Size(231, 26);
             textBoxLogin.TabIndex = 9;

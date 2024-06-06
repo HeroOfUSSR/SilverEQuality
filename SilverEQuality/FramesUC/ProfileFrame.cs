@@ -159,7 +159,8 @@ namespace SilverEQuality.FramesUC
 
         private void buttonCreateUser_Click(object sender, EventArgs e)
         {
-
+            var createUser = new CreateUserForm();
+            createUser.ShowDialog();
         }
 
         private void buttonUsers_Click(object sender, EventArgs e)

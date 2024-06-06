@@ -144,7 +144,6 @@
             // buttonDone
             // 
             buttonDone.BackColor = Color.SteelBlue;
-            buttonDone.DialogResult = DialogResult.OK;
             buttonDone.FlatAppearance.BorderSize = 0;
             buttonDone.FlatStyle = FlatStyle.Flat;
             buttonDone.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
@@ -181,6 +180,7 @@
             // 
             labelCurrent.AutoSize = true;
             labelCurrent.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            labelCurrent.ForeColor = Color.Black;
             labelCurrent.Location = new Point(18, 56);
             labelCurrent.Name = "labelCurrent";
             labelCurrent.Size = new Size(152, 19);

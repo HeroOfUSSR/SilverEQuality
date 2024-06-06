@@ -150,6 +150,8 @@ namespace SilverEQuality.Forms
                     successAdd.ShowDialog();
 
                 }
+
+                this.Close();
             }
 
         }

@@ -75,9 +75,9 @@
             labelTitle.ForeColor = SystemColors.ControlLightLight;
             labelTitle.Location = new Point(37, 8);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(197, 16);
+            labelTitle.Size = new Size(187, 16);
             labelTitle.TabIndex = 5;
-            labelTitle.Text = "Изменение материала";
+            labelTitle.Text = "Создание материала";
             // 
             // buttonHide
             // 

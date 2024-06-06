@@ -24,8 +24,11 @@ namespace SilverEQuality
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
-                authorizedUser = db.Users.FirstOrDefault(x => x.LoginUser == textBoxLogin.Text 
-                    && x.PasswordUser == textBoxPassword.Text
+                string login = textBoxLogin.Text;
+                string password = textBoxPassword.Text;
+
+                authorizedUser = db.Users.FirstOrDefault(x => x.LoginUser == login
+                    && x.PasswordUser == password
                     && x.AvailableUser == true);
 
                 //authorizedUser = db.Users.FirstOrDefault(x => x.LoginUser.Equals(textBoxLogin.Text, StringComparison.Ordinal)

@@ -56,18 +56,20 @@
             // 
             // buttonAdd
             // 
+            buttonAdd.Anchor = AnchorStyles.None;
             buttonAdd.BackColor = Color.SteelBlue;
             buttonAdd.DialogResult = DialogResult.OK;
             buttonAdd.FlatAppearance.BorderSize = 0;
             buttonAdd.FlatStyle = FlatStyle.Flat;
             buttonAdd.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAdd.ForeColor = SystemColors.ControlLightLight;
-            buttonAdd.Location = new Point(389, 17);
+            buttonAdd.Location = new Point(314, 11);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(249, 30);
+            buttonAdd.Size = new Size(379, 45);
             buttonAdd.TabIndex = 25;
-            buttonAdd.Text = "Редактировать";
+            buttonAdd.Text = "Добавить новый материал";
             buttonAdd.UseVisualStyleBackColor = false;
+            buttonAdd.Click += buttonAdd_Click;
             // 
             // panelLeftSide
             // 

@@ -164,12 +164,7 @@ namespace SilverEQuality.FramesUC
         {
             //orderEditFrame = new OrderEditFrame(orderView);
             var editForm = new EditOrderForm(orderView);
-            editForm.ShowDialog();
-            if (editForm.DialogResult == DialogResult.OK)
-            {
-                CustomMessageBox successAdd = new CustomMessageBox($"Заказ №{orderView.IdOrder} изменён", false);
-                successAdd.ShowDialog();
-            }
+            editForm.Show();
 
         }
 

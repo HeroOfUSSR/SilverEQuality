@@ -80,5 +80,11 @@ namespace SilverEQuality.FramesUC
                 panelRightSide.Visible = true;
             }
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            var newMaterial = new EditMaterialForm();
+            newMaterial.ShowDialog();
+        }
     }
 }
