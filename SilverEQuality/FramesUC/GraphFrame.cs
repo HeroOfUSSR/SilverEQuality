@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OxyPlot;
 using OxyPlot.Series;
+using SilverEQuality.Forms;
 using SilverEQuality_Context;
 using SilverEQuality_Context.Models;
 using System;
@@ -207,6 +208,20 @@ namespace SilverEQuality.FramesUC
             else
             {
                 searchDate = true;
+            }
+        }
+
+        private void GraphFrame_Resize(object sender, EventArgs e)
+        {
+            if (MainForm.isMenuExpanded)
+            {
+                labelActual.Visible = true;
+                labelNorm.Visible = true;
+            }
+            else
+            {
+                labelActual.Visible = false;
+                labelNorm.Visible = false;
             }
         }
     }

@@ -49,7 +49,7 @@ namespace SilverEQuality.Forms
             Text = "Изменение пользователя";
             buttonDone.Text = "Редактировать";
             if (user.LoginUser != null) textBoxLogin.Text = user.LoginUser;
-            if (user.PasswordUser != null) textBoxPassword.Text = user.PasswordUser;
+            //if (user.PasswordUser != null) textBoxPassword.Text = user.PasswordUser;
             if (user.EmailUser != null) textBoxMail.Text = user.EmailUser;
             textBoxFullname.Text = user.FullnameUser;
             textBoxPhone.Text = user.PhoneUser;
@@ -94,7 +94,7 @@ namespace SilverEQuality.Forms
                     editUser.PhoneUser = textBoxPhone.Text;
                     editUser.DateOfBirthUser = dateTimePickerBirth.Value;
                     editUser.LoginUser = textBoxLogin.Text;
-                    editUser.PasswordUser = textBoxPassword.Text;
+                    editUser.PasswordUser = MD5Encryptor.HashPassword(textBoxPassword.Text);
                     editUser.EmailUser = textBoxMail.Text;
                     editUser.DepartmentUser = ((Department)comboBoxDepartment.SelectedItem).CodeDepartment;
                     editUser.RoleUser = ((Role)comboBoxRoles.SelectedItem).IdRole;
@@ -127,7 +127,7 @@ namespace SilverEQuality.Forms
                     createUser.PhoneUser = textBoxPhone.Text;
                     createUser.DateOfBirthUser = dateTimePickerBirth.Value;
                     createUser.LoginUser = textBoxLogin.Text;
-                    createUser.PasswordUser = textBoxPassword.Text;
+                    createUser.PasswordUser = MD5Encryptor.HashPassword(textBoxPassword.Text);
                     createUser.EmailUser = textBoxMail.Text;
 
                     createUser.DepartmentUser = ((Department)comboBoxDepartment.SelectedItem).CodeDepartment;

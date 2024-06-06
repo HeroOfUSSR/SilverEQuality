@@ -64,6 +64,10 @@ namespace SilverEQuality.Forms
                     break;
                 case 1:
 
+                    textBoxCurrent.UseSystemPasswordChar = true;
+                    textBoxNew.UseSystemPasswordChar = true;
+                    textBoxRepeat.UseSystemPasswordChar = true;
+
                     labelTitle.Text = "Смена пароля";
                     labelCurrent.Text = "Текущий пароль";
                     labelNew.Text = "Новый пароль";
@@ -120,11 +124,11 @@ namespace SilverEQuality.Forms
                         break;
                     case 1:
 
-                        if (textBoxCurrent.Text == AuthForm.authorizedUser.PasswordUser)
+                        if (MD5Encryptor.HashPassword(textBoxCurrent.Text) == AuthForm.authorizedUser.PasswordUser)
                         {
                             if (textBoxNew.Text == textBoxRepeat.Text && textBoxNew.Text != "")
                             {
-                                AuthForm.authorizedUser.PasswordUser = textBoxNew.Text;
+                                AuthForm.authorizedUser.PasswordUser = MD5Encryptor.HashPassword(textBoxNew.Text);
 
                                 db.Users.Update(AuthForm.authorizedUser);
                                 db.SaveChanges();

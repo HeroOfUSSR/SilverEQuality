@@ -25,7 +25,7 @@ namespace SilverEQuality
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
                 string login = textBoxLogin.Text;
-                string password = textBoxPassword.Text;
+                string password = MD5Encryptor.HashPassword(textBoxPassword.Text);
 
                 authorizedUser = db.Users.FirstOrDefault(x => x.LoginUser == login
                     && x.PasswordUser == password
@@ -50,6 +50,9 @@ namespace SilverEQuality
                     MainForm mainForm = new();
                     mainForm.Show();
                     this.Hide();
+
+                    textBoxLogin.Text = "";
+                    textBoxPassword.Text = "";
                 }
                 else
                 {
@@ -111,5 +114,6 @@ namespace SilverEQuality
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
     }
 }

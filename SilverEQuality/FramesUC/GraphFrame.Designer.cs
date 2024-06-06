@@ -40,11 +40,11 @@
             buttonApply = new Button();
             panelActual = new Panel();
             buttonOffActual = new Button();
-            label2 = new Label();
+            labelActual = new Label();
             panel5 = new Panel();
             panelNorm = new Panel();
             buttonOffNorms = new Button();
-            label1 = new Label();
+            labelNorm = new Label();
             panel4 = new Panel();
             panelGraph = new Panel();
             graphView = new OxyPlot.WindowsForms.PlotView();
@@ -174,7 +174,7 @@
             panelActual.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             panelActual.BorderStyle = BorderStyle.FixedSingle;
             panelActual.Controls.Add(buttonOffActual);
-            panelActual.Controls.Add(label2);
+            panelActual.Controls.Add(labelActual);
             panelActual.Controls.Add(panel5);
             panelActual.Location = new Point(26, 362);
             panelActual.Name = "panelActual";
@@ -194,15 +194,15 @@
             buttonOffActual.UseVisualStyleBackColor = true;
             buttonOffActual.Click += buttonOffActual_Click;
             // 
-            // label2
+            // labelActual
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(66, 12);
-            label2.Name = "label2";
-            label2.Size = new Size(197, 16);
-            label2.TabIndex = 3;
-            label2.Text = "Фактические затраты";
+            labelActual.AutoSize = true;
+            labelActual.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            labelActual.Location = new Point(66, 12);
+            labelActual.Name = "labelActual";
+            labelActual.Size = new Size(197, 16);
+            labelActual.TabIndex = 3;
+            labelActual.Text = "Фактические затраты";
             // 
             // panel5
             // 
@@ -218,7 +218,7 @@
             panelNorm.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             panelNorm.BorderStyle = BorderStyle.FixedSingle;
             panelNorm.Controls.Add(buttonOffNorms);
-            panelNorm.Controls.Add(label1);
+            panelNorm.Controls.Add(labelNorm);
             panelNorm.Controls.Add(panel4);
             panelNorm.Location = new Point(26, 303);
             panelNorm.Name = "panelNorm";
@@ -238,15 +238,15 @@
             buttonOffNorms.UseVisualStyleBackColor = true;
             buttonOffNorms.Click += buttonOffNorms_Click;
             // 
-            // label1
+            // labelNorm
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(66, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(177, 16);
-            label1.TabIndex = 2;
-            label1.Text = "Затраты по нормам";
+            labelNorm.AutoSize = true;
+            labelNorm.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            labelNorm.Location = new Point(66, 12);
+            labelNorm.Name = "labelNorm";
+            labelNorm.Size = new Size(177, 16);
+            labelNorm.TabIndex = 2;
+            labelNorm.Text = "Затраты по нормам";
             // 
             // panel4
             // 
@@ -292,6 +292,7 @@
             Name = "GraphFrame";
             Size = new Size(1009, 448);
             Load += GraphFrame_Load;
+            Resize += GraphFrame_Resize;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panelActual.ResumeLayout(false);
@@ -313,8 +314,8 @@
         private Panel panel5;
         private Panel panelActual;
         private Panel panelNorm;
-        private Label label1;
-        private Label label2;
+        private Label labelNorm;
+        private Label labelActual;
         private ComboBox comboBoxUnits;
         private Button buttonApply;
         private Label label4;

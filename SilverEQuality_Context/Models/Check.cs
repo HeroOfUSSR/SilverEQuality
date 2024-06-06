@@ -6,7 +6,6 @@ namespace SilverEQuality_Context.Models
     public partial class Check
     {
         public int IdCheck { get; set; }
-        public string? NumberCheck { get; set; }
         public DateTime DateCheck { get; set; }
         public int DepartmentCheck { get; set; }
         public decimal? NormCheck { get; set; }

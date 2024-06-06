@@ -81,7 +81,9 @@ namespace SilverEQuality.FramesUC
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            
             DateTime dateCheck;
+            DecimalNumber decimalNumber;
 
             if (checkBoxDate.Checked == true)
             {
@@ -94,6 +96,41 @@ namespace SilverEQuality.FramesUC
 
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
+                if (db.Departments.FirstOrDefault(x => x.CodeDepartment.ToString() == comboBoxDepartment.Text) == null)
+                {
+                    CustomMessageBox noDepartmentFound = new CustomMessageBox("Указанный цех не найден", false);
+                    noDepartmentFound.ShowDialog();
+                    return;
+                }
+                if (db.DecimalNumbers.FirstOrDefault(x => x.TitleDecimal == comboBoxDepartment.Text) == null)
+                {
+
+                    CustomMessageBox noDecimalFound = new CustomMessageBox("Указанный децимальный номер не найден, добавить?", true);
+                    noDecimalFound.ShowDialog();
+                    if (noDecimalFound.DialogResult == DialogResult.OK)
+                    {
+                        DecimalNumber newDecimal = new DecimalNumber
+                        {
+                            TitleDecimal = comboBoxDecimal.Text,
+                        };
+
+                        db.DecimalNumbers.Add(newDecimal);
+                        db.SaveChanges();
+
+                        decimalNumber = db.DecimalNumbers.OrderBy(x => x.IdDecimal).Last();
+                    }
+                    else
+                    {
+                        CustomMessageBox selectValid = new CustomMessageBox("Выберите валидный децимальный номер", false);
+                        selectValid.ShowDialog();
+                        return;
+                    }
+                }
+                else
+                {
+                    decimalNumber = ((DecimalNumber)comboBoxDecimal.SelectedItem);
+                }
+
                 if (buttonAdd.Text == "Создать чек")
                 {
                     Check newCheck = new Check
@@ -104,7 +141,7 @@ namespace SilverEQuality.FramesUC
                         SilverTypeCheck = ((SilverType)comboBoxTypeSilver.SelectedItem).CodeSilverType,
                         CoverageCheck = Convert.ToDecimal(maskedTextBoxCoverage.Text),
                         AmountCheck = Convert.ToInt32(numericUpDownAmount.Value),
-                        DecimalCheck = ((DecimalNumber)comboBoxDecimal.SelectedItem).IdDecimal,
+                        DecimalCheck = decimalNumber.IdDecimal,
                         OrderCheck = ((Order)comboBoxOrder.SelectedItem).IdOrder,
                     };
 
@@ -121,7 +158,7 @@ namespace SilverEQuality.FramesUC
                     editCheck.SilverTypeCheck = ((SilverType)comboBoxTypeSilver.SelectedItem).CodeSilverType;
                     editCheck.CoverageCheck = Convert.ToDecimal(maskedTextBoxCoverage.Text);
                     editCheck.AmountCheck = Convert.ToInt32(numericUpDownAmount.Value);
-                    editCheck.DecimalCheck = ((DecimalNumber)comboBoxDecimal.SelectedItem).IdDecimal;
+                    editCheck.DecimalCheck = decimalNumber.IdDecimal;
                     editCheck.OrderCheck = ((Order)comboBoxOrder.SelectedItem).IdOrder;
 
                     db.Checks.Update(editCheck);

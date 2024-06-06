@@ -1,4 +1,5 @@
 ﻿using DGVPrinterHelper;
+using Microsoft.EntityFrameworkCore;
 using SilverEQuality.MessageBoxes;
 using SilverEQuality_Context;
 using SilverEQuality_Context.Models;
@@ -38,7 +39,7 @@ namespace SilverEQuality.Forms
             comboBoxSortDate.Items.Add(new { Text = "Самые новые", Value = 1 });
             comboBoxSortDate.Items.Add(new { Text = "Самые старые", Value = 2 });
 
-            comboBoxSortDate.SelectedValue = 0;
+            comboBoxSortDate.SelectedIndex = 0;
             sortChecks = comboBoxSortDate.SelectedIndex;
 
             InitDatagrid(sortChecks);
@@ -77,7 +78,6 @@ namespace SilverEQuality.Forms
                              select new
                              {
                                  IdCheck = check.IdCheck,
-                                 NumberCheck = check.NumberCheck,
                                  DateCheck = check.DateCheck,
                                  DepartmentCheck = check.DepartmentCheck,
                                  NormCheck = check.NormCheck,
@@ -92,10 +92,7 @@ namespace SilverEQuality.Forms
                 {
                     dataGridCheck.DataSource = result.ToList();
 
-                    dataGridCheck.Columns["IdCheck"].HeaderText = "Идентификатор чека";
-                    dataGridCheck.Columns["IdCheck"].Visible = false;
-
-                    dataGridCheck.Columns["NumberCheck"].HeaderText = "Номер чека";
+                    dataGridCheck.Columns["IdCheck"].HeaderText = "Номер чека";
                     dataGridCheck.Columns["DateCheck"].HeaderText = "Дата чека";
                     dataGridCheck.Columns["DepartmentCheck"].HeaderText = "Номер цеха";
                     dataGridCheck.Columns["NormCheck"].HeaderText = "Норма серебра";
@@ -126,11 +123,12 @@ namespace SilverEQuality.Forms
                 {
                     foreach (DataGridViewRow row in dataGridCheck.Rows)
                     {
-                        var correctNorm = db.Norms.FirstOrDefault(x => x.DecimalNormNavigation.TitleDecimal == row.Cells[7].Value.ToString());
+                        var correctNorm = db.Norms.Include(x => x.SilverTypeNormNavigation)
+                            .FirstOrDefault(x => x.DecimalNormNavigation.TitleDecimal == row.Cells[7].Value.ToString());
 
                         if (correctNorm != null)
                             if (correctNorm.TitleNorm.ToString() != row.Cells[3].Value.ToString()
-                                || correctNorm.SilverTypeNorm.ToString() != row.Cells[4].Value.ToString()) // Тут надо позор с ToString как то переделать
+                                || correctNorm.SilverTypeNormNavigation.TitleSilverType.ToString() != row.Cells[4].Value.ToString()) // Тут надо позор с ToString как то переделать
                                 dataGridCheck.Rows[row.Index].DefaultCellStyle.BackColor = Color.IndianRed; // P.S. Decimal.Compare не работает, потому что nullable в моделях
                     }
                 }

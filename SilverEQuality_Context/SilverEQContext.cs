@@ -71,9 +71,6 @@ namespace SilverEQuality_Context
                     .HasColumnType("decimal(20, 6)")
                     .HasColumnName("Norm_Check");
 
-                entity.Property(e => e.NumberCheck)
-                    .HasMaxLength(50)
-                    .HasColumnName("Number_Check");
 
                 entity.Property(e => e.OrderCheck).HasColumnName("Order_Check");
 

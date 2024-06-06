@@ -74,7 +74,15 @@ namespace SilverEQuality.FramesUC
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
+                if (comboBoxManufacturer.SelectedIndex == -1 || comboBoxStatus.SelectedIndex == -1)
+                {
+                    CustomMessageBox errorOrder = new CustomMessageBox("Введите данные во все поля со звёздочкой", false);
+                    errorOrder.ShowDialog();
+                    return;
+                }
+
                 string paymentOrder;
+
                 if (textBoxPayment.Text != "")
                 {
                     paymentOrder = textBoxPayment.Text;
@@ -83,6 +91,7 @@ namespace SilverEQuality.FramesUC
                 {
                     paymentOrder = null;
                 }
+
                 var newOrder = new Order
                 {
                     DateOrder = dateTimePickerStart.Value,
