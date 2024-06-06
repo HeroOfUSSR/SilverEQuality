@@ -48,6 +48,8 @@ namespace SilverEQuality.FramesUC
                     checkFrame.Dock = DockStyle.Fill;
                     checkFrame.Parent = panelBody;
 
+                    checkFrame.editingCheck += CheckFrame_editingCheck;
+
                     buttonAdd.BackColor = Color.SteelBlue;
                     buttonAdd.ForeColor = Color.White;
                     buttonGraphs.BackColor = Color.SteelBlue;
@@ -84,6 +86,16 @@ namespace SilverEQuality.FramesUC
                     break;
 
             }
+        }
+
+        private void CheckFrame_editingCheck(Check editCheck)
+        {
+            panelBody.Controls.Clear();
+
+            CheckEditFrame checkEditFrame = new CheckEditFrame(editCheck);
+            checkEditFrame.Size = panelBody.Size;
+            checkEditFrame.Dock = DockStyle.Fill;
+            checkEditFrame.Parent = panelBody;
         }
 
         private void buttonGrid_Click(object sender, EventArgs e)

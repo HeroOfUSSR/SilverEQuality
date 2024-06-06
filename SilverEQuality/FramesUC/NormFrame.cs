@@ -37,6 +37,10 @@ namespace SilverEQuality.FramesUC
             {
                 checkBoxEditMode.Visible = false;
             }
+            if (AuthForm.authorizedUser.RoleUser == 3)
+            {
+                panelWork.Visible = false;
+            }
         }
 
         public NormFrame(SilverType silverType) : this()
@@ -45,13 +49,13 @@ namespace SilverEQuality.FramesUC
             {
                 var resultSilver = from norm in db.Norms
                              .Where(x => x.SilverTypeNorm == silverType.CodeSilverType)
-                             select new
-                             {
-                                 IdNorm = norm.IdNorm,
-                                 DecimalNorm = norm.DecimalNormNavigation.TitleDecimal,
-                                 SilverTypeNorm = norm.SilverTypeNormNavigation.TitleSilverType,
-                                 TitleNorm = norm.TitleNorm,
-                             };
+                                   select new
+                                   {
+                                       IdNorm = norm.IdNorm,
+                                       DecimalNorm = norm.DecimalNormNavigation.TitleDecimal,
+                                       SilverTypeNorm = norm.SilverTypeNormNavigation.TitleSilverType,
+                                       TitleNorm = norm.TitleNorm,
+                                   };
 
                 if (resultSilver.Any())
                 {

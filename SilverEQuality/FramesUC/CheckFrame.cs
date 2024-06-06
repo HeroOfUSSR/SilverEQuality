@@ -17,6 +17,8 @@ namespace SilverEQuality.Forms
 {
     public partial class CheckFrame : UserControl
     {
+        public event Action<Check> editingCheck;
+
         private DateTime fromDate;
         private DateTime toDate;
 
@@ -25,7 +27,7 @@ namespace SilverEQuality.Forms
         public CheckFrame()
         {
             InitializeComponent();
-            
+
 
             fromDate = dateTimePickerFrom.Value;
             toDate = dateTimePickerUntil.Value;
@@ -62,19 +64,19 @@ namespace SilverEQuality.Forms
                 {
                     case 0:
                         query.OrderByDescending(c => c.DateCheck.Ticks);
-                            //.ThenBy(c => c.DateCheck.TimeOfDay);
+                        //.ThenBy(c => c.DateCheck.TimeOfDay);
                         //.OrderBy(x => x.DateCheck);
                         break;
                     case 1:
                         query.OrderBy(c => c.DateCheck.Ticks);
-                            //.ThenBy(c => c.DateCheck.TimeOfDay);
+                        //.ThenBy(c => c.DateCheck.TimeOfDay);
                         break;
                 }
 
                 var result = from check in query
                              select new
                              {
-                                 //IdCheck = check.IdCheck,
+                                 IdCheck = check.IdCheck,
                                  NumberCheck = check.NumberCheck,
                                  DateCheck = check.DateCheck,
                                  DepartmentCheck = check.DepartmentCheck,
@@ -90,7 +92,9 @@ namespace SilverEQuality.Forms
                 {
                     dataGridCheck.DataSource = result.ToList();
 
-                    //dataGridCheck.Columns["IdCheck"].HeaderText = "Идентификатор чека";
+                    dataGridCheck.Columns["IdCheck"].HeaderText = "Идентификатор чека";
+                    dataGridCheck.Columns["IdCheck"].Visible = false;
+
                     dataGridCheck.Columns["NumberCheck"].HeaderText = "Номер чека";
                     dataGridCheck.Columns["DateCheck"].HeaderText = "Дата чека";
                     dataGridCheck.Columns["DepartmentCheck"].HeaderText = "Номер цеха";
@@ -174,14 +178,65 @@ namespace SilverEQuality.Forms
             }
         }
 
-        private void buttonCheckDate_Click(object sender, EventArgs e)
-        {
 
+        private void dataGridCheck_RowContextMenuStripNeeded(object sender, DataGridViewRowContextMenuStripNeededEventArgs e)
+        {
+            if (e.RowIndex != -1 && e.RowIndex != -1)
+            {
+                contextMenuStrip.Show(Cursor.Position);
+            }
         }
 
-        private void checkBoxNorm_CheckedChanged(object sender, EventArgs e)
+        private void удалитьЧекToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            using (var db = new SilverEQContext(DBHelper.Option()))
+            {
+                var selected = Convert.ToInt32(dataGridCheck.Rows[dataGridCheck.SelectedRows[0].Index].Cells[0].Value);
 
+                var deleteCheck = db.Checks.FirstOrDefault(x => x.IdCheck == selected);
+
+                if (deleteCheck != null)
+                {
+                    CustomMessageBox confirmDelete = new CustomMessageBox("Вы уверены, что хотите удалить запись", true);
+                    confirmDelete.ShowDialog();
+                    if (confirmDelete.DialogResult == DialogResult.OK)
+                    {
+                        db.Checks.Remove(deleteCheck);
+                        db.SaveChanges();
+
+                        InitDatagrid(sortChecks);
+                    }
+                }
+                else
+                {
+                    CustomMessageBox noSelected = new CustomMessageBox("Выберите запись для удаления", false);
+                    noSelected.ShowDialog();
+                }
+
+
+            }
+        }
+
+        private void редактироватьЧекToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var db = new SilverEQContext(DBHelper.Option()))
+            {
+                var selected = Convert.ToInt32(dataGridCheck.Rows[dataGridCheck.SelectedRows[0].Index].Cells[0].Value);
+
+                var editCheck = db.Checks.FirstOrDefault(x => x.IdCheck == selected);
+
+                if (editCheck != null)
+                {
+                    editingCheck?.Invoke(editCheck);
+                }
+                else
+                {
+                    CustomMessageBox noSelected = new CustomMessageBox("Выберите запись для редактирования", false);
+                    noSelected.ShowDialog();
+                }
+
+
+            }
         }
     }
 }

@@ -28,6 +28,11 @@ namespace SilverEQuality.FramesUC
                 pictureBoxAvatar.Image = Image.FromStream(new MemoryStream(currentUser.AvatarUser));
             labelName.Text = currentUser.FullnameUser;
             labelDate.Text = currentUser.DateOfBirthUser.ToString("d MMMM yyyy");
+
+            if (currentUser.RoleUser != 1)
+            {
+                buttonUsers.Visible = false;
+            }
         }
 
         private void buttonChangeAv_Click(object sender, EventArgs e)
@@ -55,6 +60,8 @@ namespace SilverEQuality.FramesUC
             InitFlowView(buttonPressed);
             buttonComment.BackColor = Color.SteelBlue;
             buttonComment.ForeColor = Color.White;
+            buttonUsers.BackColor = Color.SteelBlue;
+            buttonUsers.ForeColor = Color.White;
         }
 
         private void buttonComment_Click(object sender, EventArgs e)
@@ -65,6 +72,8 @@ namespace SilverEQuality.FramesUC
             InitFlowView(buttonPressed);
             buttonOrders.BackColor = Color.SteelBlue;
             buttonOrders.ForeColor = Color.White;
+            buttonUsers.BackColor = Color.SteelBlue;
+            buttonUsers.ForeColor = Color.White;
         }
 
         private void InitFlowView(int buttonNumber)
@@ -111,6 +120,17 @@ namespace SilverEQuality.FramesUC
                         }
 
                         break;
+                    case 3:
+
+                        var users = db.Users.Include(x => x.RoleUserNavigation).ToList();
+
+                        foreach (var user in users)
+                        {
+                            var userView = new UserView(user);
+                            userView.Parent = flowLayoutPanelBody;
+                        }
+
+                        break;
                     default:
                         break;
                 }
@@ -123,6 +143,35 @@ namespace SilverEQuality.FramesUC
             {
                 InitFlowView(buttonPressed);
             }
+        }
+
+        private void buttonEmail_Click(object sender, EventArgs e)
+        {
+            var changeEmail = new ChangeProfileData(0);
+            changeEmail.ShowDialog();
+        }
+
+        private void buttonPassword_Click(object sender, EventArgs e)
+        {
+            var changeEmail = new ChangeProfileData(1);
+            changeEmail.ShowDialog();
+        }
+
+        private void buttonCreateUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonUsers_Click(object sender, EventArgs e)
+        {
+            buttonUsers.BackColor = Color.White;
+            buttonUsers.ForeColor = Color.SteelBlue;
+            buttonPressed = 3;
+            InitFlowView(buttonPressed);
+            buttonComment.BackColor = Color.SteelBlue;
+            buttonComment.ForeColor = Color.White;
+            buttonOrders.BackColor = Color.SteelBlue;
+            buttonOrders.ForeColor = Color.White;
         }
     }
 }

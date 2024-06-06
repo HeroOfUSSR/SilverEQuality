@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             checkBoxNorm = new CheckBox();
             comboBoxSortDate = new ComboBox();
@@ -40,9 +41,13 @@
             dateTimePickerUntil = new DateTimePicker();
             dateTimePickerFrom = new DateTimePicker();
             dataGridCheck = new DataGridView();
+            contextMenuStrip = new ContextMenuStrip(components);
+            редактироватьЧекToolStripMenuItem = new ToolStripMenuItem();
+            удалитьЧекToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridCheck).BeginInit();
+            contextMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -68,7 +73,6 @@
             checkBoxNorm.TabIndex = 8;
             checkBoxNorm.Text = "Выделить некорректные нормы";
             checkBoxNorm.UseVisualStyleBackColor = true;
-            checkBoxNorm.CheckedChanged += checkBoxNorm_CheckedChanged;
             // 
             // comboBoxSortDate
             // 
@@ -191,6 +195,27 @@
             dataGridCheck.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridCheck.Size = new Size(1009, 289);
             dataGridCheck.TabIndex = 2;
+            dataGridCheck.RowContextMenuStripNeeded += dataGridCheck_RowContextMenuStripNeeded;
+            // 
+            // contextMenuStrip
+            // 
+            contextMenuStrip.Items.AddRange(new ToolStripItem[] { редактироватьЧекToolStripMenuItem, удалитьЧекToolStripMenuItem });
+            contextMenuStrip.Name = "contextMenuStrip";
+            contextMenuStrip.Size = new Size(181, 70);
+            // 
+            // редактироватьЧекToolStripMenuItem
+            // 
+            редактироватьЧекToolStripMenuItem.Name = "редактироватьЧекToolStripMenuItem";
+            редактироватьЧекToolStripMenuItem.Size = new Size(180, 22);
+            редактироватьЧекToolStripMenuItem.Text = "Редактировать чек";
+            редактироватьЧекToolStripMenuItem.Click += редактироватьЧекToolStripMenuItem_Click;
+            // 
+            // удалитьЧекToolStripMenuItem
+            // 
+            удалитьЧекToolStripMenuItem.Name = "удалитьЧекToolStripMenuItem";
+            удалитьЧекToolStripMenuItem.Size = new Size(180, 22);
+            удалитьЧекToolStripMenuItem.Text = "Удалить чек";
+            удалитьЧекToolStripMenuItem.Click += удалитьЧекToolStripMenuItem_Click;
             // 
             // CheckFrame
             // 
@@ -209,6 +234,7 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridCheck).EndInit();
+            contextMenuStrip.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -226,5 +252,8 @@
         private CheckBox checkBoxNorm;
         private Label label2;
         private Button buttonReportCreate;
+        private ContextMenuStrip contextMenuStrip;
+        private ToolStripMenuItem редактироватьЧекToolStripMenuItem;
+        private ToolStripMenuItem удалитьЧекToolStripMenuItem;
     }
 }

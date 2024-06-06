@@ -34,12 +34,16 @@
             labelName = new Label();
             pictureBoxAvatar = new PictureBox();
             panel3 = new Panel();
+            buttonPassword = new Button();
+            buttonEmail = new Button();
             buttonComment = new Button();
             buttonOrders = new Button();
             panel2 = new Panel();
             openFileDialogChangeAv = new OpenFileDialog();
             panelBody = new Panel();
             flowLayoutPanelBody = new FlowLayoutPanel();
+            buttonCreateUser = new Button();
+            buttonUsers = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).BeginInit();
             panel3.SuspendLayout();
@@ -48,7 +52,10 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(buttonCreateUser);
             panel1.Controls.Add(buttonChangeAv);
+            panel1.Controls.Add(buttonPassword);
+            panel1.Controls.Add(buttonEmail);
             panel1.Controls.Add(labelDate);
             panel1.Controls.Add(labelName);
             panel1.Controls.Add(pictureBoxAvatar);
@@ -106,6 +113,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(buttonUsers);
             panel3.Controls.Add(buttonComment);
             panel3.Controls.Add(buttonOrders);
             panel3.Dock = DockStyle.Bottom;
@@ -113,6 +121,38 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1009, 24);
             panel3.TabIndex = 0;
+            // 
+            // buttonPassword
+            // 
+            buttonPassword.Anchor = AnchorStyles.Right;
+            buttonPassword.BackColor = Color.SteelBlue;
+            buttonPassword.FlatAppearance.BorderSize = 0;
+            buttonPassword.FlatStyle = FlatStyle.Flat;
+            buttonPassword.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonPassword.ForeColor = SystemColors.ControlLightLight;
+            buttonPassword.Location = new Point(720, 44);
+            buttonPassword.Name = "buttonPassword";
+            buttonPassword.Size = new Size(261, 24);
+            buttonPassword.TabIndex = 8;
+            buttonPassword.Text = "Сменить пароль";
+            buttonPassword.UseVisualStyleBackColor = false;
+            buttonPassword.Click += buttonPassword_Click;
+            // 
+            // buttonEmail
+            // 
+            buttonEmail.Anchor = AnchorStyles.Right;
+            buttonEmail.BackColor = Color.SteelBlue;
+            buttonEmail.FlatAppearance.BorderSize = 0;
+            buttonEmail.FlatStyle = FlatStyle.Flat;
+            buttonEmail.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEmail.ForeColor = SystemColors.ControlLightLight;
+            buttonEmail.Location = new Point(720, 14);
+            buttonEmail.Name = "buttonEmail";
+            buttonEmail.Size = new Size(261, 24);
+            buttonEmail.TabIndex = 7;
+            buttonEmail.Text = "Указать почту";
+            buttonEmail.UseVisualStyleBackColor = false;
+            buttonEmail.Click += buttonEmail_Click;
             // 
             // buttonComment
             // 
@@ -176,6 +216,38 @@
             flowLayoutPanelBody.Size = new Size(1009, 318);
             flowLayoutPanelBody.TabIndex = 0;
             // 
+            // buttonCreateUser
+            // 
+            buttonCreateUser.Anchor = AnchorStyles.Right;
+            buttonCreateUser.BackColor = Color.SteelBlue;
+            buttonCreateUser.FlatAppearance.BorderSize = 0;
+            buttonCreateUser.FlatStyle = FlatStyle.Flat;
+            buttonCreateUser.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonCreateUser.ForeColor = SystemColors.ControlLightLight;
+            buttonCreateUser.Location = new Point(720, 74);
+            buttonCreateUser.Name = "buttonCreateUser";
+            buttonCreateUser.Size = new Size(261, 24);
+            buttonCreateUser.TabIndex = 9;
+            buttonCreateUser.Text = "Создать юзера";
+            buttonCreateUser.UseVisualStyleBackColor = false;
+            buttonCreateUser.Click += buttonCreateUser_Click;
+            // 
+            // buttonUsers
+            // 
+            buttonUsers.BackColor = Color.SteelBlue;
+            buttonUsers.Dock = DockStyle.Left;
+            buttonUsers.FlatAppearance.BorderSize = 0;
+            buttonUsers.FlatStyle = FlatStyle.Flat;
+            buttonUsers.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonUsers.ForeColor = SystemColors.ControlLightLight;
+            buttonUsers.Location = new Point(342, 0);
+            buttonUsers.Name = "buttonUsers";
+            buttonUsers.Size = new Size(171, 24);
+            buttonUsers.TabIndex = 7;
+            buttonUsers.Text = "Пользователи";
+            buttonUsers.UseVisualStyleBackColor = false;
+            buttonUsers.Click += buttonUsers_Click;
+            // 
             // ProfileFrame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -211,5 +283,9 @@
         private Button buttonComment;
         private Panel panelBody;
         private FlowLayoutPanel flowLayoutPanelBody;
+        private Button buttonEmail;
+        private Button buttonPassword;
+        private Button buttonCreateUser;
+        private Button buttonUsers;
     }
 }

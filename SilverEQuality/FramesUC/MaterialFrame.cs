@@ -1,4 +1,5 @@
-﻿using SilverEQuality_Context;
+﻿using SilverEQuality.Forms;
+using SilverEQuality_Context;
 using SilverEQuality_Context.Models;
 using System;
 using System.Collections.Generic;
@@ -58,6 +59,25 @@ namespace SilverEQuality.FramesUC
             {
                 this.Size = MinimumSize;
                 BackColor = Color.White;
+            }
+        }
+
+        private void MaterialFrame_SizeChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MaterialFrame_Resize(object sender, EventArgs e)
+        {
+            if (!MainForm.isMenuExpanded)
+            {
+                panelLeftSide.Visible = false;
+                panelRightSide.Visible = false;
+            }
+            else
+            {
+                panelLeftSide.Visible = true;
+                panelRightSide.Visible = true;
             }
         }
     }

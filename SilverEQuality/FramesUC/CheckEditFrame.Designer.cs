@@ -117,6 +117,7 @@
             // 
             // checkBoxFinish
             // 
+            checkBoxFinish.Anchor = AnchorStyles.None;
             checkBoxFinish.AutoSize = true;
             checkBoxFinish.CheckAlign = ContentAlignment.MiddleRight;
             checkBoxFinish.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);

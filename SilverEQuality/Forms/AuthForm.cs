@@ -28,6 +28,10 @@ namespace SilverEQuality
                     && x.PasswordUser == textBoxPassword.Text
                     && x.AvailableUser == true);
 
+                //authorizedUser = db.Users.FirstOrDefault(x => x.LoginUser.Equals(textBoxLogin.Text, StringComparison.Ordinal)
+                //    && x.PasswordUser.Equals(textBoxPassword.Text, StringComparison.Ordinal)
+                //    && x.AvailableUser == true);
+
                 if (triesToLogin == 2)
                 {
                     Height = 520;

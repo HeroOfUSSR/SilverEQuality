@@ -132,7 +132,7 @@ namespace SilverEQuality.FramesUC
 
                 if (checkBoxFinish.Checked)
                 {
-                    if (orderReport == null) 
+                    if (orderReport == null)
                         orderReport = db.Orders.FirstOrDefault(x => x.IdOrder == db.Checks.OrderBy(x => x.IdCheck).Last().OrderCheck);
 
                     orderReport.StatusOrder = 3;
