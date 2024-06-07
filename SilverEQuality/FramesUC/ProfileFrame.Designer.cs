@@ -245,7 +245,7 @@
             flowLayoutPanelBody.AutoScroll = true;
             flowLayoutPanelBody.Location = new Point(83, 0);
             flowLayoutPanelBody.Name = "flowLayoutPanelBody";
-            flowLayoutPanelBody.Size = new Size(840, 318);
+            flowLayoutPanelBody.Size = new Size(841, 318);
             flowLayoutPanelBody.TabIndex = 0;
             // 
             // ProfileFrame

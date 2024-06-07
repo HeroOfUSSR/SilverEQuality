@@ -61,7 +61,7 @@ namespace SilverEQuality.FramesUC
 
             if (areYouSure.DialogResult == DialogResult.OK)
             {
-                var confirmAdmin = new ChangeProfileData(userView);
+                var confirmAdmin = new ChangeProfileData(userView, 2);
                 confirmAdmin.ShowDialog();
 
             }
@@ -70,7 +70,7 @@ namespace SilverEQuality.FramesUC
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             var editChelik = new CreateUserForm(userView);
-            editChelik.Show();
+            editChelik.ShowDialog();
         }
     }
 }

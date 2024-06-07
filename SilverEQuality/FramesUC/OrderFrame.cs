@@ -99,7 +99,7 @@ namespace SilverEQuality.Forms
 
                 foreach (var order in orders)
                 {
-                    
+
 
                     var orderView = new OrderView(order);
 
@@ -109,7 +109,7 @@ namespace SilverEQuality.Forms
                     }
                     else if (!MainForm.isMenuExpanded)
                     {
-                        orderView.Width = MinimumSize.Width - 20;
+                        orderView.Width = MinimumSize.Width - 30;
                     }
 
                     orderView.Parent = flowLayoutPanelOrder;
@@ -203,7 +203,7 @@ namespace SilverEQuality.Forms
 
         private void OrderFrame_ParentChanged(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

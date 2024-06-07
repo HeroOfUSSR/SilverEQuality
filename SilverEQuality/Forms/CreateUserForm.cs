@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
+using SilverEQuality.FramesUC;
 using SilverEQuality.MessageBoxes;
 using SilverEQuality_Context;
 using SilverEQuality_Context.Models;
@@ -40,7 +41,6 @@ namespace SilverEQuality.Forms
                 comboBoxRoles.SelectedValue = 0;
                 comboBoxDepartment.SelectedValue = 0;
             }
-
 
         }
 
@@ -84,9 +84,11 @@ namespace SilverEQuality.Forms
             {
                 if (buttonDone.Text == "Редактировать")
                 {
+
                     if (textBoxFullname.Text == "" || textBoxPhone.Text == "" || comboBoxDepartment.SelectedIndex == 0)
                     {
                         CustomMessageBox errorAdding = new CustomMessageBox("Заполните все поля со звёздочкой", false);
+                        errorAdding.ShowDialog();
                         return;
                     }
 
@@ -109,17 +111,18 @@ namespace SilverEQuality.Forms
                         editUser.AvailableUser = false;
                     }
 
-                    db.Users.Update(editUser);
-                    db.SaveChanges();
 
-                    CustomMessageBox successEdit = new CustomMessageBox("Успешное изменение", false);
-                    successEdit.ShowDialog();
+                    var confirmAdmin = new ChangeProfileData(editUser, 1);
+                    confirmAdmin.ShowDialog();
+
+                    
                 }
                 else
                 {
                     if (textBoxFullname.Text == "" || textBoxPhone.Text == "" || comboBoxDepartment.SelectedIndex == 0)
                     {
                         CustomMessageBox errorAdding = new CustomMessageBox("Заполните все поля со звёздочкой", false);
+                        errorAdding.ShowDialog();
                         return;
                     }
 
@@ -143,11 +146,8 @@ namespace SilverEQuality.Forms
                         createUser.AvailableUser = false;
                     }
 
-                    db.Users.Add(createUser);
-                    db.SaveChanges();
-
-                    CustomMessageBox successAdd = new CustomMessageBox("Успешное добавление", false);
-                    successAdd.ShowDialog();
+                    var confirmAdmin = new ChangeProfileData(createUser, 0);
+                    confirmAdmin.ShowDialog();
 
                 }
 

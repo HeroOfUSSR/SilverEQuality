@@ -19,9 +19,11 @@ namespace SilverEQuality.Forms
         public bool isMouseDown;
         public Point startPoint;
 
-        private User deleteUser;
+        private User workOnUser;
 
         private int optionProfile;
+        private int optionAdmin;
+
         public ChangeProfileData()
         {
             InitializeComponent();
@@ -35,10 +37,11 @@ namespace SilverEQuality.Forms
         }
 
 
-        public ChangeProfileData(User user) : this()
+        public ChangeProfileData(User user, int optionAdmin) : this()
         {
             optionProfile = 2;
-            deleteUser = user;
+            this.optionAdmin = optionAdmin;
+            workOnUser = user;
             InitDataEditor();
         }
 
@@ -165,14 +168,40 @@ namespace SilverEQuality.Forms
                         if (db.Users.FirstOrDefault(x => x.PasswordUser == MD5Encryptor.HashPassword(textBoxNew.Text) 
                             && x.IdUser == AuthForm.authorizedUser.IdUser) != null)
                         {
-                            db.Users.Remove(deleteUser);
-                            db.SaveChanges();
+                            switch (optionAdmin)
+                            {
+                                case 0:
+                                    db.Users.Add(workOnUser);
+                                    db.SaveChanges();
+
+                                    CustomMessageBox successAdd = new CustomMessageBox("Пользователь добавлен", false);
+                                    successAdd.ShowDialog();
+                                    break;
+                                case 1:
+                                    db.Users.Update(workOnUser);
+                                    db.SaveChanges();
+
+                                    CustomMessageBox successEdit = new CustomMessageBox("Успешное изменение", false);
+                                    successEdit.ShowDialog();
+                                    break;
+                                case 2:
+                                    db.Users.Remove(workOnUser);
+                                    db.SaveChanges();
+
+                                    CustomMessageBox successDelete = new CustomMessageBox("Пользователь удалён", false);
+                                    successDelete.ShowDialog();
+                                    break;
+                            }
+                            
+
+                            
+                            this.Close();
                         }
                         else
                         {
                             textBoxNew.ForeColor = Color.Red;
+                            labelNew.ForeColor = Color.Red;
                         }
-
                         break;
                     default:
                         break;

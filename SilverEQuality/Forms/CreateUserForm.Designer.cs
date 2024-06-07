@@ -359,7 +359,6 @@
             // buttonDone
             // 
             buttonDone.BackColor = Color.SteelBlue;
-            buttonDone.DialogResult = DialogResult.OK;
             buttonDone.FlatAppearance.BorderSize = 0;
             buttonDone.FlatStyle = FlatStyle.Flat;
             buttonDone.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);

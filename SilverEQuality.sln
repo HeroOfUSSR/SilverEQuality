@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilverEQuality", "SilverEQu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilverEQuality_Context", "SilverEQuality_Context\SilverEQuality_Context.csproj", "{20D4CE3D-F952-40E4-8BD0-7CAA8DC5741A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseEQ", "DatabaseEQ", "{729D8267-D7F5-4709-B29B-63509E3D38D3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

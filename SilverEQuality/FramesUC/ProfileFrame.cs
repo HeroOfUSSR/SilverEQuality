@@ -99,7 +99,7 @@ namespace SilverEQuality.FramesUC
                             }
                             else if (!MainForm.isMenuExpanded)
                             {
-                                orderView.Width = MinimumSize.Width - 20;
+                                orderView.Width = MinimumSize.Width - 30;
                             }
 
                             orderView = new OrderView(order);
