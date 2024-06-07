@@ -14,7 +14,7 @@ namespace SilverEQuality_Context.Models
 
         public int CodeSilverType { get; set; }
         public string TitleSilverType { get; set; } = null!;
-        public int? AmountSilverType { get; set; }
+        public decimal? AmountSilverType { get; set; }
         public decimal? CostPerKgSilverType { get; set; }
         public byte[]? ImageSilverType { get; set; }
 

@@ -67,20 +67,6 @@ namespace SilverEQuality.FramesUC
 
         }
 
-        private void MaterialFrame_Resize(object sender, EventArgs e)
-        {
-            if (!MainForm.isMenuExpanded)
-            {
-                panelLeftSide.Visible = false;
-                panelRightSide.Visible = false;
-            }
-            else
-            {
-                panelLeftSide.Visible = true;
-                panelRightSide.Visible = true;
-            }
-        }
-
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             var newMaterial = new EditMaterialForm();

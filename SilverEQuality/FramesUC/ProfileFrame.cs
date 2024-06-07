@@ -110,8 +110,12 @@ namespace SilverEQuality.FramesUC
                         break;
                     case 2:
 
-                        var comments = db.Comments
-                            .Where(x => x.OrderCommentNavigation.AppointedOrder == AuthForm.authorizedUser.IdUser).ToList();
+                        var comments = db.Comments.OrderByDescending(x => x.IdComment).ToList();
+
+                        if (AuthForm.authorizedUser.RoleUser != 1)
+                        {
+                            comments = comments.Where(x => x.OrderCommentNavigation.AppointedOrder == AuthForm.authorizedUser.IdUser).ToList();
+                        }
 
                         foreach (var comment in comments)
                         {
@@ -149,18 +153,23 @@ namespace SilverEQuality.FramesUC
         {
             var changeEmail = new ChangeProfileData(0);
             changeEmail.ShowDialog();
+            InitFlowView(buttonPressed);
         }
 
         private void buttonPassword_Click(object sender, EventArgs e)
         {
             var changeEmail = new ChangeProfileData(1);
             changeEmail.ShowDialog();
+            InitFlowView(buttonPressed);
+
         }
 
         private void buttonCreateUser_Click(object sender, EventArgs e)
         {
             var createUser = new CreateUserForm();
             createUser.ShowDialog();
+            InitFlowView(buttonPressed);
+
         }
 
         private void buttonUsers_Click(object sender, EventArgs e)

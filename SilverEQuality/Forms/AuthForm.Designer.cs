@@ -183,6 +183,7 @@
             buttonCancel.TabIndex = 5;
             buttonCancel.Text = "Выйти";
             buttonCancel.UseVisualStyleBackColor = false;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // buttonLogin
             // 

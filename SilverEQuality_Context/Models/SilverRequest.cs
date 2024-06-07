@@ -8,7 +8,7 @@ namespace SilverEQuality_Context.Models
         public int IdRequest { get; set; }
         public int SilverTypeRequest { get; set; }
         public int UserRequest { get; set; }
-        public int AmountRequest { get; set; }
+        public decimal AmountRequest { get; set; }
         public int? PriorityRequest { get; set; }
         public int StatusRequest { get; set; }
 

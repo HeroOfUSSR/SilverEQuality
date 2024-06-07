@@ -156,7 +156,7 @@
             comboBoxRoles.Anchor = AnchorStyles.Top;
             comboBoxRoles.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxRoles.FormattingEnabled = true;
-            comboBoxRoles.Location = new Point(252, 205);
+            comboBoxRoles.Location = new Point(252, 196);
             comboBoxRoles.Name = "comboBoxRoles";
             comboBoxRoles.Size = new Size(231, 27);
             comboBoxRoles.TabIndex = 7;
@@ -166,7 +166,7 @@
             label5.Anchor = AnchorStyles.Top;
             label5.AutoSize = true;
             label5.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(67, 208);
+            label5.Location = new Point(67, 199);
             label5.Name = "label5";
             label5.Size = new Size(119, 19);
             label5.TabIndex = 28;
@@ -176,7 +176,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(67, 245);
+            label3.Location = new Point(67, 232);
             label3.Name = "label3";
             label3.Size = new Size(163, 19);
             label3.TabIndex = 32;
@@ -185,7 +185,7 @@
             // dateTimePickerBirth
             // 
             dateTimePickerBirth.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerBirth.Location = new Point(252, 242);
+            dateTimePickerBirth.Location = new Point(252, 229);
             dateTimePickerBirth.Name = "dateTimePickerBirth";
             dateTimePickerBirth.Size = new Size(231, 26);
             dateTimePickerBirth.TabIndex = 8;
@@ -231,7 +231,7 @@
             comboBoxDepartment.Anchor = AnchorStyles.Top;
             comboBoxDepartment.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxDepartment.FormattingEnabled = true;
-            comboBoxDepartment.Location = new Point(252, 172);
+            comboBoxDepartment.Location = new Point(252, 163);
             comboBoxDepartment.Name = "comboBoxDepartment";
             comboBoxDepartment.Size = new Size(231, 27);
             comboBoxDepartment.TabIndex = 6;
@@ -241,7 +241,7 @@
             label8.Anchor = AnchorStyles.Top;
             label8.AutoSize = true;
             label8.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(67, 175);
+            label8.Location = new Point(67, 166);
             label8.Name = "label8";
             label8.Size = new Size(130, 19);
             label8.TabIndex = 39;
@@ -251,7 +251,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(111, 332);
+            label9.Location = new Point(111, 308);
             label9.Name = "label9";
             label9.Size = new Size(75, 19);
             label9.TabIndex = 43;
@@ -260,7 +260,7 @@
             // textBoxPassword
             // 
             textBoxPassword.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPassword.Location = new Point(202, 329);
+            textBoxPassword.Location = new Point(202, 305);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(231, 26);
             textBoxPassword.TabIndex = 10;
@@ -269,7 +269,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(122, 291);
+            label10.Location = new Point(122, 276);
             label10.Name = "label10";
             label10.Size = new Size(64, 19);
             label10.TabIndex = 42;
@@ -278,7 +278,7 @@
             // textBoxLogin
             // 
             textBoxLogin.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxLogin.Location = new Point(202, 288);
+            textBoxLogin.Location = new Point(202, 273);
             textBoxLogin.Name = "textBoxLogin";
             textBoxLogin.Size = new Size(231, 26);
             textBoxLogin.TabIndex = 9;
@@ -287,7 +287,7 @@
             // 
             panelPhoto.Controls.Add(buttonChangeAv);
             panelPhoto.Controls.Add(pictureBoxAvatar);
-            panelPhoto.Location = new Point(67, 371);
+            panelPhoto.Location = new Point(67, 346);
             panelPhoto.Name = "panelPhoto";
             panelPhoto.Size = new Size(400, 107);
             panelPhoto.TabIndex = 44;
@@ -299,7 +299,7 @@
             buttonChangeAv.FlatStyle = FlatStyle.Flat;
             buttonChangeAv.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonChangeAv.ForeColor = SystemColors.ControlLightLight;
-            buttonChangeAv.Location = new Point(158, 75);
+            buttonChangeAv.Location = new Point(148, 75);
             buttonChangeAv.Name = "buttonChangeAv";
             buttonChangeAv.Size = new Size(207, 25);
             buttonChangeAv.TabIndex = 11;
@@ -310,7 +310,7 @@
             // pictureBoxAvatar
             // 
             pictureBoxAvatar.Image = Properties.Resources.profileMain;
-            pictureBoxAvatar.Location = new Point(54, 3);
+            pictureBoxAvatar.Location = new Point(44, 3);
             pictureBoxAvatar.Name = "pictureBoxAvatar";
             pictureBoxAvatar.Size = new Size(98, 97);
             pictureBoxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -324,7 +324,7 @@
             checkBoxAvailable.Checked = true;
             checkBoxAvailable.CheckState = CheckState.Checked;
             checkBoxAvailable.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxAvailable.Location = new Point(131, 484);
+            checkBoxAvailable.Location = new Point(133, 459);
             checkBoxAvailable.Name = "checkBoxAvailable";
             checkBoxAvailable.Size = new Size(259, 23);
             checkBoxAvailable.TabIndex = 12;
@@ -336,7 +336,7 @@
             panel2.Controls.Add(buttonCancel);
             panel2.Controls.Add(buttonDone);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 516);
+            panel2.Location = new Point(0, 488);
             panel2.Name = "panel2";
             panel2.Size = new Size(542, 86);
             panel2.TabIndex = 14;
@@ -348,12 +348,13 @@
             buttonCancel.FlatStyle = FlatStyle.Flat;
             buttonCancel.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCancel.ForeColor = SystemColors.ControlLightLight;
-            buttonCancel.Location = new Point(80, 42);
+            buttonCancel.Location = new Point(79, 47);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(368, 33);
             buttonCancel.TabIndex = 14;
             buttonCancel.Text = "Отмена";
             buttonCancel.UseVisualStyleBackColor = false;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // buttonDone
             // 
@@ -363,7 +364,7 @@
             buttonDone.FlatStyle = FlatStyle.Flat;
             buttonDone.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonDone.ForeColor = SystemColors.ControlLightLight;
-            buttonDone.Location = new Point(80, 3);
+            buttonDone.Location = new Point(79, 8);
             buttonDone.Name = "buttonDone";
             buttonDone.Size = new Size(368, 37);
             buttonDone.TabIndex = 13;
@@ -379,7 +380,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(542, 602);
+            ClientSize = new Size(542, 574);
             Controls.Add(panel2);
             Controls.Add(checkBoxAvailable);
             Controls.Add(panelPhoto);

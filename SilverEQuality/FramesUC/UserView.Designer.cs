@@ -45,7 +45,6 @@
             // 
             // labelDateBirth
             // 
-            labelDateBirth.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelDateBirth.AutoSize = true;
             labelDateBirth.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelDateBirth.Location = new Point(157, 109);
@@ -59,9 +58,9 @@
             panel2.Controls.Add(buttonEdit);
             panel2.Controls.Add(buttonDelete);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(657, 0);
+            panel2.Location = new Point(650, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(168, 134);
+            panel2.Size = new Size(150, 134);
             panel2.TabIndex = 6;
             // 
             // buttonEdit
@@ -75,7 +74,7 @@
             buttonEdit.ForeColor = SystemColors.ControlLightLight;
             buttonEdit.Location = new Point(0, 70);
             buttonEdit.Name = "buttonEdit";
-            buttonEdit.Size = new Size(168, 32);
+            buttonEdit.Size = new Size(150, 32);
             buttonEdit.TabIndex = 32;
             buttonEdit.Text = "Изменить";
             buttonEdit.UseVisualStyleBackColor = false;
@@ -92,7 +91,7 @@
             buttonDelete.ForeColor = SystemColors.ControlLightLight;
             buttonDelete.Location = new Point(0, 102);
             buttonDelete.Name = "buttonDelete";
-            buttonDelete.Size = new Size(168, 32);
+            buttonDelete.Size = new Size(150, 32);
             buttonDelete.TabIndex = 33;
             buttonDelete.Text = "Удалить";
             buttonDelete.UseVisualStyleBackColor = false;
@@ -129,7 +128,7 @@
             textBoxMail.Multiline = true;
             textBoxMail.Name = "textBoxMail";
             textBoxMail.ReadOnly = true;
-            textBoxMail.Size = new Size(485, 23);
+            textBoxMail.Size = new Size(478, 23);
             textBoxMail.TabIndex = 8;
             textBoxMail.Text = "alexey_ivanov04@mail.ru";
             // 
@@ -142,7 +141,7 @@
             textBoxPhone.Multiline = true;
             textBoxPhone.Name = "textBoxPhone";
             textBoxPhone.ReadOnly = true;
-            textBoxPhone.Size = new Size(485, 23);
+            textBoxPhone.Size = new Size(478, 23);
             textBoxPhone.TabIndex = 11;
             textBoxPhone.Text = "89819748691";
             // 
@@ -155,13 +154,12 @@
             textBoxFullname.Multiline = true;
             textBoxFullname.Name = "textBoxFullname";
             textBoxFullname.ReadOnly = true;
-            textBoxFullname.Size = new Size(485, 36);
+            textBoxFullname.Size = new Size(478, 36);
             textBoxFullname.TabIndex = 12;
             textBoxFullname.Text = "Иванов Алексей Анатольевич\r\n";
             // 
             // labelRole
             // 
-            labelRole.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelRole.AutoSize = true;
             labelRole.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelRole.Location = new Point(479, 109);
@@ -183,7 +181,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "UserView";
-            Size = new Size(825, 134);
+            Size = new Size(800, 134);
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxAuthor).EndInit();

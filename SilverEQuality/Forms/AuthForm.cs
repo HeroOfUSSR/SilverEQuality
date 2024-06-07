@@ -115,5 +115,9 @@ namespace SilverEQuality
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace SilverEQuality.Forms
 {
@@ -52,6 +53,8 @@ namespace SilverEQuality.Forms
                     labelNew.Text = "Новая почта";
                     labelRepeat.Text = "Повторите почту";
 
+                    this.Size = MaximumSize;
+
                     if (AuthForm.authorizedUser.EmailUser != null)
                     {
                         textBoxCurrent.Text = AuthForm.authorizedUser.EmailUser;
@@ -68,6 +71,8 @@ namespace SilverEQuality.Forms
                     textBoxNew.UseSystemPasswordChar = true;
                     textBoxRepeat.UseSystemPasswordChar = true;
 
+                    this.Size = MinimumSize;
+
                     labelTitle.Text = "Смена пароля";
                     labelCurrent.Text = "Текущий пароль";
                     labelNew.Text = "Новый пароль";
@@ -78,10 +83,13 @@ namespace SilverEQuality.Forms
                     break;
                 case 2:
 
+                    this.Size = MinimumSize;
+
                     labelTitle.Text = "Подтвердите права";
                     labelCurrent.Visible = false;
                     textBoxCurrent.Visible = false;
                     labelNew.Text = "Пароль админа";
+                    textBoxNew.UseSystemPasswordChar = true;
                     labelRepeat.Visible = false;
                     textBoxRepeat.Visible = false;
 
@@ -154,7 +162,8 @@ namespace SilverEQuality.Forms
                         break;
                     case 2:
 
-                        if (db.Users.FirstOrDefault(x => x.PasswordUser == textBoxNew.Text && x.RoleUser == 1) != null)
+                        if (db.Users.FirstOrDefault(x => x.PasswordUser == MD5Encryptor.HashPassword(textBoxNew.Text) 
+                            && x.IdUser == AuthForm.authorizedUser.IdUser) != null)
                         {
                             db.Users.Remove(deleteUser);
                             db.SaveChanges();

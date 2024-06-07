@@ -126,17 +126,18 @@
             label7.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             label7.Location = new Point(29, 55);
             label7.Name = "label7";
-            label7.Size = new Size(130, 19);
+            label7.Size = new Size(141, 19);
             label7.TabIndex = 20;
-            label7.Text = "Код серебра";
+            label7.Text = "Код серебра*";
             // 
             // textBoxCode
             // 
             textBoxCode.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxCode.Location = new Point(182, 52);
+            textBoxCode.Location = new Point(187, 52);
             textBoxCode.Name = "textBoxCode";
             textBoxCode.Size = new Size(113, 26);
             textBoxCode.TabIndex = 19;
+            textBoxCode.KeyDown += textBoxCode_KeyDown;
             // 
             // label1
             // 
@@ -144,16 +145,16 @@
             label1.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(29, 87);
             label1.Name = "label1";
-            label1.Size = new Size(141, 19);
+            label1.Size = new Size(152, 19);
             label1.TabIndex = 22;
-            label1.Text = "Наименование";
+            label1.Text = "Наименование*";
             // 
             // textBoxTitleSilver
             // 
             textBoxTitleSilver.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxTitleSilver.Location = new Point(182, 84);
+            textBoxTitleSilver.Location = new Point(187, 84);
             textBoxTitleSilver.Name = "textBoxTitleSilver";
-            textBoxTitleSilver.Size = new Size(231, 26);
+            textBoxTitleSilver.Size = new Size(220, 26);
             textBoxTitleSilver.TabIndex = 21;
             // 
             // label2
@@ -169,10 +170,11 @@
             // textBoxCost
             // 
             textBoxCost.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxCost.Location = new Point(182, 148);
+            textBoxCost.Location = new Point(187, 148);
             textBoxCost.Name = "textBoxCost";
             textBoxCost.Size = new Size(113, 26);
             textBoxCost.TabIndex = 23;
+            textBoxCost.KeyDown += textBoxCost_KeyDown;
             // 
             // label3
             // 
@@ -187,7 +189,7 @@
             // numericUpDownAmount
             // 
             numericUpDownAmount.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDownAmount.Location = new Point(182, 116);
+            numericUpDownAmount.Location = new Point(187, 116);
             numericUpDownAmount.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
             numericUpDownAmount.Name = "numericUpDownAmount";
             numericUpDownAmount.Size = new Size(113, 26);
@@ -197,7 +199,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(305, 119);
+            label4.Location = new Point(310, 119);
             label4.Name = "label4";
             label4.Size = new Size(31, 19);
             label4.TabIndex = 28;
@@ -207,7 +209,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(305, 151);
+            label5.Location = new Point(310, 151);
             label5.Name = "label5";
             label5.Size = new Size(75, 19);
             label5.TabIndex = 29;
@@ -236,11 +238,11 @@
             buttonCancel.TabIndex = 3;
             buttonCancel.Text = "Отмена";
             buttonCancel.UseVisualStyleBackColor = false;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // buttonDone
             // 
             buttonDone.BackColor = Color.SteelBlue;
-            buttonDone.DialogResult = DialogResult.OK;
             buttonDone.FlatAppearance.BorderSize = 0;
             buttonDone.FlatStyle = FlatStyle.Flat;
             buttonDone.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);

@@ -31,8 +31,6 @@
             panel1 = new Panel();
             panel2 = new Panel();
             buttonAdd = new Button();
-            panelLeftSide = new Panel();
-            panelRightSide = new Panel();
             flowLayoutPanelSilver = new FlowLayoutPanel();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -71,28 +69,10 @@
             buttonAdd.UseVisualStyleBackColor = false;
             buttonAdd.Click += buttonAdd_Click;
             // 
-            // panelLeftSide
-            // 
-            panelLeftSide.Dock = DockStyle.Left;
-            panelLeftSide.Location = new Point(0, 22);
-            panelLeftSide.Name = "panelLeftSide";
-            panelLeftSide.Size = new Size(120, 359);
-            panelLeftSide.TabIndex = 2;
-            panelLeftSide.Visible = false;
-            // 
-            // panelRightSide
-            // 
-            panelRightSide.Dock = DockStyle.Right;
-            panelRightSide.Location = new Point(889, 22);
-            panelRightSide.Name = "panelRightSide";
-            panelRightSide.Size = new Size(120, 359);
-            panelRightSide.TabIndex = 3;
-            panelRightSide.Visible = false;
-            // 
             // flowLayoutPanelSilver
             // 
+            flowLayoutPanelSilver.Anchor = AnchorStyles.None;
             flowLayoutPanelSilver.AutoScroll = true;
-            flowLayoutPanelSilver.Dock = DockStyle.Fill;
             flowLayoutPanelSilver.Location = new Point(120, 22);
             flowLayoutPanelSilver.Name = "flowLayoutPanelSilver";
             flowLayoutPanelSilver.Size = new Size(769, 359);
@@ -105,8 +85,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(flowLayoutPanelSilver);
-            Controls.Add(panelRightSide);
-            Controls.Add(panelLeftSide);
             Controls.Add(panel2);
             Controls.Add(panel1);
             MaximumSize = new Size(1009, 448);
@@ -114,7 +92,6 @@
             Name = "MaterialFrame";
             Size = new Size(1009, 448);
             SizeChanged += MaterialFrame_SizeChanged;
-            Resize += MaterialFrame_Resize;
             panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -123,8 +100,6 @@
 
         private Panel panel1;
         private Panel panel2;
-        private Panel panelLeftSide;
-        private Panel panelRightSide;
         private FlowLayoutPanel flowLayoutPanelSilver;
         private Button buttonAdd;
     }

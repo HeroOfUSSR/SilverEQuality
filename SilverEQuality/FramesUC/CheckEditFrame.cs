@@ -55,12 +55,12 @@ namespace SilverEQuality.FramesUC
         {
             buttonAdd.Text = "Редактировать";
 
-            maskedTextBoxNorm.Text = check.NormCheck.ToString();
+            numericUpDownNorm.Value = check.NormCheck;
             //textBoxNumber.Text = check.NumberCheck;
             comboBoxDepartment.SelectedItem = check.DepartmentCheck;
             comboBoxTypeSilver.Text = check.SilverTypeCheck.ToString();
             comboBoxDecimal.SelectedItem = check.DecimalCheck;
-            maskedTextBoxCoverage.Text = check.CoverageCheck.ToString();
+            numericUpDownCoverage.Value = check.CoverageCheck;
             numericUpDownAmount.Value = Convert.ToDecimal(check.AmountCheck);
             //textBoxOrder.Text = check.OrderCheck;
 
@@ -81,7 +81,7 @@ namespace SilverEQuality.FramesUC
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            
+
             DateTime dateCheck;
             DecimalNumber decimalNumber;
 
@@ -102,7 +102,36 @@ namespace SilverEQuality.FramesUC
                     noDepartmentFound.ShowDialog();
                     return;
                 }
-                if (db.DecimalNumbers.FirstOrDefault(x => x.TitleDecimal == comboBoxDepartment.Text) == null)
+
+                if (numericUpDownCoverage.Value <= 0)
+                {
+                    CustomMessageBox errorAdding = new CustomMessageBox("Введите площадь покрытия!", false);
+                    errorAdding.ShowDialog();
+                    return;
+                }
+
+                if (numericUpDownCoverage.Value <= 0)
+                {
+                    CustomMessageBox errorAdding = new CustomMessageBox("Введите фактическую норму при обработке", false);
+                    errorAdding.ShowDialog();
+                    return;
+                }
+
+                if (comboBoxTypeSilver.SelectedIndex == -1)
+                {
+                    CustomMessageBox errorAdding = new CustomMessageBox("Не выбран вид серебра", false);
+                    errorAdding.ShowDialog();
+                    return;
+                }
+
+                if (comboBoxDecimal.Text == "")
+                {
+                    CustomMessageBox errorAdding = new CustomMessageBox("Укажите децимальный номер", false);
+                    errorAdding.ShowDialog();
+                    return;
+                }
+
+                if (db.DecimalNumbers.FirstOrDefault(x => x.TitleDecimal == comboBoxDecimal.Text) == null)
                 {
 
                     CustomMessageBox noDecimalFound = new CustomMessageBox("Указанный децимальный номер не найден, добавить?", true);
@@ -137,9 +166,9 @@ namespace SilverEQuality.FramesUC
                     {
                         DateCheck = dateCheck,
                         DepartmentCheck = ((Department)comboBoxDepartment.SelectedItem).CodeDepartment,
-                        NormCheck = Convert.ToDecimal(maskedTextBoxNorm.Text),
+                        NormCheck = numericUpDownNorm.Value,
                         SilverTypeCheck = ((SilverType)comboBoxTypeSilver.SelectedItem).CodeSilverType,
-                        CoverageCheck = Convert.ToDecimal(maskedTextBoxCoverage.Text),
+                        CoverageCheck = numericUpDownCoverage.Value,
                         AmountCheck = Convert.ToInt32(numericUpDownAmount.Value),
                         DecimalCheck = decimalNumber.IdDecimal,
                         OrderCheck = ((Order)comboBoxOrder.SelectedItem).IdOrder,
@@ -154,9 +183,9 @@ namespace SilverEQuality.FramesUC
                 {
                     editCheck.DateCheck = dateCheck;
                     editCheck.DepartmentCheck = ((Department)comboBoxDepartment.SelectedItem).CodeDepartment;
-                    editCheck.NormCheck = Convert.ToDecimal(maskedTextBoxNorm.Text);
+                    editCheck.NormCheck = numericUpDownNorm.Value;
                     editCheck.SilverTypeCheck = ((SilverType)comboBoxTypeSilver.SelectedItem).CodeSilverType;
-                    editCheck.CoverageCheck = Convert.ToDecimal(maskedTextBoxCoverage.Text);
+                    editCheck.CoverageCheck = numericUpDownCoverage.Value;
                     editCheck.AmountCheck = Convert.ToInt32(numericUpDownAmount.Value);
                     editCheck.DecimalCheck = decimalNumber.IdDecimal;
                     editCheck.OrderCheck = ((Order)comboBoxOrder.SelectedItem).IdOrder;

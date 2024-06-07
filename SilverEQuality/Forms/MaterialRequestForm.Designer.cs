@@ -44,7 +44,6 @@
             panelCaptcha = new Panel();
             buttonCancel = new Button();
             buttonDone = new Button();
-            numericUpDownAmount = new NumericUpDown();
             panelAdmin = new Panel();
             dateTimePickerEnd = new DateTimePicker();
             label4 = new Label();
@@ -53,11 +52,12 @@
             label2 = new Label();
             label3 = new Label();
             textBoxDesc = new TextBox();
+            numericUpDownAmount = new NumericUpDown();
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownAmount).BeginInit();
             panelAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownAmount).BeginInit();
             SuspendLayout();
             // 
             // panelHeader
@@ -234,12 +234,12 @@
             buttonCancel.TabIndex = 1;
             buttonCancel.Text = "Отмена";
             buttonCancel.UseVisualStyleBackColor = false;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // buttonDone
             // 
             buttonDone.Anchor = AnchorStyles.Top;
             buttonDone.BackColor = Color.SteelBlue;
-            buttonDone.DialogResult = DialogResult.OK;
             buttonDone.FlatAppearance.BorderSize = 0;
             buttonDone.FlatStyle = FlatStyle.Flat;
             buttonDone.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
@@ -251,15 +251,6 @@
             buttonDone.Text = "Создать";
             buttonDone.UseVisualStyleBackColor = false;
             buttonDone.Click += buttonDone_Click;
-            // 
-            // numericUpDownAmount
-            // 
-            numericUpDownAmount.Anchor = AnchorStyles.Top;
-            numericUpDownAmount.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDownAmount.Location = new Point(271, 97);
-            numericUpDownAmount.Name = "numericUpDownAmount";
-            numericUpDownAmount.Size = new Size(120, 26);
-            numericUpDownAmount.TabIndex = 30;
             // 
             // panelAdmin
             // 
@@ -276,6 +267,7 @@
             panelAdmin.Name = "panelAdmin";
             panelAdmin.Size = new Size(661, 120);
             panelAdmin.TabIndex = 31;
+            panelAdmin.Visible = false;
             // 
             // dateTimePickerEnd
             // 
@@ -284,6 +276,7 @@
             dateTimePickerEnd.Name = "dateTimePickerEnd";
             dateTimePickerEnd.Size = new Size(200, 26);
             dateTimePickerEnd.TabIndex = 29;
+            dateTimePickerEnd.Value = new DateTime(2024, 6, 7, 0, 0, 0, 0);
             // 
             // label4
             // 
@@ -302,9 +295,9 @@
             label1.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(131, 99);
             label1.Name = "label1";
-            label1.Size = new Size(119, 19);
+            label1.Size = new Size(130, 19);
             label1.TabIndex = 32;
-            label1.Text = "Количество";
+            label1.Text = "Количество*";
             // 
             // comboBoxSilver
             // 
@@ -323,9 +316,9 @@
             label2.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(131, 58);
             label2.Name = "label2";
-            label2.Size = new Size(130, 19);
+            label2.Size = new Size(141, 19);
             label2.TabIndex = 34;
-            label2.Text = "Тип серебра";
+            label2.Text = "Тип серебра*";
             // 
             // label3
             // 
@@ -348,17 +341,26 @@
             textBoxDesc.Size = new Size(261, 82);
             textBoxDesc.TabIndex = 28;
             // 
+            // numericUpDownAmount
+            // 
+            numericUpDownAmount.DecimalPlaces = 3;
+            numericUpDownAmount.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDownAmount.Location = new Point(271, 97);
+            numericUpDownAmount.Name = "numericUpDownAmount";
+            numericUpDownAmount.Size = new Size(120, 26);
+            numericUpDownAmount.TabIndex = 37;
+            // 
             // MaterialRequestForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(661, 461);
+            Controls.Add(numericUpDownAmount);
             Controls.Add(label3);
             Controls.Add(comboBoxSilver);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(panelAdmin);
-            Controls.Add(numericUpDownAmount);
             Controls.Add(label8);
             Controls.Add(textBoxDesc);
             Controls.Add(panel1);
@@ -370,9 +372,9 @@
             panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)numericUpDownAmount).EndInit();
             panelAdmin.ResumeLayout(false);
             panelAdmin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownAmount).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -394,7 +396,6 @@
         private Panel panel1;
         private Button buttonCancel;
         private Button buttonDone;
-        private NumericUpDown numericUpDownAmount;
         private Panel panelAdmin;
         private Label label1;
         private ComboBox comboBoxSilver;
@@ -404,5 +405,6 @@
         private TextBox textBoxDesc;
         private DateTimePicker dateTimePickerEnd;
         private Label label4;
+        private NumericUpDown numericUpDownAmount;
     }
 }

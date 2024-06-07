@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverEQuality", "SilverEQuality\SilverEQuality.csproj", "{F9F6BE51-58CA-4EE6-8B5A-DF62A7C850E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilverEQuality", "SilverEQuality\SilverEQuality.csproj", "{F9F6BE51-58CA-4EE6-8B5A-DF62A7C850E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverEQuality_Context", "SilverEQuality_Context\SilverEQuality_Context.csproj", "{20D4CE3D-F952-40E4-8BD0-7CAA8DC5741A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilverEQuality_Context", "SilverEQuality_Context\SilverEQuality_Context.csproj", "{20D4CE3D-F952-40E4-8BD0-7CAA8DC5741A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseEQ", "DatabaseEQ", "{729D8267-D7F5-4709-B29B-63509E3D38D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

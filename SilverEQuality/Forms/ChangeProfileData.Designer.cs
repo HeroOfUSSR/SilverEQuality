@@ -128,12 +128,13 @@
             // 
             // buttonCancel
             // 
+            buttonCancel.Anchor = AnchorStyles.None;
             buttonCancel.BackColor = SystemColors.AppWorkspace;
             buttonCancel.FlatAppearance.BorderSize = 0;
             buttonCancel.FlatStyle = FlatStyle.Flat;
             buttonCancel.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCancel.ForeColor = SystemColors.ControlLightLight;
-            buttonCancel.Location = new Point(45, 56);
+            buttonCancel.Location = new Point(41, 53);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(362, 33);
             buttonCancel.TabIndex = 3;
@@ -143,12 +144,13 @@
             // 
             // buttonDone
             // 
+            buttonDone.Anchor = AnchorStyles.None;
             buttonDone.BackColor = Color.SteelBlue;
             buttonDone.FlatAppearance.BorderSize = 0;
             buttonDone.FlatStyle = FlatStyle.Flat;
             buttonDone.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonDone.ForeColor = SystemColors.ControlLightLight;
-            buttonDone.Location = new Point(45, 13);
+            buttonDone.Location = new Point(41, 10);
             buttonDone.Name = "buttonDone";
             buttonDone.Size = new Size(362, 37);
             buttonDone.TabIndex = 2;
@@ -158,9 +160,10 @@
             // 
             // labelNew
             // 
+            labelNew.Anchor = AnchorStyles.Left;
             labelNew.AutoSize = true;
             labelNew.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelNew.Location = new Point(18, 101);
+            labelNew.Location = new Point(25, 101);
             labelNew.Name = "labelNew";
             labelNew.Size = new Size(130, 19);
             labelNew.TabIndex = 34;
@@ -168,20 +171,22 @@
             // 
             // textBoxNew
             // 
+            textBoxNew.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxNew.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxNew.ForeColor = Color.Black;
-            textBoxNew.Location = new Point(203, 98);
+            textBoxNew.Location = new Point(218, 98);
             textBoxNew.Name = "textBoxNew";
-            textBoxNew.Size = new Size(227, 26);
+            textBoxNew.Size = new Size(189, 26);
             textBoxNew.TabIndex = 33;
             textBoxNew.Enter += textBoxNew_Enter;
             // 
             // labelCurrent
             // 
+            labelCurrent.Anchor = AnchorStyles.Left;
             labelCurrent.AutoSize = true;
             labelCurrent.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             labelCurrent.ForeColor = Color.Black;
-            labelCurrent.Location = new Point(18, 56);
+            labelCurrent.Location = new Point(25, 56);
             labelCurrent.Name = "labelCurrent";
             labelCurrent.Size = new Size(152, 19);
             labelCurrent.TabIndex = 32;
@@ -189,20 +194,22 @@
             // 
             // textBoxCurrent
             // 
+            textBoxCurrent.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxCurrent.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxCurrent.ForeColor = Color.Black;
-            textBoxCurrent.Location = new Point(203, 53);
+            textBoxCurrent.Location = new Point(218, 53);
             textBoxCurrent.Name = "textBoxCurrent";
             textBoxCurrent.ReadOnly = true;
-            textBoxCurrent.Size = new Size(227, 26);
+            textBoxCurrent.Size = new Size(189, 26);
             textBoxCurrent.TabIndex = 31;
             textBoxCurrent.Enter += textBoxCurrent_Enter;
             // 
             // labelRepeat
             // 
+            labelRepeat.Anchor = AnchorStyles.Left;
             labelRepeat.AutoSize = true;
             labelRepeat.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelRepeat.Location = new Point(18, 133);
+            labelRepeat.Location = new Point(25, 133);
             labelRepeat.Name = "labelRepeat";
             labelRepeat.Size = new Size(174, 19);
             labelRepeat.TabIndex = 37;
@@ -210,11 +217,12 @@
             // 
             // textBoxRepeat
             // 
+            textBoxRepeat.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxRepeat.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxRepeat.ForeColor = Color.Black;
-            textBoxRepeat.Location = new Point(203, 130);
+            textBoxRepeat.Location = new Point(218, 130);
             textBoxRepeat.Name = "textBoxRepeat";
-            textBoxRepeat.Size = new Size(227, 26);
+            textBoxRepeat.Size = new Size(189, 26);
             textBoxRepeat.TabIndex = 36;
             textBoxRepeat.Enter += textBoxRepeat_Enter;
             // 
@@ -232,6 +240,8 @@
             Controls.Add(textBoxCurrent);
             Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.None;
+            MaximumSize = new Size(525, 275);
+            MinimumSize = new Size(442, 275);
             Name = "ChangeProfileData";
             StartPosition = FormStartPosition.CenterParent;
             Text = "ChangeProfileData";

@@ -43,16 +43,18 @@
             label6 = new Label();
             numericUpDownAmount = new NumericUpDown();
             label5 = new Label();
-            maskedTextBoxCoverage = new MaskedTextBox();
             label4 = new Label();
-            maskedTextBoxNorm = new MaskedTextBox();
             comboBoxDepartment = new ComboBox();
             label3 = new Label();
             comboBoxTypeSilver = new ComboBox();
             label2 = new Label();
+            numericUpDownNorm = new NumericUpDown();
+            numericUpDownCoverage = new NumericUpDown();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownAmount).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownNorm).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownCoverage).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -91,6 +93,8 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(numericUpDownCoverage);
+            panel3.Controls.Add(numericUpDownNorm);
             panel3.Controls.Add(checkBoxFinish);
             panel3.Controls.Add(checkBoxDate);
             panel3.Controls.Add(label9);
@@ -102,9 +106,7 @@
             panel3.Controls.Add(label6);
             panel3.Controls.Add(numericUpDownAmount);
             panel3.Controls.Add(label5);
-            panel3.Controls.Add(maskedTextBoxCoverage);
             panel3.Controls.Add(label4);
-            panel3.Controls.Add(maskedTextBoxNorm);
             panel3.Controls.Add(comboBoxDepartment);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(comboBoxTypeSilver);
@@ -240,17 +242,6 @@
             label5.TabIndex = 10;
             label5.Text = "Площадь покрытия";
             // 
-            // maskedTextBoxCoverage
-            // 
-            maskedTextBoxCoverage.Anchor = AnchorStyles.None;
-            maskedTextBoxCoverage.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            maskedTextBoxCoverage.Location = new Point(432, 156);
-            maskedTextBoxCoverage.Mask = "0.00000";
-            maskedTextBoxCoverage.Name = "maskedTextBoxCoverage";
-            maskedTextBoxCoverage.Size = new Size(153, 26);
-            maskedTextBoxCoverage.TabIndex = 3;
-            maskedTextBoxCoverage.KeyDown += maskedTextBoxCoverage_KeyDown;
-            // 
             // label4
             // 
             label4.Anchor = AnchorStyles.None;
@@ -261,17 +252,6 @@
             label4.Size = new Size(196, 19);
             label4.TabIndex = 8;
             label4.Text = "Фактическая норма";
-            // 
-            // maskedTextBoxNorm
-            // 
-            maskedTextBoxNorm.Anchor = AnchorStyles.None;
-            maskedTextBoxNorm.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            maskedTextBoxNorm.Location = new Point(432, 91);
-            maskedTextBoxNorm.Mask = "0.000000";
-            maskedTextBoxNorm.Name = "maskedTextBoxNorm";
-            maskedTextBoxNorm.Size = new Size(121, 26);
-            maskedTextBoxNorm.TabIndex = 1;
-            maskedTextBoxNorm.KeyDown += maskedTextBoxNorm_KeyDown;
             // 
             // comboBoxDepartment
             // 
@@ -318,6 +298,24 @@
             label2.TabIndex = 3;
             label2.Text = "Тип серебра";
             // 
+            // numericUpDownNorm
+            // 
+            numericUpDownNorm.DecimalPlaces = 6;
+            numericUpDownNorm.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDownNorm.Location = new Point(432, 92);
+            numericUpDownNorm.Name = "numericUpDownNorm";
+            numericUpDownNorm.Size = new Size(120, 26);
+            numericUpDownNorm.TabIndex = 38;
+            // 
+            // numericUpDownCoverage
+            // 
+            numericUpDownCoverage.DecimalPlaces = 5;
+            numericUpDownCoverage.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDownCoverage.Location = new Point(432, 157);
+            numericUpDownCoverage.Name = "numericUpDownCoverage";
+            numericUpDownCoverage.Size = new Size(120, 26);
+            numericUpDownCoverage.TabIndex = 39;
+            // 
             // CheckEditFrame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -333,6 +331,8 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownAmount).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownNorm).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownCoverage).EndInit();
             ResumeLayout(false);
         }
 
@@ -344,9 +344,7 @@
         private ComboBox comboBoxTypeSilver;
         private Label label2;
         private Label label5;
-        private MaskedTextBox maskedTextBoxCoverage;
         private Label label4;
-        private MaskedTextBox maskedTextBoxNorm;
         private ComboBox comboBoxDepartment;
         private Label label3;
         private ComboBox comboBoxDecimal;
@@ -360,5 +358,7 @@
         private Button buttonAdd;
         private CheckBox checkBoxDate;
         private CheckBox checkBoxFinish;
+        private NumericUpDown numericUpDownCoverage;
+        private NumericUpDown numericUpDownNorm;
     }
 }

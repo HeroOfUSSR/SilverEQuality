@@ -428,9 +428,12 @@ namespace SilverEQuality_Context
 
                 entity.ToTable("SilverType");
 
-                entity.Property(e => e.CodeSilverType).HasColumnName("Code_SilverType");
+                entity.Property(e => e.CodeSilverType)
+                    .ValueGeneratedNever()
+                    .HasColumnName("Code_SilverType");
 
-                entity.Property(e => e.AmountSilverType).HasColumnName("Amount_SilverType");
+                entity.Property(e => e.AmountSilverType)
+                    .HasColumnName("Amount_SilverType");
 
                 entity.Property(e => e.CostPerKgSilverType)
                     .HasColumnType("money")

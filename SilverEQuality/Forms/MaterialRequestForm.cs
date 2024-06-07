@@ -18,12 +18,14 @@ namespace SilverEQuality.Forms
         private SilverRequest editRequest;
         public bool isMouseDown;
         public Point startPoint;
+
         public MaterialRequestForm()
         {
             InitializeComponent();
 
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
+
                 comboBoxPrio.DisplayMember = nameof(Priority.TitlePriority);
                 comboBoxPrio.ValueMember = nameof(Priority.IdPriority);
                 comboBoxStatus.DisplayMember = nameof(Status.TitleStatus);
@@ -43,11 +45,15 @@ namespace SilverEQuality.Forms
 
         public MaterialRequestForm(SilverType silverType) : this()
         {
+            panelAdmin.Visible = true;
+
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
                 var index = comboBoxSilver.FindString(silverType.TitleSilverType);
 
                 comboBoxSilver.SelectedIndex = index;
+
+                dateTimePickerEnd.Value = DateTime.Now.AddDays(1);
             }
         }
 
@@ -114,16 +120,21 @@ namespace SilverEQuality.Forms
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
-                if (numericUpDownAmount.Value <= 0) return; // Валидацией займись
+                if (numericUpDownAmount.Value <= 0)
+                {
+                    CustomMessageBox errorAdding = new CustomMessageBox("Введите запрашиваемое количество", false);
+                    errorAdding.ShowDialog();
+                    return;
+                }
 
-                string paymentRequest;
+                string costRequest;
                 if (textBoxPayment.Text == "")
                 {
-                    paymentRequest = null;
+                    costRequest = null;
                 }
                 else
                 {
-                    paymentRequest = textBoxPayment.Text;
+                    costRequest = textBoxPayment.Text;
                 }
 
                 int statusRequest;
@@ -136,16 +147,27 @@ namespace SilverEQuality.Forms
                     statusRequest = 1;
                 }
 
+                int priorityRequest;
+                if (comboBoxStatus.SelectedItem != null)
+                {
+                    priorityRequest = ((Priority)comboBoxPrio.SelectedItem).IdPriority;
+                }
+                else
+                {
+                    priorityRequest = 2;
+                }
+
+
 
                 if (buttonDone.Text == "Редактировать")
                 {
                     editRequest.StatusRequest = statusRequest;
-                    editRequest.PriorityRequest = ((Priority)comboBoxPrio.SelectedItem).IdPriority;
+                    editRequest.PriorityRequest = priorityRequest;
                     editRequest.SilverTypeRequest = ((SilverType)comboBoxSilver.SelectedItem).CodeSilverType;
-                    editRequest.AmountRequest = Convert.ToInt32(numericUpDownAmount.Value);
+                    editRequest.AmountRequest = numericUpDownAmount.Value;
                     editRequest.DescRequest = textBoxDesc.Text;
 
-                    editRequest.CostRequest = Convert.ToDecimal(paymentRequest);
+                    editRequest.CostRequest = Convert.ToDecimal(costRequest);
                     editRequest.DateEndRequest = dateTimePickerEnd.Value;
 
                     db.SilverRequests.Update(editRequest);
@@ -160,13 +182,13 @@ namespace SilverEQuality.Forms
                     SilverRequest newRequest = new SilverRequest
                     {
                         StatusRequest = statusRequest,
-                        PriorityRequest = ((Priority)comboBoxPrio.SelectedItem).IdPriority,
+                        PriorityRequest = priorityRequest,
                         SilverTypeRequest = ((SilverType)comboBoxSilver.SelectedItem).CodeSilverType,
                         UserRequest = AuthForm.authorizedUser.IdUser,
-                        AmountRequest = Convert.ToInt32(numericUpDownAmount.Value),
+                        AmountRequest = numericUpDownAmount.Value,
                         DescRequest = textBoxDesc.Text,
-                        CostRequest = Convert.ToDecimal(paymentRequest),
-                        DateEndRequest = dateTimePickerEnd.Value,
+                        CostRequest = null,
+                        DateEndRequest = null,
                         DateRequest = DateTime.Now,
 
                     };
@@ -179,5 +201,11 @@ namespace SilverEQuality.Forms
                 }
             }
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

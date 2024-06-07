@@ -45,6 +45,13 @@ namespace SilverEQuality.Forms
 
         private void buttonDone_Click(object sender, EventArgs e)
         {
+            if (textBoxCode.Text == "" || textBoxTitleSilver.Text == "")
+            {
+                CustomMessageBox noSilverData = new CustomMessageBox("Не все поля со звёздочко заполнены", false);
+                noSilverData.ShowDialog();
+                return;
+            }
+
             if (buttonDone.Text == "Редактировать")
             {
                 editType.CodeSilverType = Convert.ToInt32(textBoxCode.Text);
@@ -120,6 +127,31 @@ namespace SilverEQuality.Forms
                 Point p = PointToScreen(e.Location);
                 this.Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
             }
+        }
+
+        private void textBoxCost_KeyDown(object sender, KeyEventArgs e)
+        {
+            char digit = Convert.ToChar(e.KeyCode);
+
+            if (!Char.IsDigit(digit) || e.KeyCode == Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            char digit = Convert.ToChar(e.KeyCode);
+
+            if (!Char.IsDigit(digit) || e.KeyCode == Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
