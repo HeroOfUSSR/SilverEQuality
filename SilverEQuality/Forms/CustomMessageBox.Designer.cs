@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomMessageBox));
             panelHeader = new Panel();
             label3 = new Label();
             buttonHide = new Button();
@@ -163,6 +164,7 @@
             Controls.Add(buttonOK);
             Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CustomMessageBox";
             StartPosition = FormStartPosition.CenterParent;
             Text = "MessageBoxAuth";

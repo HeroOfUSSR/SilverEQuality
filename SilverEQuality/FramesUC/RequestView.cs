@@ -14,10 +14,12 @@ namespace SilverEQuality.FramesUC
 {
     public partial class RequestView : UserControl
     {
+        private SilverRequest editSilverReq;
         public RequestView(SilverRequest silverRequest)
         {
             InitializeComponent();
             InitView(silverRequest);
+            editSilverReq = silverRequest;
         }
 
         private void InitView(SilverRequest silverRequest)
@@ -25,9 +27,19 @@ namespace SilverEQuality.FramesUC
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
                 labelRequestTitle.Text = $"Запрос №{silverRequest.IdRequest}";
-                textBoxDescReq.Text = silverRequest.DescRequest;
+                if (silverRequest.DescRequest != null && silverRequest.DescRequest != "")
+                {
+                    textBoxDescReq.Text = silverRequest.DescRequest;
+                }
                 labelDateReq.Text = silverRequest.DateRequest.ToString("D");
                 labelAmount.Text = $"{silverRequest.AmountRequest} кг";
+
+                if (silverRequest.PriorityRequest != null)
+                {
+                    labelPriority.Text = $"Приоритет: {silverRequest.PriorityRequestNavigation.TitlePriority.ToString()}";
+                }
+
+                labelStatus.Text = silverRequest.StatusRequestNavigation.TitleStatus;
 
                 var author = db.Users.FirstOrDefault(x => x.IdUser == silverRequest.UserRequest);
 
@@ -40,6 +52,11 @@ namespace SilverEQuality.FramesUC
                 labelUserName.Text = initials[0] + " " + initials[1][0] + "." + initials[2][0] + "."; //Тут надо фиксить
 
             }
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            //var requestEditForm = new MaterialRequestFrame(editSilverReq);
         }
     }
 }

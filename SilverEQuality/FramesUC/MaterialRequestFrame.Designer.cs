@@ -36,8 +36,6 @@
             buttonSearch = new Button();
             textBoxSearch = new TextBox();
             panel2 = new Panel();
-            panel3 = new Panel();
-            panel4 = new Panel();
             flowLayoutPanelRequests = new FlowLayoutPanel();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -129,26 +127,10 @@
             panel2.Size = new Size(1009, 32);
             panel2.TabIndex = 1;
             // 
-            // panel3
-            // 
-            panel3.Dock = DockStyle.Left;
-            panel3.Location = new Point(0, 80);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(84, 336);
-            panel3.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            panel4.Dock = DockStyle.Right;
-            panel4.Location = new Point(925, 80);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(84, 336);
-            panel4.TabIndex = 3;
-            // 
             // flowLayoutPanelRequests
             // 
+            flowLayoutPanelRequests.Anchor = AnchorStyles.None;
             flowLayoutPanelRequests.AutoScroll = true;
-            flowLayoutPanelRequests.Dock = DockStyle.Fill;
             flowLayoutPanelRequests.Location = new Point(84, 80);
             flowLayoutPanelRequests.Name = "flowLayoutPanelRequests";
             flowLayoutPanelRequests.Size = new Size(841, 336);
@@ -159,8 +141,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(flowLayoutPanelRequests);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             MaximumSize = new Size(1009, 448);
@@ -182,8 +162,6 @@
         private ComboBox comboBoxSortDate;
         private Button buttonSearch;
         private TextBox textBoxSearch;
-        private Panel panel3;
-        private Panel panel4;
         private FlowLayoutPanel flowLayoutPanelRequests;
     }
 }

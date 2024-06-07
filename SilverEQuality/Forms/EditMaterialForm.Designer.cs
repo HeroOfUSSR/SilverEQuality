@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditMaterialForm));
             panelHeader = new Panel();
             labelTitle = new Label();
             buttonHide = new Button();
@@ -273,6 +274,7 @@
             Controls.Add(textBoxCode);
             Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EditMaterialForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "EditMaterialForm";

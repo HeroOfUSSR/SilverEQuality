@@ -1,4 +1,5 @@
-﻿using SilverEQuality_Context;
+﻿using Microsoft.EntityFrameworkCore;
+using SilverEQuality_Context;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +24,9 @@ namespace SilverEQuality.FramesUC
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
-                var reqs = db.SilverRequests.ToList();
+                var reqs = db.SilverRequests.OrderByDescending(x => x.IdRequest)
+                    .Include(x => x.StatusRequestNavigation)
+                    .Include(x => x.PriorityRequestNavigation).ToList();
 
                 foreach (var req in reqs)
                 {

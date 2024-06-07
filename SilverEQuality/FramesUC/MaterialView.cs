@@ -28,7 +28,14 @@ namespace SilverEQuality.FramesUC
         {
             labelSilverName.Text = silver.TitleSilverType;
             labelCost.Text = $"{silver.CostPerKgSilverType} руб/кг";
-            labelAmount.Text = silver.AmountSilverType.ToString();
+            if (silver.AmountSilverType != null)
+            {
+                labelAmount.Text = silver.AmountSilverType.ToString();
+            }
+            else
+            {
+                labelAmount.Text = "Отсутствует на складе";
+            }
 
         }
 

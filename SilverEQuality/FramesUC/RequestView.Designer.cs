@@ -33,6 +33,7 @@
             pictureBoxUser = new PictureBox();
             labelDateReq = new Label();
             panel2 = new Panel();
+            buttonEdit = new Button();
             textBoxDescReq = new TextBox();
             labelRequestTitle = new Label();
             labelPriority = new Label();
@@ -40,6 +41,7 @@
             labelAmount = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUser).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -50,7 +52,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(150, 175);
+            panel1.Size = new Size(150, 173);
             panel1.TabIndex = 0;
             // 
             // labelUserName
@@ -89,22 +91,40 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(buttonEdit);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(685, 0);
+            panel2.Location = new Point(683, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(156, 175);
+            panel2.Size = new Size(156, 173);
             panel2.TabIndex = 1;
+            // 
+            // buttonEdit
+            // 
+            buttonEdit.BackColor = Color.SteelBlue;
+            buttonEdit.DialogResult = DialogResult.OK;
+            buttonEdit.Dock = DockStyle.Bottom;
+            buttonEdit.FlatAppearance.BorderSize = 0;
+            buttonEdit.FlatStyle = FlatStyle.Flat;
+            buttonEdit.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEdit.ForeColor = SystemColors.ControlLightLight;
+            buttonEdit.Location = new Point(0, 141);
+            buttonEdit.Name = "buttonEdit";
+            buttonEdit.Size = new Size(156, 32);
+            buttonEdit.TabIndex = 33;
+            buttonEdit.Text = "Изменить";
+            buttonEdit.UseVisualStyleBackColor = false;
+            buttonEdit.Click += buttonEdit_Click;
             // 
             // textBoxDescReq
             // 
             textBoxDescReq.BackColor = Color.White;
             textBoxDescReq.BorderStyle = BorderStyle.None;
             textBoxDescReq.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxDescReq.Location = new Point(173, 104);
+            textBoxDescReq.Location = new Point(173, 115);
             textBoxDescReq.Multiline = true;
             textBoxDescReq.Name = "textBoxDescReq";
             textBoxDescReq.ReadOnly = true;
-            textBoxDescReq.Size = new Size(446, 56);
+            textBoxDescReq.Size = new Size(492, 56);
             textBoxDescReq.TabIndex = 6;
             textBoxDescReq.Text = "Описание отсутствует";
             // 
@@ -124,9 +144,9 @@
             labelPriority.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelPriority.Location = new Point(173, 65);
             labelPriority.Name = "labelPriority";
-            labelPriority.Size = new Size(97, 16);
+            labelPriority.Size = new Size(217, 16);
             labelPriority.TabIndex = 9;
-            labelPriority.Text = "Приоритет";
+            labelPriority.Text = "Приоритет отсутствует";
             // 
             // labelStatus
             // 
@@ -153,6 +173,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(labelAmount);
             Controls.Add(labelPriority);
             Controls.Add(labelStatus);
@@ -161,10 +182,11 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "RequestView";
-            Size = new Size(841, 175);
+            Size = new Size(839, 173);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUser).EndInit();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -181,5 +203,6 @@
         private Label labelPriority;
         private Label labelStatus;
         private Label labelAmount;
+        private Button buttonEdit;
     }
 }

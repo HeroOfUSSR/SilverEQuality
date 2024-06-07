@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthForm));
             panel1 = new Panel();
             label3 = new Label();
             buttonHide = new Button();
@@ -295,6 +296,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(440, 520);
             MinimumSize = new Size(440, 344);
             Name = "AuthForm";

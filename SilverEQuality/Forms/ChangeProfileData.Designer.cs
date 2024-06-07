@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeProfileData));
             panelHeader = new Panel();
             labelTitle = new Label();
             buttonHide = new Button();
@@ -240,6 +241,7 @@
             Controls.Add(textBoxCurrent);
             Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(525, 275);
             MinimumSize = new Size(442, 275);
             Name = "ChangeProfileData";

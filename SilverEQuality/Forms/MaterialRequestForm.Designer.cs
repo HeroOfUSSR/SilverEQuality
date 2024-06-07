@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialRequestForm));
             panelHeader = new Panel();
             labelTitle = new Label();
             buttonHide = new Button();
@@ -343,6 +344,7 @@
             // 
             // numericUpDownAmount
             // 
+            numericUpDownAmount.Anchor = AnchorStyles.Top;
             numericUpDownAmount.DecimalPlaces = 3;
             numericUpDownAmount.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             numericUpDownAmount.Location = new Point(271, 97);
@@ -366,6 +368,7 @@
             Controls.Add(panel1);
             Controls.Add(panelHeader);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MaterialRequestForm";
             Text = "MaterialRequestForm";
             panelHeader.ResumeLayout(false);

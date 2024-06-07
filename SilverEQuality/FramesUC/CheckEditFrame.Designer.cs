@@ -32,6 +32,8 @@
             panel2 = new Panel();
             buttonAdd = new Button();
             panel3 = new Panel();
+            numericUpDownCoverage = new NumericUpDown();
+            numericUpDownNorm = new NumericUpDown();
             checkBoxFinish = new CheckBox();
             checkBoxDate = new CheckBox();
             label9 = new Label();
@@ -48,13 +50,11 @@
             label3 = new Label();
             comboBoxTypeSilver = new ComboBox();
             label2 = new Label();
-            numericUpDownNorm = new NumericUpDown();
-            numericUpDownCoverage = new NumericUpDown();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownAmount).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownNorm).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownCoverage).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownNorm).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownAmount).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -116,6 +116,26 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(841, 360);
             panel3.TabIndex = 2;
+            // 
+            // numericUpDownCoverage
+            // 
+            numericUpDownCoverage.Anchor = AnchorStyles.None;
+            numericUpDownCoverage.DecimalPlaces = 5;
+            numericUpDownCoverage.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDownCoverage.Location = new Point(432, 157);
+            numericUpDownCoverage.Name = "numericUpDownCoverage";
+            numericUpDownCoverage.Size = new Size(120, 26);
+            numericUpDownCoverage.TabIndex = 39;
+            // 
+            // numericUpDownNorm
+            // 
+            numericUpDownNorm.Anchor = AnchorStyles.None;
+            numericUpDownNorm.DecimalPlaces = 6;
+            numericUpDownNorm.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDownNorm.Location = new Point(432, 92);
+            numericUpDownNorm.Name = "numericUpDownNorm";
+            numericUpDownNorm.Size = new Size(120, 26);
+            numericUpDownNorm.TabIndex = 38;
             // 
             // checkBoxFinish
             // 
@@ -298,24 +318,6 @@
             label2.TabIndex = 3;
             label2.Text = "Тип серебра";
             // 
-            // numericUpDownNorm
-            // 
-            numericUpDownNorm.DecimalPlaces = 6;
-            numericUpDownNorm.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDownNorm.Location = new Point(432, 92);
-            numericUpDownNorm.Name = "numericUpDownNorm";
-            numericUpDownNorm.Size = new Size(120, 26);
-            numericUpDownNorm.TabIndex = 38;
-            // 
-            // numericUpDownCoverage
-            // 
-            numericUpDownCoverage.DecimalPlaces = 5;
-            numericUpDownCoverage.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDownCoverage.Location = new Point(432, 157);
-            numericUpDownCoverage.Name = "numericUpDownCoverage";
-            numericUpDownCoverage.Size = new Size(120, 26);
-            numericUpDownCoverage.TabIndex = 39;
-            // 
             // CheckEditFrame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -330,9 +332,9 @@
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownAmount).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownNorm).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownCoverage).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownNorm).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownAmount).EndInit();
             ResumeLayout(false);
         }
 
