@@ -40,6 +40,11 @@ namespace SilverEQuality.Forms
                 comboBoxSilver.SelectedValue = 0;
                 comboBoxStatus.SelectedValue = 0;
                 comboBoxPrio.SelectedValue = 0;
+
+                if (AuthForm.authorizedUser.RoleUser == 2)
+                {
+                    panelAdmin.Visible = false;
+                }
             }
         }
 
@@ -198,6 +203,7 @@ namespace SilverEQuality.Forms
 
                     CustomMessageBox successAdd = new CustomMessageBox("Запрос создан", false);
                     successAdd.ShowDialog();
+                    this.Close();
                 }
             }
         }

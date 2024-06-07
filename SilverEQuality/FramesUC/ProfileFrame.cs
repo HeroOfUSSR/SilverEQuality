@@ -32,6 +32,7 @@ namespace SilverEQuality.FramesUC
             if (currentUser.RoleUser != 1)
             {
                 buttonUsers.Visible = false;
+                buttonCreateUser.Visible = false;
             }
         }
 
@@ -110,7 +111,7 @@ namespace SilverEQuality.FramesUC
                         break;
                     case 2:
 
-                        var comments = db.Comments.OrderByDescending(x => x.IdComment).ToList();
+                        var comments = db.Comments.OrderByDescending(x => x.IdComment).Include(x => x.OrderCommentNavigation).ToList();
 
                         if (AuthForm.authorizedUser.RoleUser != 1)
                         {

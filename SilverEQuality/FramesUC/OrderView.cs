@@ -110,9 +110,13 @@ namespace SilverEQuality.FramesUC
                     buttonComments.Visible = true;
                     buttonCheck.Visible = true;
                     textBoxDesc.Visible = true;
-                    flowLayoutPanelOrderParts.Enabled = true;
-                    flowLayoutPanelOrderParts.Visible = true;
-                    flowLayoutPanelOrderParts.Size = MaximumSize;
+                    if (!MainForm.isMenuExpanded)
+                    {
+                        flowLayoutPanelOrderParts.Enabled = true;
+                        flowLayoutPanelOrderParts.Visible = true;
+                        flowLayoutPanelOrderParts.Size = MaximumSize;
+                    }
+                    
                 }
             }
             else
@@ -129,9 +133,14 @@ namespace SilverEQuality.FramesUC
                     buttonCheck.Visible = false;
                     textBoxDesc.Visible = false;
                     buttonComments.Visible = false;
-                    flowLayoutPanelOrderParts.Enabled = false;
-                    flowLayoutPanelOrderParts.Visible = false;
-                    flowLayoutPanelOrderParts.Size = MinimumSize;
+
+                    if (!MainForm.isMenuExpanded)
+                    {
+                        flowLayoutPanelOrderParts.Enabled = false;
+                        flowLayoutPanelOrderParts.Visible = false;
+                        flowLayoutPanelOrderParts.Size = MinimumSize;
+                    }
+                    
                 }
             }
         }

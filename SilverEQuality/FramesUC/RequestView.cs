@@ -37,7 +37,7 @@ namespace SilverEQuality.FramesUC
                 }
 
                 string[] initials = author.FullnameUser.Split(' ');
-                labelUserName.Text = initials[0] + " " + initials[1][0] + "." + initials[2][0] + ".";
+                labelUserName.Text = initials[0] + " " + initials[1][0] + "." + initials[2][0] + "."; //Тут надо фиксить
 
             }
         }

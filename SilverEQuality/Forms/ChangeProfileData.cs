@@ -88,6 +88,7 @@ namespace SilverEQuality.Forms
 
                     this.Size = MinimumSize;
 
+                    buttonDone.Text = "Подтвердить";
                     labelTitle.Text = "Подтвердите права";
                     labelCurrent.Visible = false;
                     textBoxCurrent.Visible = false;
