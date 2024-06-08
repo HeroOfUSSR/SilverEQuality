@@ -56,7 +56,7 @@ namespace SilverEQuality.FramesUC
                     graphView.Model.Series.Clear();
                 }*/
 
-                graphView.Model = new OxyPlot.PlotModel { Title = "Выручка" };
+                graphView.Model = new OxyPlot.PlotModel { Title = "Затраты" };
 
                 FunctionSeries actualExp = new FunctionSeries();
                 FunctionSeries normExp = new FunctionSeries();
