@@ -129,6 +129,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Resources\company_placeholder.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -160,6 +163,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\report1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\silver.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\window.png">
