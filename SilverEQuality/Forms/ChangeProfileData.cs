@@ -193,9 +193,7 @@ namespace SilverEQuality.Forms
                                     successDelete.ShowDialog();
                                     break;
                             }
-                            
 
-                            
                             this.Close();
                         }
                         else

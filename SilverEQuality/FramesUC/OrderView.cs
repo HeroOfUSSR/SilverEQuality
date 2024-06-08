@@ -54,18 +54,26 @@ namespace SilverEQuality.FramesUC
                 labelOrderNumber.Text = $"Заказ №{order.IdOrder}";
 
                 if (order.PriorityOrder != null)
-                    labelPriority.Text = db.Priorities.FirstOrDefault(x => x.IdPriority == order.PriorityOrder).TitlePriority;
+                {
+                    labelPriority.Text = $"Приоритет: {db.Priorities.FirstOrDefault(x => x.IdPriority == order.PriorityOrder).TitlePriority}";
+
+                }
                 else
+                {
                     labelPriority.Text = "Без приоритета";
+
+                }
 
                 if (order.DescOrder == null || order.DescOrder == "")
                 {
                     textBoxDesc.Text = "Описание заказа отсутствует";
                 }
                 else
+                {
                     textBoxDesc.Text = order.DescOrder;
+                }
 
-                labelStatus.Text = db.Statuses.FirstOrDefault(x => x.IdStatus == order.StatusOrder).TitleStatus;
+                labelStatus.Text = $"Статус: {db.Statuses.FirstOrDefault(x => x.IdStatus == order.StatusOrder).TitleStatus}";
 
                 labelManufacturer.Text = db.Manufacturers.FirstOrDefault(x => x.IdManufacturer == order.ManufacturerOrder).NameManufacturer;
 
@@ -105,10 +113,13 @@ namespace SilverEQuality.FramesUC
                 {
                     isExpanding = false;
                     timerExpand.Stop();
-                    buttonImageMan.Visible = true;
-                    buttonEdit.Visible = true;
+                    if (AuthForm.authorizedUser.RoleUser != 2 && AuthForm.authorizedUser.RoleUser != 4)
+                    {
+                        buttonImageMan.Visible = true;
+                        buttonEdit.Visible = true;
+                        buttonCheck.Visible = true;
+                    }
                     buttonComments.Visible = true;
-                    buttonCheck.Visible = true;
                     textBoxDesc.Visible = true;
                     if (!MainForm.isMenuExpanded)
                     {
@@ -128,9 +139,12 @@ namespace SilverEQuality.FramesUC
                 {
                     isExpanding = true;
                     timerExpand.Stop();
-                    buttonImageMan.Visible = false;
-                    buttonEdit.Visible = false;
-                    buttonCheck.Visible = false;
+                    if (AuthForm.authorizedUser.RoleUser != 2 && AuthForm.authorizedUser.RoleUser != 4)
+                    {
+                        buttonImageMan.Visible = false;
+                        buttonEdit.Visible = false;
+                        buttonCheck.Visible = false;
+                    }
                     textBoxDesc.Visible = false;
                     buttonComments.Visible = false;
 

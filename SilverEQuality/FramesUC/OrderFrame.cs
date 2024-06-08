@@ -170,27 +170,27 @@ namespace SilverEQuality.Forms
 
         private void comboBoxManuf_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Filter();
+            //Filter();
         }
 
         private void comboBoxStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Filter();
+            //Filter();
         }
 
         private void comboBoxPriority_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Filter();
+            // Filter();
         }
 
         private void comboBoxSortDate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Sort();
+            //Sort();
         }
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
-            Filter();
+            //Filter();
         }
 
         private void OrderFrame_Resize(object sender, EventArgs e)
@@ -198,12 +198,19 @@ namespace SilverEQuality.Forms
             if (this.Size == MinimumSize || this.Size == MaximumSize)
             {
                 Sort();
+                Filter();
             }
         }
 
         private void OrderFrame_ParentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            Sort();
+            Filter();
         }
     }
 }

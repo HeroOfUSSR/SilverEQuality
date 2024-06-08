@@ -16,6 +16,8 @@ namespace SilverEQuality.FramesUC
 {
     public partial class UserView : UserControl
     {
+        public event Action<bool> refreshProfile;
+
         private User userView;
         public UserView(User user)
         {
@@ -64,6 +66,7 @@ namespace SilverEQuality.FramesUC
                 var confirmAdmin = new ChangeProfileData(userView, 2);
                 confirmAdmin.ShowDialog();
 
+                refreshProfile?.Invoke(true);
             }
         }
 
@@ -71,6 +74,8 @@ namespace SilverEQuality.FramesUC
         {
             var editChelik = new CreateUserForm(userView);
             editChelik.ShowDialog();
+
+            refreshProfile?.Invoke(true);
         }
     }
 }

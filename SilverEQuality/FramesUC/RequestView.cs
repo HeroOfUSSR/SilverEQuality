@@ -1,4 +1,5 @@
-﻿using SilverEQuality_Context;
+﻿using SilverEQuality.Forms;
+using SilverEQuality_Context;
 using SilverEQuality_Context.Models;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,17 @@ namespace SilverEQuality.FramesUC
 {
     public partial class RequestView : UserControl
     {
-        private SilverRequest editSilverReq;
+        public SilverRequest silverReqView;
         public RequestView(SilverRequest silverRequest)
         {
             InitializeComponent();
             InitView(silverRequest);
-            editSilverReq = silverRequest;
+            silverReqView = silverRequest;
+
+            if (AuthForm.authorizedUser.RoleUser == 2 || AuthForm.authorizedUser.RoleUser == 4)
+            {
+                buttonEdit.Visible = false;
+            }
         }
 
         private void InitView(SilverRequest silverRequest)
@@ -39,7 +45,7 @@ namespace SilverEQuality.FramesUC
                     labelPriority.Text = $"Приоритет: {silverRequest.PriorityRequestNavigation.TitlePriority.ToString()}";
                 }
 
-                labelStatus.Text = silverRequest.StatusRequestNavigation.TitleStatus;
+                labelStatus.Text = $"Статус: {silverRequest.StatusRequestNavigation.TitleStatus}";
 
                 var author = db.Users.FirstOrDefault(x => x.IdUser == silverRequest.UserRequest);
 
@@ -56,7 +62,8 @@ namespace SilverEQuality.FramesUC
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            //var requestEditForm = new MaterialRequestFrame(editSilverReq);
+            var requestEditForm = new MaterialRequestForm(silverReqView);
+            requestEditForm.ShowDialog();
         }
     }
 }

@@ -125,7 +125,12 @@ namespace SilverEQuality.Forms
                                 catch (Exception ex)
                                 {
                                     CustomMessageBox errorMail = new CustomMessageBox("Ошибка отправки сообщения", false);
+                                    errorMail.ShowDialog();
+                                    return;
                                 }
+
+                                CustomMessageBox successSendEmail = new CustomMessageBox("Сообщение на почту отправлено", false);
+                                successSendEmail.ShowDialog();
                             }
                         }
 

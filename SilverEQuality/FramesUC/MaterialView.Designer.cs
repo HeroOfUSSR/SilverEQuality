@@ -78,9 +78,9 @@
             buttonEdit.FlatStyle = FlatStyle.Flat;
             buttonEdit.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonEdit.ForeColor = SystemColors.ControlLightLight;
-            buttonEdit.Location = new Point(499, 77);
+            buttonEdit.Location = new Point(13, 72);
             buttonEdit.Name = "buttonEdit";
-            buttonEdit.Size = new Size(232, 30);
+            buttonEdit.Size = new Size(235, 30);
             buttonEdit.TabIndex = 24;
             buttonEdit.Text = "Редактировать";
             buttonEdit.UseVisualStyleBackColor = false;
@@ -94,9 +94,9 @@
             buttonNorm.FlatStyle = FlatStyle.Flat;
             buttonNorm.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonNorm.ForeColor = SystemColors.ControlLightLight;
-            buttonNorm.Location = new Point(14, 77);
+            buttonNorm.Location = new Point(495, 72);
             buttonNorm.Name = "buttonNorm";
-            buttonNorm.Size = new Size(241, 30);
+            buttonNorm.Size = new Size(235, 30);
             buttonNorm.TabIndex = 25;
             buttonNorm.Text = "Открыть норму";
             buttonNorm.UseVisualStyleBackColor = false;
@@ -110,9 +110,9 @@
             buttonRequest.FlatStyle = FlatStyle.Flat;
             buttonRequest.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonRequest.ForeColor = SystemColors.ControlLightLight;
-            buttonRequest.Location = new Point(261, 77);
+            buttonRequest.Location = new Point(254, 72);
             buttonRequest.Name = "buttonRequest";
-            buttonRequest.Size = new Size(232, 30);
+            buttonRequest.Size = new Size(235, 30);
             buttonRequest.TabIndex = 26;
             buttonRequest.Text = "Запрос";
             buttonRequest.UseVisualStyleBackColor = false;

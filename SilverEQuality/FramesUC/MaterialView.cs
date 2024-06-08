@@ -22,6 +22,16 @@ namespace SilverEQuality.FramesUC
             InitializeComponent();
             InitView(silverType);
             silverView = silverType;
+
+            if (AuthForm.authorizedUser.RoleUser == 2 || AuthForm.authorizedUser.RoleUser == 4)
+            {
+                buttonEdit.Visible = false;
+            }
+
+            if (AuthForm.authorizedUser.RoleUser == 3)
+            {
+                buttonRequest.Visible = false;
+            }
         }
 
         private void InitView(SilverType silver)

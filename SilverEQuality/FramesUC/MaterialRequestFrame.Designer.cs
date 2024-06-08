@@ -108,6 +108,7 @@
             buttonSearch.TabIndex = 11;
             buttonSearch.Text = "Применить";
             buttonSearch.UseVisualStyleBackColor = false;
+            buttonSearch.Click += buttonSearch_Click;
             // 
             // textBoxSearch
             // 
@@ -131,9 +132,9 @@
             // 
             flowLayoutPanelRequests.Anchor = AnchorStyles.None;
             flowLayoutPanelRequests.AutoScroll = true;
-            flowLayoutPanelRequests.Location = new Point(84, 80);
+            flowLayoutPanelRequests.Location = new Point(100, 80);
             flowLayoutPanelRequests.Name = "flowLayoutPanelRequests";
-            flowLayoutPanelRequests.Size = new Size(841, 336);
+            flowLayoutPanelRequests.Size = new Size(800, 336);
             flowLayoutPanelRequests.TabIndex = 4;
             // 
             // MaterialRequestFrame
@@ -147,6 +148,7 @@
             MinimumSize = new Size(841, 448);
             Name = "MaterialRequestFrame";
             Size = new Size(1009, 448);
+            Load += MaterialRequestFrame_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

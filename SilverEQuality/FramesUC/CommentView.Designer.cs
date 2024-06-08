@@ -75,9 +75,9 @@
             // panel2
             // 
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(715, 0);
+            panel2.Location = new Point(665, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(85, 148);
+            panel2.Size = new Size(135, 148);
             panel2.TabIndex = 1;
             // 
             // labelCommentTitle
@@ -99,7 +99,7 @@
             textBoxComment.Multiline = true;
             textBoxComment.Name = "textBoxComment";
             textBoxComment.ReadOnly = true;
-            textBoxComment.Size = new Size(525, 80);
+            textBoxComment.Size = new Size(486, 80);
             textBoxComment.TabIndex = 3;
             textBoxComment.Text = "ОЧЕНЬ КРУТОЙ КОММЕНТАРИЙ. ВАШЕ МНЕНИЕ НАМ ОЧЕНЬ ВАЖНО, СПАСИБО ЗА ОБРАЩЕНИЕ";
             // 
@@ -108,7 +108,7 @@
             labelDateCom.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelDateCom.AutoSize = true;
             labelDateCom.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelDateCom.Location = new Point(582, 126);
+            labelDateCom.Location = new Point(532, 126);
             labelDateCom.Name = "labelDateCom";
             labelDateCom.Size = new Size(127, 16);
             labelDateCom.TabIndex = 4;

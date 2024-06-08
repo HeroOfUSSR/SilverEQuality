@@ -32,7 +32,6 @@
             labelUserName = new Label();
             pictureBoxUser = new PictureBox();
             labelDateReq = new Label();
-            panel2 = new Panel();
             buttonEdit = new Button();
             textBoxDescReq = new TextBox();
             labelRequestTitle = new Label();
@@ -41,7 +40,6 @@
             labelAmount = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUser).BeginInit();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -89,25 +87,15 @@
             labelDateReq.TabIndex = 7;
             labelDateReq.Text = "25 июня 2023";
             // 
-            // panel2
-            // 
-            panel2.Controls.Add(buttonEdit);
-            panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(683, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(156, 173);
-            panel2.TabIndex = 1;
-            // 
             // buttonEdit
             // 
             buttonEdit.BackColor = Color.SteelBlue;
             buttonEdit.DialogResult = DialogResult.OK;
-            buttonEdit.Dock = DockStyle.Bottom;
             buttonEdit.FlatAppearance.BorderSize = 0;
             buttonEdit.FlatStyle = FlatStyle.Flat;
             buttonEdit.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonEdit.ForeColor = SystemColors.ControlLightLight;
-            buttonEdit.Location = new Point(0, 141);
+            buttonEdit.Location = new Point(625, 141);
             buttonEdit.Name = "buttonEdit";
             buttonEdit.Size = new Size(156, 32);
             buttonEdit.TabIndex = 33;
@@ -120,11 +108,11 @@
             textBoxDescReq.BackColor = Color.White;
             textBoxDescReq.BorderStyle = BorderStyle.None;
             textBoxDescReq.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxDescReq.Location = new Point(173, 115);
+            textBoxDescReq.Location = new Point(174, 86);
             textBoxDescReq.Multiline = true;
             textBoxDescReq.Name = "textBoxDescReq";
             textBoxDescReq.ReadOnly = true;
-            textBoxDescReq.Size = new Size(492, 56);
+            textBoxDescReq.Size = new Size(426, 76);
             textBoxDescReq.TabIndex = 6;
             textBoxDescReq.Text = "Описание отсутствует";
             // 
@@ -142,7 +130,7 @@
             // 
             labelPriority.AutoSize = true;
             labelPriority.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelPriority.Location = new Point(173, 65);
+            labelPriority.Location = new Point(173, 43);
             labelPriority.Name = "labelPriority";
             labelPriority.Size = new Size(217, 16);
             labelPriority.TabIndex = 9;
@@ -152,7 +140,7 @@
             // 
             labelStatus.AutoSize = true;
             labelStatus.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelStatus.Location = new Point(173, 81);
+            labelStatus.Location = new Point(173, 59);
             labelStatus.Name = "labelStatus";
             labelStatus.Size = new Size(67, 16);
             labelStatus.TabIndex = 8;
@@ -162,7 +150,7 @@
             // 
             labelAmount.AutoSize = true;
             labelAmount.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelAmount.Location = new Point(172, 36);
+            labelAmount.Location = new Point(563, 11);
             labelAmount.Name = "labelAmount";
             labelAmount.Size = new Size(185, 19);
             labelAmount.TabIndex = 10;
@@ -174,19 +162,18 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(buttonEdit);
             Controls.Add(labelAmount);
             Controls.Add(labelPriority);
             Controls.Add(labelStatus);
             Controls.Add(textBoxDescReq);
             Controls.Add(labelRequestTitle);
-            Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "RequestView";
-            Size = new Size(839, 173);
+            Size = new Size(780, 173);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUser).EndInit();
-            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -194,7 +181,6 @@
         #endregion
 
         private Panel panel1;
-        private Panel panel2;
         private Label labelUserName;
         private PictureBox pictureBoxUser;
         private Label labelDateReq;

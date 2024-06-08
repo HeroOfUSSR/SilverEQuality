@@ -34,6 +34,12 @@ namespace SilverEQuality.FramesUC
                 buttonUsers.Visible = false;
                 buttonCreateUser.Visible = false;
             }
+
+            if (currentUser.RoleUser == 3) 
+            {
+                buttonOrders.Visible = false;
+                buttonComment.Visible = false;
+            }
         }
 
         private void buttonChangeAv_Click(object sender, EventArgs e)
@@ -133,12 +139,22 @@ namespace SilverEQuality.FramesUC
                         {
                             var userView = new UserView(user);
                             userView.Parent = flowLayoutPanelBody;
+
+                            userView.refreshProfile += UserView_refreshProfile;
                         }
 
                         break;
                     default:
                         break;
                 }
+            }
+        }
+
+        private void UserView_refreshProfile(bool toRefresh)
+        {
+            if (toRefresh)
+            {
+                InitFlowView(buttonPressed);
             }
         }
 

@@ -1,4 +1,6 @@
-﻿using SilverEQuality_Context;
+﻿using SilverEQuality.Forms;
+using SilverEQuality.MessageBoxes;
+using SilverEQuality_Context;
 using SilverEQuality_Context.Models;
 using System;
 using System.Collections.Generic;
@@ -44,5 +46,6 @@ namespace SilverEQuality.FramesUC
         private void CommentView_Load(object sender, EventArgs e)
         {
         }
+
     }
 }
