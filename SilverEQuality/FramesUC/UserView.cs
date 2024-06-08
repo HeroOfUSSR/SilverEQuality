@@ -56,7 +56,16 @@ namespace SilverEQuality.FramesUC
 
         }
 
-        private void buttonDelete_Click(object sender, EventArgs e)
+
+        private void buttonEdit_Click_1(object sender, EventArgs e)
+        {
+            var editChelik = new CreateUserForm(userView);
+            editChelik.ShowDialog();
+
+            refreshProfile?.Invoke(true);
+        }
+
+        private void buttonDelete_Click_1(object sender, EventArgs e)
         {
             CustomMessageBox areYouSure = new CustomMessageBox("Вы уверены что хотите удалить пользователя?", true);
             areYouSure.ShowDialog();
@@ -68,14 +77,6 @@ namespace SilverEQuality.FramesUC
 
                 refreshProfile?.Invoke(true);
             }
-        }
-
-        private void buttonEdit_Click(object sender, EventArgs e)
-        {
-            var editChelik = new CreateUserForm(userView);
-            editChelik.ShowDialog();
-
-            refreshProfile?.Invoke(true);
         }
     }
 }

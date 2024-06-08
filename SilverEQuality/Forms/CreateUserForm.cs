@@ -96,7 +96,11 @@ namespace SilverEQuality.Forms
                     editUser.PhoneUser = textBoxPhone.Text;
                     editUser.DateOfBirthUser = dateTimePickerBirth.Value;
                     editUser.LoginUser = textBoxLogin.Text;
-                    editUser.PasswordUser = MD5Encryptor.HashPassword(textBoxPassword.Text);
+
+                    if (textBoxPassword.Text != "" && textBoxPassword.Text != null)
+                    {
+                        editUser.PasswordUser = MD5Encryptor.HashPassword(textBoxPassword.Text);
+                    }
                     editUser.EmailUser = textBoxMail.Text;
                     editUser.DepartmentUser = ((Department)comboBoxDepartment.SelectedItem).CodeDepartment;
                     editUser.RoleUser = ((Role)comboBoxRoles.SelectedItem).IdRole;

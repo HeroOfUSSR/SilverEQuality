@@ -140,6 +140,7 @@ namespace SilverEQuality.Forms
                         {
                             if (textBoxNew.Text == textBoxRepeat.Text && textBoxNew.Text != "")
                             {
+
                                 AuthForm.authorizedUser.PasswordUser = MD5Encryptor.HashPassword(textBoxNew.Text);
 
                                 db.Users.Update(AuthForm.authorizedUser);

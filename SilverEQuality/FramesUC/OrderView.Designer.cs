@@ -28,261 +28,257 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            pictureBoxAvatar = new PictureBox();
-            labelOrderNumber = new Label();
-            labelStatus = new Label();
-            labelPriority = new Label();
-            buttonMore = new Button();
-            timerExpand = new System.Windows.Forms.Timer(components);
-            panel1 = new Panel();
-            buttonCheck = new Button();
-            panel2 = new Panel();
-            buttonComments = new Button();
-            buttonEdit = new Button();
-            buttonImageMan = new Button();
-            openFileDialogImageChange = new OpenFileDialog();
-            textBoxDesc = new TextBox();
-            labelManufacturer = new Label();
-            flowLayoutPanelOrderParts = new FlowLayoutPanel();
-            buttonNotFound = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).BeginInit();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            flowLayoutPanelOrderParts.SuspendLayout();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.pictureBoxAvatar = new System.Windows.Forms.PictureBox();
+            this.labelOrderNumber = new System.Windows.Forms.Label();
+            this.labelStatus = new System.Windows.Forms.Label();
+            this.labelPriority = new System.Windows.Forms.Label();
+            this.buttonMore = new System.Windows.Forms.Button();
+            this.timerExpand = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonCheck = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonComments = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonImageMan = new System.Windows.Forms.Button();
+            this.openFileDialogImageChange = new System.Windows.Forms.OpenFileDialog();
+            this.textBoxDesc = new System.Windows.Forms.TextBox();
+            this.labelManufacturer = new System.Windows.Forms.Label();
+            this.flowLayoutPanelOrderParts = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonNotFound = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.flowLayoutPanelOrderParts.SuspendLayout();
+            this.SuspendLayout();
             // 
             // pictureBoxAvatar
             // 
-            pictureBoxAvatar.Dock = DockStyle.Top;
-            pictureBoxAvatar.Location = new Point(0, 0);
-            pictureBoxAvatar.Name = "pictureBoxAvatar";
-            pictureBoxAvatar.Size = new Size(158, 134);
-            pictureBoxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxAvatar.TabIndex = 0;
-            pictureBoxAvatar.TabStop = false;
+            this.pictureBoxAvatar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBoxAvatar.Image = global::SilverEQuality.Properties.Resources.company_placeholder;
+            this.pictureBoxAvatar.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxAvatar.Name = "pictureBoxAvatar";
+            this.pictureBoxAvatar.Padding = new System.Windows.Forms.Padding(20, 30, 20, 30);
+            this.pictureBoxAvatar.Size = new System.Drawing.Size(158, 147);
+            this.pictureBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxAvatar.TabIndex = 0;
+            this.pictureBoxAvatar.TabStop = false;
             // 
             // labelOrderNumber
             // 
-            labelOrderNumber.AutoSize = true;
-            labelOrderNumber.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelOrderNumber.Location = new Point(164, 15);
-            labelOrderNumber.Name = "labelOrderNumber";
-            labelOrderNumber.Size = new Size(86, 19);
-            labelOrderNumber.TabIndex = 1;
-            labelOrderNumber.Text = "Заказ №";
+            this.labelOrderNumber.AutoSize = true;
+            this.labelOrderNumber.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelOrderNumber.Location = new System.Drawing.Point(164, 15);
+            this.labelOrderNumber.Name = "labelOrderNumber";
+            this.labelOrderNumber.Size = new System.Drawing.Size(86, 19);
+            this.labelOrderNumber.TabIndex = 1;
+            this.labelOrderNumber.Text = "Заказ №";
             // 
             // labelStatus
             // 
-            labelStatus.AutoSize = true;
-            labelStatus.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelStatus.Location = new Point(164, 50);
-            labelStatus.Name = "labelStatus";
-            labelStatus.Size = new Size(67, 16);
-            labelStatus.TabIndex = 2;
-            labelStatus.Text = "Статус";
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelStatus.Location = new System.Drawing.Point(164, 50);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(67, 16);
+            this.labelStatus.TabIndex = 2;
+            this.labelStatus.Text = "Статус";
             // 
             // labelPriority
             // 
-            labelPriority.AutoSize = true;
-            labelPriority.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelPriority.Location = new Point(164, 34);
-            labelPriority.Name = "labelPriority";
-            labelPriority.Size = new Size(97, 16);
-            labelPriority.TabIndex = 3;
-            labelPriority.Text = "Приоритет";
+            this.labelPriority.AutoSize = true;
+            this.labelPriority.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPriority.Location = new System.Drawing.Point(164, 34);
+            this.labelPriority.Name = "labelPriority";
+            this.labelPriority.Size = new System.Drawing.Size(97, 16);
+            this.labelPriority.TabIndex = 3;
+            this.labelPriority.Text = "Приоритет";
             // 
             // buttonMore
             // 
-            buttonMore.BackColor = Color.SteelBlue;
-            buttonMore.Dock = DockStyle.Bottom;
-            buttonMore.FlatAppearance.BorderSize = 0;
-            buttonMore.FlatStyle = FlatStyle.Flat;
-            buttonMore.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonMore.ForeColor = SystemColors.ControlLightLight;
-            buttonMore.Location = new Point(0, 110);
-            buttonMore.Name = "buttonMore";
-            buttonMore.Size = new Size(130, 36);
-            buttonMore.TabIndex = 4;
-            buttonMore.Text = "Подробнее";
-            buttonMore.UseVisualStyleBackColor = false;
-            buttonMore.Click += buttonMore_Click;
+            this.buttonMore.BackColor = System.Drawing.Color.SteelBlue;
+            this.buttonMore.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonMore.FlatAppearance.BorderSize = 0;
+            this.buttonMore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMore.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonMore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonMore.Location = new System.Drawing.Point(0, 110);
+            this.buttonMore.Name = "buttonMore";
+            this.buttonMore.Size = new System.Drawing.Size(130, 36);
+            this.buttonMore.TabIndex = 4;
+            this.buttonMore.Text = "Подробнее";
+            this.buttonMore.UseVisualStyleBackColor = false;
             // 
             // timerExpand
             // 
-            timerExpand.Interval = 5;
-            timerExpand.Tick += timerExpand_Tick;
+            this.timerExpand.Interval = 5;
             // 
             // panel1
             // 
-            panel1.Controls.Add(buttonCheck);
-            panel1.Controls.Add(buttonMore);
-            panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(348, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(130, 146);
-            panel1.TabIndex = 5;
+            this.panel1.Controls.Add(this.buttonCheck);
+            this.panel1.Controls.Add(this.buttonMore);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(348, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(130, 146);
+            this.panel1.TabIndex = 5;
             // 
             // buttonCheck
             // 
-            buttonCheck.BackColor = Color.SteelBlue;
-            buttonCheck.Dock = DockStyle.Bottom;
-            buttonCheck.FlatAppearance.BorderSize = 0;
-            buttonCheck.FlatStyle = FlatStyle.Flat;
-            buttonCheck.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonCheck.ForeColor = SystemColors.ControlLightLight;
-            buttonCheck.Location = new Point(0, 74);
-            buttonCheck.Name = "buttonCheck";
-            buttonCheck.Size = new Size(130, 36);
-            buttonCheck.TabIndex = 5;
-            buttonCheck.Text = "Отчёт";
-            buttonCheck.UseVisualStyleBackColor = false;
-            buttonCheck.Visible = false;
-            buttonCheck.Click += buttonCheck_Click;
+            this.buttonCheck.BackColor = System.Drawing.Color.SteelBlue;
+            this.buttonCheck.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonCheck.FlatAppearance.BorderSize = 0;
+            this.buttonCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCheck.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonCheck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonCheck.Location = new System.Drawing.Point(0, 74);
+            this.buttonCheck.Name = "buttonCheck";
+            this.buttonCheck.Size = new System.Drawing.Size(130, 36);
+            this.buttonCheck.TabIndex = 5;
+            this.buttonCheck.Text = "Отчёт";
+            this.buttonCheck.UseVisualStyleBackColor = false;
+            this.buttonCheck.Visible = false;
             // 
             // panel2
             // 
-            panel2.Controls.Add(buttonComments);
-            panel2.Controls.Add(buttonEdit);
-            panel2.Controls.Add(buttonImageMan);
-            panel2.Controls.Add(pictureBoxAvatar);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(158, 146);
-            panel2.TabIndex = 6;
+            this.panel2.Controls.Add(this.buttonComments);
+            this.panel2.Controls.Add(this.buttonEdit);
+            this.panel2.Controls.Add(this.buttonImageMan);
+            this.panel2.Controls.Add(this.pictureBoxAvatar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(158, 146);
+            this.panel2.TabIndex = 6;
             // 
             // buttonComments
             // 
-            buttonComments.BackColor = Color.SteelBlue;
-            buttonComments.Dock = DockStyle.Top;
-            buttonComments.FlatAppearance.BorderSize = 0;
-            buttonComments.FlatStyle = FlatStyle.Flat;
-            buttonComments.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonComments.ForeColor = SystemColors.ControlLightLight;
-            buttonComments.Location = new Point(0, 206);
-            buttonComments.Name = "buttonComments";
-            buttonComments.Size = new Size(158, 36);
-            buttonComments.TabIndex = 7;
-            buttonComments.Text = "Комментарии";
-            buttonComments.UseVisualStyleBackColor = false;
-            buttonComments.Visible = false;
-            buttonComments.Click += buttonComments_Click;
+            this.buttonComments.BackColor = System.Drawing.Color.SteelBlue;
+            this.buttonComments.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonComments.FlatAppearance.BorderSize = 0;
+            this.buttonComments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonComments.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonComments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonComments.Location = new System.Drawing.Point(0, 219);
+            this.buttonComments.Name = "buttonComments";
+            this.buttonComments.Size = new System.Drawing.Size(158, 36);
+            this.buttonComments.TabIndex = 7;
+            this.buttonComments.Text = "Комментарии";
+            this.buttonComments.UseVisualStyleBackColor = false;
+            this.buttonComments.Visible = false;
             // 
             // buttonEdit
             // 
-            buttonEdit.BackColor = Color.SteelBlue;
-            buttonEdit.Dock = DockStyle.Top;
-            buttonEdit.FlatAppearance.BorderSize = 0;
-            buttonEdit.FlatStyle = FlatStyle.Flat;
-            buttonEdit.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonEdit.ForeColor = SystemColors.ControlLightLight;
-            buttonEdit.Location = new Point(0, 170);
-            buttonEdit.Name = "buttonEdit";
-            buttonEdit.Size = new Size(158, 36);
-            buttonEdit.TabIndex = 6;
-            buttonEdit.Text = "Редактировать";
-            buttonEdit.UseVisualStyleBackColor = false;
-            buttonEdit.Visible = false;
-            buttonEdit.Click += buttonEdit_Click;
+            this.buttonEdit.BackColor = System.Drawing.Color.SteelBlue;
+            this.buttonEdit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonEdit.FlatAppearance.BorderSize = 0;
+            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEdit.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonEdit.Location = new System.Drawing.Point(0, 183);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(158, 36);
+            this.buttonEdit.TabIndex = 6;
+            this.buttonEdit.Text = "Редактировать";
+            this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Visible = false;
             // 
             // buttonImageMan
             // 
-            buttonImageMan.BackColor = Color.SteelBlue;
-            buttonImageMan.Dock = DockStyle.Top;
-            buttonImageMan.FlatAppearance.BorderSize = 0;
-            buttonImageMan.FlatStyle = FlatStyle.Flat;
-            buttonImageMan.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonImageMan.ForeColor = SystemColors.ControlLightLight;
-            buttonImageMan.Location = new Point(0, 134);
-            buttonImageMan.Name = "buttonImageMan";
-            buttonImageMan.Size = new Size(158, 36);
-            buttonImageMan.TabIndex = 5;
-            buttonImageMan.Text = "Изменить фото";
-            buttonImageMan.UseVisualStyleBackColor = false;
-            buttonImageMan.Visible = false;
-            buttonImageMan.Click += buttonImageMan_Click;
+            this.buttonImageMan.BackColor = System.Drawing.Color.SteelBlue;
+            this.buttonImageMan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonImageMan.FlatAppearance.BorderSize = 0;
+            this.buttonImageMan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImageMan.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonImageMan.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonImageMan.Location = new System.Drawing.Point(0, 147);
+            this.buttonImageMan.Name = "buttonImageMan";
+            this.buttonImageMan.Size = new System.Drawing.Size(158, 36);
+            this.buttonImageMan.TabIndex = 5;
+            this.buttonImageMan.Text = "Изменить фото";
+            this.buttonImageMan.UseVisualStyleBackColor = false;
+            this.buttonImageMan.Visible = false;
             // 
             // openFileDialogImageChange
             // 
-            openFileDialogImageChange.FileName = "openFileDialog1";
+            this.openFileDialogImageChange.FileName = "openFileDialog1";
             // 
             // textBoxDesc
             // 
-            textBoxDesc.BackColor = Color.White;
-            textBoxDesc.BorderStyle = BorderStyle.None;
-            textBoxDesc.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxDesc.Location = new Point(164, 146);
-            textBoxDesc.Multiline = true;
-            textBoxDesc.Name = "textBoxDesc";
-            textBoxDesc.ReadOnly = true;
-            textBoxDesc.Size = new Size(321, 149);
-            textBoxDesc.TabIndex = 8;
-            textBoxDesc.Text = "ОЧЕНЬ КРУТОE ОПИСАНИЕ. ТУТ КЛАССНЕНЬКИЕ ВЕЩИ ОПИСАНЫ, Например: что я сегодня покушал, где я сегодня гулял";
+            this.textBoxDesc.BackColor = System.Drawing.Color.White;
+            this.textBoxDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDesc.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxDesc.Location = new System.Drawing.Point(164, 146);
+            this.textBoxDesc.Multiline = true;
+            this.textBoxDesc.Name = "textBoxDesc";
+            this.textBoxDesc.ReadOnly = true;
+            this.textBoxDesc.Size = new System.Drawing.Size(321, 149);
+            this.textBoxDesc.TabIndex = 8;
+            this.textBoxDesc.Text = "ОЧЕНЬ КРУТОE ОПИСАНИЕ. ТУТ КЛАССНЕНЬКИЕ ВЕЩИ ОПИСАНЫ, Например: что я сегодня пок" +
+    "ушал, где я сегодня гулял";
             // 
             // labelManufacturer
             // 
-            labelManufacturer.AutoSize = true;
-            labelManufacturer.Font = new Font("Lucida Console", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            labelManufacturer.Location = new Point(164, 123);
-            labelManufacturer.Name = "labelManufacturer";
-            labelManufacturer.Size = new Size(111, 14);
-            labelManufacturer.TabIndex = 9;
-            labelManufacturer.Text = "Производитель";
+            this.labelManufacturer.AutoSize = true;
+            this.labelManufacturer.Font = new System.Drawing.Font("Lucida Console", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelManufacturer.Location = new System.Drawing.Point(164, 123);
+            this.labelManufacturer.Name = "labelManufacturer";
+            this.labelManufacturer.Size = new System.Drawing.Size(111, 14);
+            this.labelManufacturer.TabIndex = 9;
+            this.labelManufacturer.Text = "Производитель";
             // 
             // flowLayoutPanelOrderParts
             // 
-            flowLayoutPanelOrderParts.AutoScroll = true;
-            flowLayoutPanelOrderParts.Controls.Add(buttonNotFound);
-            flowLayoutPanelOrderParts.Dock = DockStyle.Right;
-            flowLayoutPanelOrderParts.Location = new Point(338, 0);
-            flowLayoutPanelOrderParts.MaximumSize = new Size(362, 298);
-            flowLayoutPanelOrderParts.MinimumSize = new Size(10, 146);
-            flowLayoutPanelOrderParts.Name = "flowLayoutPanelOrderParts";
-            flowLayoutPanelOrderParts.Size = new Size(10, 146);
-            flowLayoutPanelOrderParts.TabIndex = 7;
-            flowLayoutPanelOrderParts.Visible = false;
+            this.flowLayoutPanelOrderParts.AutoScroll = true;
+            this.flowLayoutPanelOrderParts.Controls.Add(this.buttonNotFound);
+            this.flowLayoutPanelOrderParts.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanelOrderParts.Location = new System.Drawing.Point(338, 0);
+            this.flowLayoutPanelOrderParts.MaximumSize = new System.Drawing.Size(362, 298);
+            this.flowLayoutPanelOrderParts.MinimumSize = new System.Drawing.Size(10, 146);
+            this.flowLayoutPanelOrderParts.Name = "flowLayoutPanelOrderParts";
+            this.flowLayoutPanelOrderParts.Size = new System.Drawing.Size(10, 146);
+            this.flowLayoutPanelOrderParts.TabIndex = 7;
+            this.flowLayoutPanelOrderParts.Visible = false;
             // 
             // buttonNotFound
             // 
-            buttonNotFound.Enabled = false;
-            buttonNotFound.FlatAppearance.BorderSize = 0;
-            buttonNotFound.FlatStyle = FlatStyle.Flat;
-            buttonNotFound.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonNotFound.Location = new Point(3, 3);
-            buttonNotFound.Name = "buttonNotFound";
-            buttonNotFound.Size = new Size(353, 292);
-            buttonNotFound.TabIndex = 0;
-            buttonNotFound.Text = "Детали не найдены";
-            buttonNotFound.UseVisualStyleBackColor = true;
-            buttonNotFound.Visible = false;
+            this.buttonNotFound.Enabled = false;
+            this.buttonNotFound.FlatAppearance.BorderSize = 0;
+            this.buttonNotFound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNotFound.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonNotFound.Location = new System.Drawing.Point(3, 3);
+            this.buttonNotFound.Name = "buttonNotFound";
+            this.buttonNotFound.Size = new System.Drawing.Size(353, 292);
+            this.buttonNotFound.TabIndex = 0;
+            this.buttonNotFound.Text = "Детали не найдены";
+            this.buttonNotFound.UseVisualStyleBackColor = true;
+            this.buttonNotFound.Visible = false;
             // 
             // OrderView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            BorderStyle = BorderStyle.FixedSingle;
-            Controls.Add(flowLayoutPanelOrderParts);
-            Controls.Add(labelManufacturer);
-            Controls.Add(textBoxDesc);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(labelPriority);
-            Controls.Add(labelStatus);
-            Controls.Add(labelOrderNumber);
-            MaximumSize = new Size(980, 300);
-            MinimumSize = new Size(480, 148);
-            Name = "OrderView";
-            Size = new Size(478, 146);
-            Load += OrderView_Load;
-            ParentChanged += OrderView_ParentChanged;
-            ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar).EndInit();
-            panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            flowLayoutPanelOrderParts.ResumeLayout(false);
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.flowLayoutPanelOrderParts);
+            this.Controls.Add(this.labelManufacturer);
+            this.Controls.Add(this.textBoxDesc);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.labelPriority);
+            this.Controls.Add(this.labelStatus);
+            this.Controls.Add(this.labelOrderNumber);
+            this.MaximumSize = new System.Drawing.Size(980, 300);
+            this.MinimumSize = new System.Drawing.Size(480, 148);
+            this.Name = "OrderView";
+            this.Size = new System.Drawing.Size(478, 146);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.flowLayoutPanelOrderParts.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

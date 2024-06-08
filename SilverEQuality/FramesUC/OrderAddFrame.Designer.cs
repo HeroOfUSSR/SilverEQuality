@@ -28,336 +28,332 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            panel2 = new Panel();
-            buttonDone = new Button();
-            comboBoxAppointed = new ComboBox();
-            label3 = new Label();
-            label8 = new Label();
-            textBoxDesc = new TextBox();
-            label7 = new Label();
-            textBoxPayment = new TextBox();
-            label6 = new Label();
-            comboBoxPrio = new ComboBox();
-            label5 = new Label();
-            comboBoxStatus = new ComboBox();
-            label4 = new Label();
-            comboBoxManufacturer = new ComboBox();
-            dateTimePickerEnd = new DateTimePicker();
-            checkBoxTodayDate = new CheckBox();
-            dateTimePickerStart = new DateTimePicker();
-            labelDate = new Label();
-            label10 = new Label();
-            checkBoxNoEndDate = new CheckBox();
-            panel4 = new Panel();
-            flowLayoutPanelParts = new FlowLayoutPanel();
-            textBox1 = new TextBox();
-            panel5 = new Panel();
-            panel2.SuspendLayout();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
-            SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonDone = new System.Windows.Forms.Button();
+            this.comboBoxAppointed = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxDesc = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxPayment = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxPrio = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxManufacturer = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.checkBoxTodayDate = new System.Windows.Forms.CheckBox();
+            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.labelDate = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.checkBoxNoEndDate = new System.Windows.Forms.CheckBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanelParts = new System.Windows.Forms.FlowLayoutPanel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1009, 18);
-            panel1.TabIndex = 0;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1009, 18);
+            this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
-            panel2.Controls.Add(buttonDone);
-            panel2.Controls.Add(comboBoxAppointed);
-            panel2.Controls.Add(label3);
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 398);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1009, 50);
-            panel2.TabIndex = 1;
+            this.panel2.Controls.Add(this.buttonDone);
+            this.panel2.Controls.Add(this.comboBoxAppointed);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 398);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1009, 50);
+            this.panel2.TabIndex = 1;
             // 
             // buttonDone
             // 
-            buttonDone.Anchor = AnchorStyles.None;
-            buttonDone.BackColor = Color.SteelBlue;
-            buttonDone.DialogResult = DialogResult.OK;
-            buttonDone.FlatAppearance.BorderSize = 0;
-            buttonDone.FlatStyle = FlatStyle.Flat;
-            buttonDone.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonDone.ForeColor = SystemColors.ControlLightLight;
-            buttonDone.Location = new Point(545, 6);
-            buttonDone.Name = "buttonDone";
-            buttonDone.Size = new Size(364, 37);
-            buttonDone.TabIndex = 23;
-            buttonDone.Text = "Добавить";
-            buttonDone.UseVisualStyleBackColor = false;
-            buttonDone.Click += buttonDone_Click;
+            this.buttonDone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonDone.BackColor = System.Drawing.Color.SteelBlue;
+            this.buttonDone.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.buttonDone.FlatAppearance.BorderSize = 0;
+            this.buttonDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDone.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonDone.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonDone.Location = new System.Drawing.Point(545, 6);
+            this.buttonDone.Name = "buttonDone";
+            this.buttonDone.Size = new System.Drawing.Size(364, 37);
+            this.buttonDone.TabIndex = 23;
+            this.buttonDone.Text = "Добавить";
+            this.buttonDone.UseVisualStyleBackColor = false;
             // 
             // comboBoxAppointed
             // 
-            comboBoxAppointed.Anchor = AnchorStyles.None;
-            comboBoxAppointed.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxAppointed.FormattingEnabled = true;
-            comboBoxAppointed.Location = new Point(257, 12);
-            comboBoxAppointed.Name = "comboBoxAppointed";
-            comboBoxAppointed.Size = new Size(200, 27);
-            comboBoxAppointed.TabIndex = 40;
+            this.comboBoxAppointed.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxAppointed.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxAppointed.FormattingEnabled = true;
+            this.comboBoxAppointed.Location = new System.Drawing.Point(257, 12);
+            this.comboBoxAppointed.Name = "comboBoxAppointed";
+            this.comboBoxAppointed.Size = new System.Drawing.Size(200, 27);
+            this.comboBoxAppointed.TabIndex = 40;
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.None;
-            label3.AutoSize = true;
-            label3.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(99, 15);
-            label3.Name = "label3";
-            label3.Size = new Size(152, 19);
-            label3.TabIndex = 41;
-            label3.Text = "Ответственный";
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(99, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 19);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Ответственный";
             // 
             // label8
             // 
-            label8.Anchor = AnchorStyles.None;
-            label8.AutoSize = true;
-            label8.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(144, 169);
-            label8.Name = "label8";
-            label8.Size = new Size(97, 19);
-            label8.TabIndex = 39;
-            label8.Text = "Описание";
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(144, 169);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 19);
+            this.label8.TabIndex = 39;
+            this.label8.Text = "Описание";
             // 
             // textBoxDesc
             // 
-            textBoxDesc.Anchor = AnchorStyles.None;
-            textBoxDesc.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxDesc.Location = new Point(264, 166);
-            textBoxDesc.Multiline = true;
-            textBoxDesc.Name = "textBoxDesc";
-            textBoxDesc.Size = new Size(200, 84);
-            textBoxDesc.TabIndex = 38;
+            this.textBoxDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxDesc.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxDesc.Location = new System.Drawing.Point(264, 166);
+            this.textBoxDesc.Multiline = true;
+            this.textBoxDesc.Name = "textBoxDesc";
+            this.textBoxDesc.Size = new System.Drawing.Size(200, 84);
+            this.textBoxDesc.TabIndex = 38;
             // 
             // label7
             // 
-            label7.Anchor = AnchorStyles.None;
-            label7.AutoSize = true;
-            label7.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(144, 268);
-            label7.Name = "label7";
-            label7.Size = new Size(75, 19);
-            label7.TabIndex = 37;
-            label7.Text = "Оплата";
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(144, 268);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 19);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "Оплата";
             // 
             // textBoxPayment
             // 
-            textBoxPayment.Anchor = AnchorStyles.None;
-            textBoxPayment.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPayment.Location = new Point(264, 268);
-            textBoxPayment.Name = "textBoxPayment";
-            textBoxPayment.Size = new Size(200, 26);
-            textBoxPayment.TabIndex = 36;
-            textBoxPayment.KeyDown += textBoxPayment_KeyDown;
+            this.textBoxPayment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxPayment.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPayment.Location = new System.Drawing.Point(264, 268);
+            this.textBoxPayment.Name = "textBoxPayment";
+            this.textBoxPayment.Size = new System.Drawing.Size(200, 26);
+            this.textBoxPayment.TabIndex = 36;
             // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.None;
-            label6.AutoSize = true;
-            label6.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(144, 133);
-            label6.Name = "label6";
-            label6.Size = new Size(108, 19);
-            label6.TabIndex = 35;
-            label6.Text = "Приоритет";
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(144, 133);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 19);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Приоритет";
             // 
             // comboBoxPrio
             // 
-            comboBoxPrio.Anchor = AnchorStyles.None;
-            comboBoxPrio.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxPrio.FormattingEnabled = true;
-            comboBoxPrio.Location = new Point(264, 133);
-            comboBoxPrio.Name = "comboBoxPrio";
-            comboBoxPrio.Size = new Size(200, 27);
-            comboBoxPrio.TabIndex = 34;
+            this.comboBoxPrio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxPrio.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxPrio.FormattingEnabled = true;
+            this.comboBoxPrio.Location = new System.Drawing.Point(264, 133);
+            this.comboBoxPrio.Name = "comboBoxPrio";
+            this.comboBoxPrio.Size = new System.Drawing.Size(200, 27);
+            this.comboBoxPrio.TabIndex = 34;
             // 
             // label5
             // 
-            label5.Anchor = AnchorStyles.None;
-            label5.AutoSize = true;
-            label5.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(144, 100);
-            label5.Name = "label5";
-            label5.Size = new Size(75, 19);
-            label5.TabIndex = 33;
-            label5.Text = "Статус";
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(144, 100);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 19);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Статус*";
             // 
             // comboBoxStatus
             // 
-            comboBoxStatus.Anchor = AnchorStyles.None;
-            comboBoxStatus.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxStatus.FormattingEnabled = true;
-            comboBoxStatus.Location = new Point(264, 100);
-            comboBoxStatus.Name = "comboBoxStatus";
-            comboBoxStatus.Size = new Size(200, 27);
-            comboBoxStatus.TabIndex = 32;
+            this.comboBoxStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxStatus.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Location = new System.Drawing.Point(264, 100);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(200, 27);
+            this.comboBoxStatus.TabIndex = 32;
             // 
             // label4
             // 
-            label4.Anchor = AnchorStyles.None;
-            label4.AutoSize = true;
-            label4.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(144, 48);
-            label4.Name = "label4";
-            label4.Size = new Size(97, 19);
-            label4.TabIndex = 31;
-            label4.Text = "Заказчик";
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(144, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 19);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Заказчик*";
             // 
             // comboBoxManufacturer
             // 
-            comboBoxManufacturer.Anchor = AnchorStyles.None;
-            comboBoxManufacturer.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxManufacturer.FormattingEnabled = true;
-            comboBoxManufacturer.Location = new Point(264, 48);
-            comboBoxManufacturer.Name = "comboBoxManufacturer";
-            comboBoxManufacturer.Size = new Size(200, 27);
-            comboBoxManufacturer.TabIndex = 30;
+            this.comboBoxManufacturer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxManufacturer.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxManufacturer.FormattingEnabled = true;
+            this.comboBoxManufacturer.Location = new System.Drawing.Point(264, 48);
+            this.comboBoxManufacturer.Name = "comboBoxManufacturer";
+            this.comboBoxManufacturer.Size = new System.Drawing.Size(200, 27);
+            this.comboBoxManufacturer.TabIndex = 30;
             // 
             // dateTimePickerEnd
             // 
-            dateTimePickerEnd.Anchor = AnchorStyles.None;
-            dateTimePickerEnd.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerEnd.Location = new Point(549, 27);
-            dateTimePickerEnd.Name = "dateTimePickerEnd";
-            dateTimePickerEnd.Size = new Size(200, 26);
-            dateTimePickerEnd.TabIndex = 29;
+            this.dateTimePickerEnd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateTimePickerEnd.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(549, 27);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePickerEnd.TabIndex = 29;
             // 
             // checkBoxTodayDate
             // 
-            checkBoxTodayDate.Anchor = AnchorStyles.None;
-            checkBoxTodayDate.AutoSize = true;
-            checkBoxTodayDate.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxTodayDate.Location = new Point(281, 53);
-            checkBoxTodayDate.Name = "checkBoxTodayDate";
-            checkBoxTodayDate.Size = new Size(146, 20);
-            checkBoxTodayDate.TabIndex = 28;
-            checkBoxTodayDate.Text = "Текущая дата";
-            checkBoxTodayDate.UseVisualStyleBackColor = true;
-            checkBoxTodayDate.CheckedChanged += checkBoxTodayDate_CheckedChanged;
+            this.checkBoxTodayDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.checkBoxTodayDate.AutoSize = true;
+            this.checkBoxTodayDate.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxTodayDate.Location = new System.Drawing.Point(281, 53);
+            this.checkBoxTodayDate.Name = "checkBoxTodayDate";
+            this.checkBoxTodayDate.Size = new System.Drawing.Size(146, 20);
+            this.checkBoxTodayDate.TabIndex = 28;
+            this.checkBoxTodayDate.Text = "Текущая дата";
+            this.checkBoxTodayDate.UseVisualStyleBackColor = true;
             // 
             // dateTimePickerStart
             // 
-            dateTimePickerStart.Anchor = AnchorStyles.None;
-            dateTimePickerStart.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerStart.Location = new Point(257, 26);
-            dateTimePickerStart.Name = "dateTimePickerStart";
-            dateTimePickerStart.Size = new Size(200, 26);
-            dateTimePickerStart.TabIndex = 27;
+            this.dateTimePickerStart.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateTimePickerStart.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePickerStart.Location = new System.Drawing.Point(257, 26);
+            this.dateTimePickerStart.Name = "dateTimePickerStart";
+            this.dateTimePickerStart.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePickerStart.TabIndex = 27;
             // 
             // labelDate
             // 
-            labelDate.Anchor = AnchorStyles.None;
-            labelDate.AutoSize = true;
-            labelDate.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelDate.Location = new Point(436, -1);
-            labelDate.Name = "labelDate";
-            labelDate.Size = new Size(141, 19);
-            labelDate.TabIndex = 25;
-            labelDate.Text = "Дата заказа:";
+            this.labelDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelDate.AutoSize = true;
+            this.labelDate.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelDate.Location = new System.Drawing.Point(436, -1);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(141, 19);
+            this.labelDate.TabIndex = 25;
+            this.labelDate.Text = "Дата заказа:";
             // 
             // label10
             // 
-            label10.Anchor = AnchorStyles.None;
-            label10.AutoSize = true;
-            label10.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(492, 33);
-            label10.Name = "label10";
-            label10.Size = new Size(20, 19);
-            label10.TabIndex = 43;
-            label10.Text = "-";
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(492, 33);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(20, 19);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "-";
             // 
             // checkBoxNoEndDate
             // 
-            checkBoxNoEndDate.Anchor = AnchorStyles.None;
-            checkBoxNoEndDate.AutoSize = true;
-            checkBoxNoEndDate.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxNoEndDate.Location = new Point(585, 53);
-            checkBoxNoEndDate.Name = "checkBoxNoEndDate";
-            checkBoxNoEndDate.Size = new Size(116, 20);
-            checkBoxNoEndDate.TabIndex = 44;
-            checkBoxNoEndDate.Text = "Бессрочно";
-            checkBoxNoEndDate.UseVisualStyleBackColor = true;
-            checkBoxNoEndDate.CheckedChanged += checkBoxNoEndDate_CheckedChanged;
+            this.checkBoxNoEndDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.checkBoxNoEndDate.AutoSize = true;
+            this.checkBoxNoEndDate.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxNoEndDate.Location = new System.Drawing.Point(585, 53);
+            this.checkBoxNoEndDate.Name = "checkBoxNoEndDate";
+            this.checkBoxNoEndDate.Size = new System.Drawing.Size(116, 20);
+            this.checkBoxNoEndDate.TabIndex = 44;
+            this.checkBoxNoEndDate.Text = "Бессрочно";
+            this.checkBoxNoEndDate.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
-            panel4.Controls.Add(dateTimePickerEnd);
-            panel4.Controls.Add(labelDate);
-            panel4.Controls.Add(checkBoxNoEndDate);
-            panel4.Controls.Add(dateTimePickerStart);
-            panel4.Controls.Add(label10);
-            panel4.Controls.Add(checkBoxTodayDate);
-            panel4.Dock = DockStyle.Bottom;
-            panel4.Location = new Point(0, 318);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(1009, 80);
-            panel4.TabIndex = 46;
+            this.panel4.Controls.Add(this.dateTimePickerEnd);
+            this.panel4.Controls.Add(this.labelDate);
+            this.panel4.Controls.Add(this.checkBoxNoEndDate);
+            this.panel4.Controls.Add(this.dateTimePickerStart);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.checkBoxTodayDate);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 318);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1009, 80);
+            this.panel4.TabIndex = 46;
             // 
             // flowLayoutPanelParts
             // 
-            flowLayoutPanelParts.AutoScroll = true;
-            flowLayoutPanelParts.Location = new Point(0, 54);
-            flowLayoutPanelParts.Name = "flowLayoutPanelParts";
-            flowLayoutPanelParts.Size = new Size(364, 214);
-            flowLayoutPanelParts.TabIndex = 47;
+            this.flowLayoutPanelParts.AutoScroll = true;
+            this.flowLayoutPanelParts.Location = new System.Drawing.Point(0, 54);
+            this.flowLayoutPanelParts.Name = "flowLayoutPanelParts";
+            this.flowLayoutPanelParts.Size = new System.Drawing.Size(364, 214);
+            this.flowLayoutPanelParts.TabIndex = 47;
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(0, 19);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Поиск необходимых деталей";
-            textBox1.Size = new Size(364, 26);
-            textBox1.TabIndex = 48;
+            this.textBox1.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(0, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PlaceholderText = "Поиск необходимых деталей";
+            this.textBox1.Size = new System.Drawing.Size(364, 26);
+            this.textBox1.TabIndex = 48;
             // 
             // panel5
             // 
-            panel5.Anchor = AnchorStyles.None;
-            panel5.Controls.Add(flowLayoutPanelParts);
-            panel5.Controls.Add(textBox1);
-            panel5.Location = new Point(545, 29);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(364, 286);
-            panel5.TabIndex = 49;
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel5.Controls.Add(this.flowLayoutPanelParts);
+            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Location = new System.Drawing.Point(545, 29);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(364, 286);
+            this.panel5.TabIndex = 49;
             // 
             // OrderAddFrame
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(textBoxDesc);
-            Controls.Add(label4);
-            Controls.Add(panel5);
-            Controls.Add(comboBoxStatus);
-            Controls.Add(label5);
-            Controls.Add(panel4);
-            Controls.Add(comboBoxManufacturer);
-            Controls.Add(panel2);
-            Controls.Add(comboBoxPrio);
-            Controls.Add(panel1);
-            Controls.Add(label6);
-            Controls.Add(label7);
-            Controls.Add(textBoxPayment);
-            Controls.Add(label8);
-            MaximumSize = new Size(1009, 448);
-            MinimumSize = new Size(841, 448);
-            Name = "OrderAddFrame";
-            Size = new Size(1009, 448);
-            Load += OrderAddFrame_Load;
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBoxDesc);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.comboBoxStatus);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.comboBoxManufacturer);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.comboBoxPrio);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBoxPayment);
+            this.Controls.Add(this.label8);
+            this.MaximumSize = new System.Drawing.Size(1009, 448);
+            this.MinimumSize = new System.Drawing.Size(841, 448);
+            this.Name = "OrderAddFrame";
+            this.Size = new System.Drawing.Size(1009, 448);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

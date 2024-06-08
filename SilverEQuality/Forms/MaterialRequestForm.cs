@@ -44,13 +44,14 @@ namespace SilverEQuality.Forms
                 if (AuthForm.authorizedUser.RoleUser == 2)
                 {
                     panelAdmin.Visible = false;
+                    Size = MinimumSize;
                 }
             }
         }
 
         public MaterialRequestForm(SilverType silverType) : this()
         {
-            panelAdmin.Visible = true;
+            //panelAdmin.Visible = true;
 
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
@@ -90,29 +91,24 @@ namespace SilverEQuality.Forms
             editRequest = silverRequest;
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void buttonExit_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void buttonHide_Click(object sender, EventArgs e)
+        private void buttonHide_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
 
         }
 
-        private void panelHeader_MouseDown(object sender, MouseEventArgs e)
+        private void panelHeader_MouseDown_1(object sender, MouseEventArgs e)
         {
             isMouseDown = true;
             startPoint = new Point(e.X, e.Y);
         }
 
-        private void panelHeader_MouseUp(object sender, MouseEventArgs e)
-        {
-            isMouseDown = false;
-        }
-
-        private void panelHeader_MouseMove(object sender, MouseEventArgs e)
+        private void panelHeader_MouseMove_1(object sender, MouseEventArgs e)
         {
             if (isMouseDown)
             {
@@ -121,7 +117,13 @@ namespace SilverEQuality.Forms
             }
         }
 
-        private void buttonDone_Click(object sender, EventArgs e)
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonDone_Click_1(object sender, EventArgs e)
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
@@ -208,10 +210,10 @@ namespace SilverEQuality.Forms
             }
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
+        private void panelHeader_MouseUp(object sender, MouseEventArgs e)
         {
-            this.Close();
-        }
+            isMouseDown = false;
 
+        }
     }
 }
