@@ -14,7 +14,7 @@ namespace SilverEQuality.FramesUC
 {
     public partial class MainNormFrame : UserControl
     {
-        private NormFrame normFrame = new NormFrame();
+        //private NormFrame normFrame = new NormFrame();
         private DocumentsFrame docsFrame = new DocumentsFrame();
         public MainNormFrame()
         {
@@ -42,6 +42,7 @@ namespace SilverEQuality.FramesUC
                     buttonNormView.BackColor = Color.White;
                     buttonNormView.ForeColor = Color.SteelBlue;
 
+                    var normFrame = new NormFrame();
                     normFrame.Size = panelBody.Size;
                     normFrame.Dock = DockStyle.Fill;
                     normFrame.Parent = panelBody;

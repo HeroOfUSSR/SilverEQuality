@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace SilverEQuality.FramesUC
 {
@@ -129,6 +130,11 @@ namespace SilverEQuality.FramesUC
 
                     db.Norms.Add(newNorm);
                     db.SaveChanges();
+
+                    CustomMessageBox successAdd = new CustomMessageBox("Норма добавлена", false);
+                    successAdd.ShowDialog();
+
+                    InitDatagrid();
                 }
             }
             else
@@ -176,6 +182,66 @@ namespace SilverEQuality.FramesUC
 
             }
 
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            using (var db = new SilverEQContext(DBHelper.Option()))
+            {
+                var selected = Convert.ToInt32(dataGridViewNorm.Rows[dataGridViewNorm.SelectedRows[0].Index].Cells[0].Value);
+
+                var editNorm = db.Norms.FirstOrDefault(x => x.IdNorm == selected);
+
+                if (editNorm != null)
+                {
+                    editNorm.DecimalNorm = ((DecimalNumber)comboBoxDecimal.SelectedItem).IdDecimal;
+                    editNorm.SilverTypeNorm = ((SilverType)comboBoxSilverType.SelectedItem).CodeSilverType;
+                    editNorm.TitleNorm = Convert.ToDecimal(maskedTextBoxNorm.Text);
+
+                    db.Norms.Update(editNorm);
+                    db.SaveChanges();
+
+                    CustomMessageBox successAdd = new CustomMessageBox("Норма изменена", false);
+                    successAdd.ShowDialog();
+
+                    //InitDatagrid();
+                }
+            else
+            {
+                CustomMessageBox noData = new CustomMessageBox("Не выделена норма для редактирования", false);
+                noData.ShowDialog();
+            }
+        }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            using (var db = new SilverEQContext(DBHelper.Option()))
+            {
+                var selected = Convert.ToInt32(dataGridViewNorm.Rows[dataGridViewNorm.SelectedRows[0].Index].Cells[0].Value);
+
+                var deleteNorm = db.Norms.FirstOrDefault(x => x.IdNorm == selected);
+
+                if (deleteNorm != null)
+                {
+                    deleteNorm.DecimalNorm = ((DecimalNumber)comboBoxDecimal.SelectedItem).IdDecimal;
+                    deleteNorm.SilverTypeNorm = ((SilverType)comboBoxSilverType.SelectedItem).CodeSilverType;
+                    deleteNorm.TitleNorm = Convert.ToDecimal(maskedTextBoxNorm.Text);
+
+                    db.Norms.Remove(deleteNorm);
+                    db.SaveChanges();
+
+                    CustomMessageBox successAdd = new CustomMessageBox("Норма удалена", false);
+                    successAdd.ShowDialog();
+
+                    //InitDatagrid();
+                }
+                else
+                {
+                    CustomMessageBox noData = new CustomMessageBox("Не выделена норма для удаления", false);
+                    noData.ShowDialog();
+                }
+            }
         }
     }
 }

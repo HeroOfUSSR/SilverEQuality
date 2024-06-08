@@ -31,23 +31,23 @@
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
-            checkBoxEditMode = new CheckBox();
-            maskedTextBoxNorm = new MaskedTextBox();
+            panelWork = new Panel();
             buttonAdd = new Button();
             buttonEdit = new Button();
+            checkBoxEditMode = new CheckBox();
             buttonDelete = new Button();
+            maskedTextBoxNorm = new MaskedTextBox();
+            comboBoxDecimal = new ComboBox();
+            comboBoxSilverType = new ComboBox();
+            label2 = new Label();
             label4 = new Label();
             label3 = new Label();
-            label2 = new Label();
-            comboBoxSilverType = new ComboBox();
-            comboBoxDecimal = new ComboBox();
             label1 = new Label();
             textBoxSearch = new TextBox();
             dataGridViewNorm = new DataGridView();
-            panelWork = new Panel();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewNorm).BeginInit();
             panelWork.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewNorm).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -77,27 +77,23 @@
             panel3.Size = new Size(306, 408);
             panel3.TabIndex = 2;
             // 
-            // checkBoxEditMode
+            // panelWork
             // 
-            checkBoxEditMode.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            checkBoxEditMode.AutoSize = true;
-            checkBoxEditMode.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxEditMode.Location = new Point(30, 210);
-            checkBoxEditMode.Name = "checkBoxEditMode";
-            checkBoxEditMode.Size = new Size(248, 23);
-            checkBoxEditMode.TabIndex = 32;
-            checkBoxEditMode.Text = "Режим редактирования";
-            checkBoxEditMode.UseVisualStyleBackColor = true;
-            checkBoxEditMode.CheckedChanged += checkBoxEditMode_CheckedChanged;
-            // 
-            // maskedTextBoxNorm
-            // 
-            maskedTextBoxNorm.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            maskedTextBoxNorm.Location = new Point(41, 146);
-            maskedTextBoxNorm.Mask = "0.000000";
-            maskedTextBoxNorm.Name = "maskedTextBoxNorm";
-            maskedTextBoxNorm.Size = new Size(223, 26);
-            maskedTextBoxNorm.TabIndex = 31;
+            panelWork.Controls.Add(buttonAdd);
+            panelWork.Controls.Add(buttonEdit);
+            panelWork.Controls.Add(checkBoxEditMode);
+            panelWork.Controls.Add(buttonDelete);
+            panelWork.Controls.Add(maskedTextBoxNorm);
+            panelWork.Controls.Add(comboBoxDecimal);
+            panelWork.Controls.Add(comboBoxSilverType);
+            panelWork.Controls.Add(label2);
+            panelWork.Controls.Add(label4);
+            panelWork.Controls.Add(label3);
+            panelWork.Dock = DockStyle.Bottom;
+            panelWork.Location = new Point(0, 66);
+            panelWork.Name = "panelWork";
+            panelWork.Size = new Size(306, 342);
+            panelWork.TabIndex = 33;
             // 
             // buttonAdd
             // 
@@ -132,6 +128,20 @@
             buttonEdit.Text = "Редактировать";
             buttonEdit.UseVisualStyleBackColor = false;
             buttonEdit.Visible = false;
+            buttonEdit.Click += buttonEdit_Click;
+            // 
+            // checkBoxEditMode
+            // 
+            checkBoxEditMode.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            checkBoxEditMode.AutoSize = true;
+            checkBoxEditMode.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBoxEditMode.Location = new Point(30, 210);
+            checkBoxEditMode.Name = "checkBoxEditMode";
+            checkBoxEditMode.Size = new Size(248, 23);
+            checkBoxEditMode.TabIndex = 32;
+            checkBoxEditMode.Text = "Режим редактирования";
+            checkBoxEditMode.UseVisualStyleBackColor = true;
+            checkBoxEditMode.CheckedChanged += checkBoxEditMode_CheckedChanged;
             // 
             // buttonDelete
             // 
@@ -149,6 +159,44 @@
             buttonDelete.Text = "Удалить";
             buttonDelete.UseVisualStyleBackColor = false;
             buttonDelete.Visible = false;
+            buttonDelete.Click += buttonDelete_Click;
+            // 
+            // maskedTextBoxNorm
+            // 
+            maskedTextBoxNorm.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            maskedTextBoxNorm.Location = new Point(41, 146);
+            maskedTextBoxNorm.Mask = "0.000000";
+            maskedTextBoxNorm.Name = "maskedTextBoxNorm";
+            maskedTextBoxNorm.Size = new Size(223, 26);
+            maskedTextBoxNorm.TabIndex = 31;
+            // 
+            // comboBoxDecimal
+            // 
+            comboBoxDecimal.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxDecimal.FormattingEnabled = true;
+            comboBoxDecimal.Location = new Point(41, 33);
+            comboBoxDecimal.Name = "comboBoxDecimal";
+            comboBoxDecimal.Size = new Size(223, 27);
+            comboBoxDecimal.TabIndex = 23;
+            // 
+            // comboBoxSilverType
+            // 
+            comboBoxSilverType.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxSilverType.FormattingEnabled = true;
+            comboBoxSilverType.Location = new Point(41, 88);
+            comboBoxSilverType.Name = "comboBoxSilverType";
+            comboBoxSilverType.Size = new Size(223, 27);
+            comboBoxSilverType.TabIndex = 24;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(41, 14);
+            label2.Name = "label2";
+            label2.Size = new Size(177, 16);
+            label2.TabIndex = 25;
+            label2.Text = "Децимальный номер";
             // 
             // label4
             // 
@@ -169,34 +217,6 @@
             label3.Size = new Size(117, 16);
             label3.TabIndex = 26;
             label3.Text = "Вид серебра";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(41, 14);
-            label2.Name = "label2";
-            label2.Size = new Size(177, 16);
-            label2.TabIndex = 25;
-            label2.Text = "Децимальный номер";
-            // 
-            // comboBoxSilverType
-            // 
-            comboBoxSilverType.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxSilverType.FormattingEnabled = true;
-            comboBoxSilverType.Location = new Point(41, 88);
-            comboBoxSilverType.Name = "comboBoxSilverType";
-            comboBoxSilverType.Size = new Size(223, 27);
-            comboBoxSilverType.TabIndex = 24;
-            // 
-            // comboBoxDecimal
-            // 
-            comboBoxDecimal.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxDecimal.FormattingEnabled = true;
-            comboBoxDecimal.Location = new Point(41, 33);
-            comboBoxDecimal.Name = "comboBoxDecimal";
-            comboBoxDecimal.Size = new Size(223, 27);
-            comboBoxDecimal.TabIndex = 23;
             // 
             // label1
             // 
@@ -229,24 +249,6 @@
             dataGridViewNorm.TabIndex = 3;
             dataGridViewNorm.SelectionChanged += dataGridViewNorm_SelectionChanged;
             // 
-            // panelWork
-            // 
-            panelWork.Controls.Add(buttonAdd);
-            panelWork.Controls.Add(buttonEdit);
-            panelWork.Controls.Add(checkBoxEditMode);
-            panelWork.Controls.Add(buttonDelete);
-            panelWork.Controls.Add(maskedTextBoxNorm);
-            panelWork.Controls.Add(comboBoxDecimal);
-            panelWork.Controls.Add(comboBoxSilverType);
-            panelWork.Controls.Add(label2);
-            panelWork.Controls.Add(label4);
-            panelWork.Controls.Add(label3);
-            panelWork.Dock = DockStyle.Bottom;
-            panelWork.Location = new Point(0, 66);
-            panelWork.Name = "panelWork";
-            panelWork.Size = new Size(306, 342);
-            panelWork.TabIndex = 33;
-            // 
             // NormFrame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -261,9 +263,9 @@
             Size = new Size(1009, 448);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewNorm).EndInit();
             panelWork.ResumeLayout(false);
             panelWork.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewNorm).EndInit();
             ResumeLayout(false);
         }
 
