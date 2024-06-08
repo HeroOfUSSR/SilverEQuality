@@ -96,12 +96,52 @@ namespace SilverEQuality.FramesUC
             }
         }
 
-        private void buttonMore_Click(object sender, EventArgs e)
+
+
+        private void buttonMore_Click_1(object sender, EventArgs e)
         {
             timerExpand.Start();
         }
 
-        private void timerExpand_Tick(object sender, EventArgs e)
+        private void buttonCheck_Click_1(object sender, EventArgs e)
+        {
+            if (orderView.StatusOrderNavigation.IdStatus != 3)
+            {
+                createCheck?.Invoke(orderView);
+            }
+        }
+
+        private void buttonComments_Click_1(object sender, EventArgs e)
+        {
+            CommentForm commentForm = new CommentForm(orderView);
+            commentForm.ShowDialog();
+        }
+
+        private void buttonEdit_Click_1(object sender, EventArgs e)
+        {
+            var editForm = new EditOrderForm(orderView);
+            editForm.Show();
+        }
+
+        private void buttonImageMan_Click_1(object sender, EventArgs e)
+        {
+            if (openFileDialogImageChange.ShowDialog() != DialogResult.OK) return;
+
+            using (var db = new SilverEQContext(DBHelper.Option()))
+            {
+                var newImage = File.ReadAllBytes(openFileDialogImageChange.FileName);
+                var manufacturer = db.Manufacturers.FirstOrDefault(x => x.IdManufacturer == orderView.ManufacturerOrder);
+
+                manufacturer.ImageManufacturer = newImage;
+
+                db.Manufacturers.Update(manufacturer);
+                db.SaveChanges();
+
+                pictureBoxAvatar.Image = Image.FromStream(new MemoryStream(newImage));
+            }
+        }
+
+        private void timerExpand_Tick_1(object sender, EventArgs e)
         {
             if (isExpanding)
             {
@@ -127,7 +167,7 @@ namespace SilverEQuality.FramesUC
                         flowLayoutPanelOrderParts.Visible = true;
                         flowLayoutPanelOrderParts.Size = MaximumSize;
                     }
-                    
+
                 }
             }
             else
@@ -154,60 +194,9 @@ namespace SilverEQuality.FramesUC
                         flowLayoutPanelOrderParts.Visible = false;
                         flowLayoutPanelOrderParts.Size = MinimumSize;
                     }
-                    
+
                 }
             }
-        }
-
-
-        private void OrderView_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonImageMan_Click(object sender, EventArgs e)
-        {
-            if (openFileDialogImageChange.ShowDialog() != DialogResult.OK) return;
-
-            using (var db = new SilverEQContext(DBHelper.Option()))
-            {
-                var newImage = File.ReadAllBytes(openFileDialogImageChange.FileName);
-                var manufacturer = db.Manufacturers.FirstOrDefault(x => x.IdManufacturer == orderView.ManufacturerOrder);
-
-                manufacturer.ImageManufacturer = newImage;
-
-                db.Manufacturers.Update(manufacturer);
-                db.SaveChanges();
-
-                pictureBoxAvatar.Image = Image.FromStream(new MemoryStream(newImage));
-            }
-        }
-
-        private void buttonEdit_Click(object sender, EventArgs e)
-        {
-            //orderEditFrame = new OrderEditFrame(orderView);
-            var editForm = new EditOrderForm(orderView);
-            editForm.Show();
-
-        }
-
-        private void buttonComments_Click(object sender, EventArgs e)
-        {
-            CommentForm commentForm = new CommentForm(orderView);
-            commentForm.ShowDialog();
-        }
-
-        private void buttonCheck_Click(object sender, EventArgs e)
-        {
-            if (orderView.StatusOrderNavigation.IdStatus != 3)
-            {
-                createCheck?.Invoke(orderView);
-            }
-        }
-
-        private void OrderView_ParentChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -52,15 +52,6 @@ namespace SilverEQuality.FramesUC
         }
 
 
-        private void OrderAddFrame_Load(object sender, EventArgs e)
-        {
-            using (var db = new SilverEQContext(DBHelper.Option()))
-            {
-
-            }
-
-        }
-
         private void PartView_PartAdded(object sender, (Part, int) e)
         {
             if (partMap.TryGetValue(e.Item1, out var count))
@@ -70,7 +61,9 @@ namespace SilverEQuality.FramesUC
             else partMap.Add(e.Item1, e.Item2);
         }
 
-        private void buttonDone_Click(object sender, EventArgs e)
+
+
+        private void buttonDone_Click_1(object sender, EventArgs e)
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
@@ -92,15 +85,28 @@ namespace SilverEQuality.FramesUC
                     paymentOrder = null;
                 }
 
+                int priority;
+
+                if (comboBoxPrio.SelectedItem != null)
+                {
+                    priority = ((Priority)comboBoxPrio.SelectedItem).IdPriority;
+                }
+                else priority = db.Priorities.FirstOrDefault(x => x.IdPriority == 2).IdPriority;
+
+                int? appointed = null;
+                if (comboBoxAppointed != null)
+                {
+                    appointed = ((User)comboBoxAppointed.SelectedItem).IdUser;
+                }
                 var newOrder = new Order
                 {
                     DateOrder = dateTimePickerStart.Value,
                     DateEndOrder = dateTimePickerEnd.Value,
                     ManufacturerOrder = ((Manufacturer)comboBoxManufacturer.SelectedItem).IdManufacturer,
                     StatusOrder = ((Status)comboBoxStatus.SelectedItem).IdStatus,
-                    PriorityOrder = ((Priority)comboBoxPrio.SelectedItem).IdPriority,
+                    PriorityOrder = priority,
                     DescOrder = textBoxDesc.Text,
-                    AppointedOrder = ((User)comboBoxAppointed.SelectedItem).IdUser,
+                    AppointedOrder = appointed,
                     PaymentOrder = Convert.ToDecimal(paymentOrder)
                 };
 
@@ -140,16 +146,22 @@ namespace SilverEQuality.FramesUC
             }
         }
 
-        private void checkBoxTodayDate_CheckedChanged(object sender, EventArgs e)
+        private void textBoxPayment_KeyDown_1(object sender, KeyEventArgs e)
         {
-            if (checkBoxTodayDate.Checked)
+            char digit = Convert.ToChar(e.KeyCode);
+
+            if (!Char.IsDigit(digit) || e.KeyCode == Keys.Back)
             {
-                dateTimePickerStart.Enabled = false;
+                e.Handled = true;
             }
-            else dateTimePickerStart.Enabled = true;
         }
 
-        private void checkBoxNoEndDate_CheckedChanged(object sender, EventArgs e)
+        private void dateTimePickerEnd_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxNoEndDate_CheckedChanged_1(object sender, EventArgs e)
         {
             if (checkBoxNoEndDate.Checked)
             {
@@ -158,14 +170,13 @@ namespace SilverEQuality.FramesUC
             else dateTimePickerEnd.Enabled = true;
         }
 
-        private void textBoxPayment_KeyDown(object sender, KeyEventArgs e)
+        private void checkBoxTodayDate_CheckedChanged(object sender, EventArgs e)
         {
-            char digit = Convert.ToChar(e.KeyCode);
-
-            if (!Char.IsDigit(digit) || e.KeyCode == Keys.Back)
+            if (checkBoxTodayDate.Checked)
             {
-                e.Handled = true;
+                dateTimePickerStart.Enabled = false;
             }
+            else dateTimePickerStart.Enabled = true;
         }
     }
 }

@@ -92,6 +92,7 @@
             this.buttonDone.TabIndex = 23;
             this.buttonDone.Text = "Добавить";
             this.buttonDone.UseVisualStyleBackColor = false;
+            this.buttonDone.Click += new System.EventHandler(this.buttonDone_Click_1);
             // 
             // comboBoxAppointed
             // 
@@ -154,6 +155,7 @@
             this.textBoxPayment.Name = "textBoxPayment";
             this.textBoxPayment.Size = new System.Drawing.Size(200, 26);
             this.textBoxPayment.TabIndex = 36;
+            this.textBoxPayment.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPayment_KeyDown_1);
             // 
             // label6
             // 
@@ -226,6 +228,7 @@
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(200, 26);
             this.dateTimePickerEnd.TabIndex = 29;
+            this.dateTimePickerEnd.ValueChanged += new System.EventHandler(this.dateTimePickerEnd_ValueChanged);
             // 
             // checkBoxTodayDate
             // 
@@ -238,6 +241,7 @@
             this.checkBoxTodayDate.TabIndex = 28;
             this.checkBoxTodayDate.Text = "Текущая дата";
             this.checkBoxTodayDate.UseVisualStyleBackColor = true;
+            this.checkBoxTodayDate.CheckedChanged += new System.EventHandler(this.checkBoxTodayDate_CheckedChanged);
             // 
             // dateTimePickerStart
             // 
@@ -281,6 +285,7 @@
             this.checkBoxNoEndDate.TabIndex = 44;
             this.checkBoxNoEndDate.Text = "Бессрочно";
             this.checkBoxNoEndDate.UseVisualStyleBackColor = true;
+            this.checkBoxNoEndDate.CheckedChanged += new System.EventHandler(this.checkBoxNoEndDate_CheckedChanged_1);
             // 
             // panel4
             // 

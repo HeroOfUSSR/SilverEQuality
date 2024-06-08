@@ -108,10 +108,12 @@
             this.buttonMore.TabIndex = 4;
             this.buttonMore.Text = "Подробнее";
             this.buttonMore.UseVisualStyleBackColor = false;
+            this.buttonMore.Click += new System.EventHandler(this.buttonMore_Click_1);
             // 
             // timerExpand
             // 
             this.timerExpand.Interval = 5;
+            this.timerExpand.Tick += new System.EventHandler(this.timerExpand_Tick_1);
             // 
             // panel1
             // 
@@ -138,6 +140,7 @@
             this.buttonCheck.Text = "Отчёт";
             this.buttonCheck.UseVisualStyleBackColor = false;
             this.buttonCheck.Visible = false;
+            this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click_1);
             // 
             // panel2
             // 
@@ -166,6 +169,7 @@
             this.buttonComments.Text = "Комментарии";
             this.buttonComments.UseVisualStyleBackColor = false;
             this.buttonComments.Visible = false;
+            this.buttonComments.Click += new System.EventHandler(this.buttonComments_Click_1);
             // 
             // buttonEdit
             // 
@@ -182,6 +186,7 @@
             this.buttonEdit.Text = "Редактировать";
             this.buttonEdit.UseVisualStyleBackColor = false;
             this.buttonEdit.Visible = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click_1);
             // 
             // buttonImageMan
             // 
@@ -198,6 +203,7 @@
             this.buttonImageMan.Text = "Изменить фото";
             this.buttonImageMan.UseVisualStyleBackColor = false;
             this.buttonImageMan.Visible = false;
+            this.buttonImageMan.Click += new System.EventHandler(this.buttonImageMan_Click_1);
             // 
             // openFileDialogImageChange
             // 

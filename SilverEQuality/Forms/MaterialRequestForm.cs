@@ -164,6 +164,13 @@ namespace SilverEQuality.Forms
                     priorityRequest = 2;
                 }
 
+                if (comboBoxSilver.SelectedItem == null)
+                {
+                    CustomMessageBox errorAdding = new CustomMessageBox("Выберите тип серебра", false);
+                    errorAdding.ShowDialog();
+                    return;
+                }
+
 
 
                 if (buttonDone.Text == "Редактировать")
