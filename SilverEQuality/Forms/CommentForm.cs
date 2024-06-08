@@ -80,6 +80,9 @@ namespace SilverEQuality.Forms
                 if (checkBoxSendEmail.Checked == true)
                 {
                     SendEmail();
+
+                    CustomMessageBox successSendEmail = new CustomMessageBox("Сообщение на почту отправлено", false);
+                    successSendEmail.ShowDialog();
                 }
                 else
                 {
@@ -129,8 +132,7 @@ namespace SilverEQuality.Forms
                                     return;
                                 }
 
-                                CustomMessageBox successSendEmail = new CustomMessageBox("Сообщение на почту отправлено", false);
-                                successSendEmail.ShowDialog();
+                                
                             }
                         }
 

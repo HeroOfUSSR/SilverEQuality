@@ -143,7 +143,7 @@
             checkBoxFinish.AutoSize = true;
             checkBoxFinish.CheckAlign = ContentAlignment.MiddleRight;
             checkBoxFinish.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxFinish.Location = new Point(339, 331);
+            checkBoxFinish.Location = new Point(474, 316);
             checkBoxFinish.Name = "checkBoxFinish";
             checkBoxFinish.Size = new Size(182, 23);
             checkBoxFinish.TabIndex = 18;
@@ -155,12 +155,13 @@
             // 
             checkBoxDate.Anchor = AnchorStyles.None;
             checkBoxDate.AutoSize = true;
+            checkBoxDate.CheckAlign = ContentAlignment.MiddleRight;
             checkBoxDate.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxDate.Location = new Point(361, 260);
+            checkBoxDate.Location = new Point(218, 316);
             checkBoxDate.Name = "checkBoxDate";
-            checkBoxDate.Size = new Size(160, 23);
+            checkBoxDate.Size = new Size(237, 23);
             checkBoxDate.TabIndex = 17;
-            checkBoxDate.Text = "Выбрать дату";
+            checkBoxDate.Text = "Выбрать дату заказа";
             checkBoxDate.UseVisualStyleBackColor = true;
             checkBoxDate.CheckedChanged += checkBoxChoose_CheckedChanged;
             // 
@@ -169,7 +170,7 @@
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(284, 294);
+            label9.Location = new Point(219, 270);
             label9.Name = "label9";
             label9.Size = new Size(130, 19);
             label9.TabIndex = 16;
@@ -180,7 +181,7 @@
             dateTimePickerCheck.Anchor = AnchorStyles.None;
             dateTimePickerCheck.Enabled = false;
             dateTimePickerCheck.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerCheck.Location = new Point(432, 289);
+            dateTimePickerCheck.Location = new Point(432, 267);
             dateTimePickerCheck.Name = "dateTimePickerCheck";
             dateTimePickerCheck.Size = new Size(224, 26);
             dateTimePickerCheck.TabIndex = 7;
@@ -202,7 +203,7 @@
             label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
             label8.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(273, 21);
+            label8.Location = new Point(219, 21);
             label8.Name = "label8";
             label8.Size = new Size(141, 19);
             label8.TabIndex = 15;
@@ -236,7 +237,7 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(295, 191);
+            label6.Location = new Point(219, 190);
             label6.Name = "label6";
             label6.Size = new Size(119, 19);
             label6.TabIndex = 12;
@@ -256,7 +257,7 @@
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(230, 160);
+            label5.Location = new Point(219, 159);
             label5.Name = "label5";
             label5.Size = new Size(185, 19);
             label5.TabIndex = 10;
@@ -290,7 +291,7 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(296, 62);
+            label3.Location = new Point(218, 62);
             label3.Name = "label3";
             label3.Size = new Size(119, 19);
             label3.TabIndex = 5;
@@ -312,7 +313,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(285, 127);
+            label2.Location = new Point(219, 127);
             label2.Name = "label2";
             label2.Size = new Size(130, 19);
             label2.TabIndex = 3;

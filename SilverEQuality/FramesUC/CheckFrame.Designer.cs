@@ -66,8 +66,9 @@
             // 
             checkBoxNorm.Anchor = AnchorStyles.Left;
             checkBoxNorm.AutoSize = true;
+            checkBoxNorm.CheckAlign = ContentAlignment.MiddleRight;
             checkBoxNorm.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxNorm.Location = new Point(255, 54);
+            checkBoxNorm.Location = new Point(271, 54);
             checkBoxNorm.Name = "checkBoxNorm";
             checkBoxNorm.Size = new Size(296, 20);
             checkBoxNorm.TabIndex = 8;
@@ -106,7 +107,7 @@
             textBoxSearch.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxSearch.Location = new Point(105, 25);
             textBoxSearch.Name = "textBoxSearch";
-            textBoxSearch.PlaceholderText = "Чеки за всё время";
+            textBoxSearch.PlaceholderText = "Поиск по номеру чека";
             textBoxSearch.Size = new Size(462, 23);
             textBoxSearch.TabIndex = 2;
             // 
@@ -201,19 +202,19 @@
             // 
             contextMenuStrip.Items.AddRange(new ToolStripItem[] { редактироватьЧекToolStripMenuItem, удалитьЧекToolStripMenuItem });
             contextMenuStrip.Name = "contextMenuStrip";
-            contextMenuStrip.Size = new Size(181, 70);
+            contextMenuStrip.Size = new Size(177, 48);
             // 
             // редактироватьЧекToolStripMenuItem
             // 
             редактироватьЧекToolStripMenuItem.Name = "редактироватьЧекToolStripMenuItem";
-            редактироватьЧекToolStripMenuItem.Size = new Size(180, 22);
+            редактироватьЧекToolStripMenuItem.Size = new Size(176, 22);
             редактироватьЧекToolStripMenuItem.Text = "Редактировать чек";
             редактироватьЧекToolStripMenuItem.Click += редактироватьЧекToolStripMenuItem_Click;
             // 
             // удалитьЧекToolStripMenuItem
             // 
             удалитьЧекToolStripMenuItem.Name = "удалитьЧекToolStripMenuItem";
-            удалитьЧекToolStripMenuItem.Size = new Size(180, 22);
+            удалитьЧекToolStripMenuItem.Size = new Size(176, 22);
             удалитьЧекToolStripMenuItem.Text = "Удалить чек";
             удалитьЧекToolStripMenuItem.Click += удалитьЧекToolStripMenuItem_Click;
             // 

@@ -58,7 +58,7 @@
             // numericUpDownCount
             // 
             numericUpDownCount.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDownCount.Location = new Point(274, 21);
+            numericUpDownCount.Location = new Point(263, 22);
             numericUpDownCount.Name = "numericUpDownCount";
             numericUpDownCount.Size = new Size(66, 26);
             numericUpDownCount.TabIndex = 34;
@@ -69,7 +69,7 @@
             labelAmount.Anchor = AnchorStyles.Right;
             labelAmount.AutoSize = true;
             labelAmount.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelAmount.Location = new Point(274, 24);
+            labelAmount.Location = new Point(263, 24);
             labelAmount.Name = "labelAmount";
             labelAmount.Size = new Size(53, 19);
             labelAmount.TabIndex = 35;
@@ -84,7 +84,7 @@
             Controls.Add(labelDecimal);
             Controls.Add(labelPart);
             Name = "PartView";
-            Size = new Size(358, 73);
+            Size = new Size(339, 73);
             ((System.ComponentModel.ISupportInitialize)numericUpDownCount).EndInit();
             ResumeLayout(false);
             PerformLayout();
