@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilverEQuality", "SilverEQu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilverEQuality_Context", "SilverEQuality_Context\SilverEQuality_Context.csproj", "{20D4CE3D-F952-40E4-8BD0-7CAA8DC5741A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverEQuality_Tests", "SilverEQuality_XTests\SilverEQuality_Tests.csproj", "{12CB1113-90E8-4425-BE45-E8A19DA41DAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{20D4CE3D-F952-40E4-8BD0-7CAA8DC5741A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20D4CE3D-F952-40E4-8BD0-7CAA8DC5741A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20D4CE3D-F952-40E4-8BD0-7CAA8DC5741A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12CB1113-90E8-4425-BE45-E8A19DA41DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12CB1113-90E8-4425-BE45-E8A19DA41DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12CB1113-90E8-4425-BE45-E8A19DA41DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12CB1113-90E8-4425-BE45-E8A19DA41DAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

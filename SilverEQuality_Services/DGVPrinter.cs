@@ -242,7 +242,7 @@ namespace DGVPrinterHelper //AllocationRequest
         public enum Location { Header, Footer, Absolute }
         public enum SizeType { CellSize, StringSize, Porportional }
         public enum PrintLocation { All, FirstOnly, LastOnly, None }
-        public void CreateReport(string nameTitle, DataGridView grid, DateTime fromDate, DateTime toDate)
+        public void CreateReport(string nameTitle, DataGridView grid)
         {
             var printer = new DGVPrinter();
             printer.Title = nameTitle;
@@ -251,7 +251,7 @@ namespace DGVPrinterHelper //AllocationRequest
             printer.PageNumberInHeader = false;
             printer.PorportionalColumns = true;
             printer.HeaderCellAlignment = StringAlignment.Near;
-            printer.Footer = $"{fromDate.ToString("D")} - {toDate.ToString("D")}";
+            printer.Footer = "Актуально на: " + DateTime.Now.ToString("dd.MMM, HH:mm");
             printer.FooterSpacing = 100;
             printer.PreviewDialog = new PrintPreviewDialog();
             printer.PageSettings.Landscape = true;
