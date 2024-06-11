@@ -44,6 +44,7 @@ namespace SilverEQuality.FramesUC
                 db.SaveChanges();
 
                 CustomMessageBox success = new CustomMessageBox("Файл успешно загружен", false);
+                success.ShowDialog();
             }
         }
 
