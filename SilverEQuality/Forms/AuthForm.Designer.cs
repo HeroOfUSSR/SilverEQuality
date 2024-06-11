@@ -32,7 +32,6 @@
             panel1 = new Panel();
             label3 = new Label();
             buttonHide = new Button();
-            buttonWindowSize = new Button();
             buttonExit = new Button();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
@@ -61,7 +60,6 @@
             panel1.BackColor = Color.FromArgb(50, 50, 56);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(buttonHide);
-            panel1.Controls.Add(buttonWindowSize);
             panel1.Controls.Add(buttonExit);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Top;
@@ -91,28 +89,13 @@
             buttonHide.FlatStyle = FlatStyle.Flat;
             buttonHide.Font = new Font("Lucida Console", 14F, FontStyle.Bold, GraphicsUnit.Point);
             buttonHide.ForeColor = SystemColors.ControlLightLight;
-            buttonHide.Location = new Point(340, 0);
+            buttonHide.Location = new Point(371, 0);
             buttonHide.Name = "buttonHide";
             buttonHide.Size = new Size(34, 30);
             buttonHide.TabIndex = 6;
             buttonHide.Text = "_";
             buttonHide.UseVisualStyleBackColor = true;
             buttonHide.Click += buttonHide_Click;
-            // 
-            // buttonWindowSize
-            // 
-            buttonWindowSize.BackgroundImage = Properties.Resources.windowSize;
-            buttonWindowSize.BackgroundImageLayout = ImageLayout.Zoom;
-            buttonWindowSize.Dock = DockStyle.Right;
-            buttonWindowSize.FlatAppearance.BorderSize = 0;
-            buttonWindowSize.FlatStyle = FlatStyle.Flat;
-            buttonWindowSize.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonWindowSize.ForeColor = SystemColors.ControlLightLight;
-            buttonWindowSize.Location = new Point(374, 0);
-            buttonWindowSize.Name = "buttonWindowSize";
-            buttonWindowSize.Size = new Size(31, 30);
-            buttonWindowSize.TabIndex = 7;
-            buttonWindowSize.UseVisualStyleBackColor = true;
             // 
             // buttonExit
             // 
@@ -166,7 +149,7 @@
             panel3.Controls.Add(buttonCancel);
             panel3.Controls.Add(buttonLogin);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 250);
+            panel3.Location = new Point(0, 251);
             panel3.Name = "panel3";
             panel3.Size = new Size(440, 94);
             panel3.TabIndex = 1;
@@ -213,7 +196,7 @@
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(0, 117);
             panel4.Name = "panel4";
-            panel4.Size = new Size(440, 133);
+            panel4.Size = new Size(440, 134);
             panel4.TabIndex = 0;
             // 
             // buttonReload
@@ -290,7 +273,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(440, 344);
+            ClientSize = new Size(440, 345);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -317,7 +300,6 @@
 
         private Panel panel1;
         private Button buttonHide;
-        private Button buttonWindowSize;
         private Button buttonExit;
         private PictureBox pictureBox1;
         private Panel panel2;
