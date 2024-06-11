@@ -32,6 +32,7 @@ namespace SilverEQuality_Context
         public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<Manufacturer> Manufacturers { get; set; } = null!;
         public virtual DbSet<Comment> Comments { get; set; } = null!;
+        public virtual DbSet<Document> Documents { get; set; } = null!;
 
 
         /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -446,6 +447,25 @@ namespace SilverEQuality_Context
                 entity.Property(e => e.TitleSilverType)
                     .HasMaxLength(60)
                     .HasColumnName("Title_SilverType");
+            });
+
+            modelBuilder.Entity<Document>(entity =>
+            {
+                entity.HasKey(e => e.IdDocument);
+
+                entity.ToTable("Document");
+
+                entity.Property(e => e.IdDocument)
+                    .HasColumnName("ID_Document");
+
+                entity.Property(e => e.TitleDocument)
+                    .HasMaxLength(50)
+                    .HasColumnName("Title_Document");
+
+                entity.Property(e => e.FileDocument)
+                    .HasColumnType("varbinary")
+                    .HasColumnName("File_Document");
+
             });
 
             modelBuilder.Entity<Status>(entity =>
