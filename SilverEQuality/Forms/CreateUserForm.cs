@@ -95,7 +95,7 @@ namespace SilverEQuality.Forms
                     }
 
                     editUser.FullnameUser = textBoxFullname.Text;
-                    editUser.PhoneUser = $"8{maskedTextBoxNumber.Text}";//textBoxPhone.Text;
+                    editUser.PhoneUser = $"8{phoneNumber}";//textBoxPhone.Text;
                     editUser.DateOfBirthUser = dateTimePickerBirth.Value;
                     editUser.LoginUser = textBoxLogin.Text;
 
