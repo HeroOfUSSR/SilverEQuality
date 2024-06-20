@@ -94,7 +94,8 @@ namespace SilverEQuality.FramesUC
                 else priority = db.Priorities.FirstOrDefault(x => x.IdPriority == 2).IdPriority;
 
                 int? appointed = null;
-                if (comboBoxAppointed != null)
+
+                if (comboBoxAppointed.SelectedItem != null)
                 {
                     appointed = ((User)comboBoxAppointed.SelectedItem).IdUser;
                 }

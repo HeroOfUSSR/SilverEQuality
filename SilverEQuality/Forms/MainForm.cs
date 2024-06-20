@@ -35,7 +35,6 @@ namespace SilverEQuality.Forms
             if (AuthForm.authorizedUser.RoleUser == 4
                 || AuthForm.authorizedUser.RoleUser == 2)
             {
-                panelChecks.Visible = false;
                 panelOrders.Visible = false;
             }
         }

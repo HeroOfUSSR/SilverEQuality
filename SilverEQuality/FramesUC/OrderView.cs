@@ -109,6 +109,11 @@ namespace SilverEQuality.FramesUC
             {
                 createCheck?.Invoke(orderView);
             }
+            else
+            {
+                CustomMessageBox alreadyFinished = new CustomMessageBox("Заказ уже завершён", false);
+                alreadyFinished.ShowDialog();
+            }
         }
 
         private void buttonComments_Click_1(object sender, EventArgs e)

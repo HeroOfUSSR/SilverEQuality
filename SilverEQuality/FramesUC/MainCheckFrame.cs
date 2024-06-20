@@ -22,6 +22,12 @@ namespace SilverEQuality.FramesUC
         {
             InitializeComponent();
             FrameOutput(1);
+
+            if (AuthForm.authorizedUser.RoleUser == 2 || AuthForm.authorizedUser.RoleUser == 4)
+            {
+                buttonAdd.Visible = false;
+                buttonGraphs.Visible = false;
+            }
         }
         public MainCheckFrame(Order order) : this()
         {
@@ -92,10 +98,18 @@ namespace SilverEQuality.FramesUC
         {
             panelBody.Controls.Clear();
 
+            buttonAdd.BackColor = Color.White;
+            buttonAdd.ForeColor = Color.SteelBlue;
+
             CheckEditFrame checkEditFrame = new CheckEditFrame(editCheck);
             checkEditFrame.Size = panelBody.Size;
             checkEditFrame.Dock = DockStyle.Fill;
             checkEditFrame.Parent = panelBody;
+
+            buttonGrid.BackColor = Color.SteelBlue;
+            buttonGrid.ForeColor = Color.White;
+            buttonGraphs.BackColor = Color.SteelBlue;
+            buttonGraphs.ForeColor = Color.White;
         }
 
         private void buttonGrid_Click(object sender, EventArgs e)

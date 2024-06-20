@@ -17,6 +17,11 @@ namespace SilverEQuality.FramesUC
         public DocumentsFrame()
         {
             InitializeComponent();
+            if (AuthForm.authorizedUser.RoleUser == 3)
+            {
+                buttonUploadNorms.Visible = false;
+                buttonUploadPZ.Visible = false;
+            }
         }
 
         private void buttonUploadPZ_Click(object sender, EventArgs e)

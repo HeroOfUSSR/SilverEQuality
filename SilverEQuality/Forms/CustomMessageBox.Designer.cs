@@ -166,7 +166,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CustomMessageBox";
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MessageBoxAuth";
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();

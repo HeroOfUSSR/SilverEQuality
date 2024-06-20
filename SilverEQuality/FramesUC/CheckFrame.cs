@@ -43,6 +43,13 @@ namespace SilverEQuality.Forms
             sortChecks = comboBoxSortDate.SelectedIndex;
 
             InitDatagrid(sortChecks);
+
+            if (AuthForm.authorizedUser.RoleUser == 2 || AuthForm.authorizedUser.RoleUser == 4)
+            {
+                contextMenuStrip.Visible = false;
+                contextMenuStrip.Enabled = false;
+                buttonReportCreate.Visible = false;
+            }
         }
 
         private void InitDatagrid(int sort)

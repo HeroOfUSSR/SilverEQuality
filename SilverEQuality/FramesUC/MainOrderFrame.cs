@@ -22,6 +22,11 @@ namespace SilverEQuality.FramesUC
         {
             InitializeComponent();
             FrameOutput(1);
+
+            if (AuthForm.authorizedUser.RoleUser == 2 || AuthForm.authorizedUser.RoleUser == 4)
+            {
+                buttonEditAdd.Visible = false;
+            }
         }
 
         private void FrameOutput(int buttonNumber)
