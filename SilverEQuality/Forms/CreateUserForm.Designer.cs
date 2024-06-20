@@ -41,7 +41,6 @@
             label3 = new Label();
             dateTimePickerBirth = new DateTimePicker();
             label4 = new Label();
-            textBoxPhone = new TextBox();
             label6 = new Label();
             textBoxMail = new TextBox();
             comboBoxDepartment = new ComboBox();
@@ -58,6 +57,7 @@
             buttonCancel = new Button();
             buttonDone = new Button();
             openFileDialogChangeAv = new OpenFileDialog();
+            maskedTextBoxNumber = new MaskedTextBox();
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelPhoto.SuspendLayout();
@@ -155,6 +155,7 @@
             // comboBoxRoles
             // 
             comboBoxRoles.Anchor = AnchorStyles.Top;
+            comboBoxRoles.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxRoles.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxRoles.FormattingEnabled = true;
             comboBoxRoles.Location = new Point(252, 196);
@@ -204,14 +205,6 @@
             label4.TabIndex = 35;
             label4.Text = "Номер телефона*";
             // 
-            // textBoxPhone
-            // 
-            textBoxPhone.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPhone.Location = new Point(252, 99);
-            textBoxPhone.Name = "textBoxPhone";
-            textBoxPhone.Size = new Size(231, 26);
-            textBoxPhone.TabIndex = 4;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -233,6 +226,7 @@
             // comboBoxDepartment
             // 
             comboBoxDepartment.Anchor = AnchorStyles.Top;
+            comboBoxDepartment.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxDepartment.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxDepartment.FormattingEnabled = true;
             comboBoxDepartment.Location = new Point(252, 163);
@@ -379,11 +373,21 @@
             // 
             openFileDialogChangeAv.FileName = "openFileDialog1";
             // 
+            // maskedTextBoxNumber
+            // 
+            maskedTextBoxNumber.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            maskedTextBoxNumber.Location = new Point(252, 99);
+            maskedTextBoxNumber.Mask = "(999) 000-0000";
+            maskedTextBoxNumber.Name = "maskedTextBoxNumber";
+            maskedTextBoxNumber.Size = new Size(231, 26);
+            maskedTextBoxNumber.TabIndex = 45;
+            // 
             // CreateUserForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(542, 574);
+            Controls.Add(maskedTextBoxNumber);
             Controls.Add(panel2);
             Controls.Add(checkBoxAvailable);
             Controls.Add(panelPhoto);
@@ -396,7 +400,6 @@
             Controls.Add(label6);
             Controls.Add(textBoxMail);
             Controls.Add(label4);
-            Controls.Add(textBoxPhone);
             Controls.Add(dateTimePickerBirth);
             Controls.Add(label3);
             Controls.Add(comboBoxRoles);
@@ -437,7 +440,6 @@
         private Label label3;
         private DateTimePicker dateTimePickerBirth;
         private Label label4;
-        private TextBox textBoxPhone;
         private Label label6;
         private TextBox textBoxMail;
         private ComboBox comboBoxDepartment;
@@ -454,5 +456,6 @@
         private Button buttonCancel;
         private Button buttonDone;
         private OpenFileDialog openFileDialogChangeAv;
+        private MaskedTextBox maskedTextBoxNumber;
     }
 }

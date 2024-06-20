@@ -52,7 +52,7 @@ namespace SilverEQuality.Forms
             //if (user.PasswordUser != null) textBoxPassword.Text = user.PasswordUser;
             if (user.EmailUser != null) textBoxMail.Text = user.EmailUser;
             textBoxFullname.Text = user.FullnameUser;
-            textBoxPhone.Text = user.PhoneUser;
+            maskedTextBoxNumber.Text = user.PhoneUser.Remove(0,1);
             dateTimePickerBirth.Value = user.DateOfBirthUser;
 
             var index = comboBoxRoles.FindString(user.RoleUserNavigation.TitleRole.ToString());
@@ -82,10 +82,12 @@ namespace SilverEQuality.Forms
         {
             using (var db = new SilverEQContext(DBHelper.Option()))
             {
+                string phoneNumber = new string(maskedTextBoxNumber.Text.Where(t => char.IsDigit(t)).ToArray());
+
                 if (buttonDone.Text == "Редактировать")
                 {
 
-                    if (textBoxFullname.Text == "" || textBoxPhone.Text == "" || comboBoxDepartment.SelectedIndex == 0)
+                    if (textBoxFullname.Text == "" || maskedTextBoxNumber.Text == "" || comboBoxDepartment.SelectedIndex == 0)
                     {
                         CustomMessageBox errorAdding = new CustomMessageBox("Заполните все поля со звёздочкой", false);
                         errorAdding.ShowDialog();
@@ -93,7 +95,7 @@ namespace SilverEQuality.Forms
                     }
 
                     editUser.FullnameUser = textBoxFullname.Text;
-                    editUser.PhoneUser = textBoxPhone.Text;
+                    editUser.PhoneUser = $"8{maskedTextBoxNumber.Text}";//textBoxPhone.Text;
                     editUser.DateOfBirthUser = dateTimePickerBirth.Value;
                     editUser.LoginUser = textBoxLogin.Text;
 
@@ -123,7 +125,7 @@ namespace SilverEQuality.Forms
                 }
                 else
                 {
-                    if (textBoxFullname.Text == "" || textBoxPhone.Text == "" || comboBoxDepartment.SelectedIndex == 0)
+                    if (textBoxFullname.Text == "" || phoneNumber == "" || comboBoxDepartment.SelectedIndex == 0)
                     {
                         CustomMessageBox errorAdding = new CustomMessageBox("Заполните все поля со звёздочкой", false);
                         errorAdding.ShowDialog();
@@ -131,10 +133,17 @@ namespace SilverEQuality.Forms
                     }
 
                     createUser.FullnameUser = textBoxFullname.Text;
-                    createUser.PhoneUser = textBoxPhone.Text;
+                    createUser.PhoneUser = $"8{phoneNumber}"; ;
                     createUser.DateOfBirthUser = dateTimePickerBirth.Value;
                     createUser.LoginUser = textBoxLogin.Text;
-                    createUser.PasswordUser = MD5Encryptor.HashPassword(textBoxPassword.Text);
+                    if (textBoxPassword.Text != "")
+                    {
+                        createUser.PasswordUser = MD5Encryptor.HashPassword(textBoxPassword.Text);
+                    }
+                    else
+                    {
+                        createUser.PasswordUser = null;
+                    }
                     createUser.EmailUser = textBoxMail.Text;
 
                     createUser.DepartmentUser = ((Department)comboBoxDepartment.SelectedItem).CodeDepartment;
