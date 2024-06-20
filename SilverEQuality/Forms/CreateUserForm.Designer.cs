@@ -187,9 +187,12 @@
             // 
             dateTimePickerBirth.Font = new Font("Lucida Console", 14F, FontStyle.Regular, GraphicsUnit.Point);
             dateTimePickerBirth.Location = new Point(252, 229);
+            dateTimePickerBirth.MaxDate = new DateTime(2006, 6, 20, 0, 0, 0, 0);
+            dateTimePickerBirth.MinDate = new DateTime(1940, 1, 1, 0, 0, 0, 0);
             dateTimePickerBirth.Name = "dateTimePickerBirth";
             dateTimePickerBirth.Size = new Size(231, 26);
             dateTimePickerBirth.TabIndex = 8;
+            dateTimePickerBirth.Value = new DateTime(2006, 6, 20, 0, 0, 0, 0);
             // 
             // label4
             // 

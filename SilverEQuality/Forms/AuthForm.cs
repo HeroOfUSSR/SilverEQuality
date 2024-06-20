@@ -49,6 +49,9 @@ namespace SilverEQuality
 
                     textBoxLogin.Text = "";
                     textBoxPassword.Text = "";
+                    RefreshCaptcha();
+                    textBoxCaptcha.Text = "";
+                    Size = MinimumSize;
                 }
                 else
                 {

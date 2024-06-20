@@ -149,7 +149,7 @@
             panel3.Controls.Add(buttonCancel);
             panel3.Controls.Add(buttonLogin);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 251);
+            panel3.Location = new Point(0, 250);
             panel3.Name = "panel3";
             panel3.Size = new Size(440, 94);
             panel3.TabIndex = 1;
@@ -196,7 +196,7 @@
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(0, 117);
             panel4.Name = "panel4";
-            panel4.Size = new Size(440, 134);
+            panel4.Size = new Size(440, 133);
             panel4.TabIndex = 0;
             // 
             // buttonReload
@@ -273,7 +273,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(440, 345);
+            ClientSize = new Size(440, 344);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
