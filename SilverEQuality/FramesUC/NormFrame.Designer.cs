@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -45,9 +46,13 @@
             label1 = new Label();
             textBoxSearch = new TextBox();
             dataGridViewNorm = new DataGridView();
+            reloadMenuStrip = new ContextMenuStrip(components);
+            reloadToolStripMenuItem = new ToolStripMenuItem();
+            aaaToolStripMenuItem = new ToolStripMenuItem();
             panel3.SuspendLayout();
             panelWork.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewNorm).BeginInit();
+            reloadMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -249,10 +254,30 @@
             dataGridViewNorm.TabIndex = 3;
             dataGridViewNorm.SelectionChanged += dataGridViewNorm_SelectionChanged;
             // 
+            // reloadMenuStrip
+            // 
+            reloadMenuStrip.Items.AddRange(new ToolStripItem[] { reloadToolStripMenuItem, aaaToolStripMenuItem });
+            reloadMenuStrip.Name = "reloadMenuStrip";
+            reloadMenuStrip.Size = new Size(129, 48);
+            // 
+            // reloadToolStripMenuItem
+            // 
+            reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
+            reloadToolStripMenuItem.Size = new Size(128, 22);
+            reloadToolStripMenuItem.Text = "Обновить";
+            reloadToolStripMenuItem.Click += reloadToolStripMenuItem_Click;
+            // 
+            // aaaToolStripMenuItem
+            // 
+            aaaToolStripMenuItem.Name = "aaaToolStripMenuItem";
+            aaaToolStripMenuItem.Size = new Size(128, 22);
+            aaaToolStripMenuItem.Text = "aaa";
+            // 
             // NormFrame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            ContextMenuStrip = reloadMenuStrip;
             Controls.Add(dataGridViewNorm);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -266,6 +291,7 @@
             panelWork.ResumeLayout(false);
             panelWork.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewNorm).EndInit();
+            reloadMenuStrip.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -288,5 +314,8 @@
         private MaskedTextBox maskedTextBoxNorm;
         private CheckBox checkBoxEditMode;
         private Panel panelWork;
+        private ContextMenuStrip reloadMenuStrip;
+        private ToolStripMenuItem reloadToolStripMenuItem;
+        private ToolStripMenuItem aaaToolStripMenuItem;
     }
 }

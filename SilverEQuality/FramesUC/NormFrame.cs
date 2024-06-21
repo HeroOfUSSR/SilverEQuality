@@ -134,7 +134,6 @@ namespace SilverEQuality.FramesUC
                     CustomMessageBox successAdd = new CustomMessageBox("Норма добавлена", false);
                     successAdd.ShowDialog();
 
-                    InitDatagrid();
                 }
             }
             else
@@ -204,14 +203,13 @@ namespace SilverEQuality.FramesUC
                     CustomMessageBox successAdd = new CustomMessageBox("Норма изменена", false);
                     successAdd.ShowDialog();
 
-                    //InitDatagrid();
                 }
-            else
-            {
-                CustomMessageBox noData = new CustomMessageBox("Не выделена норма для редактирования", false);
-                noData.ShowDialog();
+                else
+                {
+                    CustomMessageBox noData = new CustomMessageBox("Не выделена норма для редактирования", false);
+                    noData.ShowDialog();
+                }
             }
-        }
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -234,7 +232,6 @@ namespace SilverEQuality.FramesUC
                     CustomMessageBox successAdd = new CustomMessageBox("Норма удалена", false);
                     successAdd.ShowDialog();
 
-                    //InitDatagrid();
                 }
                 else
                 {
@@ -242,6 +239,12 @@ namespace SilverEQuality.FramesUC
                     noData.ShowDialog();
                 }
             }
+        }
+
+        private void reloadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            checkBoxEditMode.Checked = false;
+            InitDatagrid();
         }
     }
 }
